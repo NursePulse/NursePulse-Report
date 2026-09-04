@@ -25,13 +25,13 @@
 
 <p><strong>Integrantes</strong></p>
 
-| Código UPC | Apellidos y nombres |
-| ---------- | ------------------- |
-| u202414510 | Mansilla Rivero, Carlos Marcelo |
-| [Código UPC] | [Apellidos y nombres] |
-| [Código UPC] | [Apellidos y nombres] |
-| [Código UPC] | [Apellidos y nombres] |
-| [Código UPC] | [Apellidos y nombres] |
+| Código UPC   | Apellidos y nombres             |
+|--------------|---------------------------------|
+| u202414510   | Mansilla Rivero, Carlos Marcelo |
+| u202313458   | Taipe Sangama, Jorge Fracisco   |
+| [Código UPC] | [Apellidos y nombres]           |
+| [Código UPC] | [Apellidos y nombres]           |
+| [Código UPC] | [Apellidos y nombres]           |
 
 <p><strong>Periodo 202620</strong></p>
 <p><strong>Septiembre de 2026</strong></p>
@@ -84,16 +84,16 @@ Nurse Pulse no pretende sustituir una historia clínica electrónica, un Hospita
   </tr>
 
   <tr>
-    <th colspan="2">[Apellidos y nombres del integrante 2]</th>
+    <th colspan="2">Taipe Sangama, Jorge Francisco</th>
   </tr>
   <tr>
     <td>
-      <img src="assets/chapter-1/member-2.png" alt="Fotografía del integrante 2" width="300px">
+      <img src="assets/chapter-1/Foto%20Jorge.png" alt="Fotografía del Jorge Taipe" width="300px">
     </td>
     <td>
-      <b>Código:</b> [Código UPC]<br>
+      <b>Código:</b> u202313458<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
-      [Redactar una presentación que incluya los principales conocimientos técnicos, habilidades interpersonales y responsabilidades que el integrante aportará al desarrollo de Nurse Pulse.]
+        Soy estudiante de Ingenieria de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en desarrollo Front-end y desarrollo Backend. Dentro de Nurse Pulse, aportare como lider de equipo las habilidades adquiridos de ciclos anteriores como trabajo en equipo y puntualidad.
     </td>
   </tr>
 
@@ -148,7 +148,7 @@ Nurse Pulse no pretende sustituir una historia clínica electrónica, un Hospita
 
 Nurse Pulse surge como una evolución conceptual de **PulseReport**, una solución académica desarrollada previamente por el equipo BrainSpark para apoyar el registro de signos vitales, la comunicación mediante SBAR, el seguimiento de eventos clínicos y la trazabilidad de la atención cardiovascular. Este antecedente permitió identificar que varias de las necesidades abordadas no son exclusivas de cardiología, sino que también están presentes en otras áreas donde el personal de enfermería registra, consulta y comunica información de manera constante.
 
-El informe y los productos del proyecto anterior se encuentran disponibles en la organización pública de GitHub de BrainSpark: https://github.com/BrainSpark-upc. Nurse Pulse reutiliza el conocimiento adquirido sobre el dominio, pero redefine el problema, los segmentos, el alcance y las hipótesis para orientarse al sector de enfermería de clínicas privadas. Cualquier artefacto o código que sea reutilizado deberá identificarse y atribuirse adecuadamente.
+El informe y los productos del proyecto anterior se encuentran disponibles en la organización pública de GitHub de BrainSpark: https://github.com/NursePulse. Nurse Pulse reutiliza el conocimiento adquirido sobre el dominio, pero redefine el problema, los segmentos, el alcance y las hipótesis para orientarse al sector de enfermería de clínicas privadas. Cualquier artefacto o código que sea reutilizado deberá identificarse y atribuirse adecuadamente.
 
 En una clínica, el personal de enfermería participa continuamente en el monitoreo del paciente, el registro de información, la coordinación con otros profesionales y la transferencia de responsabilidad entre turnos. Dependiendo de la institución y del área clínica, estos procesos pueden apoyarse en historias clínicas electrónicas, sistemas internos, hojas de cálculo, formatos impresos o comunicación verbal. La coexistencia de varios medios puede dificultar el acceso oportuno a la información y reducir la visibilidad sobre las acciones realizadas.
 
