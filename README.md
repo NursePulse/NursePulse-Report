@@ -68,9 +68,9 @@ A continuación, se detalla la batería de preguntas principales y complementari
 *   **Tecnología, Dispositivos y Canales (Habilidades):**
     *   ¿Qué dispositivos (smartphone, tablet, PC) utiliza con mayor preferencia tanto en su vida personal como durante su turno?
     *   ¿Cuáles son los canales digitales de interacción que más utiliza para comunicarse con su equipo (WhatsApp, correo, apps internas)?
-    *   ¿Cómo calificaría sus habilidades tecnológicas al adoptar una nueva herramienta digital?
+    *   ¿Se le hace fácil o difícil aprender a usar un nuevo programa o aplicación en su trabajo?
 *   **Objetivos y Frustraciones (Pain Points):**
-    *   ¿Cuáles son sus principales objetivos profesionales al finalizar un turno de manera exitosa?
+    *   Para usted, ¿qué tiene que pasar para que sienta que tuvo un "buen turno"?
     *   ¿Qué proceso o tarea (ej. registro de signos vitales, traspaso de turno) le genera mayor frustración o le toma más tiempo del necesario? ¿Por qué?
     *   ¿Cómo se maneja actualmente cuando necesita encontrar información urgente de un paciente y no está en el sistema principal?
 
@@ -87,7 +87,7 @@ A continuación, se detalla la batería de preguntas principales y complementari
     *   ¿A través de qué dispositivos de preferencia suele monitorear el avance de los turnos?
     *   ¿Qué canales digitales emplea para emitir alertas o comunicados importantes a su equipo?
 *   **Objetivos y Frustraciones (Pain Points):**
-    *   ¿Cuál es su mayor objetivo al supervisar la trazabilidad y el cumplimiento de las tareas de su personal?
+    *   Cuando revisa el trabajo de su equipo, ¿qué es lo más importante que busca asegurar?
     *   ¿Qué le genera más frustración al momento de auditar o verificar si hubo algún incidente durante un turno?
     *   ¿Qué barreras tecnológicas o de proceso le impiden tener un control eficiente de los traspasos de turno en su clínica? 
 
