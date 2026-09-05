@@ -158,5 +158,5 @@ En esta sección se presenta el glosario de términos propios del dominio de neg
 | **Alert** | Alerta / Notificación clínica | Aviso emitido cuando un paciente presenta una novedad, evento adverso o cuando una tarea prioritaria requiere atención inmediata. |
 | **Ward / Department** | Área clínica / Pabellón | Sección física y administrativa dentro de la clínica donde los pacientes son atendidos (ej. Hospitalización, UCI, Emergencia). |
 | **EHR (Electronic Health Record)** | Historia Clínica Electrónica | Sistema integral de la clínica que contiene el registro médico completo de los pacientes. Nurse Pulse complementa y no reemplaza este sistema. |
-| **[Añadir término]** | [Añadir traducción] | [Añadir definición del término de negocio, NO términos técnicos de software] |
+| **HIS (Hospital Information System)** | Sistema de Información Hospitalaria | Sistema integral diseñado para gestionar los aspectos administrativos, financieros, operativos y clínicos de un hospital o clínica. |
 | **[Añadir término]** | [Añadir traducción] | [Añadir definición] |
