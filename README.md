@@ -29,7 +29,7 @@
 |--------------|---------------------------------|
 | u202414510   | Mansilla Rivero, Carlos Marcelo |
 | u202313458   | Taipe Sangama, Jorge Fracisco   |
-| [Código UPC] | [Apellidos y nombres]           |
+| [Código UPC] | [Paredes Davila, Jose Adrian]   |
 | [Código UPC] | [Apellidos y nombres]           |
 | [Código UPC] | [Apellidos y nombres]           |
 
@@ -98,16 +98,16 @@ Nurse Pulse no pretende sustituir una historia clínica electrónica, un Hospita
   </tr>
 
   <tr>
-    <th colspan="2">[Apellidos y nombres del integrante 3]</th>
+    <th colspan="2">Paredes Davila, Jose Adrian</th>
   </tr>
   <tr>
     <td>
       <img src="assets/chapter-1/member-3.png" alt="Fotografía del integrante 3" width="300px">
     </td>
     <td>
-      <b>Código:</b> [Código UPC]<br>
+      <b>Código:</b> u202216163<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
-      [Redactar una presentación que incluya los principales conocimientos técnicos, habilidades interpersonales y responsabilidades que el integrante aportará al desarrollo de Nurse Pulse.]
+     Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en desarrollo de software, gestión de bases de datos y metodologías ágiles. En el proyecto NursePulse, aportaré en la implementación técnica, pruebas de calidad y elaboración de la documentación integral, contribuyendo con atención al detalle, proactividad y trabajo en equipo.
     </td>
   </tr>
 
