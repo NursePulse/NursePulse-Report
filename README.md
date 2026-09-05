@@ -29,7 +29,7 @@
 |--------------|---------------------------------|
 | u202414510   | Mansilla Rivero, Carlos Marcelo |
 | u202313458   | Taipe Sangama, Jorge Fracisco   |
-| [Código UPC] | [Paredes Davila, Jose Adrian]   |
+| [Código UPC] | Paredes Davila, Jose Adrian     |
 | [Código UPC] | [Apellidos y nombres]           |
 | [Código UPC] | [Apellidos y nombres]           |
 
@@ -102,7 +102,7 @@ Nurse Pulse no pretende sustituir una historia clínica electrónica, un Hospita
   </tr>
   <tr>
     <td>
-      <img src="assets/chapter-1/member-3.png" alt="Fotografía del integrante 3" width="300px">
+      <img src="assets/chapter-1/foto_jose.jpeg" alt="Fotografía del integrante 3" width="300px">
     </td>
     <td>
       <b>Código:</b> u202216163<br>
