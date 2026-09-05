@@ -1,5 +1,4 @@
 ## Capítulo II: Requirements Elicitation & Analysis
-
 ### 2.1. Competidores
 
 En esta sección se identifican y describen los principales competidores directos o indirectos con modelos de negocio basados en productos digitales similares a Nurse Pulse (plataformas de gestión clínica, registro de enfermería o comunicación hospitalaria). 
@@ -10,36 +9,42 @@ A continuación, se presenta el Competitive Analysis Landscape comparando nuestr
 
 **Competitive Analysis Landscape**
 
-| ¿Por qué llevar a cabo este análisis? | [Completar: Escriba el objetivo de este análisis, por ejemplo: Identificar brechas en el mercado de software de gestión para enfermería...] |
+| ¿Por qué llevar a cabo este análisis? | Identificar las fortalezas y debilidades de las soluciones actuales en el mercado para validar la viabilidad de una plataforma SaaS modular, centrada exclusivamente en la experiencia y procesos del personal de enfermería en clínicas privadas, diferenciándonos de los sistemas HIS integrales. |
 | :--- | :--- |
 
-| Perfil | Su startup (Nurse Pulse) | Competidor 1: [Nombre] | Competidor 2: [Nombre] | Competidor 3: [Nombre] |
+| Perfil | Su startup (Nurse Pulse) | Competidor 1: Epic Rover | Competidor 2: TigerConnect | Competidor 3: CareCloud |
 | :--- | :--- | :--- | :--- | :--- |
-| **Logo** | <img src="[Ruta_logo_NursePulse]" width="50"> | <img src="[Ruta_logo_Comp1]" width="50"> | <img src="[Ruta_logo_Comp2]" width="50"> | <img src="[Ruta_logo_Comp3]" width="50"> |
-| **Overview** | Plataforma modular enfocada en centralizar procesos operativos de enfermería (signos vitales, eventos, SBAR) en clínicas privadas. | [Completar overview] | [Completar overview] | [Completar overview] |
-| **Ventaja competitiva (¿Qué valor ofrece a los clientes?)** | Diseño centrado exclusivamente en el flujo de trabajo de enfermería, trazabilidad clara y adopción modular progresiva. | [Completar] | [Completar] | [Completar] |
-| **Mercado objetivo** | Personal y coordinadores de enfermería en clínicas privadas (inicialmente en hospitalización general). | [Completar] | [Completar] | [Completar] |
-| **Estrategias de marketing** | [Completar] | [Completar] | [Completar] | [Completar] |
-| **Productos & Servicios** | Web y Mobile App, dashboard centralizado, registro SBAR, gestión de eventos y alertas. | [Completar] | [Completar] | [Completar] |
-| **Precios & Costos** | [Completar modelo SaaS: ej. Suscripción por módulos/usuarios] | [Completar] | [Completar] | [Completar] |
-| **Canales de distribución (Web y/o Móvil)** | Aplicación Web y Aplicación Móvil Nativa. | [Completar] | [Completar] | [Completar] |
+| **Overview** | Plataforma modular enfocada en centralizar procesos operativos de enfermería (signos vitales, eventos, SBAR) en clínicas privadas. | Aplicación móvil que se integra con el sistema HIS integral de Epic, permitiendo a las enfermeras documentar en tiempo real. | Plataforma de comunicación clínica segura orientada a todo el personal de salud, destacando en mensajería, SBAR y alertas. | Plataforma SaaS de gestión clínica, facturación y EHR, orientada a modernizar centros de salud de tamaño medio. |
+| **Ventaja competitiva (¿Qué valor ofrece a los clientes?)** | Diseño centrado exclusivamente en el flujo de trabajo de enfermería, alta trazabilidad y adopción modular progresiva sin requerir un HIS completo. | Ecosistema totalmente integrado y respaldo de la empresa líder mundial en historias clínicas electrónicas. | Alta especialización en comunicación segura (HIPAA compliant) y enrutamiento inteligente de alertas médicas. | Interfaz moderna e intuitiva con un fuerte enfoque en la automatización del ciclo de ingresos y gestión administrativa. |
+| **Mercado objetivo** | Personal y coordinadores de enfermería en clínicas privadas medianas (inicialmente en área de hospitalización general). | Grandes redes hospitalarias y clínicas de alta complejidad que ya cuentan con la infraestructura de Epic Systems. | Hospitales, clínicas y sistemas de salud de todos los tamaños que buscan mejorar su comunicación interna. | Consultorios médicos, grupos de especialidades y clínicas privadas de tamaño pequeño a mediano. |
+| **Estrategias de marketing** | B2B enfocado en los coordinadores de enfermería, énfasis en la reducción de carga administrativa y demostraciones de valor operativo. | Ventas empresariales directas (Enterprise B2B), demostración de ROI a largo plazo y fidelización de grandes redes de salud. | Marketing de contenidos, webinars sobre seguridad en salud, y publicación de casos de éxito en reducción de tiempos de respuesta. | Inbound marketing, SEO, y campañas enfocadas en la modernización tecnológica y rentabilidad operativa. |
+| **Productos & Servicios** | Web y Mobile App, dashboard centralizado, registro SBAR, gestión de eventos y alertas operativas. | Documentación clínica móvil, escaneo de códigos de barras para medicamentos, flujos de trabajo clínicos. | Mensajería de texto segura, llamadas de voz/video, gestión de turnos y alarmas clínicas integradas. | EHR (Historia Clínica Electrónica), gestión de la práctica médica (PM), portal del paciente y facturación. |
+| **Precios & Costos** | Modelo SaaS B2B, pago por suscripción mensual basado en los módulos activados y volumen de usuarios. | Altísimo costo de implementación y licenciamiento empresarial (depende del sistema core de Epic). | Suscripción mensual por usuario, con costos adicionales por integraciones avanzadas y soporte premium. | Suscripción SaaS escalonada según el plan elegido y tarifa fija mensual por proveedor de salud. |
+| **Canales de distribución (Web y/o Móvil)** | Aplicación Web Responsive y Aplicación Móvil Nativa. | Aplicación Móvil Nativa (iOS/Android) conectada a red corporativa. | Aplicación Web, de Escritorio y Móvil Nativa. | Principalmente Web-based (SaaS), con aplicaciones móviles complementarias. |
 
 <br>
 
 **Análisis FODA (SWOT) de la Competencia**
 
-| Análisis | Su Startup (Nurse Pulse) | Competidor 1: [Nombre] | Competidor 2: [Nombre] | Competidor 3: [Nombre] |
+| Análisis | Su Startup (Nurse Pulse) | Competidor 1: Epic Rover | Competidor 2: TigerConnect | Competidor 3: CareCloud |
 | :--- | :--- | :--- | :--- | :--- |
-| **Fortalezas** | Enfoque específico en el flujo de enfermería, evitando sobrecargar al usuario con funciones de administración hospitalaria completa. Alta trazabilidad. | [Completar] | [Completar] | [Completar] |
-| **Debilidades** | [Completar: ej. Falta de posicionamiento inicial en el mercado frente a sistemas EHR ya establecidos] | [Completar] | [Completar] | [Completar] |
-| **Oportunidades** | [Completar: ej. Alta demanda de digitalización en clínicas privadas medianas que no pueden pagar un HIS completo] | [Completar] | [Completar] | [Completar] |
-| **Amenazas** | [Completar: ej. Resistencia al cambio tecnológico por parte del personal de salud de mayor edad] | [Completar] | [Completar] | [Completar] |
+| **Fortalezas** | Enfoque específico en el nicho de enfermería, arquitectura modular escalable, curva de aprendizaje rápida y bajo costo de entrada. | Respaldo corporativo masivo, integración total de datos clínicos y amplia adopción en hospitales de primer nivel. | Excelente ecosistema de comunicación, manejo impecable de notificaciones push y arquitectura altamente segura. | UX/UI muy amigable, despliegue rápido en la nube (SaaS) y fuerte capacidad de gestión de facturación. |
+| **Debilidades** | Marca nueva en el mercado, ausencia de integraciones iniciales con sistemas HIS establecidos y falta de base de datos de clientes. | Costos prohibitivos para clínicas medianas, interfaz compleja, y total dependencia de tener el sistema principal de Epic. | No es un sistema de registro clínico (EHR) profundo; carece de módulos específicos para trazabilidad de signos vitales. | Menor enfoque en el cuidado intrahospitalario complejo; sus módulos están más diseñados para atención ambulatoria. |
+| **Oportunidades** | Gran cantidad de clínicas medianas que no pueden costear un HIS completo pero necesitan digitalizar y auditar su piso de hospitalización. | Expansión global de hospitales de alta complejidad que buscan movilidad para su personal clínico. | Creación de alianzas con otros sistemas EHR para actuar como su capa de comunicación oficial mediante APIs. | Clínicas privadas pequeñas que buscan migrar del papel o Excel hacia plataformas en la nube de forma rápida. |
+| **Amenazas** | Que los grandes competidores lancen versiones "Lite" de sus sistemas, o la resistencia al cambio tecnológico del personal de mayor edad. | Sistemas ágiles, modulares y especializados que roben cuota de mercado en tareas específicas por su menor costo. | Nuevas normativas de privacidad que requieran cambios drásticos de arquitectura, o competidores integrando chats propios. | Feroz competencia en el segmento "Mid-Market" y riesgos de seguridad cibernética inherentes a plataformas web médicas. |
 
 #### 2.1.2. Estrategias y tácticas frente a competidores
 
-[Completar: Redactar las estrategias y tácticas preliminares que aplicará Nurse Pulse para afrontar las fortalezas de los competidores, aprovechar sus debilidades y mitigar las amenazas del entorno. Por ejemplo, detallar cómo la adopción modular (táctica) facilitará la entrada al mercado frente a los altos costos de los sistemas integrales competidores].
+Frente al panorama competitivo analizado, Nurse Pulse aplicará un conjunto de estrategias y tácticas diseñadas para penetrar en el mercado de clínicas privadas medianas, aprovechando los vacíos que dejan los competidores actuales:
 
----
+**Estrategias:**
+1. **Estrategia de Enfoque (Nicho):** A diferencia de sistemas integrales (como CareCloud o Epic) que intentan abarcar facturación, farmacia y medicina general, Nurse Pulse se posicionará estrictamente como el aliado operativo del *personal de enfermería*. Esto nos permite construir flujos mucho más eficientes y menos saturados para este usuario en particular.
+2. **Estrategia de Penetración SaaS (Modularidad):** Aprovecharemos la debilidad de los altos costos de la competencia. Al ser una plataforma modular, las clínicas podrán adoptar Nurse Pulse activando únicamente los módulos que necesiten (por ejemplo, solo traspasos SBAR al inicio), reduciendo el riesgo de inversión.
+
+**Tácticas:**
+* **Pruebas Piloto Gratuitas (Free Trials):** Ofrecer pruebas limitadas del módulo base a los coordinadores de enfermería. Al demostrarles en la práctica cómo se reduce el tiempo de búsqueda de información y se mejora la trazabilidad, ellos mismos actuarán como promotores internos frente a los directores de las clínicas.
+* **Resaltar la Especialización UX/UI:** En nuestras demostraciones, contrastaremos la facilidad de hacer un traspaso estructurado (SBAR) en Nurse Pulse frente a los complejos y abrumadores menús de los sistemas HIS tradicionales.
+* **Diseño API-First para Convivencia:** En lugar de competir por reemplazar los sistemas de facturación o registro médico que las clínicas ya poseen, Nurse Pulse se desarrollará con la capacidad de convivir con ellos mediante futuras integraciones ligeras (API), posicionándonos como una "capa de eficiencia" adicional y no como un doloroso reemplazo tecnológico.
 
 ### 2.2. Entrevistas
 
