@@ -52,20 +52,44 @@ En esta sección se aborda la investigación cualitativa basada en la recolecci�
 
 #### 2.2.1. Diseño de entrevistas
 
-[Completar: Explicar el enfoque utilizado para diseñar las entrevistas, considerando las mejores prácticas. Dividir las preguntas principales y complementarias por segmento objetivo para recopilar datos demográficos, comportamientos, frustraciones y necesidades].
+Para el diseño de las entrevistas, se ha optado por un enfoque semiestructurado, aplicando buenas prácticas como el uso de preguntas abiertas para evitar sesgar al entrevistado y fomentar respuestas descriptivas. El objetivo principal es recolectar tanto información demográfica como datos conductuales y psicográficos que nos permitan construir los arquetipos (User Personas) con alta fidelidad a la realidad del mercado.
+
+A continuación, se detalla la batería de preguntas principales y complementarias diseñadas para cada segmento:
 
 **Segmento 1: Personal de enfermería**
-*   *Datos Demográficos:* ¿Cuál es su edad, distrito de residencia y estado civil?
-*   *Contexto Profesional:* ¿Cuánto tiempo lleva trabajando en el área de hospitalización general?
-*   *Comportamiento y Tecnología:* ¿Qué dispositivos (móvil, tablet, PC) utiliza con mayor frecuencia durante su turno?
-*   *Dolores y Frustraciones (Pain Points):* ¿Cuál es el proceso que le toma más tiempo al realizar el traspaso de turno?
-*   *... [Añadir de 5 a 10 preguntas orientadas a los pain points y arquetipos]*
+
+*   **Perfil Demográfico y Background:**
+    *   ¿Podría indicarme su edad, género y en qué distrito reside actualmente?
+    *   ¿Cuál es su estado civil y cómo está conformada su familia?
+    *   ¿Podría contarme brevemente sobre su trayectoria profesional (biografía) y cuánto tiempo lleva ejerciendo su ocupación actual en el área de hospitalización?
+*   **Personalidad, Marcas e Influencias:**
+    *   ¿Cómo describiría su personalidad en el entorno laboral (ej. detallista, rápido, analítico)?
+    *   ¿Qué marcas o referentes (instituciones, aplicaciones de salud, blogs) sigue o considera como influencia en su día a día?
+*   **Tecnología, Dispositivos y Canales (Habilidades):**
+    *   ¿Qué dispositivos (smartphone, tablet, PC) utiliza con mayor preferencia tanto en su vida personal como durante su turno?
+    *   ¿Cuáles son los canales digitales de interacción que más utiliza para comunicarse con su equipo (WhatsApp, correo, apps internas)?
+    *   ¿Cómo calificaría sus habilidades tecnológicas al adoptar una nueva herramienta digital?
+*   **Objetivos y Frustraciones (Pain Points):**
+    *   ¿Cuáles son sus principales objetivos profesionales al finalizar un turno de manera exitosa?
+    *   ¿Qué proceso o tarea (ej. registro de signos vitales, traspaso de turno) le genera mayor frustración o le toma más tiempo del necesario? ¿Por qué?
+    *   ¿Cómo se maneja actualmente cuando necesita encontrar información urgente de un paciente y no está en el sistema principal?
 
 **Segmento 2: Jefes y coordinadores de enfermería**
-*   *Datos Demográficos:* ¿Cuál es su edad y distrito de residencia?
-*   *Contexto Profesional:* ¿Cuántas personas tiene a su cargo por turno y cómo organiza sus actividades?
-*   *Supervisión y Trazabilidad:* ¿Cómo consolida la información para verificar si hubo algún incidente durante el turno?
-*   *... [Añadir preguntas orientadas al control, auditoría y adopción tecnológica]*
+
+*   **Perfil Demográfico y Background:**
+    *   ¿Cuál es su edad, género y distrito de residencia?
+    *   ¿Cuál es su estado civil y situación familiar?
+    *   ¿Cómo ha sido su evolución profesional hasta llegar a su actual ocupación de coordinación?
+*   **Personalidad, Marcas e Influencias:**
+    *   ¿Qué rasgos de personalidad considera clave para liderar y supervisar a su equipo de enfermería?
+    *   ¿Qué herramientas de gestión, marcas de software hospitalario o referentes del sector salud influyen en su metodología de trabajo?
+*   **Tecnología, Dispositivos y Canales (Habilidades):**
+    *   ¿A través de qué dispositivos de preferencia suele monitorear el avance de los turnos?
+    *   ¿Qué canales digitales emplea para emitir alertas o comunicados importantes a su equipo?
+*   **Objetivos y Frustraciones (Pain Points):**
+    *   ¿Cuál es su mayor objetivo al supervisar la trazabilidad y el cumplimiento de las tareas de su personal?
+    *   ¿Qué le genera más frustración al momento de auditar o verificar si hubo algún incidente durante un turno?
+    *   ¿Qué barreras tecnológicas o de proceso le impiden tener un control eficiente de los traspasos de turno en su clínica? 
 
 #### 2.2.2. Registro de entrevistas
 
