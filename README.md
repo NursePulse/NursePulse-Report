@@ -8,7 +8,6 @@ Las User Stories representan necesidades funcionales desde la perspectiva de los
 
 Los criterios de aceptación se redactan en formato Gherkin, siguiendo la estructura Given – When – Then. Además, se mantienen en tiempo presente, tercera persona, sin referencia innecesaria a detalles específicos de interfaz gráfica y con condiciones comprobables.
 
-> **Nota de esta versión:** la numeración se cerró sin huecos tras retirar del alcance las historias "Registrar administración de medicamento", "Consultar cumplimiento de indicaciones" y "Validar información con enfermería" (ver justificación en la nota al final de esta sección). El rol "médico especialista cardiovascular" se reemplazó por "jefe de enfermería" en todas las historias donde aparecía, porque el sistema implementado no tiene un rol médico independiente: el rol que consulta evolución clínica, historial, resumen y cambios críticos es el mismo que registra información clínica, unificado como Jefe de Enfermería.
 
 Cuadro de Epics, User Stories y Technical Stories
 
@@ -64,9 +63,6 @@ Cuadro de Epics, User Stories y Technical Stories
 
 La distribución de Epics, User Stories y Technical Stories permite mantener trazabilidad entre la investigación de usuarios, los Business Goals, el Impact Mapping, el Product Backlog y las funcionalidades implementadas en los sprints del proyecto.
 
-> **Historias retiradas del alcance** (no ocupan número en esta versión): *Registrar administración de medicamento* — se implementó por completo y se revirtió a pedido del equipo; *Consultar cumplimiento de indicaciones* — dependía por completo de la entidad de la anterior; *Validar información con enfermería* — nunca se construyó, pese a figurar como completada en un registro previo del backlog.
->
-> **Historias nuevas incorporadas** (fase de corrección y validación posterior al Sprint 4 original): **US-23** y **TS-07**, para generar, persistir y consultar reportes clínicos consolidados de múltiples pacientes por rango de fechas.
 
 ### 3.2. Impact Mapping
 
@@ -122,7 +118,6 @@ El Impact Mapping visual fue elaborado en una herramienta colaborativa y organiz
   <img src="assets/chapter-3/impact-mapping-bg05.png" alt="Impact Mapping BG-05" width="850">
 </p>
 
-> **Nota:** estas capturas fueron elaboradas en la versión original del backlog (con "Médico especialista cardiovascular" y la numeración previa). Al actualizarlas, reemplazar ese actor por "Jefe de Enfermería" y los IDs de historias por la numeración vigente indicada en la tabla detallada a continuación.
 
 #### Impact Mapping detallado
 
@@ -202,7 +197,6 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 | 29 | TS-06 | Manejo consistente de errores del API | Como Developer, deseo estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend. | 3 |
 | 30 | TS-07 | Gestión de reportes mediante API | Como Developer, deseo exponer endpoints para persistir y consultar reportes clínicos consolidados generados por el jefe de enfermería. | 5 |
 
-> **Historias retiradas de este backlog:** *Registrar administración de medicamento*, *Consultar cumplimiento de indicaciones* y *Validar información con enfermería* — ver nota de alcance en 3.1. **Historias incorporadas en la fase de corrección posterior al Sprint 4:** US-23 y TS-07 (filas 23 y 30).
 
 #### Distribución por bloques funcionales
 
@@ -244,7 +238,6 @@ La siguiente captura corresponde al Product Backlog elaborado en la herramienta 
   <img src="assets/chapter-3/product-backlog.png" alt="Product Backlog Nurse Pulse" width="850">
 </p>
 
-> **Nota:** la captura corresponde a la versión previa del backlog (con la numeración e historias todavía sin retirar). Actualizar la herramienta de gestión y volver a capturar la pantalla para reflejar la tabla vigente de esta sección.
 
 **URL del Product Backlog:**
 https://docs.google.com/spreadsheets/d/1JWzVr2lEd1AoSZBmGx0D0B3Pd09Je_w_lRHvN-_5y40/edit?usp=sharing
