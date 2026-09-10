@@ -156,7 +156,7 @@ Las entrevistas fueron registradas en video y se organizaron según el segmento 
 
 *[Nota: Agregar la Entrevista 3 (y hasta 5 si es necesario) para completar el requerimiento del primer segmento]*
 
-##### Segmento objetivo 2: Jefes y coordinadores de enfermería
+##### Segmento objetivo 2: Médicos especialistas cardiovasculares y profesionales médicos relacionados
 
 **Entrevista 1 — [Nombres y Apellidos del Entrevistado]**
 *   **Edad:** [Ej. 45 años]
@@ -191,7 +191,7 @@ El análisis de entrevistas permite identificar patrones recurrentes, caracterí
 | Segmento | Entrevistas analizadas | Cantidad |
 | :--- | :--- | :--- |
 | Personal de enfermería cardiovascular | [Nombres de los entrevistados del segmento 1] | [Ej. 3] |
-| Jefes y coordinadores de enfermería | [Nombres de los entrevistados del segmento 2] | [Ej. 3] |
+| Médico especialista cardiovascular | [Nombres de los entrevistados del segmento 2] | [Ej. 3] |
 | **Total** | — | **[Ej. 6]** |
 
 ##### Análisis del Segmento 1: Personal de enfermería cardiovascular
@@ -201,46 +201,46 @@ El análisis de entrevistas permite identificar patrones recurrentes, caracterí
 | Característica objetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
 | Uso de apuntes o libretas físicas de apoyo | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Problemas durante el traspaso de turno | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
-| Uso constante de smartphone en el trabajo | Presente en [X] de [Y] entrevistas | [Ej. 60%] |
+| Problemas o pérdida de tiempo durante el traspaso de turno | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| Uso constante de smartphone u otros dispositivos móviles | Presente en [X] de [Y] entrevistas | [Ej. 60%] |
 | [Agregar otra característica objetiva] | Presente en [X] de [Y] entrevistas | [%] |
 
 ###### Análisis de características subjetivas
 
 | Característica subjetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
-| Frustración por sistemas hospitalarios lentos | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Temor a omitir datos vitales por presión de tiempo | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| Frustración por sistemas hospitalarios lentos y complejos | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| Temor a omitir datos vitales por presión operativa | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
 | Preferencia por herramientas digitales simples y rápidas | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
 | [Agregar otra característica subjetiva] | Presente en [X] de [Y] entrevistas | [%] |
 
 **Interpretación del segmento:**  
-[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes. Ejemplo: "El análisis demuestra que la totalidad del personal entrevistado siente frustración al transcribir datos, lo que justifica nuestra hipótesis de que NursePulse debe tener un flujo de registro extremadamente rápido y preferentemente móvil..."]
+[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes. Ejemplo: "El análisis demuestra que la totalidad del personal entrevistado siente frustración al transcribir datos de la libreta física a la computadora, lo que justifica nuestra hipótesis de que NursePulse debe tener un flujo de registro extremadamente rápido, centrado en el modelo SBAR y preferentemente móvil..."]
 
-##### Análisis del Segmento 2: Jefes y coordinadores de enfermería
+##### Análisis del Segmento 2: Médico especialista cardiovascular
 
 ###### Análisis de características objetivas
 
 | Característica objetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
-| Dificultad para auditar quién realizó una acción clínica | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Uso de hojas de cálculo o reportes manuales para consolidar datos | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| Dificultad para acceder a la evolución clínica consolidada rápidamente | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| Uso de múltiples medios (físicos, digitales, verbales) para validar datos | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
 | [Agregar otra característica objetiva] | Presente en [X] de [Y] entrevistas | [%] |
 
 ###### Análisis de características subjetivas
 
 | Característica subjetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
-| Preocupación por la falta de trazabilidad en los incidentes | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Necesidad de visibilidad en tiempo real del piso clínico | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| Frustración por información clínica fragmentada al momento de tomar decisiones | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| Necesidad de visualizar rápidamente alertas y cambios críticos | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
 | [Agregar otra característica subjetiva] | Presente en [X] de [Y] entrevistas | [%] |
 
 **Interpretación del segmento:**  
-[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes para los jefes/coordinadores. Ejemplo: "Los datos evidencian que los coordinadores pierden mucho tiempo cruzando información para encontrar a los responsables de ciertas acciones, validando la necesidad de los logs de auditoría inmutables en NursePulse..."]
+[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes para los médicos especialistas. Ejemplo: "Los datos evidencian que los médicos invierten un tiempo considerable cruzando información de distintas fuentes para entender el estado real del paciente. Esto valida la necesidad de que NursePulse incorpore un dashboard o resumen clínico que consolide la evolución y eventos críticos con una trazabilidad clara..."]
 
 ##### Conclusiones generales del análisis
 
-[Completar: Redactar una conclusión integrando ambos segmentos. Ejemplo: "Las entrevistas confirman que ambos segmentos enfrentan fricciones debido a sistemas desconectados. Mientras el personal de base prioriza la rapidez de registro (SBAR y signos vitales), los jefes priorizan la trazabilidad y la supervisión. Estos hallazgos validan directamente la propuesta de valor de NursePulse y servirán como base para la construcción de los User Personas y el User Task Matrix a continuación."]
+[Completar: Redactar una conclusión integrando ambos segmentos. Ejemplo: "Las entrevistas confirman que ambos segmentos enfrentan fricciones debido a procesos desconectados y registros fragmentados. Mientras el personal de enfermería prioriza la agilidad en el registro de signos vitales y traspasos SBAR, los médicos especialistas priorizan el acceso rápido y confiable a dicha información para la toma de decisiones. Estos hallazgos validan directamente la propuesta de valor de NursePulse y sirven como pilar para la construcción de los User Personas y el User Task Matrix desarrollados a continuación."]
 
 ### 2.3. Needfinding
 
