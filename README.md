@@ -88,7 +88,7 @@ Nurse Pulse no pretende sustituir una historia clínica electrónica, un Hospita
   </tr>
   <tr>
     <td>
-      <img src="assets/chapter-1/Foto%20Jorge.png" alt="Fotografía del Jorge Taipe" width="300px">
+      <img src="assets/chapter-1/Jorge-Foto.jpeg" alt="Fotografía del Jorge Taipe" width="300px">
     </td>
     <td>
       <b>Código:</b> u202313458<br>
