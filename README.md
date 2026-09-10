@@ -717,5 +717,7 @@ A continuación, se presenta el diagrama general modelado con la herramienta Pla
 
 #### 4.9.2. Class Dictionary
 
-
+### 4.10. Database Design.
+#### 4.10.1. Relational/Non-Relational Database Diagram.
+![database.png](assets/chapter-4/database.png)
 
