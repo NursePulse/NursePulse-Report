@@ -126,6 +126,122 @@ Este segmento está conformado por médicos especialistas cardiovasculares, méd
 - Se recolectó información objetiva y subjetiva para construir arquetipos.
 - Se abordaron necesidades funcionales, frustraciones, hábitos tecnológicos y percepción sobre digitalización.
 
+#### 2.2.2. Registro de entrevistas
+
+Las entrevistas fueron registradas en video y se organizaron según el segmento objetivo correspondiente. Cada registro incluye información básica del entrevistado, captura del video, enlace, timing, duración y un resumen descriptivo de sus respuestas, prestando especial atención a sus hábitos tecnológicos y pain points en el entorno clínico.
+
+**Enlace del video consolidado de entrevistas:** [Insertar enlace de Microsoft Stream con acceso privado]
+
+##### Segmento objetivo 1: Personal de enfermería cardiovascular
+
+**Entrevista 1 — [Nombres y Apellidos del Entrevistado]**
+*   **Edad:** [Ej. 30 años]
+*   **Distrito:** [Ej. San Miguel]
+*   **Ocupación:** [Ej. Enfermera de hospitalización general]
+*   **Inicio en el video (Timing):** [Ej. 00:00]
+*   **Duración:** [Ej. 05:30]
+*   **Screenshot:**
+    <img src="[Ruta_screenshot_entrevista_1]" width="400">
+*   **Resumen descriptivo:** [Redactar un resumen descriptivo indicando las principales respuestas. Incluir características subjetivas como personalidad, herramientas que usa actualmente para registrar signos vitales, cómo maneja los traspasos de turno y sus principales frustraciones operativas].
+
+**Entrevista 2 — [Nombres y Apellidos del Entrevistado]**
+*   **Edad:** [Completar]
+*   **Distrito:** [Completar]
+*   **Ocupación:** [Completar]
+*   **Inicio en el video (Timing):** [Completar]
+*   **Duración:** [Completar]
+*   **Screenshot:**
+    <img src="[Ruta_screenshot_entrevista_2]" width="400">
+*   **Resumen descriptivo:** [Redactar resumen descriptivo...]
+
+*[Nota: Agregar la Entrevista 3 (y hasta 5 si es necesario) para completar el requerimiento del primer segmento]*
+
+##### Segmento objetivo 2: Jefes y coordinadores de enfermería
+
+**Entrevista 1 — [Nombres y Apellidos del Entrevistado]**
+*   **Edad:** [Ej. 45 años]
+*   **Distrito:** [Ej. Jesús María]
+*   **Ocupación:** [Ej. Coordinador de Enfermería]
+*   **Inicio en el video (Timing):** [Ej. 15:00]
+*   **Duración:** [Ej. 06:15]
+*   **Screenshot:**
+    <img src="[Ruta_screenshot_entrevista_coordinador_1]" width="400">
+*   **Resumen descriptivo:** [Redactar un resumen descriptivo indicando sus respuestas. Enfocarse en cómo supervisa la trazabilidad del personal, qué dificultades tiene para auditar incidentes y qué espera de una herramienta digital de gestión].
+
+**Entrevista 2 — [Nombres y Apellidos del Entrevistado]**
+*   **Edad:** [Completar]
+*   **Distrito:** [Completar]
+*   **Ocupación:** [Completar]
+*   **Inicio en el video (Timing):** [Completar]
+*   **Duración:** [Completar]
+*   **Screenshot:**
+    <img src="[Ruta_screenshot_entrevista_coordinador_2]" width="400">
+*   **Resumen descriptivo:** [Redactar resumen descriptivo...]
+
+*[Nota: Agregar la Entrevista 3 (y hasta 5 si es necesario) para completar el requerimiento del segundo segmento]*
+
+---
+
+#### 2.2.3. Análisis de entrevistas
+
+El análisis de entrevistas permite identificar patrones recurrentes, características objetivas, características subjetivas, necesidades operativas y oportunidades de mejora relacionadas con el dominio clínico de NursePulse.
+
+##### Resumen de entrevistas analizadas
+
+| Segmento | Entrevistas analizadas | Cantidad |
+| :--- | :--- | :--- |
+| Personal de enfermería cardiovascular | [Nombres de los entrevistados del segmento 1] | [Ej. 3] |
+| Jefes y coordinadores de enfermería | [Nombres de los entrevistados del segmento 2] | [Ej. 3] |
+| **Total** | — | **[Ej. 6]** |
+
+##### Análisis del Segmento 1: Personal de enfermería cardiovascular
+
+###### Análisis de características objetivas
+
+| Característica objetiva | Evidencia identificada | Porcentaje |
+| :--- | :--- | :--- |
+| Uso de apuntes o libretas físicas de apoyo | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| Problemas durante el traspaso de turno | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| Uso constante de smartphone en el trabajo | Presente en [X] de [Y] entrevistas | [Ej. 60%] |
+| [Agregar otra característica objetiva] | Presente en [X] de [Y] entrevistas | [%] |
+
+###### Análisis de características subjetivas
+
+| Característica subjetiva | Evidencia identificada | Porcentaje |
+| :--- | :--- | :--- |
+| Frustración por sistemas hospitalarios lentos | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| Temor a omitir datos vitales por presión de tiempo | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| Preferencia por herramientas digitales simples y rápidas | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| [Agregar otra característica subjetiva] | Presente en [X] de [Y] entrevistas | [%] |
+
+**Interpretación del segmento:**  
+[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes. Ejemplo: "El análisis demuestra que la totalidad del personal entrevistado siente frustración al transcribir datos, lo que justifica nuestra hipótesis de que NursePulse debe tener un flujo de registro extremadamente rápido y preferentemente móvil..."]
+
+##### Análisis del Segmento 2: Jefes y coordinadores de enfermería
+
+###### Análisis de características objetivas
+
+| Característica objetiva | Evidencia identificada | Porcentaje |
+| :--- | :--- | :--- |
+| Dificultad para auditar quién realizó una acción clínica | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| Uso de hojas de cálculo o reportes manuales para consolidar datos | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| [Agregar otra característica objetiva] | Presente en [X] de [Y] entrevistas | [%] |
+
+###### Análisis de características subjetivas
+
+| Característica subjetiva | Evidencia identificada | Porcentaje |
+| :--- | :--- | :--- |
+| Preocupación por la falta de trazabilidad en los incidentes | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
+| Necesidad de visibilidad en tiempo real del piso clínico | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
+| [Agregar otra característica subjetiva] | Presente en [X] de [Y] entrevistas | [%] |
+
+**Interpretación del segmento:**  
+[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes para los jefes/coordinadores. Ejemplo: "Los datos evidencian que los coordinadores pierden mucho tiempo cruzando información para encontrar a los responsables de ciertas acciones, validando la necesidad de los logs de auditoría inmutables en NursePulse..."]
+
+##### Conclusiones generales del análisis
+
+[Completar: Redactar una conclusión integrando ambos segmentos. Ejemplo: "Las entrevistas confirman que ambos segmentos enfrentan fricciones debido a sistemas desconectados. Mientras el personal de base prioriza la rapidez de registro (SBAR y signos vitales), los jefes priorizan la trazabilidad y la supervisión. Estos hallazgos validan directamente la propuesta de valor de NursePulse y servirán como base para la construcción de los User Personas y el User Task Matrix a continuación."]
+
 ### 2.3. Needfinding
 
 La presente sección desarrolla los artefactos de Needfinding del proyecto NursePulse. Estos artefactos permiten transformar los hallazgos obtenidos en entrevistas, análisis competitivo y definición de segmentos objetivo en representaciones más claras de los usuarios, sus tareas, recorridos, emociones, frustraciones y oportunidades de mejora.
@@ -315,11 +431,37 @@ El proceso de elaboración consistió en colocar a cada User Persona en el centr
 </p>
 
 
-#### 2.3.5. As-is Scenario Mapping
+### 2.3.5. As-Is Scenario Mapping
 
-La presente sección documenta el As-is Scenario Mapping para los usuarios de NursePulse. Este mapeo permite dividir las acciones del usuario en fases específicas, documentando lo que hace, piensa y siente en el contexto actual, identificando áreas de fricción y puntos clave donde la solución puede intervenir.
+En el *As-Is Scenario Map* se representa el proceso real que vive un usuario previo a la existencia del producto solución (NursePulse). Este mapa ayuda a encontrar puntos clave que usualmente forman obstáculos en las metas de los User Persona y ayudan a formar ideas de solución a estos obstáculos que se integran en el producto a diseñar.
 
-[Insertar imagen de Canva para el As-is Scenario Mapping]
+De esta forma, se diseñaron ambos mapas AS-IS para cada User Persona de NursePulse. El proceso de diseño empezó con la identificación de fases de eventos más resaltantes dentro del flujo clínico cardiovascular. Luego, de cada fase, se identificaron las labores que realiza comúnmente cada persona. A continuación, nos colocamos en los zapatos de cada persona e imaginamos qué pensamientos surgirían al realizar cada actividad. Finalmente, se identifica el sentimiento del pensamiento y se analiza el porqué de la aparición de dicho sentimiento, identificando áreas positivas y negativas para cada persona dependiendo de su situación.
+
+#### User Persona 1: Personal de enfermería cardiovascular (Daniela Ríos)
+
+En esta primera tabla/imagen se detalla el proceso por el que pasa Daniela al momento de iniciar su jornada clínica. Se visualiza el recorrido desde que recibe la información del turno saliente, realiza el monitoreo de sus pacientes, hace anotaciones de apoyo debido a la lentitud del sistema actual y, finalmente, entrega la información al siguiente equipo enfrentándose a posibles omisiones.
+
+**AS-IS Scenario Map: Personal de enfermería cardiovascular**
+
+| PHASES | Recibe el turno clínico | Monitorea y atiende al paciente | Registra información clínica | Entrega el turno al equipo entrante |
+| :--- | :--- | :--- | :--- | :--- |
+| **DOING** | Escucha el reporte verbal del turno anterior y revisa los apuntes rápidos entregados por sus colegas. | Toma signos vitales y administra medicación. Toma notas en un papel o libreta personal porque el sistema de la clínica es lento. | Busca una computadora disponible y transcribe las notas físicas de su libreta al sistema EHR general del hospital. | Organiza sus notas dispersas y transmite la información más importante verbalmente a la enfermera del siguiente turno. |
+| **THINKING** | *"¿Se le habrá olvidado mencionarme algo importante sobre el cambio de medicación de la cama 4?"* 👎 | *"Anotaré esto rápido aquí en mi libreta para no olvidarlo y luego, cuando tenga tiempo, lo paso al sistema."* 👎 | *"Pierdo mucho tiempo pasando los datos del papel a la computadora, ojalá fuera más directo."* 👎 | *"Espero que entiendan mis apuntes rápidos y que no se me pase mencionarles ningún detalle crítico."* 👎 |
+| **FEELING** | **Incertidumbre** al no contar con un reporte estandarizado y depender solo de la memoria del colega. | **Estrés y premura** por tener que hacer doble trabajo (anotar en físico para luego pasarlo a digital) ante una emergencia. | **Frustración** por la carga operativa y la pérdida de tiempo transcribiendo datos de forma manual. | **Angustia** por la responsabilidad de transferir toda la información correctamente sin olvidar datos clave. |
+
+---
+
+#### User Persona 2: Médico especialista cardiovascular (Dr. Alejandro Torres)
+
+En esta segunda tabla/imagen, se visualiza el *As-Is Scenario Map* del segundo User Persona. Aquí se detalla el proceso por el que pasa el Dr. Alejandro al coordinar sus rondas médicas, donde debe buscar información clínica fragmentada en distintos medios, validar datos con el equipo de enfermería y, finalmente, lograr tomar una decisión clínica sobre el tratamiento de un paciente.
+
+**AS-IS Scenario Map: Médico especialista cardiovascular**
+
+| PHASES | Inicia la ronda médica | Busca información clínica | Valida datos con enfermería | Toma una decisión clínica |
+| :--- | :--- | :--- | :--- | :--- |
+| **DOING** | Revisa la lista de pacientes cardiovasculares asignados y trata de priorizar a los más críticos del día. | Abre el sistema del hospital, busca reportes en papel y revisa los monitores biomédicos de la UCI. | Busca físicamente a la enfermera de turno para confirmar quién anotó un evento clínico y a qué hora fue. | Con la información recolectada de distintas fuentes, ajusta la medicación y anota la nueva indicación médica. |
+| **THINKING** | *"¿Cuál de estos pacientes habrá presentado cambios críticos o alertas durante la madrugada?"* 👎 | *"Tengo que revisar tres pantallas y buscar la carpeta física para lograr entender la evolución reciente del paciente."* 👎 | *"¿Quién anotó esta caída de presión arterial? Necesito confirmar si ya se le administró el medicamento."* 👎 | *"Finalmente tengo el panorama claro para decidir, pero me tomó demasiado tiempo reunir las piezas."* 👍 |
+| **FEELING** | **Expectativa** y necesidad de organización para saber por dónde empezar su jornada laboral. | **Impaciencia y frustración** debido a la fragmentación de la información en múltiples medios y sistemas. | **Duda y preocupación** por la falta de trazabilidad clara sobre qué profesional registró la acción y a qué hora. | **Alivio** por poder definir el tratamiento, pero con desgaste por el esfuerzo y tiempo invertido en la búsqueda. |
 
 ### 2.4. Ubiquitous Language
 
