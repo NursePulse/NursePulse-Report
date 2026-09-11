@@ -144,15 +144,15 @@ Las entrevistas fueron registradas en video y se organizaron según el segmento 
     <img src="[Ruta_screenshot_entrevista_1]" width="400">
 *   **Resumen descriptivo:** [Redactar un resumen descriptivo indicando las principales respuestas. Incluir características subjetivas como personalidad, herramientas que usa actualmente para registrar signos vitales, cómo maneja los traspasos de turno y sus principales frustraciones operativas].
 
-**Entrevista 2 — [Nombres y Apellidos del Entrevistado]**
-*   **Edad:** [Completar]
-*   **Distrito:** [Completar]
-*   **Ocupación:** [Completar]
-*   **Inicio en el video (Timing):** [Completar]
-*   **Duración:** [Completar]
+**Entrevista 2 — Andrew Sanchez**
+*   **Edad:** 25
+*   **Distrito:** San Borja
+*   **Ocupación:** Enfermero
+*   **Inicio en el video (Timing):** 00:04
+*   **Duración:** 06:21
 *   **Screenshot:**
-    <img src="[Ruta_screenshot_entrevista_2]" width="400">
-*   **Resumen descriptivo:** [Redactar resumen descriptivo...]
+    ![Interview2Segm1.png](assets/Interview2Segm1.png)
+*   **Resumen descriptivo:** Andrew Sánchez es un enfermero de 25 años con cinco años de experiencia clínica que destaca por su enfoque metódico y práctico en el área de hospitalización. Tecnológicamente adaptable pero intolerante a sistemas lentos, confía en su PC de escritorio y en WhatsApp para la comunicación médica operativa. Su mayor frustración laboral es la ineficiencia causada por la duplicidad de tareas, específicamente la transcripción manual de signos vitales del papel al sistema y las demoras al buscar historiales físicos por información urgente, subrayando la necesidad de una solución digital ágil que centralice los datos y optimice los traspasos de turno.
 
 *[Nota: Agregar la Entrevista 3 (y hasta 5 si es necesario) para completar el requerimiento del primer segmento]*
 
