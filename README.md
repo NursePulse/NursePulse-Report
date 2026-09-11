@@ -150,7 +150,7 @@ Las entrevistas fueron registradas en video y se organizaron según el segmento 
 *   **Ocupación:** Enfermero
 *   **Inicio en el video (Timing):** 00:04
 *   **Duración:** 06:21
-*   **Link de Video:** ![Entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313458_upc_edu_pe/IQB3WB7P_GbdSKjvbaiKWvGCAWcp-O7mdxV9P8m4FPu8EBo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=61VxAb)
+*   **Link de Video:** [Entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313458_upc_edu_pe/IQB3WB7P_GbdSKjvbaiKWvGCAWcp-O7mdxV9P8m4FPu8EBo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=61VxAb)
 *   **Screenshot:**
     ![Interview2Segm1.png](assets/Interview2Segm1.png)
 *   **Resumen descriptivo:** Andrew Sánchez es un enfermero de 25 años con cinco años de experiencia clínica que destaca por su enfoque metódico y práctico en el área de hospitalización. Tecnológicamente adaptable pero intolerante a sistemas lentos, confía en su PC de escritorio y en WhatsApp para la comunicación médica operativa. Su mayor frustración laboral es la ineficiencia causada por la duplicidad de tareas, específicamente la transcripción manual de signos vitales del papel al sistema y las demoras al buscar historiales físicos por información urgente, subrayando la necesidad de una solución digital ágil que centralice los datos y optimice los traspasos de turno.
