@@ -55,7 +55,33 @@ El diseño web de **NursePulse** se implementa como una solución digital orient
 
 #### 4.1.3.1 IOS Mobile Style Guidelines
 
+En iOS, la aplicación mantiene el mismo lenguaje visual de Material Design definido para Android, en lugar de adoptar los componentes nativos de Cupertino (Human Interface Guidelines). Esta decisión responde a que la aplicación móvil se desarrolla con Flutter, framework que permite un único código base para ambas plataformas manteniendo consistencia visual total entre Android e iOS.
+**Adaptaciones principales**
+- Los componentes visuales (Navigation Drawer, FAB, Cards, Snackbar) se renderizan de forma idéntica a la versión Android, priorizando la consistencia de marca sobre las convenciones nativas de iOS.
+- El sistema respeta automáticamente los elementos propios del sistema operativo, como el *safe area* (notch y barra inferior de gestos), la tipografía del sistema y los gestos nativos de navegación (deslizar desde el borde izquierdo para retroceder).
+- Los indicadores de carga y desplazamiento (scroll bounce) siguen el comportamiento nativo de iOS proporcionado por el framework, sin necesidad de personalización adicional.
+- Se mantiene la misma paleta de color y jerarquía visual (teal `#0F766E` como color primario) que en Android y en la Web Application, asegurando consistencia de marca entre las tres plataformas.
+
+## AYUDA JOSE CAPTURAS PORFA
+
 #### 4.1.3.2 Android Mobile Style Guidelines
+
+En Android, la interfaz utiliza la misma base visual definida en el Web Style Guidelines (paleta de color, tipografía y jerarquía), adaptándose a los principios de Material Design.
+
+**Adaptaciones principales**
+
+- Uso de **Navigation Drawer** para la navegación principal en pantallas angostas (teléfono), reemplazado por un **Navigation Rail** en pantallas más anchas (tablet), manteniendo siempre el mismo orden de módulos: Dashboard, Pacientes, Signos vitales, Eventos clínicos, Traspasos SBAR, Alertas y Suscripciones.
+- Inclusión de **Floating Action Button (FAB)** para la acción principal de cada módulo: "Nuevo paciente", "Registrar" (signos vitales), "Registrar traspaso" (SBAR) y "Registrar alerta".
+- Tarjetas (**Card**) con bordes redondeados y contorno sutil en lugar de sombras pronunciadas, para conservar el mismo estilo plano y ordenado de la Web Application.
+- Feedback táctil mediante el efecto **ripple** nativo de Material en listas, botones y elementos interactivos.
+- Uso de **Snackbar** para mensajes temporales de error o confirmación (por ejemplo, al perder la conexión con el servidor o al completar un registro exitosamente).
+- Misma paleta de color y tipografía que la Web Application (teal `#0F766E` como color primario sobre fondo claro), asegurando consistencia de marca entre ambas plataformas.
+
+![android-navigation.png](assets/chapter-4/android-navigation.png)
+
+![android-fab-actions.png](assets/chapter-4/android-fab-actions.png)
+
+![android-cards-snackbar.png](assets/chapter-4/android-cards-snackbar.png)
 
 
 ### 4.2. Information Architecture
@@ -716,6 +742,110 @@ A continuación, se presenta el diagrama general modelado con la herramienta Pla
 ![Diagram-class.png](assets/chapter-4/Diagram-class.png)
 
 #### 4.9.2. Class Dictionary
+
+El siguiente diccionario describe las clases de dominio principales del sistema y sus atributos.
+
+**Patient**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| id | Long | Identificador único del paciente |
+| firstName | String | Nombre(s) del paciente |
+| lastName | String | Apellido(s) del paciente |
+| documentNumber | String | Número de documento de identidad (único) |
+| birthDate | LocalDate | Fecha de nacimiento |
+| gender | String | Género del paciente |
+| diagnosis | String | Diagnóstico clínico actual |
+| roomNumber | String | Número de habitación asignada |
+| bedNumber | String | Número de cama asignada |
+| attendingPhysician | String | Médico tratante responsable |
+| status | PatientStatus | Estado clínico: STABLE, OBSERVATION, CRITICAL, DISCHARGED |
+| admissionDate | LocalDate | Fecha de ingreso al centro asistencial |
+
+**VitalSignRecord**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| id | Long | Identificador único del registro |
+| patientId | Long | Paciente al que pertenece el registro |
+| nurseId | Long | Enfermero(a) que registró el signo vital |
+| heartRate | Integer | Frecuencia cardíaca (lpm) |
+| respiratoryRate | Integer | Frecuencia respiratoria (rpm) |
+| bloodPressure | BloodPressure | Presión arterial sistólica/diastólica |
+| oxygenSaturation | Integer | Saturación de oxígeno (%) |
+| temperature | BigDecimal | Temperatura corporal (°C) |
+| riskLevel | RiskLevel | Nivel de riesgo clínico: LOW, MEDIUM, HIGH, CRITICAL |
+| recordedAt | LocalDateTime | Fecha y hora del registro |
+
+**Handover (Traspaso SBAR)**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| id | Long | Identificador único del traspaso |
+| createdAt | Date | Fecha de creación |
+| patientId | Long | Paciente asociado al traspaso |
+| title | String | Título del traspaso |
+| situation | String | Situación actual del paciente (S) |
+| background | String | Antecedentes relevantes (B) |
+| assessment | String | Evaluación clínica (A) |
+| recommendation | String | Recomendación para el siguiente turno (R) |
+| registeredBy | String | Usuario que registró el traspaso |
+| targetNurseId | Long | Enfermero(a) receptor(a) designado(a) |
+| status | HandoverStatus | Estado: PENDING, ACKNOWLEDGED, COMPLETED, CANCELLED |
+| incomingNurseId | Long | Enfermero(a) que confirmó la recepción |
+| additionalNotes | String | Notas adicionales al confirmar recepción |
+
+**Alert**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| id | Long | Identificador único de la alerta |
+| patientId | Long | Paciente asociado a la alerta |
+| type | AlertType | Tipo: CARDIAC, RESPIRATORY, NEUROLOGICAL, FALL, MEDICATION, OTHER |
+| severity | AlertSeverity | Severidad: LOW, MEDIUM, HIGH, CRITICAL |
+| description | String | Descripción de la alerta |
+| status | AlertStatus | Estado: OPEN, ATTENDED, CLOSED |
+| triggeredBy | String | Origen de la alerta (usuario o sistema) |
+| triggeredAt | LocalDateTime | Fecha y hora en que se generó |
+| attendedBy | String | Usuario que atendió la alerta |
+| attendedAt | LocalDateTime | Fecha y hora de atención |
+| closedBy | String | Usuario que cerró la alerta |
+| resolutionNotes | String | Notas de resolución |
+| closedAt | LocalDateTime | Fecha y hora de cierre |
+
+**ClinicalEvent**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| id | Long | Identificador único del evento |
+| patientId | Long | Paciente asociado al evento |
+| eventType | ClinicalEventType | Tipo de evento clínico |
+| severity | ClinicalEventSeverity | Severidad del evento |
+| title | String | Título del evento |
+| description | String | Descripción detallada |
+| registeredBy | String | Usuario que registró el evento |
+| occurredAt | LocalDateTime | Fecha y hora en que ocurrió |
+
+**User**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| id | Long | Identificador único del usuario |
+| username | String | Nombre de usuario |
+| password | String | Contraseña encriptada (BCrypt) |
+| roles | Set\<Role\> | Roles asignados: NURSE, DOCTOR, ADMIN |
+
+**AuditLog**
+
+| Atributo | Tipo | Descripción  |
+|---|---|---|
+| patientId | Long | Paciente asociado a la acción auditada |
+| entityType | AuditedEntityType | Tipo de entidad afectada |
+| entityId | String | Identificador de la entidad afectada |
+| actionType | AuditActionType | Tipo de acción realizada |
+| performedBy | String | Usuario que realizó la acción |
+| performedAt | Instant | Fecha y hora de la acción |
+| metadata | AuditMetadata | Datos adicionales de contexto de la acción |
 
 ### 4.10. Database Design.
 #### 4.10.1. Relational/Non-Relational Database Diagram.
