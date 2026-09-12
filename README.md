@@ -134,15 +134,16 @@ Las entrevistas fueron registradas en video y se organizaron según el segmento 
 
 ##### Segmento objetivo 1: Personal de enfermería cardiovascular
 
-**Entrevista 1 — [Nombres y Apellidos del Entrevistado]**
-*   **Edad:** [Ej. 30 años]
-*   **Distrito:** [Ej. San Miguel]
-*   **Ocupación:** [Ej. Enfermera de hospitalización general]
-*   **Inicio en el video (Timing):** [Ej. 00:00]
-*   **Duración:** [Ej. 05:30]
+**Entrevista 1 — Marcelo Garriazo**
+*   **Edad:** 26
+*   **Distrito:** Ayacucho
+*   **Ocupación:** Enfermero
+*   **Inicio en el video (Timing):** 00:04
+*   **Duración:** 06:33
+*   **Link de Video:** [Entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211a574_upc_edu_pe/IQBXdADPJDniQqaW_lCr9cUGAUm5djB4n84-bS-LSykaTzk?e=VjZaWJ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) 
 *   **Screenshot:**
-    <img src="[Ruta_screenshot_entrevista_1]" width="400">
-*   **Resumen descriptivo:** [Redactar un resumen descriptivo indicando las principales respuestas. Incluir características subjetivas como personalidad, herramientas que usa actualmente para registrar signos vitales, cómo maneja los traspasos de turno y sus principales frustraciones operativas].
+    ![Ruta_screenshot_entrevista_1](assets/Interviews03Seg1.png)
+*   **Resumen descriptivo:** Marcelo Garriazo es un enfermero de 26 años con 2 años de experiencia clinica en hospitales grandes y clinicas pequeñas se destaca por empatia, templanza y el caracter para la toma de decisiones. Adaptable a las tecnologias, le cuesta un poco al incio pero luego su manejo es preciso, cuenta con un Laptop y usa recurrentemente WhatsApp para la comunicación en su area de trabajo. Su mayor fruntacion es no lograr encontrar los documentos de manera oportuna junto con los problemas de caida de sistema que lo frustran más frente a una emergencia. Presenta un problema real de gestion ya que la mayoria de documento o diagnosticos son diseñadas manualmente y no por un sistema que lo registre y guarde de forma rapida u oportuna.
 
 **Entrevista 2 — Andrew Sanchez**
 *   **Edad:** 25
