@@ -30,7 +30,7 @@
 | u202414510   | Mansilla Rivero, Carlos Marcelo |
 | u202313458 | Taipe Sangama, Jorge Francisco    |
 | u202216163 | Paredes Davila, Jose Adrian       |
-| [Código UPC] | [Apellidos y nombres]           |
+| u20211A574 | Navarro Flores, Renzo Jesus       |
 | [Código UPC] | [Apellidos y nombres]           |
 
 <p><strong>Periodo 202620</strong></p>
@@ -112,16 +112,16 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
   </tr>
 
   <tr>
-    <th colspan="2">[Apellidos y nombres del integrante 4]</th>
+    <th colspan="2">Navarro Flores, Renzo Jesus</th>
   </tr>
   <tr>
     <td>
-      <img src="assets/chapter-1/member-4.png" alt="Fotografía del integrante 4" width="300px">
+      <img src="assets/chapter-1/Foto_Renzo.png" alt="Fotografía de Renzo Navarro" width="300px">
     </td>
     <td>
-      <b>Código:</b> [Código UPC]<br>
+      <b>Código:</b> u20211A574<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
-      [Redactar una presentación que incluya los principales conocimientos técnicos, habilidades interpersonales y responsabilidades que el integrante aportará al desarrollo de Nurse Pulse.]
+      Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos de desarrollo de documentacion, requisitos y requerimientos, arquitectura de software. Dentro de Nurse Pulse, aportare mi logica de anilisis para buscar vulnerabilidades en el sistema y preparar contramedidas, responsabilidad y trabajo colaborativo.
     </td>
   </tr>
 
