@@ -1,35 +1,300 @@
 ## Capítulo III: Requirements Specification
 ### 3.1 To-Be Scenario Mapping
 
+Para entender hacia dónde se dirige el producto, es necesario visualizar la experiencia deseada. Si el mapa del estado actual (*As-Is Scenario Mapping*) nos ayudó a diagnosticar los problemas de dispersión y demoras en el flujo clínico habitual, el **To-Be Scenario Mapping** (Mapa de Escenarios Futuros) es la herramienta de diseño de experiencia con la que proyectamos el **estado ideal** de interacción. 
 
+Su propósito es modelar cómo el personal de salud (enfermeros y médicos especialistas) interactuará con **Nurse Pulse** para resolver sus tareas diarias, eliminando los cuellos de botella identificados. Este mapa organiza el recorrido en cuatro dimensiones clave:
+
+- **Phases (Fases):** Las etapas cronológicas que atraviesa el usuario para completar un objetivo clínico (por ejemplo: recepción de guardia, registro a pie de cama, traspaso SBAR).
+- **Doing (Acciones):** Las tareas operativas concretas que realiza el profesional dentro y fuera del sistema digital.
+- **Thinking (Pensamientos):** Las preguntas, expectativas y razonamientos que pasan por la mente del profesional mientras ejecuta la tarea.
+- **Feeling (Emociones):** La carga emocional y nivel de satisfacción del usuario a lo largo del proceso, evidenciando la reducción de estrés y el aumento de confianza y seguridad clínica.
+
+---
+
+#### Proceso metodológico desarrollado por el equipo
+
+Para construir un escenario futuro viable, riguroso y centrado en las necesidades reales de los profesionales de la salud, el equipo de Nurse Pulse siguió un flujo de diseño iterativo de cinco pasos:
+
+1. **Preparación:** El equipo consolidó los hallazgos del diagnóstico clínico, los *Lean UX Problem Statements* y los dolores documentados previamente en los mapas de estado actual (*As-Is*), definiendo los objetivos de eficiencia y trazabilidad esperados para cada segmento.
+2. **Lluvia de ideas individual:** Cada integrante del equipo formuló propuestas de interacción digital enfocadas en resolver las fricciones existentes (por ejemplo: estandarización de formularios SBAR, alertas visuales automáticas y acceso consolidado a signos vitales desde dispositivos móviles y web).
+3. **Revisión e identificación de fases:** Se agruparon las propuestas por afinidad funcional para establecer las columnas cronológicas que marcan el ciclo de trabajo del profesional de salud durante una jornada o turno.
+4. **Nombrado y consolidación de fases:** Se nombraron las etapas de forma estandarizada y se completaron los carriles de *Phases*, *Doing*, *Thinking* y *Feeling* para cada User Persona representativo.
+5. **Comparación y validación frente al As-Is:** Se contrastó cada paso del escenario futuro contra el escenario actual para garantizar que **Nurse Pulse** no introdujera pasos redundantes ni sobrecarga administrativa, verificando que los momentos de frustración y ansiedad del *As-Is* se transformen en certezas y tranquilidad en el *To-Be*.
+
+---
+
+#### Artefactos del To-Be Scenario Mapping
+
+A continuación, se presentan los escenarios futuros proyectados para los dos segmentos objetivos del sistema.
+
+##### A. To-Be Scenario Mapping: Personal de Enfermería Cardiovascular
+*Enfocado en el flujo de recepción de turno, monitoreo continuo a pie de cama con la Native Mobile Application y entrega de guardia estandarizada mediante SBAR.*
+
+<p align="center">
+  <img src="assets/chapter-3/ScenarioEnfermeria.png" alt="To-Be Scenario Mapping - Personal de Enfermería" width="850px">
+</p>
+<p align="center"><em>Figura 1.1 Mapa de escenario futuro para el personal de enfermería cardiovascular.</em></p>
+
+---
+
+##### B. To-Be Scenario Mapping: Médico Especialista Cardiovascular
+*Enfocado en la ronda médica matutina, consulta rápida del estado del paciente en el Dashboard Web consolidado, toma de decisiones informada e indicación trazable de nuevas conductas médicas.*
+
+<p align="center">
+  <img src="assets/chapter-3/ScenariMedico.png" alt="To-Be Scenario Mapping - Médico Especialista" width="850px">
+</p>
+<p align="center"><em>Figura 2.1 Mapa de escenario futuro para el médico especialista cardiovascular.</em></p>
+
+---
+
+#### Espacio de Trabajo Colaborativo
+
+Para auditar en detalle la matriz completa de post-its virtuales, interacciones de usuario y trazabilidad de cada fase de los mapas *To-Be*, puede acceder al tablero colaborativo del proyecto en el siguiente enlace:
+
+> 🔗 **Acceso al Tablero de Diseño (Miro / Canvas):**  
+> [Ver To-Be Scenario Mapping interactivo en Miro](https://miro.com/app/board/uXjVHnjGnd0=/?share_link_id=39885473758)
 
 
 ### 3.2. User Stories
 
 La presente sección desarrolla el conjunto de Epics, User Stories y Technical Stories definidos para el proyecto NursePulse. Estos requisitos fueron elaborados a partir de los hallazgos obtenidos en entrevistas, User Personas, User Task Matrix, User Journey Maps, Empathy Maps, Big Picture Event Storming, Ubiquitous Language y el avance desarrollado de la Landing Page.
 
-Las User Stories representan necesidades funcionales desde la perspectiva de los usuarios finales y visitantes del sitio web. Las Technical Stories representan necesidades técnicas necesarias para implementar los recursos del RESTful API, utilizando el rol Developer. Asimismo, se incluyen historias correspondientes al sitio web estático o Landing Page, tomando como rol base al visitante, debido a que la página comunica la propuesta de valor, funcionamiento, características, beneficios, testimonios, equipo, preguntas frecuentes y canales de contacto de PulseReport.
+Las User Stories representan necesidades funcionales desde la perspectiva de los usuarios finales y visitantes del sitio web. Las Technical Stories representan necesidades técnicas necesarias para implementar los recursos del RESTful API, utilizando el rol Developer. Asimismo, se incluyen historias correspondientes al sitio web estático o Landing Page, tomando como rol base al visitante, debido a que la página comunica la propuesta de valor, funcionamiento, características, beneficios, testimonios, equipo, preguntas frecuentes y canales de contacto de **Nurse Pulse**.
 
 Los criterios de aceptación se redactan en formato Gherkin, siguiendo la estructura Given – When – Then. Además, se mantienen en tiempo presente, tercera persona, sin referencia innecesaria a detalles específicos de interfaz gráfica y con condiciones comprobables.
 
 Cuadro de Epics, User Stories y Technical Stories
 
+<style>
+.user-stories-table {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.user-stories-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1.25rem;
+}
+
+.user-stories-table thead {
+  display: none;
+}
+
+.user-stories-table tbody tr {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  border: 1px solid #222;
+  background: #ffffff20;
+}
+
+.user-stories-table tbody td {
+  display: block;
+  padding: 0.75rem;
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  vertical-align: top;
+}
+
+.user-stories-table tbody td:last-child {
+  border-right: 0;
+}
+
+.user-stories-table tbody tr::before,
+.user-stories-table tbody tr::after {
+  display: block;
+  padding: 0.75rem;
+  white-space: pre-line;
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  font-weight: 700;
+}
+
+.user-stories-table tbody tr::before {
+  grid-column: 2;
+  grid-row: 1;
+  content: "User\A Visitante";
+}
+
+.user-stories-table tbody tr::after {
+  grid-column: 3;
+  grid-row: 1;
+  content: "Priority\A Alta";
+}
+
+.user-stories-table tbody tr td:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.user-stories-table tbody tr td:nth-child(2) {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.user-stories-table tbody tr td:nth-child(3) {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+.user-stories-table tbody tr td:nth-child(4) {
+  grid-column: 1 / -1;
+  grid-row: 4;
+}
+
+.user-stories-table tbody tr td:nth-child(5) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.user-stories-table tbody tr td:nth-child(1)::before {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  content: "Story ID";
+}
+
+.user-stories-table tbody tr td:nth-child(2)::before {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  content: "Title / User";
+}
+
+.user-stories-table tbody tr td:nth-child(3)::before {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  content: "Description";
+}
+
+.user-stories-table tbody tr td:nth-child(4)::before {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  content: "Acceptance Criteria";
+}
+
+.user-stories-table tbody tr td:nth-child(5)::before {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  content: "Epic";
+}
+
+.user-stories-table tbody tr td:nth-child(2)::before {
+  content: "Title";
+}
+
+.user-stories-table tbody tr td:nth-child(3)::before {
+  content: "Description";
+}
+
+.user-stories-table tbody tr td:nth-child(4)::before {
+  content: "Acceptance Criteria";
+}
+
+.user-stories-table tbody tr td:nth-child(2),
+.user-stories-table tbody tr td:nth-child(3),
+.user-stories-table tbody tr td:nth-child(4) {
+  border-right: 0;
+}
+
+.user-stories-table tbody tr td:nth-child(4) {
+  border-bottom: 0;
+}
+
+.user-stories-table tbody tr:nth-child(1)::before,
+.user-stories-table tbody tr:nth-child(14)::before,
+.user-stories-table tbody tr:nth-child(18)::before,
+.user-stories-table tbody tr:nth-child(22)::before,
+.user-stories-table tbody tr:nth-child(25)::before,
+.user-stories-table tbody tr:nth-child(28)::before {
+  content: "User\A Personal clínico";
+}
+
+.user-stories-table tbody tr:nth-child(2)::before,
+.user-stories-table tbody tr:nth-child(3)::before,
+.user-stories-table tbody tr:nth-child(4)::before,
+.user-stories-table tbody tr:nth-child(5)::before,
+.user-stories-table tbody tr:nth-child(6)::before,
+.user-stories-table tbody tr:nth-child(7)::before,
+.user-stories-table tbody tr:nth-child(8)::before,
+.user-stories-table tbody tr:nth-child(9)::before,
+.user-stories-table tbody tr:nth-child(10)::before,
+.user-stories-table tbody tr:nth-child(11)::before,
+.user-stories-table tbody tr:nth-child(12)::before,
+.user-stories-table tbody tr:nth-child(13)::before {
+  content: "User\A Visitante";
+}
+
+.user-stories-table tbody tr:nth-child(15)::before,
+.user-stories-table tbody tr:nth-child(17)::before {
+  content: "User\A Enfermera cardiovascular";
+}
+
+.user-stories-table tbody tr:nth-child(16)::before {
+  content: "User\A Enfermera entrante";
+}
+
+.user-stories-table tbody tr:nth-child(19)::before,
+.user-stories-table tbody tr:nth-child(21)::before {
+  content: "User\A Enfermera cardiovascular";
+}
+
+.user-stories-table tbody tr:nth-child(20)::before,
+.user-stories-table tbody tr:nth-child(23)::before,
+.user-stories-table tbody tr:nth-child(27)::before {
+  content: "User\A Médico especialista cardiovascular";
+}
+
+.user-stories-table tbody tr:nth-child(24)::before {
+  content: "User\A Usuario clínico";
+}
+
+.user-stories-table tbody tr:nth-child(n+29)::before {
+  content: "User\A Developer";
+}
+
+.user-stories-table tbody tr:nth-child(n+14)::after {
+  content: "Priority\A Media";
+}
+
+.user-stories-table tbody tr:nth-child(n+24)::after {
+  content: "Priority\A Baja";
+}
+
+@media (max-width: 700px) {
+  .user-stories-table tbody tr {
+    display: block;
+  }
+
+  .user-stories-table tbody td {
+    border-right: 0;
+  }
+}
+</style>
+
+<div class="user-stories-table">
+
 | Epic / Story ID | Título                                          | Descripción                                                                                                                                                                                                                                | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Relacionado con (Epic ID) |
 | --------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
-| **EP-01**       | **Landing Page informativa**                    | Como visitante, quiero conocer la propuesta de valor, funcionamiento, beneficios, planes y canales de contacto de PulseReport para evaluar si la solución responde a necesidades clínicas de comunicación, trazabilidad y continuidad asistencial.| **Given** que el visitante accede al sitio web, **When** revisa la información disponible, **Then** comprende el propósito general de PulseReport. <br><br> **Given** que el visitante desea conocer la solución, **When** navega por las secciones del sitio, **Then** encuentra información sobre propuesta de valor, funcionamiento, características, beneficios, planes, preguntas frecuentes, testimonios, equipo, llamados a la acción y contacto.                                                                | —                         |
-| **US-01**       | Visualizar landing page                         | Como visitante, quiero visualizar la landing page de PulseReport para conocer rápidamente la solución propuesta.                                                                                                                           | **Given** que el visitante accede al sitio web, **When** la página carga correctamente, **Then** visualiza información general de PulseReport. <br><br> **Given** que el visitante usa un navegador compatible, **When** ingresa al sitio, **Then** visualiza el contenido principal sin errores de carga.                                                                                                                                                                                 | EP-01                     |
-| **US-02**       | Ver propuesta de valor                          | Como visitante, quiero conocer la propuesta de valor de PulseReport para entender qué problema clínico busca resolver.                                                                                                                     | **Given** que el visitante revisa la información principal, **When** lee la propuesta presentada, **Then** identifica que PulseReport se enfoca en comunicación clínica y trazabilidad en tiempo real. <br><br> **Given** que el visitante pertenece al sector salud, **When** revisa la propuesta de valor, **Then** reconoce beneficios relacionados con continuidad asistencial, trazabilidad de eventos críticos y comunicación entre turnos.                                          | EP-01                     |
-| **US-03**       | Consultar el problema que resuelve PulseReport  | Como visitante, quiero entender por qué existe la necesidad de PulseReport para reconocer el problema actual de información clínica dispersa.                                                                                              | **Given** que el visitante consulta la sección informativa del problema, **When** lee la explicación presentada, **Then** identifica que la información clínica dispersa dificulta la continuidad asistencial y la trazabilidad. <br><br> **Given** que el visitante analiza la necesidad del producto, **When** revisa el problema descrito, **Then** comprende que PulseReport busca centralizar procesos esenciales de enfermería cardiovascular.                                       | EP-01                     |
-| **US-04**       | Revisar cómo funciona PulseReport               | Como visitante, quiero conocer cómo funciona PulseReport en pasos simples para comprender el flujo general de uso de la solución.                                                                                                          | **Given** que el visitante revisa la explicación de funcionamiento, **When** consulta los pasos presentados, **Then** identifica las etapas generales de registro, monitoreo y trazabilidad. <br><br> **Given** que el visitante desea entender el funcionamiento general, **When** revisa los pasos descritos, **Then** comprende que la solución permite digitalizar traspasos SBAR, consultar información clínica y mantener historial de eventos.                                      | EP-01                     |
-| **US-05**       | Visualizar características clave                | Como visitante, quiero conocer las características principales de PulseReport para evaluar si la solución responde a necesidades del entorno clínico cardiovascular.                                                                       | **Given** que el visitante consulta la información de características, **When** revisa el contenido disponible, **Then** identifica capacidades relacionadas con SBAR digital, gestión de pacientes, seguimiento de tratamientos, monitoreo de signos vitales, historial clínico digital y trazabilidad. <br><br> **Given** que el visitante compara beneficios funcionales, **When** revisa cada característica presentada, **Then** comprende el valor de cada capacidad descrita.       | EP-01                     |
-| **US-06**       | Visualizar beneficios                           | Como visitante, quiero revisar los beneficios de PulseReport para comprender el valor que aporta al entorno clínico.                                                                                                                       | **Given** que el visitante consulta la información de beneficios, **When** revisa los beneficios disponibles, **Then** identifica mejoras relacionadas con comunicación entre turnos, reducción de omisiones, trazabilidad, organización de información y atención oportuna. <br><br> **Given** que el visitante evalúa la utilidad del producto, **When** revisa los beneficios, **Then** comprende cómo PulseReport puede aportar valor a hospitales, clínicas o centros especializados. | EP-01                     |
-| **US-07**       | Consultar preguntas frecuentes                  | Como visitante, quiero revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de PulseReport.                                                                                                    | **Given** que el visitante consulta las preguntas frecuentes, **When** revisa las respuestas disponibles, **Then** obtiene información sobre orientación del producto, consulta de información, público objetivo y modelo de servicio. <br><br> **Given** que el visitante tiene dudas sobre la solución, **When** revisa las preguntas frecuentes, **Then** encuentra respuestas claras sobre el alcance de PulseReport.                                                                  | EP-01                     |
-| **US-08**       | Visualizar testimonios                          | Como visitante, quiero revisar testimonios sobre PulseReport para aumentar mi confianza en la solución.                                                                                                                                    | **Given** que el visitante consulta los testimonios disponibles, **When** revisa las opiniones presentadas, **Then** identifica percepciones positivas relacionadas con organización, seguimiento y mejora del trabajo clínico. <br><br> **Given** que el visitante evalúa la credibilidad del producto, **When** lee los testimonios, **Then** obtiene información que respalda la propuesta de valor.                                                                                    | EP-01                     |
-| **US-09**       | Conocer al equipo                               | Como visitante, quiero conocer al equipo detrás de PulseReport para identificar quiénes desarrollan la solución.                                                                                                                           | **Given** que el visitante consulta la información del equipo, **When** revisa los datos presentados, **Then** visualiza integrantes y roles asociados al proyecto. <br><br> **Given** que el visitante evalúa confianza institucional, **When** revisa el equipo del proyecto, **Then** reconoce que existe un equipo responsable detrás de la solución.                                                                                                                                  | EP-01                     |
-| **US-10**       | Contactar al equipo de PulseReport              | Como visitante, quiero contactar al equipo de PulseReport para solicitar información adicional o una demostración.                                                                                                                         | **Given** que el visitante desea contactar al equipo, **When** proporciona los datos requeridos, **Then** la solicitud queda lista para ser enviada. <br><br> **Given** que existen datos obligatorios, **When** el visitante intenta enviar información incompleta, **Then** el sistema solicita completar los datos requeridos.                                                                                                                                                          | EP-01                     |
+| —    | **Landing Page informativa**                    | Como visitante, quiero conocer la propuesta de valor, funcionamiento, beneficios, planes y canales de contacto de Nurse Pulse para evaluar si la solución responde a necesidades clínicas de comunicación, trazabilidad y continuidad asistencial.| **Given** que el visitante accede al sitio web, **When** revisa la información disponible, **Then** comprende el propósito general de Nurse Pulse. <br><br> **Given** que el visitante desea conocer la solución, **When** navega por las secciones del sitio, **Then** encuentra información sobre propuesta de valor, funcionamiento, características, beneficios, planes, preguntas frecuentes, testimonios, equipo, llamados a la acción y contacto.                                                                | **EP-01**                        |
+| **US-01**       | Visualizar landing page                         | Como visitante, quiero visualizar la landing page de Nurse Pulse para conocer rápidamente la solución propuesta.                                                                                                                           | **Given** que el visitante accede al sitio web, **When** la página carga correctamente, **Then** visualiza información general de Nurse Pulse. <br><br> **Given** que el visitante usa un navegador compatible, **When** ingresa al sitio, **Then** visualiza el contenido principal sin errores de carga.                                                                                                                                                                                 | EP-01                     |
+| **US-02**       | Ver propuesta de valor                          | Como visitante, quiero conocer la propuesta de valor de Nurse Pulse para entender qué problema clínico busca resolver.                                                                                                                     | **Given** que el visitante revisa la información principal, **When** lee la propuesta presentada, **Then** identifica que Nurse Pulse se enfoca en comunicación clínica y trazabilidad en tiempo real. <br><br> **Given** que el visitante pertenece al sector salud, **When** revisa la propuesta de valor, **Then** reconoce beneficios relacionados con continuidad asistencial, trazabilidad de eventos críticos y comunicación entre turnos.                                          | EP-01                     |
+| **US-03**       | Consultar el problema que resuelve Nurse Pulse  | Como visitante, quiero entender por qué existe la necesidad de Nurse Pulse para reconocer el problema actual de información clínica dispersa.                                                                                              | **Given** que el visitante consulta la sección informativa del problema, **When** lee la explicación presentada, **Then** identifica que la información clínica dispersa dificulta la continuidad asistencial y la trazabilidad. <br><br> **Given** que el visitante analiza la necesidad del producto, **When** revisa el problema descrito, **Then** comprende que Nurse Pulse busca centralizar procesos esenciales de enfermería cardiovascular.                                       | EP-01                     |
+| **US-04**       | Revisar cómo funciona Nurse Pulse               | Como visitante, quiero conocer cómo funciona Nurse Pulse en pasos simples para comprender el flujo general de uso de la solución.                                                                                                          | **Given** que el visitante revisa la explicación de funcionamiento, **When** consulta los pasos presentados, **Then** identifica las etapas generales de registro, monitoreo y trazabilidad. <br><br> **Given** que el visitante desea entender el funcionamiento general, **When** revisa los pasos descritos, **Then** comprende que la solución permite digitalizar traspasos SBAR, consultar información clínica y mantener historial de eventos.                                      | EP-01                     |
+| **US-05**       | Visualizar características clave                | Como visitante, quiero conocer las características principales de Nurse Pulse para evaluar si la solución responde a necesidades del entorno clínico cardiovascular.                                                                       | **Given** que el visitante consulta la información de características, **When** revisa el contenido disponible, **Then** identifica capacidades relacionadas con SBAR digital, gestión de pacientes, seguimiento de tratamientos, monitoreo de signos vitales, historial clínico digital y trazabilidad. <br><br> **Given** que el visitante compara beneficios funcionales, **When** revisa cada característica presentada, **Then** comprende el valor de cada capacidad descrita.       | EP-01                     |
+| **US-06**       | Visualizar beneficios                           | Como visitante, quiero revisar los beneficios de Nurse Pulse para comprender el valor que aporta al entorno clínico.                                                                                                                       | **Given** que el visitante consulta la información de beneficios, **When** revisa los beneficios disponibles, **Then** identifica mejoras relacionadas con comunicación entre turnos, reducción de omisiones, trazabilidad, organización de información y atención oportuna. <br><br> **Given** que el visitante evalúa la utilidad del producto, **When** revisa los beneficios, **Then** comprende cómo Nurse Pulse puede aportar valor a hospitales, clínicas o centros especializados. | EP-01                     |
+| **US-07**       | Consultar preguntas frecuentes                  | Como visitante, quiero revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de Nurse Pulse.                                                                                                    | **Given** que el visitante consulta las preguntas frecuentes, **When** revisa las respuestas disponibles, **Then** obtiene información sobre orientación del producto, consulta de información, público objetivo y modelo de servicio. <br><br> **Given** que el visitante tiene dudas sobre la solución, **When** revisa las preguntas frecuentes, **Then** encuentra respuestas claras sobre el alcance de Nurse Pulse.                                                                  | EP-01                     |
+| **US-08**       | Visualizar testimonios                          | Como visitante, quiero revisar testimonios sobre Nurse Pulse para aumentar mi confianza en la solución.                                                                                                                                    | **Given** que el visitante consulta los testimonios disponibles, **When** revisa las opiniones presentadas, **Then** identifica percepciones positivas relacionadas con organización, seguimiento y mejora del trabajo clínico. <br><br> **Given** que el visitante evalúa la credibilidad del producto, **When** lee los testimonios, **Then** obtiene información que respalda la propuesta de valor.                                                                                    | EP-01                     |
+| **US-09**       | Conocer al equipo                               | Como visitante, quiero conocer al equipo detrás de Nurse Pulse para identificar quiénes desarrollan la solución.                                                                                                                           | **Given** que el visitante consulta la información del equipo, **When** revisa los datos presentados, **Then** visualiza integrantes y roles asociados al proyecto. <br><br> **Given** que el visitante evalúa confianza institucional, **When** revisa el equipo del proyecto, **Then** reconoce que existe un equipo responsable detrás de la solución.                                                                                                                                  | EP-01                     |
+| **US-10**       | Contactar al equipo de Nurse Pulse              | Como visitante, quiero contactar al equipo de Nurse Pulse para solicitar información adicional o una demostración.                                                                                                                         | **Given** que el visitante desea contactar al equipo, **When** proporciona los datos requeridos, **Then** la solicitud queda lista para ser enviada. <br><br> **Given** que existen datos obligatorios, **When** el visitante intenta enviar información incompleta, **Then** el sistema solicita completar los datos requeridos.                                                                                                                                                          | EP-01                     |
 | **US-11**       | Cambiar idioma del sitio                        | Como visitante, quiero cambiar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia.                                                                                                      | **Given** que el visitante se encuentra en la landing page, **When** selecciona un idioma disponible, **Then** el contenido del sitio se muestra en el idioma seleccionado. <br><br> **Given** que el visitante vuelve a ingresar al sitio, **When** existe una preferencia de idioma guardada, **Then** el sitio mantiene el idioma previamente seleccionado.                                                                                                                             | EP-01                     |
-| **US-12**       | Acceder desde dispositivos móviles              | Como visitante, quiero acceder al sitio web desde dispositivos móviles para revisar información de PulseReport desde cualquier lugar.                                                                                                      | **Given** que el visitante accede desde un dispositivo móvil, **When** carga el sitio web, **Then** el contenido se adapta al tamaño del dispositivo. <br><br> **Given** que el visitante navega desde un dispositivo móvil, **When** revisa las secciones del sitio, **Then** consulta la información sin pérdida de contenido relevante.                                                                                                                                                 | EP-01                     |
-| **EP-02**       | **Gestión de traspaso clínico SBAR**            | Como personal clínico, quiero estructurar la información del cambio de turno para reducir omisiones y mejorar la continuidad de atención.                                                                                                  | **Given** que el personal clínico realiza un cambio de turno, **When** registra información bajo estructura SBAR, **Then** la información queda organizada en situación, antecedentes, evaluación y recomendación. <br><br> **Given** que el nuevo turno recibe información, **When** consulta el traspaso clínico, **Then** comprende el estado del paciente y los pendientes relevantes.                                                                                                 | —                         |
+| **US-12**       | Acceder desde dispositivos móviles              | Como visitante, quiero acceder al sitio web desde dispositivos móviles para revisar información de Nurse Pulse desde cualquier lugar.                                                                                                      | **Given** que el visitante accede desde un dispositivo móvil, **When** carga el sitio web, **Then** el contenido se adapta al tamaño del dispositivo. <br><br> **Given** que el visitante navega desde un dispositivo móvil, **When** revisa las secciones del sitio, **Then** consulta la información sin pérdida de contenido relevante.                                                                                                                                                 | EP-01                     |
+| —       | **Gestión de traspaso clínico SBAR**            | Como personal clínico, quiero estructurar la información del cambio de turno para reducir omisiones y mejorar la continuidad de atención.                                                                                                  | **Given** que el personal clínico realiza un cambio de turno, **When** registra información bajo estructura SBAR, **Then** la información queda organizada en situación, antecedentes, evaluación y recomendación. <br><br> **Given** que el nuevo turno recibe información, **When** consulta el traspaso clínico, **Then** comprende el estado del paciente y los pendientes relevantes.                                                                                                 | **EP-02**                         |
 | **US-13**       | Registrar traspaso SBAR                         | Como enfermera cardiovascular, quiero registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno.                                                                                                   | **Given** que la enfermera necesita entregar información clínica, **When** registra situación, antecedentes, evaluación y recomendación, **Then** el traspaso queda registrado con estructura SBAR. <br><br> **Given** que falta información obligatoria, **When** la enfermera intenta guardar el traspaso, **Then** el sistema solicita completar la información requerida.                                                                                                              | EP-02                     |
 | **US-14**       | Consultar traspaso de turno                     | Como enfermera entrante, quiero consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante.                                                                                 | **Given** que existe un traspaso registrado, **When** la enfermera entrante consulta la información del paciente, **Then** visualiza la información clínica entregada por el turno anterior. <br><br> **Given** que el traspaso contiene pendientes, **When** la enfermera lo revisa, **Then** identifica acciones pendientes para el nuevo turno.                                                                                                                                         | EP-02                     |
 | **US-15**       | Confirmar recepción de traspaso                 | Como enfermera entrante, quiero confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención.                                                                                                                 | **Given** que la enfermera entrante revisa el traspaso, **When** confirma la recepción, **Then** el sistema registra que el traspaso fue recibido. <br><br> **Given** que el traspaso aún no fue confirmado, **When** se consulta su estado, **Then** aparece como pendiente de recepción.                                                                                                                                                                                                 | EP-02                     |
@@ -40,10 +305,10 @@ Cuadro de Epics, User Stories y Technical Stories
 | **EP-04**       | **Trazabilidad clínica**                        | Como equipo clínico, quiero conocer la secuencia de eventos, responsables y horarios para mejorar seguimiento, auditoría y continuidad de atención.                                                                                        | **Given** que se registra una acción clínica, **When** la información queda guardada, **Then** se almacena responsable, fecha y hora. <br><br> **Given** que se consulta la trazabilidad de un paciente, **When** existen registros asociados, **Then** se muestra la secuencia de eventos clínicos registrados.                                                                                                                                                                           | —                         |
 | **US-19**       | Consultar historial de eventos                  | Como médico especialista cardiovascular, quiero consultar el historial de eventos clínicos para reconstruir la evolución del paciente.                                                                                                     | **Given** que el paciente tiene eventos registrados, **When** el médico consulta el historial, **Then** el sistema muestra los eventos ordenados cronológicamente. <br><br> **Given** que el médico necesita validar un evento específico, **When** revisa el historial, **Then** identifica fecha, hora y responsable del registro.                                                                                                                                                       | EP-04                     |
 | **US-20**       | Identificar responsable de registro             | Como usuario clínico, quiero identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional.                                                                                                  | **Given** que existe un registro clínico guardado, **When** el usuario consulta el detalle del registro, **Then** el sistema muestra el responsable asociado. <br><br> **Given** que el registro fue actualizado, **When** se consulta su información, **Then** el sistema conserva evidencia del responsable de la actualización.                                                                                                                                                         | EP-04                     |
-| **EP-05**       | **Soporte a la toma de decisiones clínicas**    | Como médico especialista cardiovascular, quiero acceder rápidamente a información consolidada para tomar decisiones clínicas oportunas y seguras.                                                                                          | **Given** que el médico evalúa a un paciente cardiovascular, **When** consulta su información clínica, **Then** accede a datos relevantes para la toma de decisiones. <br><br> **Given** que existen cambios relevantes del paciente, **When** el médico revisa la evolución, **Then** identifica información clínica reciente.                                                                                                                                                            | —                         |
+| —       | **Soporte a la toma de decisiones clínicas**    | Como médico especialista cardiovascular, quiero acceder rápidamente a información consolidada para tomar decisiones clínicas oportunas y seguras.                                                                                          | **Given** que el médico evalúa a un paciente cardiovascular, **When** consulta su información clínica, **Then** accede a datos relevantes para la toma de decisiones. <br><br> **Given** que existen cambios relevantes del paciente, **When** el médico revisa la evolución, **Then** identifica información clínica reciente.                                                                                                                                                            | **EP-05**                         |
 | **US-21**       | Consultar resumen clínico del paciente          | Como médico especialista cardiovascular, quiero consultar un resumen clínico del paciente para comprender rápidamente su estado actual.                                                                                                    | **Given** que el paciente tiene información clínica registrada, **When** el médico consulta el resumen, **Then** el sistema muestra datos relevantes del estado actual del paciente. <br><br> **Given** que existe información reciente, **When** el médico revisa el resumen, **Then** identifica evolución, eventos e indicaciones relevantes.                                                                                                                                           | EP-05                     |
 | **US-22**       | Identificar cambios críticos                    | Como médico especialista cardiovascular, quiero identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos.                                                                                           | **Given** que existen registros clínicos recientes, **When** se identifica un cambio crítico definido por reglas clínicas, **Then** el sistema marca el evento como relevante. <br><br> **Given** que el médico consulta la evolución, **When** existen cambios críticos registrados, **Then** puede identificarlos dentro del historial del paciente.                                                                                                                                     | EP-05                     |
-| **EP-06**       | **RESTful API de PulseReport**                  | Como Developer, quiero contar con una API RESTful para exponer de forma segura los recursos clínicos necesarios para la aplicación PulseReport.                                                                                            | **Given** que un cliente autorizado realiza una solicitud válida, **When** el API procesa la solicitud, **Then** responde con el recurso solicitado y código HTTP correspondiente. <br><br> **Given** que ocurre un error de validación o autorización, **When** el API procesa la solicitud, **Then** responde con código HTTP y mensaje consistente.                                                                                                                                     | —                         |
+| —       | **RESTful API de Nurse Pulse**                  | Como Developer, quiero contar con una API RESTful para exponer de forma segura los recursos clínicos necesarios para la aplicación Nurse Pulse.                                                                                            | **Given** que un cliente autorizado realiza una solicitud válida, **When** el API procesa la solicitud, **Then** responde con el recurso solicitado y código HTTP correspondiente. <br><br> **Given** que ocurre un error de validación o autorización, **When** el API procesa la solicitud, **Then** responde con código HTTP y mensaje consistente.                                                                                                                                     | **EP-06**                         |
 | TS-01 | Autenticación de usuarios | Como Developer, quiero implementar autenticación para proteger el acceso a recursos clínicos del sistema, incluyendo una política de contraseñas seguras en el registro de nuevas cuentas. | Given que un usuario envía credenciales válidas, When el API procesa la autenticación, Then responde con un token válido. <br><br> **Given** que un usuario envía credenciales inválidas, **When** el API procesa la autenticación, **Then** responde con estado 401. <br><br> **Given** que un usuario se registra con una contraseña de entre 12 y 20 caracteres, que incluye al menos una mayúscula y un carácter especial, **When** el API procesa el registro, **Then** crea la cuenta correctamente. <br><br> **Given** que un usuario se registra con una contraseña que no cumple la longitud requerida, When el API procesa el registro, **Then** responde con estado 400 indicando el requisito de longitud. <br><br> **Given** que un usuario se registra con una contraseña sin mayúscula o sin carácter especial, **When** el API procesa el registro, **Then** responde con estado 400 indicando qué requisito de complejidad falta. |         EP-06 |
 | **TS-02**       | Gestión de pacientes mediante API               | Como Developer, quiero exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular.                                                                                                   | **Given** que un cliente autorizado solicita un paciente existente, **When** el API recibe la solicitud, **Then** responde con la información del paciente y estado 200. <br><br> **Given** que el paciente no existe, **When** el API recibe la solicitud, **Then** responde con estado 404.                                                                                                                                                                                              | EP-06                     |
 | **TS-03**       | Gestión de registros clínicos mediante API      | Como Developer, quiero exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones.                                                                                             | **Given** que un cliente autorizado envía un registro clínico válido, **When** el API procesa la solicitud, **Then** guarda el registro y responde con estado 201. <br><br> **Given** que el registro clínico contiene datos inválidos, **When** el API procesa la solicitud, **Then** responde con estado 400 y detalle de validación.                                                                                                                                                    | EP-06                     |
@@ -51,22 +316,24 @@ Cuadro de Epics, User Stories y Technical Stories
 | **TS-05**       | Trazabilidad de acciones clínicas               | Como Developer, quiero registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada.                                                                                                           | **Given** que un usuario autorizado crea o actualiza un registro clínico, **When** el API completa la operación, **Then** almacena usuario, fecha, hora y tipo de acción. <br><br> **Given** que se consulta la auditoría de un registro, **When** existe información de trazabilidad, **Then** el API responde con la secuencia de acciones registradas.                                                                                                                                  | EP-06                     |
 | **TS-06**       | Manejo consistente de errores del API           | Como Developer, quiero estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend.                                                                                                                      | **Given** que ocurre un error de validación, **When** el API responde, **Then** incluye código HTTP 400 y detalle del error. <br><br> **Given** que un usuario no autorizado solicita un recurso protegido, **When** el API procesa la solicitud, **Then** responde con estado 401 o 403 según corresponda.                                                                                                                                                                                | EP-06                     |
 
+</div>
+
 #### Resumen de Epics, User Stories y Technical Stories
 
 | Epic ID   | Bloque                                      | Historias relacionadas | Propósito                                                                                                                                                      |
 |-----------|---------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **EP-01** | Landing Page informativa                    | US-01 a US-12          | Comunicar la propuesta de valor de PulseReport, explicar el problema, presentar beneficios, generar confianza y facilitar contacto con visitantes interesados. |
+| **EP-01** | Landing Page informativa                    | US-01 a US-12          | Comunicar la propuesta de valor de Nurse Pulse, explicar el problema, presentar beneficios, generar confianza y facilitar contacto con visitantes interesados. |
 | **EP-02** | Gestión de traspaso clínico SBAR            | US-13 a US-15          | Estructurar la comunicación clínica durante cambios de turno mediante el modelo SBAR.                                                                          |
 | **EP-03** | Registro y seguimiento clínico del paciente | US-16 a US-18          | Registrar información clínica relevante como signos vitales, eventos clínicos.                                                |
 | **EP-04** | Trazabilidad clínica                        | US-19 a US-21          | Consultar historial, responsables y cumplimiento de indicaciones para fortalecer seguimiento, auditoría y continuidad clínica.                                 |
 | **EP-05** | Soporte a la toma de decisiones clínicas    | US-22 a US-23          | Facilitar consulta de información consolidada, identificación de cambios críticos y validación de información con enfermería.                                  |
-| **EP-06** | RESTful API de PulseReport                  | TS-01 a TS-06          | Implementar recursos técnicos del backend necesarios para exponer pacientes, registros clínicos, traspasos, trazabilidad, autenticación y manejo de errores.   |
+| **EP-06** | RESTful API de Nurse Pulse                  | TS-01 a TS-06          | Implementar recursos técnicos del backend necesarios para exponer pacientes, registros clínicos, traspasos, trazabilidad, autenticación y manejo de errores.   |
 
 La distribución de Epics, User Stories y Technical Stories permite mantener trazabilidad entre la investigación de usuarios, los Business Goals, el Impact Mapping, el Product Backlog y las funcionalidades implementadas en los sprints del proyecto.
 
 ### 3.3. Product Backlog
 
-La presente sección desarrolla el Product Backlog del proyecto PulseReport, incluyendo la priorización y estimación de las User Stories y Technical Stories definidas previamente. El orden del backlog se establece considerando el valor para el negocio, la validación temprana del producto, la relación con los Business Goals y la necesidad de contar con una primera versión funcional del sistema.
+La presente sección desarrolla el Product Backlog del proyecto Nurse Pulse, incluyendo la priorización y estimación de las User Stories y Technical Stories definidas previamente. El orden del backlog se establece considerando el valor para el negocio, la validación temprana del producto, la relación con los Business Goals y la necesidad de contar con una primera versión funcional del sistema.
 
 De acuerdo con el criterio solicitado, las historias relacionadas con el sitio web estático o Landing Page se consideran desde el primer sprint, ya que permiten comunicar la propuesta de valor, captar visitantes interesados y validar el interés inicial del mercado. Posteriormente se priorizan las funcionalidades clínicas centrales relacionadas con traspaso SBAR, registro clínico, trazabilidad, consulta de información y soporte a la toma de decisiones.
 
@@ -83,22 +350,22 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 | **Riesgo técnico** | Las Technical Stories se priorizan según su necesidad para soportar funcionalidades clínicas y no únicamente por seguridad o autenticación. |
 | **Alcance por sprints** | El backlog considera la evolución del producto desde Landing Page hasta Web Application, RESTful API, validación y cierre final. |
 
-#### Product Backlog — PulseReport
+#### Product Backlog — Nurse Pulse
 
 | # Orden | User Story Id | Título | Descripción | Story Points |
 | ------: | ------------- | ------ | ----------- | -----------: |
-| 1 | US-01 | Visualizar landing page | Como visitante, deseo visualizar la landing page de PulseReport para conocer rápidamente la solución propuesta. | 3 |
-| 2 | US-02 | Ver propuesta de valor | Como visitante, deseo conocer la propuesta de valor de PulseReport para entender qué problema clínico busca resolver. | 3 |
-| 3 | US-03 | Consultar el problema que resuelve PulseReport | Como visitante, deseo entender por qué existe la necesidad de PulseReport para reconocer el problema actual de información clínica dispersa. | 3 |
-| 4 | US-04 | Revisar cómo funciona PulseReport | Como visitante, deseo conocer cómo funciona PulseReport en pasos simples para comprender el flujo general de uso de la solución. | 3 |
-| 5 | US-05 | Visualizar características clave | Como visitante, deseo conocer las características principales de PulseReport para evaluar si la solución responde a necesidades del entorno clínico cardiovascular. | 3 |
-| 6 | US-06 | Visualizar beneficios | Como visitante, deseo revisar los beneficios de PulseReport para comprender el valor que aporta al entorno clínico. | 3 |
-| 7 | US-10 | Contactar al equipo de PulseReport | Como visitante, deseo contactar al equipo de PulseReport para solicitar información adicional o una demostración. | 5 |
-| 8 | US-12 | Acceder desde dispositivos móviles | Como visitante, deseo acceder al sitio web desde dispositivos móviles para revisar información de PulseReport desde cualquier lugar. | 5 |
+| 1 | US-01 | Visualizar landing page | Como visitante, deseo visualizar la landing page de Nurse Pulse para conocer rápidamente la solución propuesta. | 3 |
+| 2 | US-02 | Ver propuesta de valor | Como visitante, deseo conocer la propuesta de valor de Nurse Pulse para entender qué problema clínico busca resolver. | 3 |
+| 3 | US-03 | Consultar el problema que resuelve Nurse Pulse | Como visitante, deseo entender por qué existe la necesidad de Nurse Pulse para reconocer el problema actual de información clínica dispersa. | 3 |
+| 4 | US-04 | Revisar cómo funciona Nurse Pulse | Como visitante, deseo conocer cómo funciona Nurse Pulse en pasos simples para comprender el flujo general de uso de la solución. | 3 |
+| 5 | US-05 | Visualizar características clave | Como visitante, deseo conocer las características principales de Nurse Pulse para evaluar si la solución responde a necesidades del entorno clínico cardiovascular. | 3 |
+| 6 | US-06 | Visualizar beneficios | Como visitante, deseo revisar los beneficios de Nurse Pulse para comprender el valor que aporta al entorno clínico. | 3 |
+| 7 | US-10 | Contactar al equipo de Nurse Pulse | Como visitante, deseo contactar al equipo de Nurse Pulse para solicitar información adicional o una demostración. | 5 |
+| 8 | US-12 | Acceder desde dispositivos móviles | Como visitante, deseo acceder al sitio web desde dispositivos móviles para revisar información de Nurse Pulse desde cualquier lugar. | 5 |
 | 9 | US-11 | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia. | 5 |
-| 10 | US-07 | Consultar preguntas frecuentes | Como visitante, deseo revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de PulseReport. | 2 |
-| 11 | US-08 | Visualizar testimonios | Como visitante, deseo revisar testimonios sobre PulseReport para aumentar mi confianza en la solución. | 2 |
-| 12 | US-09 | Conocer al equipo | Como visitante, deseo conocer al equipo detrás de PulseReport para identificar quiénes desarrollan la solución. | 2 |
+| 10 | US-07 | Consultar preguntas frecuentes | Como visitante, deseo revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de Nurse Pulse. | 2 |
+| 11 | US-08 | Visualizar testimonios | Como visitante, deseo revisar testimonios sobre Nurse Pulse para aumentar mi confianza en la solución. | 2 |
+| 12 | US-09 | Conocer al equipo | Como visitante, deseo conocer al equipo detrás de Nurse Pulse para identificar quiénes desarrollan la solución. | 2 |
 | 13 | US-13 | Registrar traspaso SBAR | Como enfermera cardiovascular, deseo registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno. | 8 |
 | 14 | US-14 | Consultar traspaso de turno | Como enfermera entrante, deseo consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante. | 5 |
 | 15 | US-15 | Confirmar recepción de traspaso | Como enfermera entrante, deseo confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención. | 3 |
@@ -132,7 +399,7 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 
 | Business Goal | Historias principales relacionadas | Justificación |
 | ------------- | ---------------------------------- | ------------- |
-| **BG-01** | US-01 a US-12 | Estas historias permiten comunicar el valor de PulseReport, generar confianza y facilitar contacto desde la Landing Page. |
+| **BG-01** | US-01 a US-12 | Estas historias permiten comunicar el valor de Nurse Pulse, generar confianza y facilitar contacto desde la Landing Page. |
 | **BG-02** | US-13, US-14, US-15, TS-04 | Estas historias permiten validar el flujo de traspaso SBAR digital con usuarios clínicos e instituciones. |
 | **BG-03** | US-16, US-17, US-20, US-23 | Estas historias reducen fricción al registrar y consultar información clínica relevante. |
 | **BG-04** | US-13, US-16, US-18, US-19, TS-02, TS-03, TS-04 | Estas historias permiten reemplazar registros físicos complementarios por flujos digitales funcionales. |
@@ -150,7 +417,7 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 La siguiente captura corresponde al Product Backlog elaborado en la herramienta de gestión utilizada por el equipo. En ella se evidencia la priorización de historias, estimación mediante Story Points y organización del backlog según valor para el negocio.
 
 <p align="center">
-  <img src="assets/chapter-3/product-backlog.png" alt="Product Backlog PulseReport" width="850">
+  <img src="assets/chapter-3/product-backlog.png" alt="Product Backlog Nurse Pulse" width="850">
 </p>
 
 **URL del Product Backlog:**  
@@ -158,14 +425,14 @@ https://docs.google.com/spreadsheets/d/1JWzVr2lEd1AoSZBmGx0D0B3Pd09Je_w_lRHvN-_5
 
 #### Conclusión del Product Backlog
 
-El Product Backlog de PulseReport prioriza primero las historias relacionadas con la Landing Page porque permiten comunicar la propuesta de valor, presentar beneficios, mostrar planes, validar interés inicial y obtener contacto con visitantes interesados mediante llamados a la acción. Luego se priorizan funcionalidades clínicas centrales relacionadas con traspaso SBAR, registro de signos vitales, eventos clínicos, consulta de evolución, trazabilidad y soporte a decisiones clínicas.
+El Product Backlog de Nurse Pulse prioriza primero las historias relacionadas con la Landing Page porque permiten comunicar la propuesta de valor, presentar beneficios, mostrar planes, validar interés inicial y obtener contacto con visitantes interesados mediante llamados a la acción. Luego se priorizan funcionalidades clínicas centrales relacionadas con traspaso SBAR, registro de signos vitales, eventos clínicos, consulta de evolución, trazabilidad y soporte a decisiones clínicas.
 
 Las Technical Stories se ubican después de las historias funcionales principales porque su propósito es habilitar técnicamente los recursos necesarios para la Web Application y el RESTful API. Esta organización evita priorizar autenticación o seguridad al inicio sin una relación directa con valor de negocio visible, y mantiene coherencia con el enfoque solicitado para el Product Backlog.
 
 
 ### 3.4. Impact Mapping
 
-La presente sección desarrolla el Impact Mapping del proyecto PulseReport, elaborado para el modelo de negocio digital a partir de los User Personas, User Stories, User Journey Maps, Empathy Maps, Big Picture Event Storming y Ubiquitous Language.
+La presente sección desarrolla el Impact Mapping del proyecto Nurse Pulse, elaborado para el modelo de negocio digital a partir de los User Personas, User Stories, User Journey Maps, Empathy Maps, Big Picture Event Storming y Ubiquitous Language.
 
 El Impact Mapping permite conectar los objetivos de negocio con los actores que pueden contribuir a lograrlos, los cambios de comportamiento esperados, los entregables digitales necesarios y las User Stories que permiten construir dichos entregables. De esta manera, se evita que las funcionalidades sean definidas de forma aislada y se mantiene trazabilidad entre investigación, requerimientos, diseño e implementación.
 
@@ -179,26 +446,26 @@ La estructura utilizada responde a las siguientes preguntas:
 | **Deliverable** | ¿Qué puede construir el negocio digital para provocar ese impacto? |
 | **User Stories** | ¿Qué historias permiten desarrollar los features necesarios para producir los entregables? |
 
-Para este proyecto se consideran Business Goals definidos bajo criterios SMART, los User Personas previamente identificados y las User Stories del backlog del proyecto PulseReport.
+Para este proyecto se consideran Business Goals definidos bajo criterios SMART, los User Personas previamente identificados y las User Stories del backlog del proyecto Nurse Pulse.
 
 #### Business Goals SMART
 
 | Business Goal ID | Business Goal SMART |
 | ---------------- | ------------------- |
-| **BG-01** | Lograr que al menos **60 visitantes interesados** soliciten información o una demostración de PulseReport mediante la Landing Page durante los primeros **4 meses** posteriores a su publicación. |
+| **BG-01** | Lograr que al menos **60 visitantes interesados** soliciten información o una demostración de Nurse Pulse mediante la Landing Page durante los primeros **4 meses** posteriores a su publicación. |
 | **BG-02** | Conseguir que al menos **3 instituciones de salud o áreas clínicas cardiovasculares** validen el flujo de traspaso SBAR digital durante los primeros **6 meses** del proyecto. |
 | **BG-03** | Reducir en un **30% el tiempo estimado de búsqueda y revisión de información clínica relevante** durante escenarios simulados de UCI cardiovascular en un periodo de **6 meses**. |
-| **BG-04** | Lograr que al menos el **80% de usuarios clínicos participantes en pruebas piloto** registre eventos clínicos, signos vitales o traspasos usando PulseReport sin recurrir a registros físicos complementarios en un periodo de **8 meses**. |
+| **BG-04** | Lograr que al menos el **80% de usuarios clínicos participantes en pruebas piloto** registre eventos clínicos, signos vitales o traspasos usando Nurse Pulse sin recurrir a registros físicos complementarios en un periodo de **8 meses**. |
 | **BG-05** | Alcanzar un nivel mínimo de **85% de trazabilidad completa** en eventos clínicos registrados durante pruebas piloto, considerando responsable, fecha, hora y tipo de acción, en un periodo de **8 meses**. |
 
 #### Actors / Personas considerados
 
-| Actor / Persona | Relación con PulseReport |
+| Actor / Persona | Relación con Nurse Pulse |
 | --------------- | ------------------------ |
 | **Visitante de la Landing Page** | Persona interesada en conocer la solución, revisar beneficios, evaluar confianza y solicitar información o una demostración. |
 | **Daniela Ríos — Personal de enfermería cardiovascular** | User Persona encargado de registrar signos vitales, eventos clínicos, administración y traspasos SBAR durante el turno. |
 | **Dr. Alejandro Torres — Médico especialista cardiovascular** | User Persona encargado de consultar información clínica, validar evolución del paciente y tomar decisiones médicas oportunas. |
-| **Cliente institucional** | Hospital, clínica privada o centro especializado en cardiología que puede adoptar PulseReport para mejorar procesos internos. |
+| **Cliente institucional** | Hospital, clínica privada o centro especializado en cardiología que puede adoptar Nurse Pulse para mejorar procesos internos. |
 | **Developer** | Actor técnico encargado de implementar y consumir recursos del RESTful API que soportan la Web Application. |
 
 #### Capturas del Impact Mapping
@@ -223,9 +490,9 @@ Debido a que las capturas visuales presentan los identificadores principales par
 
 | Business Goal | Actor / Persona | Impact esperado | Deliverable | User Stories relacionadas |
 | ------------- | --------------- | --------------- | ----------- | ------------------------- |
-| **BG-01** | Visitante de la Landing Page | Comprender rápidamente qué es PulseReport, qué problema resuelve y por qué puede aportar valor al entorno clínico cardiovascular. | Landing Page informativa con propuesta de valor, explicación del problema, funcionamiento y beneficios. | **US-01:** Como visitante, deseo visualizar la landing page de PulseReport para conocer rápidamente la solución propuesta. <br><br> **US-02:** Como visitante, deseo conocer la propuesta de valor de PulseReport para entender qué problema clínico busca resolver. <br><br> **US-03:** Como visitante, deseo entender por qué existe la necesidad de PulseReport para reconocer el problema actual de información clínica dispersa. |
-| **BG-01** | Visitante de la Landing Page | Evaluar confianza, resolver dudas y decidir si desea solicitar información adicional. | Secciones de características, beneficios, planes, preguntas frecuentes, testimonios, equipo, llamados a la acción y contacto. | **US-04:** Como visitante, deseo conocer cómo funciona PulseReport en pasos simples para comprender el flujo general de uso de la solución. <br><br> **US-05:** Como visitante, deseo conocer las características principales de PulseReport para evaluar si la solución responde a necesidades del entorno clínico cardiovascular. <br><br> **US-06:** Como visitante, deseo revisar los beneficios de PulseReport para comprender el valor que aporta al entorno clínico. <br><br> **US-07:** Como visitante, deseo revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de PulseReport. <br><br> **US-08:** Como visitante, deseo revisar testimonios sobre PulseReport para aumentar mi confianza en la solución. <br><br> **US-09:** Como visitante, deseo conocer al equipo detrás de PulseReport para identificar quiénes desarrollan la solución. <br><br> **US-10:** Como visitante, deseo contactar al equipo de PulseReport para solicitar información adicional o una demostración. |
-| **BG-01** | Visitante de la Landing Page | Acceder a la información desde distintos dispositivos y revisar el contenido en su idioma de preferencia. | Landing Page responsive e internacionalizada. | **US-11:** Como visitante, deseo cambiar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia. <br><br> **US-12:** Como visitante, deseo acceder al sitio web desde dispositivos móviles para revisar información de PulseReport desde cualquier lugar. |
+| **BG-01** | Visitante de la Landing Page | Comprender rápidamente qué es Nurse Pulse, qué problema resuelve y por qué puede aportar valor al entorno clínico cardiovascular. | Landing Page informativa con propuesta de valor, explicación del problema, funcionamiento y beneficios. | **US-01:** Como visitante, deseo visualizar la landing page de Nurse Pulse para conocer rápidamente la solución propuesta. <br><br> **US-02:** Como visitante, deseo conocer la propuesta de valor de Nurse Pulse para entender qué problema clínico busca resolver. <br><br> **US-03:** Como visitante, deseo entender por qué existe la necesidad de Nurse Pulse para reconocer el problema actual de información clínica dispersa. |
+| **BG-01** | Visitante de la Landing Page | Evaluar confianza, resolver dudas y decidir si desea solicitar información adicional. | Secciones de características, beneficios, planes, preguntas frecuentes, testimonios, equipo, llamados a la acción y contacto. | **US-04:** Como visitante, deseo conocer cómo funciona Nurse Pulse en pasos simples para comprender el flujo general de uso de la solución. <br><br> **US-05:** Como visitante, deseo conocer las características principales de Nurse Pulse para evaluar si la solución responde a necesidades del entorno clínico cardiovascular. <br><br> **US-06:** Como visitante, deseo revisar los beneficios de Nurse Pulse para comprender el valor que aporta al entorno clínico. <br><br> **US-07:** Como visitante, deseo revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de Nurse Pulse. <br><br> **US-08:** Como visitante, deseo revisar testimonios sobre Nurse Pulse para aumentar mi confianza en la solución. <br><br> **US-09:** Como visitante, deseo conocer al equipo detrás de Nurse Pulse para identificar quiénes desarrollan la solución. <br><br> **US-10:** Como visitante, deseo contactar al equipo de Nurse Pulse para solicitar información adicional o una demostración. |
+| **BG-01** | Visitante de la Landing Page | Acceder a la información desde distintos dispositivos y revisar el contenido en su idioma de preferencia. | Landing Page responsive e internacionalizada. | **US-11:** Como visitante, deseo cambiar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia. <br><br> **US-12:** Como visitante, deseo acceder al sitio web desde dispositivos móviles para revisar información de Nurse Pulse desde cualquier lugar. |
 | **BG-02** | Daniela Ríos — Personal de enfermería cardiovascular | Registrar información del cambio de turno de manera estructurada para reducir omisiones y mejorar continuidad clínica. | Módulo de traspaso clínico SBAR. | **US-13:** Como enfermera cardiovascular, deseo registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno. <br><br> **US-14:** Como enfermera entrante, deseo consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante. <br><br> **US-15:** Como enfermera entrante, deseo confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención. |
 | **BG-02** | Cliente institucional | Validar si el flujo SBAR digital puede aplicarse como apoyo operativo dentro de áreas cardiovasculares. | Flujo demostrable de traspaso SBAR, evidencias de uso, documentación del proceso y validación con usuarios. | **US-13:** Como enfermera cardiovascular, deseo registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno. <br><br> **US-14:** Como enfermera entrante, deseo consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante. <br><br> **TS-04:** Como Developer, deseo implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno. |
 | **BG-03** | Dr. Alejandro Torres — Médico especialista cardiovascular | Consultar información clínica consolidada y reducir el tiempo de búsqueda entre múltiples fuentes. | Vista de evolución clínica, resumen clínico del paciente e historial de eventos. | **US-17:** Como médico especialista cardiovascular, deseo consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada. <br><br> **US-20:** Como médico especialista cardiovascular, deseo consultar el historial de eventos clínicos para reconstruir la evolución del paciente. <br><br> **US-22:** Como médico especialista cardiovascular, deseo consultar un resumen clínico del paciente para comprender rápidamente su estado actual. |
@@ -239,4 +506,4 @@ Debido a que las capturas visuales presentan los identificadores principales par
 
 #### Conclusión del Impact Mapping
 
-El Impact Mapping permite evidenciar que las funcionalidades priorizadas de PulseReport responden a objetivos de negocio concretos. La Landing Page se relaciona con la adquisición de visitantes interesados y la comunicación de la propuesta de valor. Los módulos clínicos de traspaso SBAR, signos vitales, eventos, resumen clínico e historial se relacionan con la mejora de comunicación, reducción del tiempo de búsqueda de información, disminución de dependencia de registros físicos y fortalecimiento de trazabilidad. Finalmente, las Technical Stories del RESTful API permiten sostener técnicamente los entregables necesarios para registro, consulta, seguridad, auditoría y continuidad clínica.
+El Impact Mapping permite evidenciar que las funcionalidades priorizadas de Nurse Pulse responden a objetivos de negocio concretos. La Landing Page se relaciona con la adquisición de visitantes interesados y la comunicación de la propuesta de valor. Los módulos clínicos de traspaso SBAR, signos vitales, eventos, resumen clínico e historial se relacionan con la mejora de comunicación, reducción del tiempo de búsqueda de información, disminución de dependencia de registros físicos y fortalecimiento de trazabilidad. Finalmente, las Technical Stories del RESTful API permiten sostener técnicamente los entregables necesarios para registro, consulta, seguridad, auditoría y continuidad clínica.
