@@ -32,7 +32,7 @@ A continuación, se presentan los escenarios futuros proyectados para los dos se
 *Enfocado en el flujo de recepción de turno, monitoreo continuo a pie de cama con la Native Mobile Application y entrega de guardia estandarizada mediante SBAR.*
 
 <p align="center">
-  <img src="assets/chapter-3/ScenarioEnfermeria.png" alt="To-Be Scenario Mapping - Personal de Enfermería" width="850px">
+  <img src="assets/Chapter-3/ScenarioEnfermeria.png" alt="To-Be Scenario Mapping - Personal de Enfermería" width="850px">
 </p>
 <p align="center"><em>Figura 1.1 Mapa de escenario futuro para el personal de enfermería cardiovascular.</em></p>
 
@@ -42,7 +42,7 @@ A continuación, se presentan los escenarios futuros proyectados para los dos se
 *Enfocado en la ronda médica matutina, consulta rápida del estado del paciente en el Dashboard Web consolidado, toma de decisiones informada e indicación trazable de nuevas conductas médicas.*
 
 <p align="center">
-  <img src="assets/chapter-3/ScenariMedico.png" alt="To-Be Scenario Mapping - Médico Especialista" width="850px">
+  <img src="assets/Chapter-3/ScenariMedico.png" alt="To-Be Scenario Mapping - Médico Especialista" width="850px">
 </p>
 <p align="center"><em>Figura 2.1 Mapa de escenario futuro para el médico especialista cardiovascular.</em></p>
 
