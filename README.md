@@ -137,7 +137,7 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
   </tr>
 
   <tr>
-    <th colspan="2">[Apellidos y nombres del integrante 5]</th>
+    <th colspan="2">Luque Minaya, Renzo Andres</th>
   </tr>
   <tr>
     <td>
@@ -146,7 +146,7 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
     <td>
       <b>Código:</b> u20221C275<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
-      Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC) con sólidos conocimientos en desarrollo de sistemas, gestión de bases de datos y metodologías ágiles. En NursePulse, mi rol se centra en la implementación técnica, el aseguramiento de la calidad (QA) y la elaboración de documentación clara.
+      Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC) con sólidos conocimientos en desarrollo de sistemas, gestión de bases de datos y metodologías ágiles. En NursePulse, mi rol se centra en la implementación técnica, el aseguramiento de la calidad y la elaboración de documentación clara.
     </td>
   </tr>
 </table>
