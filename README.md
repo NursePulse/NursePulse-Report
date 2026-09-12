@@ -66,257 +66,1265 @@ Los criterios de aceptación se redactan en formato Gherkin, siguiendo la estruc
 
 Cuadro de Epics, User Stories y Technical Stories
 
-<style>
-.user-stories-table {
-  width: 100%;
-  margin: 1.5rem 0;
-}
+**Cuadro de Epics, User Stories y Technical Stories**
 
-.user-stories-table table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 1.25rem;
-}
+<!-- EP-01 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Landing Page informativa</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer la propuesta de valor, funcionamiento, beneficios, planes y canales de contacto de Nurse Pulse para evaluar si la solución responde a necesidades clínicas de comunicación, trazabilidad y continuidad asistencial.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante accede al sitio web, <b>When</b> revisa la información disponible, <b>Then</b> comprende el propósito general de Nurse Pulse.<br><br>
+      <b>Given</b> que el visitante desea conocer la solución, <b>When</b> navega por las secciones del sitio, <b>Then</b> encuentra información sobre propuesta de valor, funcionamiento, características, beneficios, planes, preguntas frecuentes, testimonios, equipo, llamados a la acción y contacto.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table thead {
-  display: none;
-}
+<br>
 
-.user-stories-table tbody tr {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  overflow: hidden;
-  border: 1px solid #222;
-  background: #ffffff20;
-}
+<!-- EP-02 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Personal clínico</td>
+    <td>Media</td>
+    <td>EP-02</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Gestión de traspaso clínico SBAR</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero estructurar la información del cambio de turno para reducir omisiones y mejorar la continuidad de atención.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el personal clínico realiza un cambio de turno, <b>When</b> registra información bajo estructura SBAR, <b>Then</b> la información queda organizada en situación, antecedentes, evaluación y recomendación.<br><br>
+      <b>Given</b> que el nuevo turno recibe información, <b>When</b> consulta el traspaso clínico, <b>Then</b> comprende el estado del paciente y los pendientes relevantes.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody td {
-  display: block;
-  padding: 0.75rem;
-  border-right: 1px solid #222;
-  border-bottom: 1px solid #222;
-  vertical-align: top;
-}
+<br>
 
-.user-stories-table tbody td:last-child {
-  border-right: 0;
-}
+<!-- EP-03 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Personal clínico</td>
+    <td>Media</td>
+    <td>EP-03</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registro y seguimiento clínico del paciente</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero registrar y consultar información clínica relevante para mantener actualizado el estado del paciente cardiovascular.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el personal clínico registra información del paciente, <b>When</b> la información es guardada correctamente, <b>Then</b> queda disponible para seguimiento clínico.<br><br>
+      <b>Given</b> que un profesional consulta al paciente, <b>When</b> accede a su información clínica, <b>Then</b> revisa datos relevantes para su atención.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr::before,
-.user-stories-table tbody tr::after {
-  display: block;
-  padding: 0.75rem;
-  white-space: pre-line;
-  border-right: 1px solid #222;
-  border-bottom: 1px solid #222;
-  font-weight: 700;
-}
+<br>
 
-.user-stories-table tbody tr::before {
-  grid-column: 2;
-  grid-row: 1;
-  content: "User\A Visitante";
-}
+<!-- EP-04 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Equipo clínico</td>
+    <td>Media</td>
+    <td>EP-04</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Trazabilidad clínica</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como equipo clínico, quiero conocer la secuencia de eventos, responsables y horarios para mejorar seguimiento, auditoría y continuidad de atención.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que se registra una acción clínica, <b>When</b> la información queda guardada, <b>Then</b> se almacena responsable, fecha y hora.<br><br>
+      <b>Given</b> que se consulta la trazabilidad de un paciente, <b>When</b> existen registros asociados, <b>Then</b> se muestra la secuencia de eventos clínicos registrados.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr::after {
-  grid-column: 3;
-  grid-row: 1;
-  content: "Priority\A Alta";
-}
+<br>
 
-.user-stories-table tbody tr td:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
+<!-- EP-05 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Médico especialista cardiovascular</td>
+    <td>Baja</td>
+    <td>EP-05</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Soporte a la toma de decisiones clínicas</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como médico especialista cardiovascular, quiero acceder rápidamente a información consolidada para tomar decisiones clínicas oportunas y seguras.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el médico evalúa a un paciente cardiovascular, <b>When</b> consulta su información clínica, <b>Then</b> accede a datos relevantes para la toma de decisiones.<br><br>
+      <b>Given</b> que existen cambios relevantes del paciente, <b>When</b> el médico revisa la evolución, <b>Then</b> identifica información clínica reciente.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(2) {
-  grid-column: 1 / -1;
-  grid-row: 2;
-}
+<br>
 
-.user-stories-table tbody tr td:nth-child(3) {
-  grid-column: 1 / -1;
-  grid-row: 3;
-}
+<!-- EP-06 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">RESTful API de Nurse Pulse</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero contar con una API RESTful para exponer de forma segura los recursos clínicos necesarios para la aplicación Nurse Pulse.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un cliente autorizado realiza una solicitud válida, <b>When</b> el API procesa la solicitud, <b>Then</b> responde con el recurso solicitado y código HTTP correspondiente.<br><br>
+      <b>Given</b> que ocurre un error de validación o autorización, <b>When</b> el API procesa la solicitud, <b>Then</b> responde con código HTTP y mensaje consistente.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(4) {
-  grid-column: 1 / -1;
-  grid-row: 4;
-}
+<!-- US-01 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-01</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Visualizar landing page</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero visualizar la landing page de Nurse Pulse para conocer rápidamente la solución propuesta.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante accede al sitio web, <b>When</b> la página carga correctamente, <b>Then</b> visualiza información general de Nurse Pulse.<br><br>
+      <b>Given</b> que el visitante usa un navegador compatible, <b>When</b> ingresa al sitio, <b>Then</b> visualiza el contenido principal sin errores de carga.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(5) {
-  grid-column: 4;
-  grid-row: 1;
-}
+<br>
 
-.user-stories-table tbody tr td:nth-child(1)::before {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-weight: 700;
-  content: "Story ID";
-}
+<!-- US-02 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-02</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Ver propuesta de valor</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer la propuesta de valor de Nurse Pulse para entender qué problema clínico busca resolver.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante revisa la información principal, <b>When</b> lee la propuesta presentada, <b>Then</b> identifica que Nurse Pulse se enfoca en comunicación clínica y trazabilidad en tiempo real.<br><br>
+      <b>Given</b> que el visitante pertenece al sector salud, <b>When</b> revisa la propuesta de valor, <b>Then</b> reconoce beneficios relacionados con continuidad asistencial, trazabilidad de eventos críticos y comunicación entre turnos.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(2)::before {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-weight: 700;
-  content: "Title / User";
-}
+<br>
 
-.user-stories-table tbody tr td:nth-child(3)::before {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-weight: 700;
-  content: "Description";
-}
+<!-- US-03 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-03</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar el problema que resuelve Nurse Pulse</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero entender por qué existe la necesidad de Nurse Pulse para reconocer el problema actual de información clínica dispersa.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante consulta la sección informativa del problema, <b>When</b> lee la explicación presentada, <b>Then</b> identifica que la información clínica dispersa dificulta la continuidad asistencial y la trazabilidad.<br><br>
+      <b>Given</b> que el visitante analiza la necesidad del producto, <b>When</b> revisa el problema descrito, <b>Then</b> comprende que Nurse Pulse busca centralizar procesos esenciales de enfermería cardiovascular.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(4)::before {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-weight: 700;
-  content: "Acceptance Criteria";
-}
+<br>
 
-.user-stories-table tbody tr td:nth-child(5)::before {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-weight: 700;
-  content: "Epic";
-}
+<!-- US-04 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-04</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Revisar cómo funciona Nurse Pulse</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer cómo funciona Nurse Pulse en pasos simples para comprender el flujo general de uso de la solución.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante revisa la explicación de funcionamiento, <b>When</b> consulta los pasos presentados, <b>Then</b> identifica las etapas generales de registro, monitoreo y trazabilidad.<br><br>
+      <b>Given</b> que el visitante desea entender el funcionamiento general, <b>When</b> revisa los pasos descritos, <b>Then</b> comprende que la solución permite digitalizar traspasos SBAR, consultar información clínica y mantener historial de eventos.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(2)::before {
-  content: "Title";
-}
+<br>
 
-.user-stories-table tbody tr td:nth-child(3)::before {
-  content: "Description";
-}
+<!-- US-05 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-05</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Visualizar características clave</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer las características principales de Nurse Pulse para evaluar si la solución responde a necesidades del entorno clínico cardiovascular.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante consulta la información de características, <b>When</b> revisa el contenido disponible, <b>Then</b> identifica capacidades relacionadas con SBAR digital, gestión de pacientes, seguimiento de tratamientos, monitoreo de signos vitales, historial clínico digital y trazabilidad.<br><br>
+      <b>Given</b> que el visitante compara beneficios funcionales, <b>When</b> revisa cada característica presentada, <b>Then</b> comprende el valor de cada capacidad descrita.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(4)::before {
-  content: "Acceptance Criteria";
-}
+<br>
 
-.user-stories-table tbody tr td:nth-child(2),
-.user-stories-table tbody tr td:nth-child(3),
-.user-stories-table tbody tr td:nth-child(4) {
-  border-right: 0;
-}
+<!-- US-06 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-06</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Visualizar beneficios</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero revisar los beneficios de Nurse Pulse para comprender el valor que aporta al entorno clínico.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante consulta la información de beneficios, <b>When</b> revisa los beneficios disponibles, <b>Then</b> identifica mejoras relacionadas con comunicación entre turnos, reducción de omisiones, trazabilidad, organización de información y atención oportuna.<br><br>
+      <b>Given</b> que el visitante evalúa la utilidad del producto, <b>When</b> revisa los beneficios, <b>Then</b> comprende cómo Nurse Pulse puede aportar valor a hospitales, clínicas o centros especializados.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr td:nth-child(4) {
-  border-bottom: 0;
-}
+<br>
 
-.user-stories-table tbody tr:nth-child(1)::before,
-.user-stories-table tbody tr:nth-child(14)::before,
-.user-stories-table tbody tr:nth-child(18)::before,
-.user-stories-table tbody tr:nth-child(22)::before,
-.user-stories-table tbody tr:nth-child(25)::before,
-.user-stories-table tbody tr:nth-child(28)::before {
-  content: "User\A Personal clínico";
-}
+<!-- US-07 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-07</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar preguntas frecuentes</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de Nurse Pulse.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante consulta las preguntas frecuentes, <b>When</b> revisa las respuestas disponibles, <b>Then</b> obtiene información sobre orientación del producto, consulta de información, público objetivo y modelo de servicio.<br><br>
+      <b>Given</b> que el visitante tiene dudas sobre la solución, <b>When</b> revisa las preguntas frecuentes, <b>Then</b> encuentra respuestas claras sobre el alcance de Nurse Pulse.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr:nth-child(2)::before,
-.user-stories-table tbody tr:nth-child(3)::before,
-.user-stories-table tbody tr:nth-child(4)::before,
-.user-stories-table tbody tr:nth-child(5)::before,
-.user-stories-table tbody tr:nth-child(6)::before,
-.user-stories-table tbody tr:nth-child(7)::before,
-.user-stories-table tbody tr:nth-child(8)::before,
-.user-stories-table tbody tr:nth-child(9)::before,
-.user-stories-table tbody tr:nth-child(10)::before,
-.user-stories-table tbody tr:nth-child(11)::before,
-.user-stories-table tbody tr:nth-child(12)::before,
-.user-stories-table tbody tr:nth-child(13)::before {
-  content: "User\A Visitante";
-}
+<br>
 
-.user-stories-table tbody tr:nth-child(15)::before,
-.user-stories-table tbody tr:nth-child(17)::before {
-  content: "User\A Enfermera cardiovascular";
-}
+<!-- US-08 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-08</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Visualizar testimonios</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero revisar testimonios sobre Nurse Pulse para aumentar mi confianza en la solución.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante consulta los testimonios disponibles, <b>When</b> revisa las opiniones presentadas, <b>Then</b> identifica percepciones positivas relacionadas con organización, seguimiento y mejora del trabajo clínico.<br><br>
+      <b>Given</b> que el visitante evalúa la credibilidad del producto, <b>When</b> lee los testimonios, <b>Then</b> obtiene información que respalda la propuesta de valor.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr:nth-child(16)::before {
-  content: "User\A Enfermera entrante";
-}
+<br>
 
-.user-stories-table tbody tr:nth-child(19)::before,
-.user-stories-table tbody tr:nth-child(21)::before {
-  content: "User\A Enfermera cardiovascular";
-}
+<!-- US-09 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-09</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Conocer al equipo</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer al equipo detrás de Nurse Pulse para identificar quiénes desarrollan la solución.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante consulta la información del equipo, <b>When</b> revisa los datos presentados, <b>Then</b> visualiza integrantes y roles asociados al proyecto.<br><br>
+      <b>Given</b> que el visitante evalúa confianza institucional, <b>When</b> revisa el equipo del proyecto, <b>Then</b> reconoce que existe un equipo responsable detrás de la solución.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr:nth-child(20)::before,
-.user-stories-table tbody tr:nth-child(23)::before,
-.user-stories-table tbody tr:nth-child(27)::before {
-  content: "User\A Médico especialista cardiovascular";
-}
+<br>
 
-.user-stories-table tbody tr:nth-child(24)::before {
-  content: "User\A Usuario clínico";
-}
+<!-- US-10 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-10</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Contactar al equipo de Nurse Pulse</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero contactar al equipo de Nurse Pulse para solicitar información adicional o una demostración.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante desea contactar al equipo, <b>When</b> proporciona los datos requeridos, <b>Then</b> la solicitud queda lista para ser enviada.<br><br>
+      <b>Given</b> que existen datos obligatorios, <b>When</b> el visitante intenta enviar información incompleta, <b>Then</b> el sistema solicita completar los datos requeridos.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr:nth-child(n+29)::before {
-  content: "User\A Developer";
-}
+<br>
 
-.user-stories-table tbody tr:nth-child(n+14)::after {
-  content: "Priority\A Media";
-}
+<!-- US-11 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-11</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Cambiar idioma del sitio</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero cambiar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante se encuentra en la landing page, <b>When</b> selecciona un idioma disponible, <b>Then</b> el contenido del sitio se muestra en el idioma seleccionado.<br><br>
+      <b>Given</b> que el visitante vuelve a ingresar al sitio, <b>When</b> existe una preferencia de idioma guardada, <b>Then</b> el sitio mantiene el idioma previamente seleccionado.
+    </td>
+  </tr>
+</table>
 
-.user-stories-table tbody tr:nth-child(n+24)::after {
-  content: "Priority\A Baja";
-}
+<br>
 
-@media (max-width: 700px) {
-  .user-stories-table tbody tr {
-    display: block;
-  }
+<!-- US-12 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-12</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-01</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Acceder desde dispositivos móviles</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero acceder al sitio web desde dispositivos móviles para revisar información de Nurse Pulse desde cualquier lugar.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante accede desde un dispositivo móvil, <b>When</b> carga el sitio web, <b>Then</b> el contenido se adapta al tamaño del dispositivo.<br><br>
+      <b>Given</b> que el visitante navega desde un dispositivo móvil, <b>When</b> revisa las secciones del sitio, <b>Then</b> consulta la información sin pérdida de contenido relevante.
+    </td>
+  </tr>
+</table>
 
-  .user-stories-table tbody td {
-    border-right: 0;
-  }
-}
-</style>
+<br>
 
-<div class="user-stories-table">
+<!-- US-13 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-13</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Media</td>
+    <td>EP-02</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar traspaso SBAR</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera cardiovascular, quiero registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que la enfermera necesita entregar información clínica, <b>When</b> registra situación, antecedentes, evaluación y recomendación, <b>Then</b> el traspaso queda registrado con estructura SBAR[cite: 1, 2].<br><br>
+      <b>Given</b> que falta información obligatoria, <b>When</b> la enfermera intenta guardar el traspaso, <b>Then</b> el sistema solicita completar la información requerida.
+    </td>
+  </tr>
+</table>
 
-| Epic / Story ID | Título                                          | Descripción                                                                                                                                                                                                                                | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Relacionado con (Epic ID) |
-| --------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
-| —    | **Landing Page informativa**                    | Como visitante, quiero conocer la propuesta de valor, funcionamiento, beneficios, planes y canales de contacto de Nurse Pulse para evaluar si la solución responde a necesidades clínicas de comunicación, trazabilidad y continuidad asistencial.| **Given** que el visitante accede al sitio web, **When** revisa la información disponible, **Then** comprende el propósito general de Nurse Pulse. <br><br> **Given** que el visitante desea conocer la solución, **When** navega por las secciones del sitio, **Then** encuentra información sobre propuesta de valor, funcionamiento, características, beneficios, planes, preguntas frecuentes, testimonios, equipo, llamados a la acción y contacto.                                                                | **EP-01**                        |
-| **US-01**       | Visualizar landing page                         | Como visitante, quiero visualizar la landing page de Nurse Pulse para conocer rápidamente la solución propuesta.                                                                                                                           | **Given** que el visitante accede al sitio web, **When** la página carga correctamente, **Then** visualiza información general de Nurse Pulse. <br><br> **Given** que el visitante usa un navegador compatible, **When** ingresa al sitio, **Then** visualiza el contenido principal sin errores de carga.                                                                                                                                                                                 | EP-01                     |
-| **US-02**       | Ver propuesta de valor                          | Como visitante, quiero conocer la propuesta de valor de Nurse Pulse para entender qué problema clínico busca resolver.                                                                                                                     | **Given** que el visitante revisa la información principal, **When** lee la propuesta presentada, **Then** identifica que Nurse Pulse se enfoca en comunicación clínica y trazabilidad en tiempo real. <br><br> **Given** que el visitante pertenece al sector salud, **When** revisa la propuesta de valor, **Then** reconoce beneficios relacionados con continuidad asistencial, trazabilidad de eventos críticos y comunicación entre turnos.                                          | EP-01                     |
-| **US-03**       | Consultar el problema que resuelve Nurse Pulse  | Como visitante, quiero entender por qué existe la necesidad de Nurse Pulse para reconocer el problema actual de información clínica dispersa.                                                                                              | **Given** que el visitante consulta la sección informativa del problema, **When** lee la explicación presentada, **Then** identifica que la información clínica dispersa dificulta la continuidad asistencial y la trazabilidad. <br><br> **Given** que el visitante analiza la necesidad del producto, **When** revisa el problema descrito, **Then** comprende que Nurse Pulse busca centralizar procesos esenciales de enfermería cardiovascular.                                       | EP-01                     |
-| **US-04**       | Revisar cómo funciona Nurse Pulse               | Como visitante, quiero conocer cómo funciona Nurse Pulse en pasos simples para comprender el flujo general de uso de la solución.                                                                                                          | **Given** que el visitante revisa la explicación de funcionamiento, **When** consulta los pasos presentados, **Then** identifica las etapas generales de registro, monitoreo y trazabilidad. <br><br> **Given** que el visitante desea entender el funcionamiento general, **When** revisa los pasos descritos, **Then** comprende que la solución permite digitalizar traspasos SBAR, consultar información clínica y mantener historial de eventos.                                      | EP-01                     |
-| **US-05**       | Visualizar características clave                | Como visitante, quiero conocer las características principales de Nurse Pulse para evaluar si la solución responde a necesidades del entorno clínico cardiovascular.                                                                       | **Given** que el visitante consulta la información de características, **When** revisa el contenido disponible, **Then** identifica capacidades relacionadas con SBAR digital, gestión de pacientes, seguimiento de tratamientos, monitoreo de signos vitales, historial clínico digital y trazabilidad. <br><br> **Given** que el visitante compara beneficios funcionales, **When** revisa cada característica presentada, **Then** comprende el valor de cada capacidad descrita.       | EP-01                     |
-| **US-06**       | Visualizar beneficios                           | Como visitante, quiero revisar los beneficios de Nurse Pulse para comprender el valor que aporta al entorno clínico.                                                                                                                       | **Given** que el visitante consulta la información de beneficios, **When** revisa los beneficios disponibles, **Then** identifica mejoras relacionadas con comunicación entre turnos, reducción de omisiones, trazabilidad, organización de información y atención oportuna. <br><br> **Given** que el visitante evalúa la utilidad del producto, **When** revisa los beneficios, **Then** comprende cómo Nurse Pulse puede aportar valor a hospitales, clínicas o centros especializados. | EP-01                     |
-| **US-07**       | Consultar preguntas frecuentes                  | Como visitante, quiero revisar preguntas frecuentes para resolver dudas básicas sobre alcance, uso y modelo de servicio de Nurse Pulse.                                                                                                    | **Given** que el visitante consulta las preguntas frecuentes, **When** revisa las respuestas disponibles, **Then** obtiene información sobre orientación del producto, consulta de información, público objetivo y modelo de servicio. <br><br> **Given** que el visitante tiene dudas sobre la solución, **When** revisa las preguntas frecuentes, **Then** encuentra respuestas claras sobre el alcance de Nurse Pulse.                                                                  | EP-01                     |
-| **US-08**       | Visualizar testimonios                          | Como visitante, quiero revisar testimonios sobre Nurse Pulse para aumentar mi confianza en la solución.                                                                                                                                    | **Given** que el visitante consulta los testimonios disponibles, **When** revisa las opiniones presentadas, **Then** identifica percepciones positivas relacionadas con organización, seguimiento y mejora del trabajo clínico. <br><br> **Given** que el visitante evalúa la credibilidad del producto, **When** lee los testimonios, **Then** obtiene información que respalda la propuesta de valor.                                                                                    | EP-01                     |
-| **US-09**       | Conocer al equipo                               | Como visitante, quiero conocer al equipo detrás de Nurse Pulse para identificar quiénes desarrollan la solución.                                                                                                                           | **Given** que el visitante consulta la información del equipo, **When** revisa los datos presentados, **Then** visualiza integrantes y roles asociados al proyecto. <br><br> **Given** que el visitante evalúa confianza institucional, **When** revisa el equipo del proyecto, **Then** reconoce que existe un equipo responsable detrás de la solución.                                                                                                                                  | EP-01                     |
-| **US-10**       | Contactar al equipo de Nurse Pulse              | Como visitante, quiero contactar al equipo de Nurse Pulse para solicitar información adicional o una demostración.                                                                                                                         | **Given** que el visitante desea contactar al equipo, **When** proporciona los datos requeridos, **Then** la solicitud queda lista para ser enviada. <br><br> **Given** que existen datos obligatorios, **When** el visitante intenta enviar información incompleta, **Then** el sistema solicita completar los datos requeridos.                                                                                                                                                          | EP-01                     |
-| **US-11**       | Cambiar idioma del sitio                        | Como visitante, quiero cambiar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia.                                                                                                      | **Given** que el visitante se encuentra en la landing page, **When** selecciona un idioma disponible, **Then** el contenido del sitio se muestra en el idioma seleccionado. <br><br> **Given** que el visitante vuelve a ingresar al sitio, **When** existe una preferencia de idioma guardada, **Then** el sitio mantiene el idioma previamente seleccionado.                                                                                                                             | EP-01                     |
-| **US-12**       | Acceder desde dispositivos móviles              | Como visitante, quiero acceder al sitio web desde dispositivos móviles para revisar información de Nurse Pulse desde cualquier lugar.                                                                                                      | **Given** que el visitante accede desde un dispositivo móvil, **When** carga el sitio web, **Then** el contenido se adapta al tamaño del dispositivo. <br><br> **Given** que el visitante navega desde un dispositivo móvil, **When** revisa las secciones del sitio, **Then** consulta la información sin pérdida de contenido relevante.                                                                                                                                                 | EP-01                     |
-| —       | **Gestión de traspaso clínico SBAR**            | Como personal clínico, quiero estructurar la información del cambio de turno para reducir omisiones y mejorar la continuidad de atención.                                                                                                  | **Given** que el personal clínico realiza un cambio de turno, **When** registra información bajo estructura SBAR, **Then** la información queda organizada en situación, antecedentes, evaluación y recomendación. <br><br> **Given** que el nuevo turno recibe información, **When** consulta el traspaso clínico, **Then** comprende el estado del paciente y los pendientes relevantes.                                                                                                 | **EP-02**                         |
-| **US-13**       | Registrar traspaso SBAR                         | Como enfermera cardiovascular, quiero registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno.                                                                                                   | **Given** que la enfermera necesita entregar información clínica, **When** registra situación, antecedentes, evaluación y recomendación, **Then** el traspaso queda registrado con estructura SBAR. <br><br> **Given** que falta información obligatoria, **When** la enfermera intenta guardar el traspaso, **Then** el sistema solicita completar la información requerida.                                                                                                              | EP-02                     |
-| **US-14**       | Consultar traspaso de turno                     | Como enfermera entrante, quiero consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante.                                                                                 | **Given** que existe un traspaso registrado, **When** la enfermera entrante consulta la información del paciente, **Then** visualiza la información clínica entregada por el turno anterior. <br><br> **Given** que el traspaso contiene pendientes, **When** la enfermera lo revisa, **Then** identifica acciones pendientes para el nuevo turno.                                                                                                                                         | EP-02                     |
-| **US-15**       | Confirmar recepción de traspaso                 | Como enfermera entrante, quiero confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención.                                                                                                                 | **Given** que la enfermera entrante revisa el traspaso, **When** confirma la recepción, **Then** el sistema registra que el traspaso fue recibido. <br><br> **Given** que el traspaso aún no fue confirmado, **When** se consulta su estado, **Then** aparece como pendiente de recepción.                                                                                                                                                                                                 | EP-02                     |
-| **EP-03**       | **Registro y seguimiento clínico del paciente** | Como personal clínico, quiero registrar y consultar información clínica relevante para mantener actualizado el estado del paciente cardiovascular.                                                                                         | **Given** que el personal clínico registra información del paciente, **When** la información es guardada correctamente, **Then** queda disponible para seguimiento clínico. <br><br> **Given** que un profesional consulta al paciente, **When** accede a su información clínica, **Then** revisa datos relevantes para su atención.                                                                                                                                                       | —                         |
-| **US-16**       | Registrar signos vitales                        | Como enfermera cardiovascular, quiero registrar signos vitales del paciente para mantener actualizado el monitoreo clínico.                                                                                                                | **Given** que la enfermera registra signos vitales, **When** ingresa los valores requeridos, **Then** el sistema guarda el registro asociado al paciente. <br><br> **Given** que falta un valor obligatorio, **When** la enfermera intenta guardar el registro, **Then** el sistema informa que falta información requerida.                                                                                                                                                               | EP-03                     |
-| **US-17**       | Consultar evolución clínica                     | Como médico especialista cardiovascular, quiero consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada.                                                                                    | **Given** que existen registros clínicos del paciente, **When** el médico consulta su evolución, **Then** el sistema muestra eventos y registros recientes asociados al paciente. <br><br> **Given** que no existen registros recientes, **When** el médico consulta la evolución, **Then** el sistema informa que no hay información registrada en el periodo consultado.                                                                                                                 | EP-03                     |
-| **US-18**       | Registrar evento clínico relevante              | Como enfermera cardiovascular, quiero registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente.                                                                                                 | **Given** que ocurre un evento clínico relevante, **When** la enfermera registra el evento, **Then** el sistema guarda descripción, fecha, hora y responsable. <br><br> **Given** que un médico consulta la evolución del paciente, **When** existen eventos relevantes registrados, **Then** aparecen asociados al historial clínico del paciente.                                                                                                                                        | EP-03                     |
-| **EP-04**       | **Trazabilidad clínica**                        | Como equipo clínico, quiero conocer la secuencia de eventos, responsables y horarios para mejorar seguimiento, auditoría y continuidad de atención.                                                                                        | **Given** que se registra una acción clínica, **When** la información queda guardada, **Then** se almacena responsable, fecha y hora. <br><br> **Given** que se consulta la trazabilidad de un paciente, **When** existen registros asociados, **Then** se muestra la secuencia de eventos clínicos registrados.                                                                                                                                                                           | —                         |
-| **US-19**       | Consultar historial de eventos                  | Como médico especialista cardiovascular, quiero consultar el historial de eventos clínicos para reconstruir la evolución del paciente.                                                                                                     | **Given** que el paciente tiene eventos registrados, **When** el médico consulta el historial, **Then** el sistema muestra los eventos ordenados cronológicamente. <br><br> **Given** que el médico necesita validar un evento específico, **When** revisa el historial, **Then** identifica fecha, hora y responsable del registro.                                                                                                                                                       | EP-04                     |
-| **US-20**       | Identificar responsable de registro             | Como usuario clínico, quiero identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional.                                                                                                  | **Given** que existe un registro clínico guardado, **When** el usuario consulta el detalle del registro, **Then** el sistema muestra el responsable asociado. <br><br> **Given** que el registro fue actualizado, **When** se consulta su información, **Then** el sistema conserva evidencia del responsable de la actualización.                                                                                                                                                         | EP-04                     |
-| —       | **Soporte a la toma de decisiones clínicas**    | Como médico especialista cardiovascular, quiero acceder rápidamente a información consolidada para tomar decisiones clínicas oportunas y seguras.                                                                                          | **Given** que el médico evalúa a un paciente cardiovascular, **When** consulta su información clínica, **Then** accede a datos relevantes para la toma de decisiones. <br><br> **Given** que existen cambios relevantes del paciente, **When** el médico revisa la evolución, **Then** identifica información clínica reciente.                                                                                                                                                            | **EP-05**                         |
-| **US-21**       | Consultar resumen clínico del paciente          | Como médico especialista cardiovascular, quiero consultar un resumen clínico del paciente para comprender rápidamente su estado actual.                                                                                                    | **Given** que el paciente tiene información clínica registrada, **When** el médico consulta el resumen, **Then** el sistema muestra datos relevantes del estado actual del paciente. <br><br> **Given** que existe información reciente, **When** el médico revisa el resumen, **Then** identifica evolución, eventos e indicaciones relevantes.                                                                                                                                           | EP-05                     |
-| **US-22**       | Identificar cambios críticos                    | Como médico especialista cardiovascular, quiero identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos.                                                                                           | **Given** que existen registros clínicos recientes, **When** se identifica un cambio crítico definido por reglas clínicas, **Then** el sistema marca el evento como relevante. <br><br> **Given** que el médico consulta la evolución, **When** existen cambios críticos registrados, **Then** puede identificarlos dentro del historial del paciente.                                                                                                                                     | EP-05                     |
-| —       | **RESTful API de Nurse Pulse**                  | Como Developer, quiero contar con una API RESTful para exponer de forma segura los recursos clínicos necesarios para la aplicación Nurse Pulse.                                                                                            | **Given** que un cliente autorizado realiza una solicitud válida, **When** el API procesa la solicitud, **Then** responde con el recurso solicitado y código HTTP correspondiente. <br><br> **Given** que ocurre un error de validación o autorización, **When** el API procesa la solicitud, **Then** responde con código HTTP y mensaje consistente.                                                                                                                                     | **EP-06**                         |
-| TS-01 | Autenticación de usuarios | Como Developer, quiero implementar autenticación para proteger el acceso a recursos clínicos del sistema, incluyendo una política de contraseñas seguras en el registro de nuevas cuentas. | Given que un usuario envía credenciales válidas, When el API procesa la autenticación, Then responde con un token válido. <br><br> **Given** que un usuario envía credenciales inválidas, **When** el API procesa la autenticación, **Then** responde con estado 401. <br><br> **Given** que un usuario se registra con una contraseña de entre 12 y 20 caracteres, que incluye al menos una mayúscula y un carácter especial, **When** el API procesa el registro, **Then** crea la cuenta correctamente. <br><br> **Given** que un usuario se registra con una contraseña que no cumple la longitud requerida, When el API procesa el registro, **Then** responde con estado 400 indicando el requisito de longitud. <br><br> **Given** que un usuario se registra con una contraseña sin mayúscula o sin carácter especial, **When** el API procesa el registro, **Then** responde con estado 400 indicando qué requisito de complejidad falta. |         EP-06 |
-| **TS-02**       | Gestión de pacientes mediante API               | Como Developer, quiero exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular.                                                                                                   | **Given** que un cliente autorizado solicita un paciente existente, **When** el API recibe la solicitud, **Then** responde con la información del paciente y estado 200. <br><br> **Given** que el paciente no existe, **When** el API recibe la solicitud, **Then** responde con estado 404.                                                                                                                                                                                              | EP-06                     |
-| **TS-03**       | Gestión de registros clínicos mediante API      | Como Developer, quiero exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones.                                                                                             | **Given** que un cliente autorizado envía un registro clínico válido, **When** el API procesa la solicitud, **Then** guarda el registro y responde con estado 201. <br><br> **Given** que el registro clínico contiene datos inválidos, **When** el API procesa la solicitud, **Then** responde con estado 400 y detalle de validación.                                                                                                                                                    | EP-06                     |
-| **TS-04**       | Gestión de traspasos SBAR mediante API          | Como Developer, quiero implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno.                                                                                                                               | **Given** que un cliente autorizado envía un traspaso SBAR válido, **When** el API procesa la solicitud, **Then** guarda el traspaso asociado al paciente y responde con estado 201. <br><br> **Given** que falta un campo requerido del SBAR, **When** el API procesa la solicitud, **Then** responde con estado 400.                                                                                                                                                                     | EP-06                     |
-| **TS-05**       | Trazabilidad de acciones clínicas               | Como Developer, quiero registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada.                                                                                                           | **Given** que un usuario autorizado crea o actualiza un registro clínico, **When** el API completa la operación, **Then** almacena usuario, fecha, hora y tipo de acción. <br><br> **Given** que se consulta la auditoría de un registro, **When** existe información de trazabilidad, **Then** el API responde con la secuencia de acciones registradas.                                                                                                                                  | EP-06                     |
-| **TS-06**       | Manejo consistente de errores del API           | Como Developer, quiero estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend.                                                                                                                      | **Given** que ocurre un error de validación, **When** el API responde, **Then** incluye código HTTP 400 y detalle del error. <br><br> **Given** que un usuario no autorizado solicita un recurso protegido, **When** el API procesa la solicitud, **Then** responde con estado 401 o 403 según corresponda.                                                                                                                                                                                | EP-06                     |
+<br>
 
-</div>
+<!-- US-14 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-14</b></td>
+    <td>Enfermera entrante</td>
+    <td>Media</td>
+    <td>EP-02</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar traspaso de turno</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera entrante, quiero consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante[cite: 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existe un traspaso registrado, <b>When</b> la enfermera entrante consulta la información del paciente, <b>Then</b> visualiza la información clínica entregada por el turno anterior[cite: 2].<br><br>
+      <b>Given</b> que el traspaso contiene pendientes, <b>When</b> la enfermera lo revisa, <b>Then</b> identifica acciones pendientes para el nuevo turno.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-15 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-15</b></td>
+    <td>Enfermera entrante</td>
+    <td>Media</td>
+    <td>EP-02</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Confirmar recepción de traspaso</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera entrante, quiero confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención[cite: 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que la enfermera entrante revisa el traspaso, <b>When</b> confirma la recepción, <b>Then</b> el sistema registra que el traspaso fue recibido.<br><br>
+      <b>Given</b> que el traspaso aún no fue confirmado, <b>When</b> se consulta su estado, <b>Then</b> aparece como pendiente de recepción.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-16 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-16</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Media</td>
+    <td>EP-03</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar signos vitales</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera cardiovascular, quiero registrar signos vitales del paciente para mantener actualizado el monitoreo clínico[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que la enfermera registra signos vitales, <b>When</b> ingresa los valores requeridos, <b>Then</b> el sistema guarda el registro asociado al paciente[cite: 1].<br><br>
+      <b>Given</b> que falta un valor obligatorio, <b>When</b> la enfermera intenta guardar el registro, <b>Then</b> el sistema informa que falta información requerida.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-17 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-17</b></td>
+    <td>Médico especialista cardiovascular</td>
+    <td>Media</td>
+    <td>EP-03</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar evolución clínica</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como médico especialista cardiovascular, quiero consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen registros clínicos del paciente, <b>When</b> el médico consulta su evolución, <b>Then</b> el sistema muestra eventos y registros recientes asociados al paciente[cite: 1, 2].<br><br>
+      <b>Given</b> que no existen registros recientes, <b>When</b> el médico consulta la evolución, <b>Then</b> el sistema informa que no hay información registrada en el periodo consultado.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-18 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-18</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Media</td>
+    <td>EP-03</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar evento clínico relevante</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera cardiovascular, quiero registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que ocurre un evento clínico relevante, <b>When</b> la enfermera registra el evento, <b>Then</b> el sistema guarda descripción, fecha, hora y responsable[cite: 1, 2].<br><br>
+      <b>Given</b> que un médico consulta la evolución del paciente, <b>When</b> existen eventos relevantes registrados, <b>Then</b> aparecen asociados al historial clínico del paciente[cite: 1, 2].
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-19 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-19</b></td>
+    <td>Médico especialista cardiovascular</td>
+    <td>Media</td>
+    <td>EP-04</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar historial de eventos</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como médico especialista cardiovascular, quiero consultar el historial de eventos clínicos para reconstruir la evolución del paciente[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el paciente tiene eventos registrados, <b>When</b> el médico consulta el historial, <b>Then</b> el sistema muestra los eventos ordenados cronológicamente[cite: 1, 2].<br><br>
+      <b>Given</b> que el médico necesita validar un evento específico, <b>When</b> revisa el historial, <b>Then</b> identifica fecha, hora y responsable del registro[cite: 1, 2].
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-20 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-20</b></td>
+    <td>Usuario clínico</td>
+    <td>Baja</td>
+    <td>EP-04</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Identificar responsable de registro</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario clínico, quiero identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existe un registro clínico guardado, <b>When</b> el usuario consulta el detalle del registro, <b>Then</b> el sistema muestra el responsable asociado[cite: 1, 2].<br><br>
+      <b>Given</b> que el registro fue actualizado, <b>When</b> se consulta su información, <b>Then</b> el sistema conserva evidencia del responsable de la actualización[cite: 1, 2].
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-21 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-21</b></td>
+    <td>Médico especialista cardiovascular</td>
+    <td>Baja</td>
+    <td>EP-05</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar resumen clínico del paciente</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como médico especialista cardiovascular, quiero consultar un resumen clínico del paciente para comprender rápidamente su estado actual[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el paciente tiene información clínica registrada, <b>When</b> el médico consulta el resumen, <b>Then</b> el sistema muestra datos relevantes del estado actual del paciente[cite: 2].<br><br>
+      <b>Given</b> que existe información reciente, <b>When</b> el médico revisa el resumen, <b>Then</b> identifica evolución, eventos e indicaciones relevantes[cite: 1, 2].
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-22 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-22</b></td>
+    <td>Médico especialista cardiovascular</td>
+    <td>Baja</td>
+    <td>EP-05</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Identificar cambios críticos</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como médico especialista cardiovascular, quiero identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen registros clínicos recientes, <b>When</b> se identifica un cambio crítico definido por reglas clínicas, <b>Then</b> el sistema marca el evento como relevante[cite: 1, 2].<br><br>
+      <b>Given</b> que el médico consulta la evolución, <b>When</b> existen cambios críticos registrados, <b>Then</b> puede identificarlos dentro del historial del paciente[cite: 1, 2].
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-01 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-01</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Autenticación de usuarios</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero implementar autenticación para proteger el acceso a recursos clínicos del sistema, incluyendo una política de contraseñas seguras en el registro de nuevas cuentas[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un usuario envía credenciales válidas, <b>When</b> el API procesa la autenticación, <b>Then</b> responde con un token válido.<br><br>
+      <b>Given</b> que un usuario envía credenciales inválidas, <b>When</b> el API procesa la autenticación, <b>Then</b> responde con estado 401.<br><br>
+      <b>Given</b> que un usuario se registra con una contraseña de entre 12 y 20 caracteres, que incluye al menos una mayúscula y un carácter especial, <b>When</b> el API procesa el registro, <b>Then</b> crea la cuenta correctamente.<br><br>
+      <b>Given</b> que un usuario se registra con una contraseña que no cumple la longitud requerida, <b>When</b> el API procesa el registro, <b>Then</b> responde con estado 400 indicando el requisito de longitud.<br><br>
+      <b>Given</b> que un usuario se registra con una contraseña sin mayúscula o sin carácter especial, <b>When</b> el API procesa el registro, <b>Then</b> responde con estado 400 indicando qué requisito de complejidad falta.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-02 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-02</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Gestión de pacientes mediante API</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un cliente autorizado solicita un paciente existente, <b>When</b> el API recibe la solicitud, <b>Then</b> responde con la información del paciente y estado 200.<br><br>
+      <b>Given</b> que el paciente no existe, <b>When</b> el API recibe la solicitud, <b>Then</b> responde con estado 404.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-03 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-03</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Gestión de registros clínicos mediante API</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un cliente autorizado envía un registro clínico válido, <b>When</b> el API procesa la solicitud, <b>Then</b> guarda el registro y responde con estado 201.<br><br>
+      <b>Given</b> que el registro clínico contiene datos inválidos, <b>When</b> el API procesa la solicitud, <b>Then</b> responde con estado 400 y detalle de validación.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-04 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-04</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Gestión de traspasos SBAR mediante API</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un cliente autorizado envía un traspaso SBAR válido, <b>When</b> el API procesa la solicitud, <b>Then</b> guarda el traspaso asociado al paciente y responde con estado 201[cite: 1, 2].<br><br>
+      <b>Given</b> que falta un campo requerido del SBAR, <b>When</b> el API procesa la solicitud, <b>Then</b> responde con estado 400[cite: 1, 2].
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-05 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-05</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Trazabilidad de acciones clínicas</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada[cite: 1, 2].</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un usuario autorizado crea o actualiza un registro clínico, <b>When</b> el API completa la operación, <b>Then</b> almacena usuario, fecha, hora y tipo de acción[cite: 1, 2].<br><br>
+      <b>Given</b> que se consulta la auditoría de un registro, <b>When</b> existe información de trazabilidad, <b>Then</b> el API responde con la secuencia de acciones registradas[cite: 1, 2].
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-06 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-06</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Manejo consistente de errores del API</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que ocurre un error de validación, <b>When</b> el API responde, <b>Then</b> incluye código HTTP 400 y detalle del error.<br><br>
+      <b>Given</b> que un usuario no autorizado solicita un recurso protegido, <b>When</b> el API procesa la solicitud, <b>Then</b> responde con estado 401 o 403 según corresponda.
+    </td>
+  </tr>
+</table>
+
 
 #### Resumen de Epics, User Stories y Technical Stories
 
