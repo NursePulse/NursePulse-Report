@@ -28,10 +28,17 @@
 | Código UPC   | Apellidos y nombres             |
 |--------------|---------------------------------|
 | u202414510   | Mansilla Rivero, Carlos Marcelo |
+<<<<<<< HEAD
 | u202313458 | Taipe Sangama, Jorge Francisco    |
 | u202216163 | Paredes Davila, Jose Adrian       |
 | u20211A574 | Navarro Flores, Renzo Jesus       |
 | [Código UPC] | [Apellidos y nombres]           |
+=======
+| u202313458   | Taipe Sangama, Jorge Fracisco   |
+| u202216163   | Paredes Davila, Jose Adrian     |
+| u20211A574   | Navarro Flores, Renzo Jesus     |
+| u20221c275   | Luque Minaya, Renzo Andres      |
+>>>>>>> 7fc8fbc (update: student profile)
 
 <p><strong>Periodo 202620</strong></p>
 <p><strong>Septiembre de 2026</strong></p>
@@ -107,7 +114,11 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
     <td>
       <b>Código:</b> u202216163<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
+<<<<<<< HEAD
       Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en desarrollo de software, gestión de bases de datos y metodologías ágiles. En el proyecto Nurse Pulse, aportaré en la implementación técnica, pruebas de calidad y elaboración de la documentación integral, contribuyendo con atención al detalle, proactividad y trabajo en equipo.
+=======
+     Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en desarrollo de software, gestión de base de datos y metodologías ágiles. Dentro de NursePulse, aportaré con implementación técnica, pruebas de calidad y documentación.
+>>>>>>> 7fc8fbc (update: student profile)
     </td>
   </tr>
 
@@ -130,12 +141,12 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
   </tr>
   <tr>
     <td>
-      <img src="assets/chapter-1/member-5.png" alt="Fotografía del integrante 5" width="300px">
+      <img src="assets/chapter-1/foto_Luque.jpeg" alt="Fotografía del integrante 5" width="300px">
     </td>
     <td>
-      <b>Código:</b> [Código UPC]<br>
+      <b>Código:</b> u20221C275<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
-      [Redactar una presentación que incluya los principales conocimientos técnicos, habilidades interpersonales y responsabilidades que el integrante aportará al desarrollo de Nurse Pulse.]
+      Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC) con sólidos conocimientos en desarrollo de sistemas, gestión de bases de datos y metodologías ágiles. En NursePulse, mi rol se centra en la implementación técnica, el aseguramiento de la calidad (QA) y la elaboración de documentación clara.
     </td>
   </tr>
 </table>
