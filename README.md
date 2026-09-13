@@ -28,7 +28,7 @@
 | Código UPC   | Apellidos y nombres             |
 |--------------|---------------------------------|
 | u202414510   | Mansilla Rivero, Carlos Marcelo |
-| u202313458   | Taipe Sangama, Jorge Fracisco   |
+| u202313458   | Taipe Sangama, Jorge Francisco   |
 | u202216163   | Paredes Davila, Jose Adrian     |
 | u20211A574   | Navarro Flores, Renzo Jesus     |
 | u20221c275   | Luque Minaya, Renzo Andres      |
@@ -38,7 +38,238 @@
 
 </div>
 
-<div style="page-break-after: always;"></div>
+<div style="page-break-before: always;"></div>
+
+## Registro de Versiones del Informe
+
+<table>
+  <thead>
+    <tr>
+      <th>Versión</th>
+      <th>Fecha</th>
+      <th>Autor</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5" style="text-align: center; vertical-align: middle;"><b>AV1</b></td>
+      <td></td>
+      <td>Mansilla Rivero, Carlos Marcelo</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Paredes Davila, Jose Adrian</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Navarro Flores, Renzo Jesus</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Luque Minaya, Renzo Andrés</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="5" style="text-align: center; vertical-align: middle;"><b>TB1</b></td>
+      <td></td>
+      <td>Mansilla Rivero, Carlos Marcelo</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Paredes Davila, Jose Adrian</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Navarro Flores, Renzo Jesus</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Luque Minaya, Renzo Andrés</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="5" style="text-align: center; vertical-align: middle;"><b>AV2</b></td>
+      <td></td>
+      <td>Mansilla Rivero, Carlos Marcelo</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Paredes Davila, Jose Adrian</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Navarro Flores, Renzo Jesus</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Luque Minaya, Renzo Andrés</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="5" style="text-align: center; vertical-align: middle;"><b>TB2</b></td>
+      <td></td>
+      <td>Mansilla Rivero, Carlos Marcelo</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Paredes Davila, Jose Adrian</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Navarro Flores, Renzo Jesus</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Luque Minaya, Renzo Andrés</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Project Report Collaboration Insights
+
+**URL del repositorio del informe:** https://github.com/NursePulse/NursePulse-Report
+
+### AV1
+
+**Descripción de la colaboración en la elaboración del informe:**
+
+Durante el Avance 1, el equipo de NursePulse organizó la elaboración del informe mediante la asignación de tareas a cada integrante, distribuidas por capítulos y apartados. Se coordinaron los avances, se identificaron contenidos pendientes y se acordaron ajustes en las entrevistas, el Product Backlog, el Impact Mapping y los flujos de usuario. Asimismo, se asignó la preparación de la carátula, el índice y la estructura del Student Outcome en el documento Markdown. Esta distribución de responsabilidades facilitó el seguimiento de las tareas y la integración de los aportes del equipo para la entrega.
+<div style="page-break-before: always;"></div>
+
+## Contenido
+
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+- [Contenido](#contenido)
+- [Student Outcome](#student-outcome)
+- [Part I: As-Is Software Project](#part-i-as-is-software-project)
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+- [Capítulo II: Requirements Elicitation & Analysis](chapter-2.md#capítulo-ii-requirements-elicitation--analysis)
+  - [2.1. Competidores](chapter-2.md#21-competidores)
+    - [2.1.1. Análisis competitivo](chapter-2.md#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores](chapter-2.md#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](chapter-2.md#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](chapter-2.md#221-diseño-de-entrevistas)
+    - [2.2.2. Registro de entrevistas](chapter-2.md#222-registro-de-entrevistas)
+    - [2.2.3. Análisis de entrevistas](chapter-2.md#223-análisis-de-entrevistas)
+  - [2.3. Needfinding](chapter-2.md#23-needfinding)
+    - [2.3.1. User Personas](chapter-2.md#231-user-personas)
+    - [2.3.2. User Task Matrix](chapter-2.md#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](chapter-2.md#233-user-journey-mapping)
+    - [2.3.4. Empathy Mapping](chapter-2.md#234-empathy-mapping)
+    - [2.3.5. As-Is Scenario Mapping](chapter-2.md#235-as-is-scenario-mapping)
+  - [2.4. Ubiquitous Language](chapter-2.md#24-ubiquitous-language)
+- [Capítulo III: Requirements Specification](chapter-3.md#capítulo-iii-requirements-specification)
+  - [3.1 To-Be Scenario Mapping](chapter-3.md#31-to-be-scenario-mapping)
+  - [3.2. User Stories](chapter-3.md#32-user-stories)
+  - [3.3. Product Backlog](chapter-3.md#33-product-backlog)
+  - [3.4. Impact Mapping](chapter-3.md#34-impact-mapping)
+- [Capítulo IV: Product Design](chapter-4.md#capítulo-iv-product-design)
+  - [4.1. Style Guidelines](chapter-4.md#41-style-guidelines)
+    - [4.1.1. General Style Guidelines](chapter-4.md#411-general-style-guidelines)
+    - [4.1.2. Web Style Guidelines](chapter-4.md#412-web-style-guidelines)
+    - [4.1.3. Mobile Style Guidelines](chapter-4.md#413-mobile-style-guidelines)
+      - [4.1.3.1 IOS Mobile Style Guidelines](chapter-4.md#4131-ios-mobile-style-guidelines)
+      - [4.1.3.2 Android Mobile Style Guidelines](chapter-4.md#4132-android-mobile-style-guidelines)
+  - [4.2. Information Architecture](chapter-4.md#42-information-architecture)
+    - [4.2.1. Organization Systems](chapter-4.md#421-organization-systems)
+    - [4.2.2. Labeling Systems](chapter-4.md#422-labeling-systems)
+    - [4.2.3. SEO Tags and Meta Tags](chapter-4.md#423-seo-tags-and-meta-tags)
+    - [4.2.4. Searching Systems.](chapter-4.md#424-searching-systems)
+    - [4.2.5. Navigation Systems.](chapter-4.md#425-navigation-systems)
+  - [4.3. Landing Page UI Design.](chapter-4.md#43-landing-page-ui-design)
+    - [4.3.1. Landing Page Wireframe.](chapter-4.md#431-landing-page-wireframe)
+    - [4.3.2. Landing Page Mock-up](chapter-4.md#432-landing-page-mock-up)
+  - [4.4. Mobile Application UX/UI Design](chapter-4.md#44-mobile-application-uxui-design)
+    - [4.4.1. Mobile Applications Wireframes](chapter-4.md#441-mobile-applications-wireframes)
+    - [4.4.2. Mobile Applications Wireflow Diagrams](chapter-4.md#442-mobile-applications-wireflow-diagrams)
+    - [4.4.3. Mobile Applications Mock-ups](chapter-4.md#443-mobile-applications-mock-ups)
+    - [4.4.4. Mobile Applications User Flow Diagrams](chapter-4.md#444-mobile-applications-user-flow-diagrams)
+  - [4.5. Mobile Applications Prototyping](chapter-4.md#45-mobile-applications-prototyping)
+    - [4.5.1. Android Mobile Applications Prototyping](chapter-4.md#451-android-mobile-applications-prototyping)
+    - [4.5.2. iOS Mobile Applications Prototyping](chapter-4.md#452-ios-mobile-applications-prototyping)
+  - [4.6. Web Applications UX/UI Design](chapter-4.md#46-web-applications-uxui-design)
+    - [4.6.1. Web Applications Wireframes](chapter-4.md#461-web-applications-wireframes)
+    - [4.6.2. Web Applications Wireflow Diagrams](chapter-4.md#462-web-applications-wireflow-diagrams)
+    - [4.6.3. Web Applications Mock-ups](chapter-4.md#463-web-applications-mock-ups)
+    - [4.6.4. Web Applications User Flow Diagrams](chapter-4.md#464-web-applications-user-flow-diagrams)
+  - [4.7. Web Applications Prototyping.](chapter-4.md#47-web-applications-prototyping)
+  - [4.8. Domain-Driven Software Architecture](chapter-4.md#48-domain-driven-software-architecture)
+    - [4.8.1. Software Architecture Context Diagram](chapter-4.md#481-software-architecture-context-diagram)
+    - [4.8.2. Software Architecture Container Diagrams](chapter-4.md#482-software-architecture-container-diagrams)
+    - [4.8.3. Software Architecture Components Diagrams](chapter-4.md#483-software-architecture-components-diagrams)
+  - [4.9. Software Object-Oriented Design](chapter-4.md#49-software-object-oriented-design)
+    - [4.9.1. Class Diagrams.](chapter-4.md#491-class-diagrams)
+    - [4.9.2. Class Dictionary](chapter-4.md#492-class-dictionary)
+  - [4.10. Database Design.](chapter-4.md#410-database-design)
+    - [4.10.1. Relational/Non-Relational Database Diagram.](chapter-4.md#4101-relationalnon-relational-database-diagram)
+
+    <div style="page-break-before: always;"></div>
+
+## Student Outcome
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+**ABET – EAC - Student Outcome 4**
+
+**Criterio:** La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4.
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+| --- | --- | --- |
+| 4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Mansilla Rivero, Carlos Marcelo**<br>**AV1:**<br><br>**Taipe Sangama, Jorge Francisco**<br>**AV1:**<br><br>**Paredes Davila, Jose Adrian**<br>**AV1:**<br><br>**Navarro Flores, Renzo Jesus**<br>**AV1:**<br><br>**Luque Minaya, Renzo Andres**<br>**AV1:** | **AV1:** |
+| 4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Mansilla Rivero, Carlos Marcelo**<br>**AV1:**<br><br>**Taipe Sangama, Jorge Francisco**<br>**AV1:**<br><br>**Paredes Davila, Jose Adrian**<br>**AV1:**<br><br>**Navarro Flores, Renzo Jesus**<br>**AV1:**<br><br>**Luque Minaya, Renzo Andres**<br>**AV1:** | **AV1:** |
+
+<div style="page-break-before: always;"></div>
+
+
 
 # Part I: As-Is Software Project
 
