@@ -74,9 +74,9 @@
       <td></td>
     </tr>
     <tr>
-      <td></td>
+      <td>13/09/2026</td>
       <td>Luque Minaya, Renzo Andrés</td>
-      <td></td>
+      <td>Actualización de la documentación de NursePulse: incorporación del índice de los capítulos I–IV, Registro de Versiones, Project Report Collaboration Insights y estructura del Student Outcome.</td>
     </tr>
     <tr>
       <td rowspan="5" style="text-align: center; vertical-align: middle;"><b>TB1</b></td>
@@ -264,8 +264,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | --- | --- | --- |
-| 4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Mansilla Rivero, Carlos Marcelo**<br>**AV1:**<br><br>**Taipe Sangama, Jorge Francisco**<br>**AV1:**<br><br>**Paredes Davila, Jose Adrian**<br>**AV1:**<br><br>**Navarro Flores, Renzo Jesus**<br>**AV1:**<br><br>**Luque Minaya, Renzo Andres**<br>**AV1:** | **AV1:** |
-| 4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Mansilla Rivero, Carlos Marcelo**<br>**AV1:**<br><br>**Taipe Sangama, Jorge Francisco**<br>**AV1:**<br><br>**Paredes Davila, Jose Adrian**<br>**AV1:**<br><br>**Navarro Flores, Renzo Jesus**<br>**AV1:**<br><br>**Luque Minaya, Renzo Andres**<br>**AV1:** | **AV1:** |
+| 4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Mansilla Rivero, Carlos Marcelo**<br>**AV1:**<br><br>**Taipe Sangama, Jorge Francisco**<br>**AV1:**<br><br>**Paredes Davila, Jose Adrian**<br>**AV1:**<br><br>**Navarro Flores, Renzo Jesus**<br>**AV1:**<br><br>**Luque Minaya, Renzo Andres**<br>**AV1:** Contribuí a la documentación de NursePulse y al código de la landing page. Verifiqué la implementación de las historias de usuario en la aplicación web y apoyé en la corrección de errores cuando el comportamiento no correspondía con lo especificado. Estas actividades contribuyeron a la responsabilidad profesional de comprobar la coherencia entre los requisitos, la documentación y el funcionamiento del software. Asimismo, en la documentación se reconoce a PulseReport como antecedente del proyecto. | **AV1:** |
+| 4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Mansilla Rivero, Carlos Marcelo**<br>**AV1:**<br><br>**Taipe Sangama, Jorge Francisco**<br>**AV1:**<br><br>**Paredes Davila, Jose Adrian**<br>**AV1:**<br><br>**Navarro Flores, Renzo Jesus**<br>**AV1:**<br><br>**Luque Minaya, Renzo Andres**<br>**AV1:** Al verificar las historias de usuario de la aplicación web, consideré cómo las diferencias entre los requisitos y su implementación podían afectar las tareas de los profesionales de salud. Apoyé en la identificación y corrección de errores para favorecer un funcionamiento acorde con las necesidades descritas. Esta revisión me permitió considerar el impacto social de la calidad del software en el contexto clínico de NursePulse, sin asumir que las correcciones realizadas demuestran por sí solas mejoras en la atención de pacientes. | **AV1:** |
 
 <div style="page-break-before: always;"></div>
 
