@@ -28,17 +28,10 @@
 | Código UPC   | Apellidos y nombres             |
 |--------------|---------------------------------|
 | u202414510   | Mansilla Rivero, Carlos Marcelo |
-<<<<<<< HEAD
-| u202313458 | Taipe Sangama, Jorge Francisco    |
-| u202216163 | Paredes Davila, Jose Adrian       |
-| u20211A574 | Navarro Flores, Renzo Jesus       |
-| [Código UPC] | [Apellidos y nombres]           |
-=======
 | u202313458   | Taipe Sangama, Jorge Fracisco   |
 | u202216163   | Paredes Davila, Jose Adrian     |
 | u20211A574   | Navarro Flores, Renzo Jesus     |
 | u20221c275   | Luque Minaya, Renzo Andres      |
->>>>>>> 7fc8fbc (update: student profile)
 
 <p><strong>Periodo 202620</strong></p>
 <p><strong>Septiembre de 2026</strong></p>
@@ -114,11 +107,7 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
     <td>
       <b>Código:</b> u202216163<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
-<<<<<<< HEAD
       Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en desarrollo de software, gestión de bases de datos y metodologías ágiles. En el proyecto Nurse Pulse, aportaré en la implementación técnica, pruebas de calidad y elaboración de la documentación integral, contribuyendo con atención al detalle, proactividad y trabajo en equipo.
-=======
-     Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en desarrollo de software, gestión de base de datos y metodologías ágiles. Dentro de NursePulse, aportaré con implementación técnica, pruebas de calidad y documentación.
->>>>>>> 7fc8fbc (update: student profile)
     </td>
   </tr>
 
