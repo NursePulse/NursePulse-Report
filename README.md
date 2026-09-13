@@ -62,7 +62,11 @@ En iOS, la aplicación mantiene el mismo lenguaje visual de Material Design defi
 - Los indicadores de carga y desplazamiento (scroll bounce) siguen el comportamiento nativo de iOS proporcionado por el framework, sin necesidad de personalización adicional.
 - Se mantiene la misma paleta de color y jerarquía visual (teal `#0F766E` como color primario) que en Android y en la Web Application, asegurando consistencia de marca entre las tres plataformas.
 
-## AYUDA JOSE CAPTURAS PORFA
+![iphone2.png](assets/chapter-4/iphone2.png)
+![iphone1.png](assets/chapter-4/iphone1.png)
+![iphone4.png](assets/chapter-4/iphone4.png)
+![iphone3.png](assets/chapter-4/iphone3.png)
+![iphonoe5.png](assets/chapter-4/iphonoe5.png)
 
 #### 4.1.3.2 Android Mobile Style Guidelines
 
@@ -77,12 +81,11 @@ En Android, la interfaz utiliza la misma base visual definida en el Web Style Gu
 - Uso de **Snackbar** para mensajes temporales de error o confirmación (por ejemplo, al perder la conexión con el servidor o al completar un registro exitosamente).
 - Misma paleta de color y tipografía que la Web Application (teal `#0F766E` como color primario sobre fondo claro), asegurando consistencia de marca entre ambas plataformas.
 
-![android-navigation.png](assets/chapter-4/android-navigation.png)
-
 ![android-fab-actions.png](assets/chapter-4/android-fab-actions.png)
 
-![android-cards-snackbar.png](assets/chapter-4/android-cards-snackbar.png)
+![android-navigation.png](assets/chapter-4/android-navigation.png)
 
+![android-cards-snackbar.png](assets/chapter-4/android-cards-snackbar.png)
 
 ### 4.2. Information Architecture
 #### 4.2.1. Organization Systems
@@ -411,26 +414,79 @@ El wireframe de la landing page de **NursePulse** presenta una estructura clara 
 
 ### 4.4. Mobile Application UX/UI Design
 
+El diseño UX/UI de la aplicación móvil de **NursePulse** sigue un proceso iterativo desde baja hasta alta fidelidad, partiendo de wireframes que definen la estructura y jerarquía de cada pantalla, hasta llegar a mock-ups de alta fidelidad y un prototipo interactivo navegable. El objetivo es validar los flujos de trabajo del personal de enfermería (registro de pacientes, signos vitales, traspasos SBAR y alertas) antes de su implementación final.
 
 #### 4.4.1. Mobile Applications Wireframes
 
+Los wireframes representan la estructura base de las pantallas principales de la aplicación móvil, priorizando la disposición de elementos y la jerarquía de información sobre el estilo visual.
+
+**Pantallas incluidas**
+- Inicio de sesión y registro
+- Dashboard
+- Listado de pacientes y formulario de registro/edición
+- Listado y registro de signos vitales
+- Listado y registro de traspasos SBAR
+- Listado y registro de alertas
+
+
+### Register 
+![registernursepulse.png](assets/chapter-4/wireframes/registernursepulse.png)
+
+### Login
+![login.png](assets/chapter-4/wireframes/login.png)
+
+### Dashboard
+![Dashboard.png](assets/chapter-4/wireframes/Dashboard.png)
+
+### List of Patients
+![listapacientes.png](assets/chapter-4/wireframes/listapacientes.png)
+
+### Signos Vitales
+![signosvitales.png](assets/chapter-4/wireframes/signosvitales.png)
+
+### SBAR
+![sbar.png](assets/chapter-4/wireframes/sbar.png)
+
+### Alertas
+![alertas.png](assets/chapter-4/wireframes/alertas.png)
+
+
 #### 4.4.2. Mobile Applications Wireflow Diagrams
+
+Los wireflow diagrams combinan los wireframes de cada pantalla con flechas de navegación, mostrando cómo el usuario se desplaza entre pantallas al completar una acción (por ejemplo, registrar un paciente y luego navegar a su monitoreo, o registrar un traspaso SBAR y volver al listado).
+
+![WireflowDiagram.png](assets/chapter-4/wireframes/WireflowDiagram.png)
 
 #### 4.4.3. Mobile Applications Mock-ups
 
-#### 4.4.4. Mobile Applications User Flow Diagrams  
+
+Los mock-ups aplican la paleta de color, tipografía e iconografía definidas en el Style Guidelines sobre los wireframes ya validados, representando la apariencia final de la aplicación tal como la ve el usuario.
+
+  ![mockups.png](assets/chapter-4/mockups.png)
+
+#### 4.4.4. Mobile Applications User Flow Diagrams  \
+
+Los user flow diagrams documentan el recorrido completo del usuario dentro de la aplicación móvil para cumplir una tarea específica, considerando puntos de decisión y posibles caminos alternativos (por ejemplo, el flujo de una enfermera al recibir un traspaso SBAR: revisar el listado, abrir el detalle, y confirmar la recepción).
+
+## Happy paths
 
 ### 4.5. Mobile Applications Prototyping
+El prototipo interactivo permite validar la navegación real entre pantallas y los flujos críticos de la aplicación antes de su desarrollo, simulando la experiencia final del usuario sobre los mock-ups de alta fidelidad.
+
 
 #### 4.5.1. Android Mobile Applications Prototyping
+El prototipo para Android reproduce fielmente los componentes de Material Design definidos en el Style Guidelines (Navigation Drawer, FAB, Cards, Snackbar), permitiendo navegar entre el listado de pacientes, el registro de signos vitales y los traspasos SBAR de forma interactiva.
 
+![prototypingandroid.png](assets/chapter-4/prototypingandroid.png)
+
+**Prototipo de Android:** [Video Android](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313458_upc_edu_pe/IQBbxeDWgAbDSZDhf4L2BzW7Ac6eRDZvO-kiqTK9NjEEUdI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=eVSzdP)
 #### 4.5.2. iOS Mobile Applications Prototyping
+El prototipo para iOS reutiliza las mismas pantallas y flujos definidos para Android, dado que ambas plataformas comparten un único diseño visual basado en Material Design, adaptado únicamente a las convenciones propias del sistema operativo (safe area y gestos nativos).
 
+![prototypingios.png](assets/chapter-4/prototypingios.png)
 
-
+**Prototipo IOS: ** [Video iOS](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313458_upc_edu_pe/IQAfEjEEL4pDQbMwtBbhrwyqAXkSaqFvZuvOyDn2tJcdTHA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FnRXm1)
 ### 4.6. Web Applications UX/UI Design
-
-
 #### 4.6.1. Web Applications Wireframes
 
 ![dashboardCarelabs-wf.png](assets/chapter-4/dashboardCarelabs-wf.png)
