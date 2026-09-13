@@ -156,6 +156,16 @@ Las entrevistas fueron registradas en video y se organizaron según el segmento 
     ![Interview2Segm1.png](assets/Interview2Segm1.png)
 *   **Resumen descriptivo:** Andrew Sánchez es un enfermero de 25 años con cinco años de experiencia clínica que destaca por su enfoque metódico y práctico en el área de hospitalización. Tecnológicamente adaptable pero intolerante a sistemas lentos, confía en su PC de escritorio y en WhatsApp para la comunicación médica operativa. Su mayor frustración laboral es la ineficiencia causada por la duplicidad de tareas, específicamente la transcripción manual de signos vitales del papel al sistema y las demoras al buscar historiales físicos por información urgente, subrayando la necesidad de una solución digital ágil que centralice los datos y optimice los traspasos de turno.
 
+**Entrevista 3 — Sofia Ortega**
+*   **Edad:** 20
+*   **Distrito:** Breña
+*   **Ocupación:** Practicante de Medicina Humana (Área Cardiovascular y Hospitalización)
+*   **Inicio en el video (Timing):** 00:00
+*   **Duración:** 06:21
+*   **Link de Video:** [Entrevista](https://youtu.be/KqQPt1-ARGE)
+*   **Screenshot:**
+     ![Ruta_screenshot_entrevista_3](assets/entrevista03seg1.png)
+*   **Resumen descriptivo:** Sofia Ortega es una estudiante de los últimos ciclos de Medicina Humana de 20 años que realiza sus prácticas preprofesionales en hospitalización y cardiología preventiva desde hace 8 meses. En el entorno clínico destaca por ser observadora, adaptable y comunicativa al coordinar con médicos y personal de enfermería. Presenta una alta familiaridad y apertura hacia la tecnología digital (nivel 9-10), utilizando preferentemente su smartphone y tablet para el monitoreo durante el turno y WhatsApp como canal ágil de coordinación con su equipo. Su mayor frustración radica en el proceso de traspaso de turno y la lentitud de los sistemas hospitalarios actuales, los cuales obligan a registrar datos manualmente en papel para luego transcribirlos, generando demoras y riesgo de omisión de información. Ante la falta de datos urgentes en el sistema, debe recurrir a la búsqueda física de notas o carpetas en camilla, evidenciando una clara necesidad de centralización digital y optimización móvil para el registro oportuno de constantes vitales.
 *[Nota: Agregar la Entrevista 3 (y hasta 5 si es necesario) para completar el requerimiento del primer segmento]*
 
 ##### Segmento objetivo 2: Médicos especialistas cardiovasculares y profesionales médicos relacionados
