@@ -130,8 +130,7 @@ Este segmento está conformado por médicos especialistas cardiovasculares, méd
 
 Las entrevistas fueron registradas en video y se organizaron según el segmento objetivo correspondiente. Cada registro incluye información básica del entrevistado, captura del video, enlace, timing, duración y un resumen descriptivo de sus respuestas, prestando especial atención a sus hábitos tecnológicos y pain points en el entorno clínico.
 
-**Enlace del video consolidado de entrevistas:** [Insertar enlace de Microsoft Stream con acceso privado]
-
+**Enlace del video consolidado de entrevistas:** [Entrevistas juntas](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313458_upc_edu_pe/IQAPzP1oOB6ERoo5BGwKcdS9AV0_u2uJuW7fUmAUufOfWnY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FeJD7b)
 ##### Segmento objetivo 1: Personal de enfermería cardiovascular
 
 **Entrevista 1 — Marcelo Garriazo**
