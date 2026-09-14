@@ -1429,11 +1429,11 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 La siguiente captura corresponde al Product Backlog elaborado en la herramienta de gestión utilizada por el equipo. En ella se evidencia la priorización de historias, estimación mediante Story Points y organización del backlog según valor para el negocio.
 
 <p align="center">
-  <img src="assets/chapter-3/product-backlog.png" alt="Product Backlog Nurse Pulse" width="850">
+  <img src="assets/Chapter-3/product-backlog.png" alt="Product Backlog Nurse Pulse" width="850">
 </p>
 
 **URL del Product Backlog:**  
-https://docs.google.com/spreadsheets/d/1JWzVr2lEd1AoSZBmGx0D0B3Pd09Je_w_lRHvN-_5y40/edit?usp=sharing
+https://jorgefrantas1.atlassian.net/jira/software/projects/HAT/boards/101/backlog
 
 #### Conclusión del Product Backlog
 
@@ -1485,15 +1485,15 @@ Para este proyecto se consideran Business Goals definidos bajo criterios SMART, 
 El Impact Mapping visual fue elaborado en una herramienta colaborativa y organizado en tres capturas para facilitar su lectura. Cada captura relaciona Business Goals, actores, impactos, entregables y User Stories asociadas.
 
 <p align="center">
-  <img src="assets/chapter-3/impact-mapping-bg01-bg02.png" alt="Impact Mapping BG-01 y BG-02" width="850">
+  <img src="assets/Chapter-3/impact-mapping-bg01-bg02.png" alt="Impact Mapping BG-01 y BG-02" width="850">
 </p>
 
 <p align="center">
-  <img src="assets/chapter-3/impact-mapping-bg03-bg04.png" alt="Impact Mapping BG-03 y BG-04" width="850">
+  <img src="assets/Chapter-3/impact-mapping-bg03-bg04.png" alt="Impact Mapping BG-03 y BG-04" width="850">
 </p>
 
 <p align="center">
-  <img src="assets/chapter-3/impact-mapping-bg05.png" alt="Impact Mapping BG-05" width="850">
+  <img src="assets/Chapter-3/impact-mapping-bg05.png" alt="Impact Mapping BG-05" width="850">
 </p>
 
 #### Impact Mapping detallado
