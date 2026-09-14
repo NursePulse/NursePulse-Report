@@ -464,11 +464,82 @@ Los mock-ups aplican la paleta de color, tipografía e iconografía definidas en
 
   ![mockups.png](assets/chapter-4/mockups.png)
 
-#### 4.4.4. Mobile Applications User Flow Diagrams  \
+#### 4.4.4. Mobile Applications User Flow Diagrams
 
 Los user flow diagrams documentan el recorrido completo del usuario dentro de la aplicación móvil para cumplir una tarea específica, considerando puntos de decisión y posibles caminos alternativos (por ejemplo, el flujo de una enfermera al recibir un traspaso SBAR: revisar el listado, abrir el detalle, y confirmar la recepción).
 
-## Happy paths
+#### User Goal 1: Usuario desea registrarse en la aplicación
+
+#### Happy Path
+
+En esta ruta esperada, el flujo concentra un proceso de registro de cuenta clínica en la aplicación. El usuario es recibido por la pantalla de inicio de sesión, presiona "Regístrate" y completa el formulario con usuario, tipo de cuenta, contraseña y confirmación de contraseña. Al validarse correctamente los datos, la cuenta se crea y el usuario puede iniciar sesión.
+
+![Happypathuno.png](assets/chapter-4/Happypathuno.png)
+
+#### Unhappy Path
+
+Estas rutas alternas consideran que el usuario ingresó una contraseña que no cumple la política de seguridad (menos de 12 caracteres, sin mayúscula o sin carácter especial), que las contraseñas no coinciden entre sí, o que el nombre de usuario ya existe en el sistema, impidiendo la creación de la cuenta hasta corregir el dato señalado.
+
+![unhappypath2.png](assets/chapter-4/unhappypath2.png)
+
+#### User Goal 2: Enfermero(a) desea registrar un nuevo paciente
+
+#### Happy Path
+
+En esta ruta esperada, el flujo concentra el registro de un paciente en el módulo de Pacientes. El usuario presiona "Nuevo paciente", completa nombre, apellido, documento, fecha de nacimiento, género, diagnóstico, habitación, cama y médico tratante. Al guardar, el paciente aparece inmediatamente en el listado con estado "En observación".
+
+![happypath2.png](assets/chapter-4/happypath2.png)
+
+#### Unhappy Path
+
+Estas rutas alternas toman en cuenta que el usuario dejó algún campo obligatorio vacío, o que el número de documento ingresado ya pertenece a otro paciente registrado en el sistema, mostrando un mensaje de error y evitando la duplicidad de registros.
+
+
+![unhappy.png](assets/chapter-4/unhappy.png)
+
+
+#### User Goal 3: Enfermero(a) desea registrar signos vitales de un paciente
+
+#### Happy Path
+
+En esta ruta esperada, el flujo concentra el registro de signos vitales desde el módulo correspondiente. El usuario presiona "Registrar", selecciona al paciente e ingresa frecuencia cardíaca, frecuencia respiratoria, presión arterial, saturación de oxígeno y temperatura. Al guardar, el sistema calcula automáticamente el nivel de riesgo clínico y lo muestra en el listado.
+
+![happypath3.png](assets/chapter-4/happypath3.png)
+
+#### Unhappy Path
+
+Estas rutas alternas consideran que el usuario ingresó un valor fuera del rango clínico permitido (por ejemplo, una frecuencia cardíaca de 999 lpm), o que la presión sistólica ingresada es menor o igual a la diastólica, bloqueando el guardado hasta que los valores sean clínicamente coherentes.
+
+![unhappy3.png](assets/chapter-4/unhappy3.png)
+
+
+#### User Goal 4: Enfermero(a) desea registrar un traspaso SBAR
+
+#### Happy Path
+
+En esta ruta esperada, el flujo concentra la creación de un traspaso de turno. El usuario presiona "Nuevo traspaso", selecciona al paciente y al personal receptor, y completa los cuatro campos estructurados: Situación, Antecedentes, Evaluación y Recomendación. Al guardar, el traspaso queda visible para el receptor con estado "Pendiente" hasta que este confirme la recepción.
+
+![happypath4.png](assets/chapter-4/happypath4.png)
+
+#### Unhappy Path
+
+Estas rutas alternas toman en cuenta que el usuario no seleccionó un personal receptor, o que dejó alguno de los cuatro campos SBAR vacío, impidiendo el envío del traspaso hasta completar la información requerida.
+
+![unhappypath4.png](assets/chapter-4/unhappypath4.png)
+
+#### User Goal 5: Enfermero(a) desea registrar una alerta clínica
+
+#### Happy Path
+
+En esta ruta esperada, el flujo concentra el registro manual de una alerta clínica. El usuario presiona "Registrar alerta", selecciona al paciente, el tipo de alerta (cardíaca, respiratoria, neurológica, caída o medicación), la severidad y una descripción del evento. Al guardar, la alerta aparece en el listado con estado "Activa", disponible para ser atendida por el personal de turno.
+
+![happypath5.png](assets/chapter-4/happypath5.png)
+
+#### Unhappy Path
+
+Estas rutas alternas consideran que el usuario dejó la descripción vacía, o que intentó registrar la alerta sin seleccionar previamente un paciente, mostrando un mensaje de validación y evitando el registro de una alerta incompleta.
+
+![happypath5.png](assets/chapter-4/happypath5.png)
 
 ### 4.5. Mobile Applications Prototyping
 El prototipo interactivo permite validar la navegación real entre pantallas y los flujos críticos de la aplicación antes de su desarrollo, simulando la experiencia final del usuario sobre los mock-ups de alta fidelidad.
