@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec292d99-2e69-44b9-90cb-16927ab0a197" name="Changes" comment="docs(README): Update video link for consolidated interviews" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="docs/Chapter2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JorgeFTS&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NursePulse/NursePulse-Report.git&quot;,
+    &quot;accountId&quot;: &quot;c2bdaef3-1b45-4fd8-a08f-e1dcca273865&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.000000012530333" />
+      <entry key="MS500" value="1.0262780129766786" />
+      <entry key="S2" value="1.4026225829873136" />
+      <entry key="S5" value="1.6949591099211685" />
+      <entry key="S10" value="1.8336420754263598" />
+      <entry key="S30" value="1.9411522295050683" />
+      <entry key="S60" value="1.9701300064965872" />
+      <entry key="M2" value="1.9849517787749296" />
+      <entry key="M5" value="1.9940802091219156" />
+      <entry key="M10" value="2.0538331059779074" />
+      <entry key="M15" value="2.479402054662597" />
+      <entry key="M30" value="6.3046994392852715" />
+      <entry key="H1" value="15.36749240495817" />
+      <entry key="H2" value="26.694145396105288" />
+      <entry key="H4" value="42.997322447887" />
+      <entry key="D1" value="115.54508283283229" />
+      <entry key="W1" value="149.15773075001698" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="3.815487816404655E-283" />
+      <entry key="M2" value="6.176963506776329E-142" />
+      <entry key="M5" value="3.28329582341229E-57" />
+      <entry key="M10" value="5.730005081509337E-29" />
+      <entry key="M15" value="1.4862892548781056E-19" />
+      <entry key="M30" value="3.8552422166163634E-10" />
+      <entry key="H1" value="1.9634770731068812E-5" />
+      <entry key="H2" value="0.004431113937947067" />
+      <entry key="H4" value="0.06656661278709516" />
+      <entry key="D1" value="0.6366138407011223" />
+      <entry key="W1" value="0.9375237893898072" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.5783441018521245" />
+      <entry key="MS500" value="0.9213348610179201" />
+      <entry key="S2" value="1.3708982240871628" />
+      <entry key="S5" value="1.680799222984759" />
+      <entry key="S10" value="1.8262188465056144" />
+      <entry key="S30" value="1.9385895591279192" />
+      <entry key="S60" value="1.9688368029023355" />
+      <entry key="M2" value="1.9843021436180739" />
+      <entry key="M5" value="1.9938196104695094" />
+      <entry key="M10" value="2.053699598251612" />
+      <entry key="M15" value="2.479295588562281" />
+      <entry key="M30" value="6.304561996316505" />
+      <entry key="H1" value="15.367341398121434" />
+      <entry key="H2" value="26.698428888557974" />
+      <entry key="H4" value="43.06377731391648" />
+      <entry key="D1" value="116.18165391618116" />
+      <entry key="W1" value="150.0952468706866" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3J75wczbOkPWUlyM0FcpNbV0mTx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "docs/Chapter5",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/jorget/Desktop/Projects/Expe/ReportNursePulse/assets/chapter-4",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/chapter-4" />
+      <recent name="$PROJECT_DIR$/assets/chapter-4/mockups" />
+      <recent name="$PROJECT_DIR$/assets/chapter-4/wireframes" />
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/assets/chapter-1" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.10315.144" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec292d99-2e69-44b9-90cb-16927ab0a197" name="Changes" comment="" />
+      <created>1788999506014</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788999506014</updated>
+      <workItem from="1788999507066" duration="610000" />
+      <workItem from="1789000780398" duration="6224000" />
+      <workItem from="1789063497144" duration="768000" />
+      <workItem from="1789065872915" duration="1099000" />
+      <workItem from="1789147107654" duration="3363000" />
+      <workItem from="1789166814419" duration="4907000" />
+      <workItem from="1789265692657" duration="7867000" />
+      <workItem from="1789314652952" duration="8075000" />
+      <workItem from="1789419495901" duration="7058000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add initial project files and README with style guidelines for NursePulse">
+      <option name="closed" value="true" />
+      <created>1789004890465</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1789004890465</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add database design section with relational/non-relational diagram to README">
+      <option name="closed" value="true" />
+      <created>1789006299390</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1789006299390</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: update image source in README for Jorge Taipe">
+      <option name="closed" value="true" />
+      <created>1789065956609</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1789065956609</updated>
+    </task>
+    <task id="LOCAL-00004" summary="docs(chapter2:): Update README with details from Interview 2, including participant information and insights">
+      <option name="closed" value="true" />
+      <created>1789167890691</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1789167890691</updated>
+    </task>
+    <task id="LOCAL-00005" summary="docs(README): Add video link for Interview with Andrew Sánchez">
+      <option name="closed" value="true" />
+      <created>1789168482913</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1789168482913</updated>
+    </task>
+    <task id="LOCAL-00006" summary="docs(README): Update video link format for interview with Andrew Sánchez">
+      <option name="closed" value="true" />
+      <created>1789168600468</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1789168600468</updated>
+    </task>
+    <task id="LOCAL-00007" summary="chore: Add .gitignore to exclude IDE configuration files">
+      <option name="closed" value="true" />
+      <created>1789168939934</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1789168939934</updated>
+    </task>
+    <task id="LOCAL-00008" summary="docs(chapter 4): Add Class Diagram">
+      <option name="closed" value="true" />
+      <created>1789171252583</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1789171252583</updated>
+    </task>
+    <task id="LOCAL-00009" summary="docs(chapter 4): Update README with mobile application wireframes and prototyping details">
+      <option name="closed" value="true" />
+      <created>1789278091290</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1789278091290</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docs(chapter 4): Expand user flow diagrams for mobile applications with detailed happy and unhappy paths">
+      <option name="closed" value="true" />
+      <created>1789355942099</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1789355942099</updated>
+    </task>
+    <task id="LOCAL-00011" summary="docs(chapter1): update team member details and contributions in README">
+      <option name="closed" value="true" />
+      <created>1789424149381</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1789424149381</updated>
+    </task>
+    <task id="LOCAL-00012" summary="docs(README): Update interview details for Olenka Vela and add analysis for Segment 2">
+      <option name="closed" value="true" />
+      <created>1789428525507</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1789428525507</updated>
+    </task>
+    <task id="LOCAL-00013" summary="docs(README): Update video link for consolidated interviews">
+      <option name="closed" value="true" />
+      <created>1789428823379</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1789428823379</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add initial project files and README with style guidelines for NursePulse" />
+    <MESSAGE value="Add database design section with relational/non-relational diagram to README" />
+    <MESSAGE value="fix: update image source in README for Jorge Taipe" />
+    <MESSAGE value="docs(chapter2:): Update README with details from Interview 2, including participant information and insights" />
+    <MESSAGE value="docs(README): Add video link for Interview with Andrew Sánchez" />
+    <MESSAGE value="docs(README): Update video link format for interview with Andrew Sánchez" />
+    <MESSAGE value="chore: Add .gitignore to exclude IDE configuration files" />
+    <MESSAGE value="docs(chapter 4): Add Class Diagram" />
+    <MESSAGE value="docs(chapter 4): Update README with mobile application wireframes and prototyping details" />
+    <MESSAGE value="docs(chapter 4): Expand user flow diagrams for mobile applications with detailed happy and unhappy paths" />
+    <MESSAGE value="docs(chapter1): update team member details and contributions in README" />
+    <MESSAGE value="docs(README): Update interview details for Olenka Vela and add analysis for Segment 2" />
+    <MESSAGE value="docs(README): Update video link for consolidated interviews" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(README): Update video link for consolidated interviews" />
+  </component>
+</project>
