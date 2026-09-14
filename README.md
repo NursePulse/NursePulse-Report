@@ -166,19 +166,19 @@ Las entrevistas fueron registradas en video y se organizaron según el segmento 
 *   **Screenshot:**
      ![Ruta_screenshot_entrevista_3](assets/entrevista03seg1.png)
 *   **Resumen descriptivo:** Sofia Ortega es una estudiante de los últimos ciclos de Medicina Humana de 20 años que realiza sus prácticas preprofesionales en hospitalización y cardiología preventiva desde hace 8 meses. En el entorno clínico destaca por ser observadora, adaptable y comunicativa al coordinar con médicos y personal de enfermería. Presenta una alta familiaridad y apertura hacia la tecnología digital (nivel 9-10), utilizando preferentemente su smartphone y tablet para el monitoreo durante el turno y WhatsApp como canal ágil de coordinación con su equipo. Su mayor frustración radica en el proceso de traspaso de turno y la lentitud de los sistemas hospitalarios actuales, los cuales obligan a registrar datos manualmente en papel para luego transcribirlos, generando demoras y riesgo de omisión de información. Ante la falta de datos urgentes en el sistema, debe recurrir a la búsqueda física de notas o carpetas en camilla, evidenciando una clara necesidad de centralización digital y optimización móvil para el registro oportuno de constantes vitales.
-*[Nota: Agregar la Entrevista 3 (y hasta 5 si es necesario) para completar el requerimiento del primer segmento]*
 
 ##### Segmento objetivo 2: Médicos especialistas cardiovasculares y profesionales médicos relacionados
 
-**Entrevista 1 — [Nombres y Apellidos del Entrevistado]**
-*   **Edad:** [Ej. 45 años]
-*   **Distrito:** [Ej. Jesús María]
-*   **Ocupación:** [Ej. Coordinador de Enfermería]
-*   **Inicio en el video (Timing):** [Ej. 15:00]
-*   **Duración:** [Ej. 06:15]
+**Entrevista 1 — Olenka Vela**
+*   **Edad:** 28 años
+*   **Distrito:** Rumisapa
+*   **Ocupación:** Médico General (Área de Hospitalización y Seguimiento Cardiovascular)
+*   **Inicio en el video (Timing):** 00:00
+*   **Duración:** 06:10
+*   **Link de Video:** [Entrevista](https://youtu.be/yWTwLYsYlXY)
 *   **Screenshot:**
-    <img src="[Ruta_screenshot_entrevista_coordinador_1]" width="400">
-*   **Resumen descriptivo:** [Redactar un resumen descriptivo indicando sus respuestas. Enfocarse en cómo supervisa la trazabilidad del personal, qué dificultades tiene para auditar incidentes y qué espera de una herramienta digital de gestión].
+    ![Ruta_screenshot_entrevista_3](assets/entrevista04seg2.png)
+*   **Resumen descriptivo:** Olenka Vela es una médico general de 28 años con cuatro años de trayectoria profesional, dedicando los últimos dos al área de hospitalización y seguimiento de pacientes cardiovasculares. Destaca en su entorno laboral por su empatía, templanza bajo presión y claridad para coordinar indicaciones con el personal asistencial. Emplea activamente su smartphone y aplicaciones de soporte clínico como UpToDate y MDCalc, recurriendo a WhatsApp como canal principal para la coordinación ágil de urgencias del servicio. Su principal frustración radica en la fragmentación y desorganización de los registros físicos en papel, lo cual retrasa la identificación oportuna de incidentes previos durante el pase de turno. Enfrenta barreras por la ausencia de sistemas digitales móviles integrados, obligándola a rastrear manualmente notas y carpetas físicas, lo que evidencia la necesidad urgente de una plataforma centralizada y accesible para la toma de decisiones clínicas inmediatas.
 
 **Entrevista 2 — [Nombres y Apellidos del Entrevistado]**
 *   **Edad:** [Completar]
