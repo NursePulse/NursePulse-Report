@@ -180,19 +180,6 @@ Las entrevistas fueron registradas en video y se organizaron según el segmento 
     ![Ruta_screenshot_entrevista_3](assets/entrevista04seg2.png)
 *   **Resumen descriptivo:** Olenka Vela es una médico general de 28 años con cuatro años de trayectoria profesional, dedicando los últimos dos al área de hospitalización y seguimiento de pacientes cardiovasculares. Destaca en su entorno laboral por su empatía, templanza bajo presión y claridad para coordinar indicaciones con el personal asistencial. Emplea activamente su smartphone y aplicaciones de soporte clínico como UpToDate y MDCalc, recurriendo a WhatsApp como canal principal para la coordinación ágil de urgencias del servicio. Su principal frustración radica en la fragmentación y desorganización de los registros físicos en papel, lo cual retrasa la identificación oportuna de incidentes previos durante el pase de turno. Enfrenta barreras por la ausencia de sistemas digitales móviles integrados, obligándola a rastrear manualmente notas y carpetas físicas, lo que evidencia la necesidad urgente de una plataforma centralizada y accesible para la toma de decisiones clínicas inmediatas.
 
-**Entrevista 2 — [Nombres y Apellidos del Entrevistado]**
-*   **Edad:** [Completar]
-*   **Distrito:** [Completar]
-*   **Ocupación:** [Completar]
-*   **Inicio en el video (Timing):** [Completar]
-*   **Duración:** [Completar]
-*   **Screenshot:**
-    <img src="[Ruta_screenshot_entrevista_coordinador_2]" width="400">
-*   **Resumen descriptivo:** [Redactar resumen descriptivo...]
-
-*[Nota: Agregar la Entrevista 3 (y hasta 5 si es necesario) para completar el requerimiento del segundo segmento]*
-
----
 
 #### 2.2.3. Análisis de entrevistas
 
@@ -202,9 +189,9 @@ El análisis de entrevistas permite identificar patrones recurrentes, caracterí
 
 | Segmento | Entrevistas analizadas | Cantidad |
 | :--- | :--- | :--- |
-| Personal de enfermería cardiovascular | [Nombres de los entrevistados del segmento 1] | [Ej. 3] |
-| Médico especialista cardiovascular | [Nombres de los entrevistados del segmento 2] | [Ej. 3] |
-| **Total** | — | **[Ej. 6]** |
+| Personal de enfermería cardiovascular | Marcelo Garriazo, Andrew Sánchez, Sofia Ortega | 3 |
+| Médico especialista cardiovascular | Olenka Vela | 1 |
+| **Total** | — | **4** |
 
 ##### Análisis del Segmento 1: Personal de enfermería cardiovascular
 
@@ -212,47 +199,45 @@ El análisis de entrevistas permite identificar patrones recurrentes, caracterí
 
 | Característica objetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
-| Uso de apuntes o libretas físicas de apoyo | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Problemas o pérdida de tiempo durante el traspaso de turno | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
-| Uso constante de smartphone u otros dispositivos móviles | Presente en [X] de [Y] entrevistas | [Ej. 60%] |
-| [Agregar otra característica objetiva] | Presente en [X] de [Y] entrevistas | [%] |
+| Registro manual en papel antes de trasladar la información al sistema | Presente en 3 de 3 entrevistas (Marcelo, Andrew, Sofia) | 100% |
+| Dificultad o demora para ubicar información/documentos durante el turno | Presente en 3 de 3 entrevistas (Marcelo, Andrew, Sofia) | 100% |
+| Uso de WhatsApp como canal principal de comunicación clínica | Presente en 3 de 3 entrevistas (Marcelo, Andrew, Sofia) | 100% |
+| Uso de dispositivo móvil (smartphone/tablet) durante el monitoreo del turno | Presente en 1 de 3 entrevistas (Sofia) | 33% |
 
 ###### Análisis de características subjetivas
 
 | Característica subjetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
-| Frustración por sistemas hospitalarios lentos y complejos | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Temor a omitir datos vitales por presión operativa | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
-| Preferencia por herramientas digitales simples y rápidas | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| [Agregar otra característica subjetiva] | Presente en [X] de [Y] entrevistas | [%] |
+| Frustración por lentitud o caídas de los sistemas hospitalarios | Presente en 2 de 3 entrevistas (Marcelo, Sofia) | 67% |
+| Riesgo percibido de omisión de información por presión operativa | Presente en 1 de 3 entrevistas (Sofia) | 33% |
+| Preferencia por una herramienta digital ágil que centralice la información | Presente en 3 de 3 entrevistas (Marcelo, Andrew, Sofia) | 100% |
 
 **Interpretación del segmento:**  
-[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes. Ejemplo: "El análisis demuestra que la totalidad del personal entrevistado siente frustración al transcribir datos de la libreta física a la computadora, lo que justifica nuestra hipótesis de que NursePulse debe tener un flujo de registro extremadamente rápido, centrado en el modelo SBAR y preferentemente móvil..."]
+Las tres entrevistas del personal de enfermería coinciden en un mismo patrón: el registro de información clínica todavía depende del papel como paso intermedio antes de llegar a cualquier sistema digital, lo que genera demoras al ubicar historiales durante el turno y aumenta el riesgo de perder información relevante en el traspaso. El uso de WhatsApp como canal de comunicación en los tres casos evidencia una necesidad de inmediatez que los sistemas actuales no cubren. Esto respalda la hipótesis de que NursePulse debe ofrecer un flujo de registro rápido, centrado en el modelo SBAR, y con una versión móvil que reduzca la dependencia de estaciones de trabajo fijas, especialmente en escenarios de traspaso de turno.
 
 ##### Análisis del Segmento 2: Médico especialista cardiovascular
+
 
 ###### Análisis de características objetivas
 
 | Característica objetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
-| Dificultad para acceder a la evolución clínica consolidada rápidamente | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Uso de múltiples medios (físicos, digitales, verbales) para validar datos | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
-| [Agregar otra característica objetiva] | Presente en [X] de [Y] entrevistas | [%] |
+| Dificultad para acceder a la evolución clínica consolidada rápidamente | Presente en 1 de 1 entrevista (Olenka) | 100% (n=1) |
+| Uso de múltiples medios (apps clínicas, WhatsApp, notas físicas) para validar datos | Presente en 1 de 1 entrevista (Olenka) | 100% (n=1) |
 
 ###### Análisis de características subjetivas
 
 | Característica subjetiva | Evidencia identificada | Porcentaje |
 | :--- | :--- | :--- |
-| Frustración por información clínica fragmentada al momento de tomar decisiones | Presente en [X] de [Y] entrevistas | [Ej. 100%] |
-| Necesidad de visualizar rápidamente alertas y cambios críticos | Presente en [X] de [Y] entrevistas | [Ej. 80%] |
-| [Agregar otra característica subjetiva] | Presente en [X] de [Y] entrevistas | [%] |
+| Frustración por información clínica fragmentada al momento de tomar decisiones | Presente en 1 de 1 entrevista (Olenka) | 100% (n=1) |
+| Necesidad de centralizar la información para decisiones clínicas inmediatas | Presente en 1 de 1 entrevista (Olenka) | 100% (n=1) |
 
 **Interpretación del segmento:**  
-[Completar: Redactar un párrafo explicando qué nos dicen estos porcentajes para los médicos especialistas. Ejemplo: "Los datos evidencian que los médicos invierten un tiempo considerable cruzando información de distintas fuentes para entender el estado real del paciente. Esto valida la necesidad de que NursePulse incorpore un dashboard o resumen clínico que consolide la evolución y eventos críticos con una trazabilidad clara..."]
+La única entrevista disponible para este segmento describe una fricción similar a la del personal de enfermería, pero enfocada en la toma de decisiones: la fragmentación de los registros físicos retrasa la identificación de incidentes previos del paciente, obligando a la médica a apoyarse en aplicaciones externas (UpToDate, MDCalc) y en WhatsApp para suplir la falta de un sistema centralizado. Aunque el hallazgo es consistente con la propuesta de valor de NursePulse, al provenir de una sola entrevista no permite todavía generalizar al segmento completo de médicos especialistas.
 
 ##### Conclusiones generales del análisis
 
-[Completar: Redactar una conclusión integrando ambos segmentos. Ejemplo: "Las entrevistas confirman que ambos segmentos enfrentan fricciones debido a procesos desconectados y registros fragmentados. Mientras el personal de enfermería prioriza la agilidad en el registro de signos vitales y traspasos SBAR, los médicos especialistas priorizan el acceso rápido y confiable a dicha información para la toma de decisiones. Estos hallazgos validan directamente la propuesta de valor de NursePulse y sirven como pilar para la construcción de los User Personas y el User Task Matrix desarrollados a continuación."]
+Con la evidencia disponible, ambos segmentos coinciden en un mismo problema de fondo: la dependencia de registros físicos y canales informales (papel, WhatsApp) genera demoras y riesgo de pérdida de información en momentos clínicamente sensibles, ya sea durante el traspaso de turno de enfermería o durante la revisión del estado del paciente por parte del médico. Esto valida la propuesta de valor de NursePulse como una plataforma centralizada que digitaliza el traspaso SBAR y consolida la evolución clínica del paciente. Sin embargo, dado que el segmento de médicos especialistas se sustenta hasta el momento en una sola entrevista, se recomienda ampliar esa muestra antes de dar por validados los hallazgos de dicho segmento con el mismo nivel de confianza que el de enfermería.
 
 ### 2.3. Needfinding
 
