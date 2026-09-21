@@ -825,17 +825,17 @@ Los experimentos se realizarán en ciclos de aprendizaje. Si una hipótesis obti
 El Lean UX Canvas sintetiza los principales elementos del modelo de aprendizaje de Nurse Pulse y relaciona el problema de negocio con los usuarios, resultados, supuestos, soluciones e hipótesis que serán evaluadas.
 
 | Sección | Descripción para Nurse Pulse |
-| ------- | ---------------------------- |
-| **1. Business Problem** | En entornos cardiovasculares, determinada información clínica puede encontrarse distribuida entre diferentes sistemas, registros físicos y procesos de comunicación. Esta fragmentación puede dificultar la consulta, comunicación y trazabilidad de información relevante. Nurse Pulse busca evaluar una solución digital complementaria enfocada en centralizar determinados flujos clínicos cardiovasculares. |
-| **2. Business Outcomes** | Reducir fricción en procesos de registro y consulta, mejorar trazabilidad, identificar funcionalidades de mayor valor y generar interés institucional en la solución. |
+| :--- | :--- |
+| **1. Business Problem** | En entornos cardiovasculares, la información clínica suele estar fragmentada entre registros físicos y digitales. Esta duplicidad dificulta la trazabilidad, retrasa la consulta médica y genera fricción operativa en los cambios de turno. Nurse Pulse busca centralizar estos flujos. |
+| **2. Business Outcomes** | Reducir el tiempo promedio de registro clínico, eliminar la duplicidad operativa (transcripción de papel a digital), disminuir las omisiones de información crítica y mejorar la trazabilidad de los eventos. |
 | **3. Users and Customers** | **Usuarios directos:** personal de enfermería cardiovascular y médicos especialistas cardiovasculares. **Cliente institucional:** hospitales, clínicas y centros especializados en cardiología. |
-| **4. User Outcomes** | Registrar signos vitales, comunicar traspasos SBAR, consultar evolución clínica, identificar eventos relevantes y conocer la trazabilidad de las acciones realizadas. |
-| **5. User Benefits** | Menor esfuerzo para encontrar información, mayor claridad durante cambios de turno, mejor organización de registros y mayor visibilidad sobre responsables, fechas y eventos. |
-| **6. Solutions** | Landing Page, Web Application, Native Mobile Application, registro de signos vitales, traspasos SBAR, eventos clínicos, alertas, vista de evolución, dashboard y registros de trazabilidad. |
-| **7. Hypotheses** | SBAR puede reducir omisiones; el registro digital puede facilitar el flujo de signos vitales; una vista resumida puede reducir tiempos de consulta; la trazabilidad puede facilitar la revisión de registros; y la priorización visual puede facilitar el reconocimiento de eventos. |
-| **8. Assumptions** | Los profesionales valoran rapidez, simplicidad y trazabilidad; determinadas tareas se ven afectadas por la fragmentación de información; y las instituciones pueden reconocer valor en una solución complementaria especializada. |
-| **9. Experiments** | Entrevistas, pruebas comparativas, tareas de usabilidad, experimentos SBAR, evaluación de navegación, pruebas móviles y validación de Landing Page. |
-| **10. Learning** | Los resultados determinarán qué funcionalidades deben mantenerse, modificarse, descartarse o someterse a nuevos experimentos antes de ampliar el producto. |
+| **4. User Outcomes** | Registrar signos vitales ágilmente (*Point of Care*), comunicar traspasos estructurados vía SBAR, consultar evolución clínica rápidamente y registrar trazabilidad automática de acciones. |
+| **5. User Benefits** | Menor carga administrativa, reducción del estrés durante los cambios de turno, mayor confianza clínica al tener información completa y acceso inmediato a datos críticos para la toma de decisiones. |
+| **6. Solutions** | Plataforma Web y Aplicación Móvil Nativa con: registro de signos vitales, módulo de traspasos guiado por SBAR, vista consolidada de evolución, sistema de alertas y panel de trazabilidad. Incluye una Landing Page para clientes. |
+| **7. Hypotheses** | Si implementamos SBAR, reduciremos omisiones; si usamos registro digital móvil, eliminaremos el uso de borradores en papel; si consolidamos la vista clínica, reduciremos los tiempos de consulta médica. |
+| **8. Assumptions** | Los profesionales valoran la rapidez y rechazan interfaces complejas; el uso de papel es una barrera para la eficiencia; las instituciones están dispuestas a adoptar herramientas complementarias que no requieran cambiar todo su sistema actual. |
+| **9. Experiments** | Entrevistas a profundidad, simulaciones comparativas de registro (papel vs. digital), pruebas de usabilidad de la aplicación móvil y evaluación de comprensión de la Landing Page. |
+| **10. Learning** | Los resultados de los experimentos determinarán qué funcionalidades aportan valor real y deben priorizarse en el desarrollo, y cuáles deben modificarse o descartarse para evitar desperdicio de recursos. |
 
 > **Artefacto:** Lean UX Canvas
 
@@ -844,6 +844,7 @@ El Lean UX Canvas sintetiza los principales elementos del modelo de aprendizaje 
 </p>
 
 ---
+
 ### 1.3. Segmentos objetivo
 
 Nurse Pulse diferencia entre los **usuarios directos** que interactúan con la plataforma dentro de las actividades relacionadas con la atención cardiovascular y el **cliente institucional** responsable de evaluar o adoptar la solución.
