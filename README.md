@@ -56,7 +56,7 @@
       <td rowspan="5" style="text-align: center; vertical-align: middle;"><b>AV1</b></td>
       <td>14/09/2026</td>
       <td>Mansilla Rivero, Carlos Marcelo</td>
-      <td>Encargado de la validacion y realizacion del capitulo I , asi como los segmentos objetivos, tambien encargado del despliguede la aplicacion movil perimera version</td>
+      <td>Encargado de la validacion y realizacion del capitulo I , asi como los segmentos objetivos, tambien encargado del despligue de la aplicacion movil perimera version</td>
     </tr>
     <tr>
       <td>14/09/2026</td>
@@ -301,7 +301,7 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
 
 |Mision|Vision|
 |----|----|
-|Desarrollar soluciones digitales que ayuden a mejorar la comunicación, trazabilidad y organización de procesos clínicos cardiovasculares, aportando valor a los profesionales de salud y a las instituciones que buscan fortalecer la continuidad de atención de sus pacientes |Desarrollar soluciones digitales que ayuden a mejorar la comunicación, trazabilidad y organización de procesos clínicos cardiovasculares, aportando valor a los profesionales de salud y a las instituciones que buscan fortalecer la continuidad de atención de sus pacientes|
+|Desarrollar soluciones digitales que ayuden a mejorar la comunicación, trazabilidad y organización de procesos clínicos cardiovasculares, aportando valor a los profesionales de salud y a las instituciones que buscan fortalecer la continuidad de atención de sus pacientes |Ser una startup reconocida por crear soluciones tecnológicas confiables, accesibles y escalables para el sector salud, contribuyendo a una mejor gestión de información clínica y a la transformación digital de los procesos de atención|
 
 
 
@@ -360,7 +360,7 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
     <td>
       <b>Código:</b> u20211A574<br>
       <b>Carrera:</b> Ingeniería de Software<br><br>
-      Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos de desarrollo de documentacion, requisitos y requerimientos, arquitectura de software. Dentro de Nurse Pulse, aportare mi logica de anilisis para buscar vulnerabilidades en el sistema y preparar contramedidas, responsabilidad y trabajo colaborativo.
+      Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos de desarrollo de documentacion, requisitos y requerimientos, arquitectura de software. Dentro de Nurse Pulse, aportare mi logica de análisis para buscar vulnerabilidades en el sistema y preparar contramedidas, responsabilidad y trabajo colaborativo.
     </td>
   </tr>
 
