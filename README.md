@@ -273,11 +273,18 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 # Part I: As-Is Software Project
 
-## Capítulo I: Introducción
+---
+# Capítulo I: Introducción
 
-### 1.1. Startup Profile
+---
 
-#### 1.1.1. Descripción de la Startup
+## 1.1. Startup Profile
+
+---
+
+En esta sección, se presenta una descripción detallada de la startup, incluyendo su misión, visión y valores fundamentales así como una descripción de los integrantes que la conforman.
+
+### 1.1.1. Descripción de la Startup
 
 **Nurse Pulse** es una startup tecnológica conformada por estudiantes de la carrera de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas. El equipo se enfoca en el desarrollo de soluciones digitales orientadas a mejorar procesos críticos dentro del sector salud, aplicando investigación con usuarios, diseño de experiencias digitales, desarrollo de aplicaciones y construcción de servicios de software.
 
@@ -291,11 +298,12 @@ La solución no pretende reemplazar una Historia Clínica Electrónica (EHR), un
 
 Como startup, Nurse Pulse busca desarrollar un producto digital accesible, seguro, escalable y centrado en las necesidades reales de sus usuarios. Para ello, el proyecto combina investigación del problema, experimentación, diseño centrado en el usuario, desarrollo de software, documentación técnica y validación de las funcionalidades propuestas.
 
-**Misión:** Desarrollar soluciones digitales que ayuden a mejorar la comunicación, trazabilidad y organización de procesos clínicos cardiovasculares, aportando valor a los profesionales de salud y a las instituciones que buscan fortalecer la continuidad de atención de sus pacientes.
 
-**Visión:** Ser una startup reconocida por crear soluciones tecnológicas confiables, accesibles y escalables para el sector salud, contribuyendo a una mejor gestión de información clínica y a la transformación digital de los procesos de atención.
+|Mision|Vision|
+|----|----|
+|Desarrollar soluciones digitales que ayuden a mejorar la comunicación, trazabilidad y organización de procesos clínicos cardiovasculares, aportando valor a los profesionales de salud y a las instituciones que buscan fortalecer la continuidad de atención de sus pacientes |Desarrollar soluciones digitales que ayuden a mejorar la comunicación, trazabilidad y organización de procesos clínicos cardiovasculares, aportando valor a los profesionales de salud y a las instituciones que buscan fortalecer la continuidad de atención de sus pacientes|
 
----
+
 
 #### 1.1.2. Perfiles de integrantes del equipo
 
@@ -373,10 +381,20 @@ Como startup, Nurse Pulse busca desarrollar un producto digital accesible, segur
 
 ---
 
-### 1.2. Solution Profile
+## 1.2. Solution Profile
 
-#### 1.2.1. Antecedentes y problemática
+---
 
+En esta sección se describe el perfil de la solución propuesta, incluyendo los antecedentes y la problemática que aborda. Además, se usó la técnica de las 5W y 2H para comprender mejor el contexto y las necesidades del usuario. Finalmente, se desarrolló el proceso Lean UX para definir las posibles características y funcionalidades de la solución.
+
+![logoNursePulse.png](assets/chapter-1/logoNursePulse.png)
+
+
+
+### 1.2.1. Antecedentes y problemática
+
+
+#### Antecedentes:
 Nurse Pulse toma como antecedente conceptual **PulseReport**, una solución académica desarrollada previamente por el equipo BrainSpark para apoyar la gestión de información clínica en entornos cardiovasculares. El proyecto anterior abordó procesos como el registro de signos vitales, los traspasos de turno mediante SBAR, el registro de eventos clínicos y la trazabilidad de las acciones realizadas por profesionales de la salud.
 
 A partir de dicho antecedente, Nurse Pulse mantiene el enfoque en el contexto cardiovascular y utiliza los conocimientos obtenidos durante el desarrollo previo como punto de partida para una nueva etapa de investigación y experimentación. Las hipótesis, decisiones de diseño y resultados del proyecto actual deberán ser nuevamente evaluados dentro del contexto de este curso.
@@ -386,6 +404,9 @@ La problemática identificada se relaciona con la forma en que información clí
 En áreas cardiovasculares, el personal de enfermería y los médicos especialistas requieren consultar, registrar y comunicar información con rapidez. Datos como signos vitales, eventos clínicos, tratamientos, evolución reciente del paciente y traspasos de turno deben encontrarse disponibles de manera clara y trazable. Cuando la información está fragmentada o no se comunica de manera estructurada, pueden producirse omisiones, duplicidad de registros, retrasos en la consulta y dificultades para reconstruir lo ocurrido durante la atención.
 
 Nurse Pulse plantea una solución digital complementaria que permita centralizar información relevante del paciente cardiovascular y facilitar determinados procesos de comunicación y seguimiento clínico.
+
+
+#### Técnica de las 5W's y 2H's:
 
 ##### A. Quiénes están involucrados (Who)
 
@@ -505,7 +526,10 @@ Nurse Pulse busca abordar los siguientes puntos:
 - Reducir la dependencia de registros complementarios cuando el flujo digital resulte adecuado.
 - Mantener una experiencia clara y comprensible en los productos digitales desarrollados.
 
-##### Objetivos de la solución
+
+![IshikawaDiagram.png](assets/chapter-1/IshikawaDiagram.png)
+
+### Objetivos de la solución
 
 **Objetivo general**
 
@@ -816,141 +840,94 @@ El Lean UX Canvas sintetiza los principales elementos del modelo de aprendizaje 
 > **Artefacto:** Lean UX Canvas
 
 <p align="center">
-  <img src="assets/chapter-1/LEAN-UX-CANVAS.png" alt="Lean UX Canvas de Nurse Pulse" width="700px">
+  <img src="assets/chapter-1/Lean%20UX%20Canvas.png" alt="Lean UX Canvas de Nurse Pulse" width="700px">
 </p>
 
 ---
-
 ### 1.3. Segmentos objetivo
 
 Nurse Pulse diferencia entre los **usuarios directos** que interactúan con la plataforma dentro de las actividades relacionadas con la atención cardiovascular y el **cliente institucional** responsable de evaluar o adoptar la solución.
 
-Los dos segmentos principales de usuarios definidos para la investigación son el **personal de enfermería cardiovascular** y los **médicos especialistas cardiovasculares**. Como cliente institucional se consideran hospitales, clínicas y centros especializados en cardiología.
+Los dos segmentos principales de usuarios definidos para la investigación son el **personal de enfermería cardiovascular** y los **médicos especialistas cardiovasculares**. Como cliente institucional se consideran hospitales, clínicas y centros especializados en cardiología dentro del ecosistema de salud peruano.
 
 ---
 
 #### Segmento objetivo #1: Personal de enfermería cardiovascular
 
-Este segmento está conformado por enfermeros y enfermeras que atienden pacientes cardiovasculares en áreas como hospitalización, unidades de cuidados intensivos, emergencia y centros especializados en cardiología.
-
-Sus actividades pueden incluir monitoreo del paciente, registro de signos vitales, seguimiento de tratamientos indicados, documentación de eventos clínicos y transferencia de información durante los cambios de turno.
+Este segmento está conformado por enfermeros y enfermeras que atienden pacientes cardiovasculares en áreas como hospitalización, unidades de cuidados intensivos, emergencia y centros especializados en cardiología. Sus actividades pueden incluir monitoreo del paciente, registro de signos vitales, seguimiento de tratamientos indicados, documentación de eventos clínicos y transferencia de información durante los cambios de turno.
 
 **Características demográficas y profesionales preliminares:**
-
 - Profesionales de salud con formación técnica o universitaria en enfermería.
 - Edad aproximada entre 24 y 55 años, rango que deberá validarse mediante la investigación.
 - Experiencia variable, desde profesionales en etapas iniciales hasta personal con amplia experiencia clínica.
 - Participación frecuente en turnos rotativos y guardias.
 - Trabajo en áreas donde la información del paciente puede cambiar constantemente.
-- Uso de herramientas digitales y sistemas institucionales según los recursos disponibles en el establecimiento.
-
-**Características clave del segmento:**
-
-- Registra información clínica con alta frecuencia.
-- Necesita consultar información durante diferentes momentos del turno.
-- Participa en la transferencia de información entre equipos.
-- Trabaja en escenarios donde rapidez y precisión son relevantes.
-- Requiere identificar signos vitales y eventos recientes.
-- Necesita mantener trazabilidad sobre determinadas acciones realizadas.
-- Valora interfaces claras que no añadan pasos innecesarios.
+- Uso de herramientas digitales y sistemas institucionales según los recursos disponibles en el establecimiento (frecuentemente combinados con registros en papel).
 
 **Necesidades principales:**
-
 - Registrar información clínica de manera rápida y comprensible.
 - Consultar signos vitales y eventos recientes.
 - Comunicar información estructurada durante el cambio de turno.
 - Reducir omisiones durante la transferencia de información.
-- Evitar duplicidad innecesaria entre diferentes medios.
-- Identificar información que requiere seguimiento.
+- Evitar duplicidad innecesaria entre diferentes medios (físico a digital).
 - Mantener evidencia de las acciones realizadas durante el turno.
 
 ---
 
 #### Segmento objetivo #2: Médicos especialistas cardiovasculares
 
-Este segmento está compuesto por médicos cardiólogos, intensivistas, cirujanos cardiovasculares y otros profesionales médicos relacionados con la evaluación y seguimiento de pacientes cardiovasculares.
-
-Su interacción con Nurse Pulse se orienta principalmente a la consulta de información clínica, revisión de signos vitales, análisis de eventos recientes y seguimiento de la evolución del paciente.
+Este segmento está compuesto por médicos cardiólogos, intensivistas, cirujanos cardiovasculares y otros profesionales médicos relacionados con la evaluación y seguimiento de pacientes cardiovasculares. Su interacción con Nurse Pulse se orienta principalmente a la consulta de información clínica, revisión de signos vitales, análisis de eventos recientes y seguimiento de la evolución del paciente.
 
 **Características demográficas y profesionales preliminares:**
-
 - Profesionales médicos con especialización o experiencia en cardiología, medicina intensiva, cirugía cardiovascular u otras áreas relacionadas.
 - Edad aproximada entre 28 y 60 años, rango que deberá validarse mediante la investigación.
 - Formación especializada y experiencia clínica variable.
-- Trabajo en hospitales, clínicas, centros cardiovasculares, UCI, emergencia o áreas de hospitalización.
+- Trabajo en hospitales (MINSA, EsSalud), clínicas privadas, centros cardiovasculares, UCI o áreas de emergencia.
 - Interacción frecuente con personal de enfermería y otros profesionales.
-- Uso de historias clínicas, sistemas hospitalarios y diferentes fuentes de información para evaluar pacientes.
-
-**Características clave del segmento:**
-
-- Consulta información clínica para evaluar la evolución del paciente.
-- Necesita revisar signos vitales y eventos relevantes.
-- Busca información resumida y fácil de interpretar.
-- Requiere conocer información actualizada antes de determinadas decisiones.
-- Coordina actividades con personal de enfermería y otros profesionales.
-- Valora la trazabilidad para verificar cuándo y quién realizó determinados registros.
-- Rechaza herramientas que incrementen innecesariamente la complejidad de su trabajo.
 
 **Necesidades principales:**
-
 - Consultar rápidamente información relevante del paciente.
-- Visualizar la evolución reciente.
-- Revisar signos vitales registrados.
+- Visualizar la evolución reciente y revisar signos vitales registrados.
 - Identificar eventos clínicos relevantes.
 - Reconocer responsables, fechas y horas de determinados registros.
-- Reducir el tiempo requerido para localizar información.
-- Contar con una vista organizada y comprensible del estado reciente del paciente.
+- Reducir el tiempo requerido para localizar información distribuida en distintos formatos.
 
 ---
 
 #### Cliente objetivo: Hospitales, clínicas y centros especializados en cardiología
 
-Además de los usuarios directos, Nurse Pulse considera como cliente objetivo a las instituciones de salud que atienden pacientes cardiovasculares.
-
-Estas organizaciones pueden disponer de distintos niveles de digitalización y contar con diferentes sistemas para administrar su información clínica. Nurse Pulse no pretende sustituir esa infraestructura, sino evaluar su valor como herramienta complementaria para determinados procesos de comunicación, consulta y trazabilidad.
-
-**Características del cliente institucional:**
-
-- Instituciones públicas o privadas del sector salud.
-- Hospitales y clínicas con atención cardiovascular.
-- Centros especializados en cardiología.
-- Instituciones con áreas de hospitalización, emergencia o cuidados intensivos.
-- Organizaciones que pueden disponer previamente de sistemas hospitalarios.
-- Entidades interesadas en mejorar trazabilidad y continuidad de determinados procesos clínicos.
+Además de los usuarios directos, Nurse Pulse considera como cliente objetivo a las instituciones de salud peruanas que atienden pacientes cardiovasculares. El sistema de salud en Perú (dividido entre MINSA, EsSalud y sector privado) presenta distintos niveles de digitalización y carencia de interoperabilidad. Nurse Pulse no pretende sustituir infraestructuras complejas (HIS), sino evaluar su valor como herramienta complementaria ágil.
 
 **Necesidades principales:**
-
-- Facilitar la comunicación entre profesionales.
-- Reducir la pérdida u omisión de información relevante.
-- Mantener trazabilidad de registros y eventos.
-- Facilitar la supervisión y revisión de determinadas acciones.
-- Implementar soluciones digitales sin reemplazar inmediatamente toda su infraestructura existente.
-- Evaluar herramientas que aporten valor sin incrementar excesivamente la complejidad operativa.
+- Facilitar la comunicación entre profesionales mitigando la fragmentación del sistema.
+- Reducir la pérdida u omisión de información relevante y mantener trazabilidad de registros.
+- Facilitar la supervisión y revisión de determinadas acciones clínicas.
+- Implementar soluciones digitales sin reemplazar inmediatamente toda su infraestructura existente ni requerir integraciones costosas.
 
 ---
 
-#### Sustento estadístico de los segmentos
+#### Sustento estadístico del problema y los segmentos
 
-Las enfermedades cardiovasculares representan un problema relevante de salud pública. La Organización Mundial de la Salud señala que constituyen la principal causa de muerte a nivel mundial, lo que evidencia la magnitud de este conjunto de enfermedades y la importancia de los procesos relacionados con su prevención, monitoreo y atención (Organización Mundial de la Salud [OMS], s. f.).
+Las enfermedades cardiovasculares representan un problema crítico de salud pública. A nivel global, la Organización Mundial de la Salud señala que constituyen la principal causa de muerte, evidenciando la magnitud de los procesos de monitoreo y atención (Organización Mundial de la Salud [OMS], s. f.). En el contexto local, la Encuesta Demográfica y de Salud Familiar correspondiente a 2024 reportó que aproximadamente el **14.2 % de las personas de 15 años a más en el Perú presentó presión arterial alta**, indicador fuertemente relacionado con el riesgo cardiovascular (Instituto Nacional de Estadística e Informática [INEI], 2025).
 
-En el contexto de las Américas, la Organización Panamericana de la Salud también identifica a las enfermedades cardiovasculares como una de las principales causas de mortalidad de la región. Este panorama evidencia que los servicios relacionados con atención cardiovascular involucran una demanda permanente de profesionales capaces de monitorear, registrar y evaluar información clínica de estos pacientes (Organización Panamericana de la Salud [OPS], s. f.).
+Sin embargo, el cuidado de estos pacientes se ve obstaculizado por la carga operativa derivada de la documentación clínica. De acuerdo con el estudio observacional clásico *A 36-hospital time and motion study: How do medical-surgical nurses spend their time?* (Hendrich et al., 2008), el personal de enfermería dedica en promedio un **35.3% de su turno a labores de documentación y coordinación**, en marcado contraste con un exiguo 19.3% destinado a las actividades de atención directa al paciente. Esta desproporción subraya la necesidad de rediseñar la arquitectura de la información en salud para que el registro actúe como un facilitador y no como un cuello de botella.
 
-En el Perú, las enfermedades cardiovasculares forman parte de los principales problemas de salud pública. Asimismo, la Encuesta Demográfica y de Salud Familiar correspondiente a 2024 reportó que aproximadamente el **14.2 % de las personas de 15 años a más presentó presión arterial alta**, indicador relacionado con uno de los principales factores de riesgo cardiovascular de la población (Instituto Nacional de Estadística e Informática [INEI], 2025).
+Esta vulnerabilidad alcanza su punto más crítico durante los cambios de turno (shift handover). The Joint Commission ha determinado que las deficiencias comunicacionales constituyen la causa raíz principal de los eventos adversos hospitalarios; **los errores u omisiones en la comunicación contribuyeron a un 64% de todos los eventos centinela** reportados, ascendiendo a un 81% en los casos con resultados fatales.
 
-Este contexto permite sustentar la selección del **personal de enfermería cardiovascular** y los **médicos especialistas cardiovasculares** como segmentos principales de Nurse Pulse. Ambos participan directamente en procesos de registro, monitoreo, consulta y comunicación de información relacionada con pacientes que presentan enfermedades cardiovasculares o factores de riesgo asociados.
+Para neutralizar estas fallas, la evidencia demuestra que la implementación de metodologías estructuradas como SBAR reduce drásticamente el riesgo. En el estudio de De Meester et al. (2013), la adopción de este protocolo incrementó la documentación estructurada del 4% al 35% (p < 0.001). De manera convergente, Randmaa et al. (2014) comprobó que la integración de SBAR logró una **reducción absoluta del 20% en la tasa de reportes de incidentes por errores de comunicación** (de un 31% a un 11%).
+
+| Dimensión Operativa | Indicador Estadístico | Impacto Clínico y Operativo | Fuente de Evidencia |
+| :--- | :--- | :--- | :--- |
+| **Carga de Documentación** | 35.3% del turno en registros frente a 19.3% en cuidado directo. | Riesgo de sobrecarga cognitiva, burnout y reducción del tiempo de atención. | Hendrich et al. (2008) |
+| **Fallas de Comunicación** | 64% de eventos centinela (81% en casos fatales). | Causa raíz primaria de eventos adversos, retrasos y daño permanente. | The Joint Commission |
+| **Mitigación SBAR (Registro)** | Aumento en documentación estructurada del 4% al 35%. | Reducción empírica de muertes inesperadas y mejora en colaboración. | De Meester et al. (2013) |
+| **Mitigación SBAR (Incidentes)**| Disminución de reportes por error del 31% al 11%. | Mejora estadísticamente significativa en el clima de seguridad. | Randmaa et al. (2014) |
 
 ---
 
 #### Justificación de selección de segmentos
 
-Los segmentos seleccionados se relacionan directamente con el problema central de Nurse Pulse: la **gestión y trazabilidad de información clínica cardiovascular**.
+Los segmentos seleccionados se relacionan directamente con el problema central de Nurse Pulse: la gestión y trazabilidad de información clínica cardiovascular frente a la alta carga administrativa documentada.
 
-El **personal de enfermería cardiovascular** representa principalmente los procesos de monitoreo, registro de signos vitales, documentación de eventos y comunicación entre turnos.
+El **personal de enfermería cardiovascular** representa los procesos de monitoreo, registro de signos vitales, y comunicación entre turnos (los principales afectados por el 35.3% de tiempo de documentación y los riesgos del traspaso). Los **médicos especialistas cardiovasculares** representan los procesos de consulta e interpretación de la evolución clínica rápida. Finalmente, los **hospitales y clínicas peruanas** representan al cliente institucional que requiere mitigar los riesgos de eventos adversos y mejorar la eficiencia sin enfrentarse a las barreras tecnológicas típicas del sector local.
 
-Los **médicos especialistas cardiovasculares** representan los procesos de consulta, interpretación de la evolución clínica y utilización de información relevante para la evaluación del paciente.
-
-Finalmente, los **hospitales, clínicas y centros especializados en cardiología** representan al cliente institucional que podría adoptar la solución, definir sus condiciones de utilización y evaluar su integración dentro de los procesos existentes.
-
-Esta separación permite mantener coherencia entre la problemática, los segmentos objetivo, las entrevistas, los User Personas, las hipótesis, los experimentos y las funcionalidades propuestas para Nurse Pulse.
-
-La investigación deberá evitar asumir que todos los profesionales o instituciones trabajan de la misma manera. Las características, necesidades y dificultades planteadas en este capítulo representan hipótesis iniciales que deberán ser contrastadas posteriormente mediante entrevistas y experimentos con participantes representativos.
