@@ -1,6 +1,6 @@
-## Capítulo V: Product Implementation, Validation & Deployment
+# Capítulo V: Product Implementation, Validation & Deployment
 
-### 5.1. Software Configuration Management.
+## 5.1. Software Configuration Management.
 
 En esta sección se describe la gestión de la configuración del software utilizado en el proyecto de NursePulse, la cual tiene como objetivo garantizar la trazabilidad y digitalización de procesos vitales durante la estadía de un paciente en un hospital cardiovascular.
 Desde registro de pacientes hasta generación de alertas y traspasos SBAR. Esta gestión permite mantener la integridad, trazabilidad y consistencia del código fuente, así como coordinar de manera eficiente el trabajo colaborativo del equipo.
@@ -9,7 +9,7 @@ El Software Configuration Management en NursePulse se basa en el uso de herramie
 las distintas versiones del sistema a lo largo del tiempo. Esto incluye la organización de los repositorios del proyecto, la definición de estrategias de ramificación, la gestión
 de cambios mediante commits bien documentados y la integración del trabajo realizado por los diferentes miembros del equipo.
 
-#### 5.1.1. Software Development Environment Configuration.
+### 5.1.1. Software Development Environment Configuration.
 
 En esta sección se describen las herramientas utilizadas por el equipo encargado de desarrollar NursePulse para colaborar de manera efectiva durante todo el ciclo de vida del producto digital. Estas herramientas han sido seleccionadas estratégicamente con el objetivo de optimizar la comunicación, organización, diseño, desarrollo, despliegue y documentación del sistema, permitiendo un trabajo colaborativo eficiente y escalable.
 
@@ -63,6 +63,7 @@ El repositorio principal del proyecto es el siguiente:
 - **Landing Page Repository**: [https://github.com/NursePulse/Landing-NursePulse](https://github.com/NursePulse/Landing-NursePulse)
 - **Frontend Web App Repository**: [https://github.com/NursePulse/Application-Web-Nurse-Pulse](https://github.com/NursePulse/Application-Web-Nurse-Pulse)
 - **Backend (Web Services) Repository**: [https://github.com/NursePulse/Backend-NursePulse](https://github.com/NursePulse/Backend-NursePulse)
+- **Mobile Multiplatform Application:**: [https://github.com/NursePulse/MultiPlatform-App-NursePulse](https://github.com/NursePulse/MultiPlatform-App-NursePulse)
 
 ### GitFlow Workflow implementado
 
@@ -261,7 +262,9 @@ independiente utilizando plataformas especializadas en la nube, lo que permite m
 
 - **Landing Page**: desplegada en GitHub Pages.
 - **Frontend Web Application (Angular)**: desplegada en Firebase Hosting.
-- **Web Services RESTful API (Backend)**: desplegado en un Cloud Provider (Render / Heroku).
+- **Web Services RESTful API (Backend)**: desplegado como contenedor Docker en Render (PaaS).
+- **Base de Datos (MySQL)**: gestionada como servicio administrado en Aiven.
+- **Monitoreo de Disponibilidad**: UptimeRobot, encargado de mantener activo el backend y notificar caídas.
 
 ### 1. Control de Versiones
 
@@ -382,86 +385,15 @@ El sistema funciona de la siguiente manera:
 - Mantener compatibilidad entre versiones de frontend y backend, respetando el control de versiones semántico.
 
 
-### 5.2. Landing Page, Services & Applications Implementation.
+## 5.2. Landing Page, Services & Applications Implementation.
 
-#### 5.2.1 Sprint 1
+### 5.2.1 Sprint Backlog 1
 
 El Sprint 1 se enfocó en el desarrollo e implementación de la Landing Page de NursePulse, la cual representa el primer punto de contacto entre la solución y los usuarios potenciales.
 Este sprint tuvo como objetivo establecer una presencia digital sólida que comunique de manera clara la propuesta de valor del producto.
 
 Durante este sprint, se desarrollaron e integraron las secciones principales de la Landing Page, incluyendo presentación del producto, funcionalidades clave, llamadas a la acción, equipo desarrollador, sectores beneficiados, 
 preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamientos de diseño y los wireframes definidos previamente en el Capítulo IV. Asimismo, se priorizó la usabilidad, accesibilidad y coherencia visual, con el fin de ofrecer una experiencia atractiva y profesional.
-
-#### 5.2.1.1. Sprint Planning 1
-
-<table><tr> <th colspan="5">Sprint #</th> <th colspan="9">Sprint 1</th> </tr> <tr> <td colspan="13">Sprint Planning Background</td> </tr> <tr> <td colspan="5">Date</td> <td colspan="8">15-04-2026</td> </tr> <tr> <td colspan="5">Time</td> <td colspan="8">9:30 AM</td> </tr> <tr> <td colspan="5">Location</td> <td colspan="8">Reunion presencial en el campus de la universidad</td> </tr> <tr> <td colspan="5">Prepared By</td> <td colspan="8">Rios Cespedes, Adrian Matias</td> </tr> <tr> <td colspan="5">Attendees (to planning meeting)</td> <td colspan="8">Aliaga Ocampo, Alexander Auden / Huamán Cuba, Johan Giovani / Rios Cespedes, Adrian Matias / Rocca Leon, Anhelo Rodrigo </td> </tr> <tr> <td colspan="5">Sprint n-1 Review Summary</td> <td colspan="8">No aplica - Este es el primer Sprint del proyecto</td> </tr> <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">No aplica - Este es el primer Sprint del proyecto</td> </tr> <tr> <td colspan="13">Sprint Goal & User Stories</td> </tr> <tr> <td colspan="5">Sprint 1 Goal</td> <td colspan="8"> <strong>"Our focus is on delivering a fully functional and user-friendly Landing Page for NursePulse, 
-accompanied by complete and well-structured documentation. We believe this will provide an engaging first impression and clearly 
-communicate the value proposition of our solution for enhancing clinical processes in cardiovascular nursing. This will 
-be validated when the Landing Page is successfully deployed and accessible online, with all core sections (hero, how it works, 
-features, benefits, FAQs, and contact) working correctly, and all corresponding documentation completed."</strong> </td> </tr> <tr> <td colspan="5">Sprint 1 Velocity</td> <td colspan="8">22 Story Points</td> </tr> <tr> <td colspan="5">Sum of Story Points</td> <td colspan="8">22 Story Points</td> </tr> </table>
-
-
-#### 5.2.1.2. Aspect Leaders and Collaborators
-<div align="center">
-  <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 13px; text-align: center;">
-    <thead>
-      <tr style="background-color: #f2f2f2;">
-        <th style="border: 1px solid #dddddd; padding: 10px;">Team Member (Last Name, First Name)</th>
-        <th style="border: 1px solid #dddddd; padding: 10px;">GitHub Username</th>
-        <th style="border: 1px solid #dddddd; padding: 10px;">Diseño del Layout Principal (L/C)</th>
-        <th style="border: 1px solid #dddddd; padding: 10px;">Navegacion (L/C)</th>
-        <th style="border: 1px solid #dddddd; padding: 10px;">Llamada a la Accion ( CTA ) (L/C)</th>
-        <th style="border: 1px solid #dddddd; padding: 10px;">Despliegue de la Landing (L/C)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="border: 1px solid #dddddd; padding: 8px;">Aliaga Ocampo, Alexander Auden</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">AlexanderAliaga19</td>
-        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">L</td>
-        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">L</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #dddddd; padding: 8px;">Rios Cespedes, Adrian Matias</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">AdrianR16-C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">C</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #dddddd; padding: 8px;">Huamán Cuba, Johan Giovani</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">Johancuba</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-      </tr>
-        <tr>
-        <td style="border: 1px solid #dddddd; padding: 8px;">Rodrigo Rocca, Anhelo</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">RoccaA4</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">C</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-#### 5.2.1.3. Sprint Backlog 1
-
-El objetivo principal del Sprint 1 fue implementar la primera versión de la Landing Page de NursePulse, enfocada en comunicar la propuesta de valor, explicar la problemática de información clínica dispersa, presentar beneficios principales, incluir llamados a la acción, habilitar contacto inicial y asegurar una experiencia responsive. Este sprint permitió establecer el primer punto de entrada público del producto y validar la claridad inicial de la solución frente a visitantes interesados.
-
-*Nota: Todas las tareas de ingeniería (Tasks) han sido estimadas rigurosamente en un rango de 4 a 8 horas como máximo, asegurando una descomposición granulada y manejable según los requerimientos del marco Scrum.*
-
-**Board del Sprint (Jira):**
-
-![Jira Board](assets/chapter-5/jira-board.png)
-
 
 
 ###  Sprint Backlog
@@ -577,7 +509,6 @@ El objetivo principal del Sprint 1 fue implementar la primera versión de la Lan
 - **ToReview**: En revisión
 - **Done**: Finalizado
 
-#### 5.2.1.4. Development Evidence for Sprint Review.
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -617,339 +548,33 @@ El objetivo principal del Sprint 1 fue implementar la primera versión de la Lan
 | NursePulse/Landing-NursePulse | Development | 509148aa54b4ebaf08717e97b323b079c5fd386c | Delete tsconfig.spec.json | - | 11/05/2026 |
 | NursePulse/Landing-NursePulse | Development | fac634067aca0bc95ad4471ecca765aa5a3338c0 | Add files via upload | - | 11/05/2026 |
 
-#### 5.2.1.5. Execution Evidence for Sprint Review
+### 5.2.2. Implemented Landing Page Evidenc
 
 
-## 1. Resumen de Logros del Sprint
-En este Sprint, el equipo se ha enfocado en el diseño, maquetación y despliegue de la interfaz principal de **NursePulse**. 
-Se ha logrado consolidar la identidad visual de la marca y la arquitectura de información necesaria para comunicar una solución técnica compleja de manera sencilla y efectiva.
 
-**Hitos alcanzados:**
-* **Desarrollo de Interfaz:** Implementación completa de la Landing Page utilizando estándares modernos de diseño UI/UX.
-* **Optimización de Activos:** Organización y renombrado semántico de recursos visuales para mejorar la mantenibilidad del proyecto.
-* **Propuesta de Valor:** Estructuración de las secciones de monetización (Planes) y validación social (Testimonios).
-* **Navegación:** Configuración de una experiencia de usuario fluida y orientada a la conversión (CTAs).
 
-## 2. Screenshots de las Principales Vistas
+### 5.2.3. Implemented Frontend-Web Application Evidence
 
-A continuación, se presentan las capturas de pantalla que sirven como evidencia de la implementación funcional del sitio. Las vistas se organizan según las secciones de navegación del Landing Page (Plataforma, El problema, ¿Cómo funciona?, Características, Beneficios, Planes, Nosotros y Preguntas frecuentes), indicando el propósito de cada una y el perfil de visitante al que atiende (racional, emocional o recurrente).
 
-### A. Plataforma (Portada y Propuesta de Valor)
 
-![Hero Section](assets/chapter-5/image_hero.png)
-*Sección de portada que presenta la propuesta de valor central de la plataforma: una solución digital diseñada específicamente para mejorar los procesos de enfermería cardiovascular mediante la centralización de información clínica, la facilitación de la comunicación entre turnos y la garantía de trazabilidad en eventos críticos. Incluye los Call-To-Action principales que dirigen al visitante recurrente hacia la aplicación desplegada, así como el selector de idioma (ES/EN) y el acceso a "Iniciar sesión".*
 
-### B. El Problema
 
-![The Problem](assets/chapter-5/problem.png)
-<!-- TODO: agregar la captura real de la sección "El problema" (assets/chapter-5/problem.png) -->
-*Explica la problemática que da origen a NursePulse: la información clínica dispersa y el registro manual dificultan la continuidad asistencial y la trazabilidad de eventos críticos en enfermería cardiovascular. Esta sección atiende al perfil de visitante racional, ayudándole a reconocer la necesidad que resuelve la plataforma.*
+### 5.2.4. Acuerdo de Servicio - SaaS
 
-![Proposal & Sectors Benefiting](assets/chapter-5/proposal-sectors-benefited.png)
-*Complementa la sección del problema mostrando cómo NursePulse impacta directamente en instituciones de salud como hospitales, clínicas privadas y centros especializados en cardiología, proporcionando soluciones concretas para optimizar la gestión de procesos críticos.*
 
-### C. ¿Cómo Funciona?
 
-![How it works](assets/chapter-5/how-it-works.png)
-*Describe el flujo integral de la plataforma, mostrando cómo el personal de enfermería cardiovascular puede registrar signos vitales, documentar traspasos SBAR (Situación, Antecedentes, Evaluación y Recomendaciones), consultar historiales clínicos y mantener trazabilidad de eventos para mejorar la comunicación entre turnos.*
+### 5.2.5. Implemented Native-Mobile Application Evidence
 
-### D. Características
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
-![Features](assets/chapter-5/main-features.png)
-*Detalla las funcionalidades clave como registro de pacientes y citas, monitoreo de signos vitales, gestión de traspasos SBAR, seguimiento de tratamientos, registro de eventos críticos, alertas automáticas ante fluctuaciones cardiovasculares anormales y sistema de auditoría inalterable.*
+### 5.2.7. RESTful API documentation
 
-### E. Beneficios
+### 5.2.8. Team Collaboration Insights
 
-![Benefits](assets/chapter-5/main-benefits.png)
-*Ilustra cómo NursePulse reduce errores en documentación clínica, optimiza el tiempo del personal de salud en tareas de registro, mejora la continuidad del cuidado del paciente y fortalece la eficiencia operativa mediante la digitalización y trazabilidad de procesos críticos.*
+## 5.3. Video About-the-Product.
 
-### F. Planes
 
-![Plans](assets/chapter-5/plans.png)
-<!-- TODO: agregar la captura real de la sección "Planes" (assets/chapter-5/plans.png) -->
-*Presenta los planes y precios disponibles de NursePulse para las instituciones de salud, detallando las características incluidas en cada nivel de servicio. Esta sección atiende al perfil de visitante racional, ya que le entrega la información necesaria para comparar opciones y facilitar la decisión de contratación de la plataforma.*
-
-### G. Nosotros (Equipo)
-
-![Team](assets/chapter-5/dev-team.png)
-*Presenta a los integrantes del equipo responsable del diseño, desarrollo e implementación de NursePulse, incluyendo sus perfiles y motivaciones. Esta sección atiende al perfil de visitante emocional, generando confianza al mostrar quiénes están detrás de la solución.*
-
-### H. Preguntas Frecuentes
-
-![FAQ](assets/chapter-5/faq.png)
-*Aborda las consultas comunes del personal de enfermería cardiovascular y administradores de instituciones de salud sobre seguridad de datos, facilidad de acceso, integración con sistemas existentes, escalabilidad de la plataforma y soporte técnico disponible.*
-
-### I. Testimonios
-
-![Testimonials](assets/chapter-5/testimonials.png)
-*Presenta experiencias y perspectivas del personal de salud e instituciones que han validado NursePulse, destacando mejoras en eficiencia operativa, reducción de errores, mejor comunicación entre turnos y fortalecimiento de la continuidad clínica. Esta sección atiende al perfil de visitante emocional, generando confianza a través de la experiencia de terceros y permitiendo conocer los beneficios del producto sin haberlo usado.*
-
-### J. Contacto con Care-Labs
-
-![Contact](assets/chapter-5/contact.png)
-*Proporciona los canales de comunicación disponibles para hospitales, clínicas, centros especializados y profesionales de salud interesados en conocer más sobre NursePulse, solicitar demostraciones, consultar precios o gestionar suscripciones a la plataforma.*
-#### 5.2.1.6. Services Documentation Evidence for Sprint Review.
-
-En esta sección se presenta la documentación relacionada con los servicios que serán ofrecidos a través de la plataforma web de NursePulse. 
-Estos servicios incluirán funcionalidades como el registro de pacientes y citas, traspasos SBAR, generación de alertas ante fluctuaciones cardiovasculares inusuales del paciente y registro de los signos vitales del paciente.
-
-Durante el presente Sprint 1, el enfoque del equipo estuvo centrado exclusivamente en el diseño y desarrollo de la Landing Page del producto, 
-con el objetivo de definir la propuesta de valor, los segmentos de usuarios y la experiencia inicial del sistema. Debido a este alcance, 
-no se implementaron ni desplegaron servicios web funcionales, por lo que no se cuenta aún con endpoints operativos ni documentación técnica asociada 
-a su consumo.
-
-
-#### 5.2.1.7. Software Deployment Evidence for Sprint Review.
-
-En esta sección se describe el proceso de implementación de la plataforma en un entorno de producción. Además, se 
-presentarán los hitos más importantes que marcarán el despliegue del proyecto y garantizarán su disponibilidad para los usuarios finales.
-
-URL de despliegue del Landing Page: [Landing Page Desplegado](https://github.com/NursePulse/Landing-NursePulse)
-
-1. Para la Landing Page, nuestro equipo creó una rama denominada “develop” dentro del repositorio, en la cual se organizaron y almacenaron todos los archivos correspondientes al desarrollo de la Landing Page.
-<p align="center">
-  <img src="assets/chapter-5/deployment-landing-page-1.png" alt="deployment1" width="1000">
-</p>
-
-2. Posteriormente, nos dirigimos a configuración y empleamos GitHub Pages, el servicio de alojamiento para sitios estáticos de GitHub, para publicar y poner en línea nuestra Landing Page.
-<p align="center">
-  <img src="assets/chapter-5/deployment-landing-page2.png" alt="deployment2" width="1000">
-</p>
-
-3. Se seleccionó la rama previamente configurada y se procedió con el despliegue de la página.
-<p align="center">
-  <img src="assets/chapter-5/deployment-landing-page-3.png" alt="deployment3" width="1000">
-</p>
-
-
-4. Finalmente, obtuvimos el enlace de publicación, que nos permite acceder y visualizar la Landing Page en línea.
-<p align="center">
-  <img src="assets/chapter-5/deployment-landing-page-4.png" alt="deployment4" width="1000">
-</p>
-
-#### 5.2.1.8. Team Collaboration Insights during Sprint.
-
-La herramienta de Insights de GitHub demuestra que todos los miembros del equipo han colaborado activamente mediante la subida de commits. Hubo un esfuerzo distribuido:
-
-Alexander Aliaga gestionó la maquetación principal.
-Anhelo Rocca estructuró las secciones interactivas de equipo y testimonios.
-Johan Huamán trabajó en la internacionalización.
-Adrian Rios resolvió bugs de media queries y gestionó el flujo GitFlow.
-
-<p align="center">
-  <img src="assets/chapter-5/members-commit.png" alt="deployment4" width="1000">
-</p>
-
-### 5.3. Validation Interviews
-
-En esta sección se describen las entrevistas de validación realizadas con usuarios pertenecientes a los segmentos objetivo de NursePulse. Estas entrevistas tuvieron como propósito evaluar la interacción de los usuarios con el Landing Page y con las funcionalidades del sistema, obteniendo retroalimentación sobre usabilidad, comprensión y valor percibido.
-
-Las entrevistas fueron registradas en video como evidencia y se analizaron en base a tareas asignadas durante la sesión.
-
----
-
-### 5.3.1. Diseño de Entrevistas
-
-Se definieron los siguientes segmentos objetivo:
-
-- Segmento 1: Personal de salud (médicos/enfermeros)
-- Segmento 2: Usuarios con interés en soluciones digitales clínicas
-
----
-
-#### Elementos evaluados
-
-Durante la sesión de validación, los usuarios interactuaron con:
-
-- Landing Page de NursePulse
-- Documentación de endpoints mediante Swagger UI
-- Flujo de registro y consulta de signos vitales
-
----
-
-#### User Flows evaluados
-
-1. Navegación del Landing Page
-2. Comprensión de la propuesta de valor
-3. Interpretación de funcionalidades del sistema
-4. Simulación de uso del sistema (explicación de endpoints)
-5. Percepción de utilidad en contexto real
-
----
-
-#### Estructura de la entrevista
-
-1. Introducción al proyecto
-2. Exploración del Landing Page
-3. Explicación del sistema (backend)
-4. Tareas guiadas
-5. Preguntas de validación
-
----
-#### Guion de preguntas por segmento objetivo
-
-Para asegurar una validación adecuada, se diseñaron guiones de preguntas específicos para cada segmento objetivo, considerando su contexto de uso y relación con el sistema.
-
----
-
-### Segmento 1: Personal de salud (Enfermeros)
-
-**Objetivo:**  
-Evaluar la utilidad del sistema en el registro y consulta de información clínica, así como la claridad de las funcionalidades relacionadas a signos vitales.
-
-**Preguntas – Landing Page:**
-- ¿Qué entiendes que hace esta plataforma?
-- ¿Te queda claro el problema que busca resolver?
-- ¿Consideras que la información presentada es relevante para tu trabajo?
-- ¿Qué sección te parece más útil o importante?
-
-**Preguntas – Sistema (flujo funcional):**
-- ¿Crees que este sistema facilitaría el registro de signos vitales?
-- ¿Te parece claro cómo se registra la información del paciente?
-- ¿Consideras útil poder consultar el último registro de signos vitales?
-- ¿Qué tan fácil crees que sería usar este sistema en tu rutina diaria?
-
-**Preguntas – Experiencia de usuario:**
-- ¿Te resulta intuitiva la forma en que se presenta la información?
-- ¿Qué mejorarías en el sistema?
-- ¿Usarías esta herramienta en tu entorno laboral?
-
----
-
-### Segmento 2: Personal de salud (Médicos)
-
-**Objetivo:**  
-Evaluar la utilidad del sistema en la toma de decisiones clínicas y consulta rápida de información del paciente.
-
-**Preguntas – Landing Page:**
-- ¿El landing page transmite claramente el propósito del sistema?
-- ¿Te parece relevante la solución presentada para el entorno clínico?
-- ¿Qué mejorarías en la forma en que se presenta la información?
-
-**Preguntas – Sistema (flujo funcional):**
-- ¿Te resulta útil poder consultar rápidamente los signos vitales de un paciente?
-- ¿Consideras importante acceder al último registro clínico?
-- ¿La información presentada te parece suficiente para apoyar decisiones médicas?
-- ¿Qué otras funcionalidades agregarías?
-
-**Preguntas – Experiencia de usuario:**
-- ¿La interfaz te parece clara y comprensible?
-- ¿Qué tan útil consideras el sistema en tu práctica médica?
-- ¿Qué mejorarías para hacerlo más eficiente?
-
----
-
-### Segmento 3: Usuarios generales / interesados en tecnología
-
-**Objetivo:**  
-Evaluar la comprensión general del sistema y la claridad de la propuesta de valor.
-
-**Preguntas – Landing Page:**
-- ¿Qué entiendes que hace este sistema?
-- ¿Te parece clara la propuesta de valor?
-- ¿El diseño te parece atractivo?
-
-**Preguntas – Sistema:**
-- ¿Te resulta fácil entender cómo funciona el sistema?
-- ¿Consideras que la solución tiene valor en el sector salud?
-
-**Preguntas – Experiencia de usuario:**
-- ¿Te parece fácil de usar?
-- ¿Qué mejorarías del sistema?
-- ¿Recomendarías esta solución?
-
-
-### 5.3.2. Registro de Entrevistas
-
-#### Segmento: Usuarios generales / Personal de salud
-
----
-
-### Entrevista 1
-- Nombre: Milagros Mendoza
-- Edad: 22
-- Distrito: Lima
-- Video: https://youtu.be/RMx0DzfhOL0
-- Inicio: 00:00
-- Duración: 11:55 min
-- Screenshot: 
-
-**Resumen:**
-El usuario logró identificar correctamente el propósito del sistema. Consideró que el landing page es claro y bien estructurado. Sin embargo, mencionó que algunas funcionalidades técnicas podrían explicarse mejor para usuarios no especializados.
-
----
-
-### Entrevista 2
-- Nombre: Miguel Zevallos
-- Edad: 24
-- Distrito: Lima
-- Video: https://youtu.be/ERz3jkvERR8
-- Inicio: 00:00
-- Duración: 9:00 min
-- Screenshot: 
-
-**Resumen:**
-El usuario destacó la organización visual del landing page y la claridad de la información. Indicó que el sistema tiene potencial en entornos clínicos reales. Sugirió mejorar la interfaz para hacerla más intuitiva.
-
----
-
-### Entrevista 3
-- Nombre: Karen Mio
-- Edad: 23
-- Distrito: Lima
-- Video: https://youtu.be/ypqKHHFEOTU
-- Inicio: 00:00
-- Duración: 8:32 min
-- Screenshot: 
-
-**Resumen:**
-El usuario comprendió las funcionalidades principales del sistema. Consideró que la solución es innovadora. Recomendó incluir ejemplos prácticos para mejorar la comprensión del sistema.
-
----
-
-### Entrevista 4
-- Nombre: Olenka Rios
-- Edad: 25
-- Distrito: Lima
-- Video: https://youtu.be/Pu3OU6O2b9I
-- Inicio: 00:00
-- Duración: 9:36 min
-- Screenshot:
-
-
-**Resumen:**
-El usuario tuvo una experiencia positiva con el sistema. Destacó la propuesta de valor, pero sugirió optimizar la navegación y simplificar algunos textos.
-
----
-
-### 5.3.3. Evaluaciones según heurísticas
-
-Se realizó la evaluación basada en heurísticas de usabilidad, arquitectura de información e inclusive design.
-
----
-
-#### Evaluación heurística (basado en Anexo D)
-
-| # | Heurística | Descripción | Evaluación | Problema identificado | Severidad |
-|---|-----------|------------|------------|----------------------|----------|
-| 1 | Visibilidad del sistema | El sistema debe comunicar su estado claramente | Alta | No se identificaron problemas graves | Baja |
-| 2 | Relación con el mundo real | Uso de lenguaje comprensible | Media | Algunos términos técnicos no claros | Media |
-| 3 | Control del usuario | Facilidad de navegación | Media | Navegación puede mejorar | Media |
-| 4 | Consistencia | Uniformidad en diseño | Alta | Diseño consistente | Baja |
-| 5 | Prevención de errores | Evitar errores del usuario | Media | Falta feedback visual en acciones | Media |
-| 6 | Reconocimiento vs memoria | Fácil comprensión visual | Alta | Información clara | Baja |
-| 7 | Flexibilidad | Adaptabilidad del sistema | Media | Limitada personalización | Media |
-| 8 | Diseño estético | Interfaz atractiva | Alta | Diseño moderno | Baja |
-
----
-
-### Conclusión de validación
-
-Las entrevistas permitieron validar que NursePulse cumple con comunicar su propuesta de valor y presentar una solución útil para el entorno clínico. No obstante, se identificaron mejoras necesarias en la claridad de algunas funcionalidades, navegación y experiencia de usuario.
-
-El sistema demuestra potencial de aplicación real, especialmente en la gestión de información clínica estructurada.
-
-### 5.4. Video About-the-Product
+## 5.4. Video About-the-Product
 
 En esta sección se presenta el video "About the Product", en el cual el equipo muestra el funcionamiento general del sistema NursePulse, explicando su propósito, principales funcionalidades y valor dentro del contexto clínico.
 

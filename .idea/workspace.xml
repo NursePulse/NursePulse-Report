@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec292d99-2e69-44b9-90cb-16927ab0a197" name="Changes" comment="docs(README): Update video link for consolidated interviews" />
+    <list default="true" id="ec292d99-2e69-44b9-90cb-16927ab0a197" name="Changes" comment="docs(README): Update video link for consolidated interviews">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/home/jorget/Desktop/Projects/Expe/ReportNursePulse" value="3Jq211pEXrHEt5EbgVUdsjhQDqA" />
+    </persistenceIdMap>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -36,23 +44,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000012530333" />
-      <entry key="MS500" value="1.0262780129766786" />
-      <entry key="S2" value="1.4026225829873136" />
-      <entry key="S5" value="1.6949591099211685" />
-      <entry key="S10" value="1.8336420754263598" />
-      <entry key="S30" value="1.9411522295050683" />
-      <entry key="S60" value="1.9701300064965872" />
-      <entry key="M2" value="1.9849517787749296" />
-      <entry key="M5" value="1.9940802091219156" />
-      <entry key="M10" value="2.0538331059779074" />
-      <entry key="M15" value="2.479402054662597" />
-      <entry key="M30" value="6.3046994392852715" />
-      <entry key="H1" value="15.36749240495817" />
-      <entry key="H2" value="26.694145396105288" />
-      <entry key="H4" value="42.997322447887" />
-      <entry key="D1" value="115.54508283283229" />
-      <entry key="W1" value="149.15773075001698" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.000011577177647" />
+      <entry key="S5" value="1.0211599270680631" />
+      <entry key="S10" value="1.306510233817936" />
+      <entry key="S30" value="2.9452906894627877" />
+      <entry key="S60" value="4.113611401779672" />
+      <entry key="M2" value="4.944034128934735" />
+      <entry key="M5" value="5.547022273033072" />
+      <entry key="M10" value="5.822030791070086" />
+      <entry key="M15" value="6.3094154464615215" />
+      <entry key="M30" value="10.154523271238146" />
+      <entry key="H1" value="19.21535895854441" />
+      <entry key="H2" value="30.5698646880078" />
+      <entry key="H4" value="46.90049556873735" />
+      <entry key="D1" value="119.50323117310941" />
+      <entry key="W1" value="153.15004976380982" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -61,36 +69,36 @@
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
       <entry key="S30" value="0.0" />
-      <entry key="S60" value="3.815487816404655E-283" />
-      <entry key="M2" value="6.176963506776329E-142" />
-      <entry key="M5" value="3.28329582341229E-57" />
-      <entry key="M10" value="5.730005081509337E-29" />
-      <entry key="M15" value="1.4862892548781056E-19" />
-      <entry key="M30" value="3.8552422166163634E-10" />
-      <entry key="H1" value="1.9634770731068812E-5" />
-      <entry key="H2" value="0.004431113937947067" />
-      <entry key="H4" value="0.06656661278709516" />
-      <entry key="D1" value="0.6366138407011223" />
-      <entry key="W1" value="0.9375237893898072" />
+      <entry key="S60" value="2.290719567566957E-283" />
+      <entry key="M2" value="4.786146223807788E-142" />
+      <entry key="M5" value="2.9647930582829395E-57" />
+      <entry key="M10" value="5.444991329913145E-29" />
+      <entry key="M15" value="1.436585444055941E-19" />
+      <entry key="M30" value="3.7902314494710485E-10" />
+      <entry key="H1" value="1.9468516762894524E-5" />
+      <entry key="H2" value="0.004412314218513283" />
+      <entry key="H4" value="0.06642525286751472" />
+      <entry key="D1" value="0.6363883237135619" />
+      <entry key="W1" value="0.9374763375139584" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.5783441018521245" />
-      <entry key="MS500" value="0.9213348610179201" />
-      <entry key="S2" value="1.3708982240871628" />
-      <entry key="S5" value="1.680799222984759" />
-      <entry key="S10" value="1.8262188465056144" />
-      <entry key="S30" value="1.9385895591279192" />
-      <entry key="S60" value="1.9688368029023355" />
-      <entry key="M2" value="1.9843021436180739" />
-      <entry key="M5" value="1.9938196104695094" />
-      <entry key="M10" value="2.053699598251612" />
-      <entry key="M15" value="2.479295588562281" />
-      <entry key="M30" value="6.304561996316505" />
-      <entry key="H1" value="15.367341398121434" />
-      <entry key="H2" value="26.698428888557974" />
-      <entry key="H4" value="43.06377731391648" />
-      <entry key="D1" value="116.18165391618116" />
-      <entry key="W1" value="150.0952468706866" />
+      <entry key="MS100" value="0.8122523963562355" />
+      <entry key="MS500" value="0.9592641193252643" />
+      <entry key="S2" value="0.9896680815122078" />
+      <entry key="S5" value="1.0168424162831347" />
+      <entry key="S10" value="1.3029905127599992" />
+      <entry key="S30" value="2.941226557356012" />
+      <entry key="S60" value="4.110508025881584" />
+      <entry key="M2" value="4.942096815412073" />
+      <entry key="M5" value="5.5461346132897305" />
+      <entry key="M10" value="5.821563292815067" />
+      <entry key="M15" value="6.309082133717033" />
+      <entry key="M30" value="10.154271255454672" />
+      <entry key="H1" value="19.215150358152652" />
+      <entry key="H2" value="30.574100463575355" />
+      <entry key="H4" value="46.96679451348605" />
+      <entry key="D1" value="120.13957428442609" />
+      <entry key="W1" value="154.08751808001543" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -98,6 +106,21 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3J75wczbOkPWUlyM0FcpNbV0mTx" />
+  <component name="ProjectSessionTemplates">
+    <option name="inlineTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -111,10 +134,10 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "docs/Chapter5",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/jorget/Desktop/Projects/Expe/ReportNursePulse/assets/chapter-4",
+    "last_opened_file_path": "/home/jorget/Desktop/Projects/Expe/FrontendNursePulse",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -156,6 +179,7 @@
       <workItem from="1789265692657" duration="7867000" />
       <workItem from="1789314652952" duration="8075000" />
       <workItem from="1789419495901" duration="7058000" />
+      <workItem from="1790486598540" duration="1621000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial project files and README with style guidelines for NursePulse">
       <option name="closed" value="true" />
