@@ -548,31 +548,292 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
 | NursePulse/Landing-NursePulse | Development | 509148aa54b4ebaf08717e97b323b079c5fd386c | Delete tsconfig.spec.json | - | 11/05/2026 |
 | NursePulse/Landing-NursePulse | Development | fac634067aca0bc95ad4471ecca765aa5a3338c0 | Add files via upload | - | 11/05/2026 |
 
-### 5.2.2. Implemented Landing Page Evidenc
+### 5.2.2. Implemented Landing Page Evidence
 
+A continuación se presenta evidencia visual de las secciones implementadas de la Landing Page de NursePulse, desplegada en GitHub Pages: [https://nursepulse.github.io/Landing-NursePulse/](https://nursepulse.github.io/Landing-NursePulse/).
 
+**Sección Hero (presentación y propuesta de valor)**
 
+📸 *[FOTO AQUÍ: captura de la parte superior de la Landing Page — abrir la URL de arriba y capturar el hero con el título, el pitch y los botones de llamada a la acción]*
+
+![Landing - Hero](assets/chapter-5/landing-hero.png)
+
+**Sección de características / cómo funciona**
+
+📸 *[FOTO AQUÍ: scrollear hasta la sección "Cómo funciona" / "Características" y capturarla]*
+
+![Landing - Características](assets/chapter-5/landing-features.png)
+
+**Sección de planes (pricing)**
+
+📸 *[FOTO AQUÍ: scrollear hasta la sección de planes Essential / Professional / Enterprise]*
+
+![Landing - Pricing](assets/chapter-5/landing-pricing.png)
+
+**Sección de equipo y testimonios**
+
+📸 *[FOTO AQUÍ: capturar la sección "Equipo" y la sección "Testimonios"]*
+
+![Landing - Equipo](assets/chapter-5/landing-team.png)
+
+**Página de descarga de la app móvil**
+
+📸 *[FOTO AQUÍ: abrir [https://nursepulse.github.io/Landing-NursePulse/download.html](https://nursepulse.github.io/Landing-NursePulse/download.html) y capturar la tarjeta de descarga con el botón "Download on the App Store or Google Play Store"]*
+
+![Landing - Descarga app](assets/chapter-5/landing-download.png)
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
+A continuación se presenta evidencia visual de los módulos implementados en la Web Application (Angular), desplegada en: [https://application-web-nurse-pulse.vercel.app](https://application-web-nurse-pulse.vercel.app).
 
+**Inicio de sesión**
 
+📸 *[FOTO AQUÍ: abrir `/sign-in` y capturar la pantalla de acceso clínico]*
 
+![Frontend - Sign in](assets/chapter-5/frontend-sign-in.png)
+
+**Dashboard**
+
+📸 *[FOTO AQUÍ: iniciar sesión con un usuario y capturar el Dashboard principal, con el resumen de pacientes en monitoreo y alertas]*
+
+![Frontend - Dashboard](assets/chapter-5/frontend-dashboard.png)
+
+**Gestión de pacientes**
+
+📸 *[FOTO AQUÍ: capturar la vista `/patients`, la tabla de pacientes y el formulario de registro/edición abierto (con el campo "Médico tratante" como select)]*
+
+![Frontend - Pacientes](assets/chapter-5/frontend-patients.png)
+
+**Signos vitales**
+
+📸 *[FOTO AQUÍ: entrar al detalle clínico de un paciente, pestaña de Signos Vitales, con el formulario de registro abierto]*
+
+![Frontend - Signos vitales](assets/chapter-5/frontend-vital-signs.png)
+
+**Eventos clínicos**
+
+📸 *[FOTO AQUÍ: capturar la vista de Eventos Clínicos con el formulario de registro abierto]*
+
+![Frontend - Eventos clínicos](assets/chapter-5/frontend-clinical-events.png)
+
+**Traspasos SBAR**
+
+📸 *[FOTO AQUÍ: capturar la vista de SBAR con el formulario de Situación/Antecedentes/Evaluación/Recomendación abierto]*
+
+![Frontend - SBAR](assets/chapter-5/frontend-sbar.png)
+
+**Alertas clínicas**
+
+📸 *[FOTO AQUÍ: capturar el Centro de Alertas, mostrando alertas pendientes y el botón de atender/cerrar]*
+
+![Frontend - Alertas](assets/chapter-5/frontend-alerts.png)
+
+**Auditoría (trazabilidad) y exportación a PDF**
+
+📸 *[FOTO AQUÍ: capturar la vista de Auditoría con la tabla de movimientos y el botón "Exportar PDF"]*
+
+![Frontend - Auditoría](assets/chapter-5/frontend-audit.png)
+
+**Gestión de usuarios (solo Administrador)**
+
+📸 *[FOTO AQUÍ: iniciar sesión como admin, capturar `/users` con la lista de usuarios y el selector de roles]*
+
+![Frontend - Usuarios](assets/chapter-5/frontend-users.png)
+
+**Reportes**
+
+📸 *[FOTO AQUÍ: capturar la vista de Reportes con un reporte generado]*
+
+![Frontend - Reportes](assets/chapter-5/frontend-reports.png)
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
+NursePulse se ofrece bajo un modelo de suscripción SaaS (Software as a Service) con tres planes diferenciados por número de asientos (usuarios clínicos) y funcionalidades habilitadas. Esta sección resume las condiciones comerciales simuladas dentro del producto, implementadas en el módulo de Suscripciones de la Web Application.
 
+| Plan | Precio mensual | Asientos incluidos | Funcionalidades incluidas |
+| :--- | :--- | :--- | :--- |
+| **Essential** | US$ 0 (gratuito) | Hasta 5 usuarios | Gestión de pacientes, registro de signos vitales, alertas clínicas |
+| **Professional** | US$ 49 / mes | Hasta 25 usuarios | Todo lo del plan Essential + Traspasos SBAR + Reportes |
+| **Enterprise** | US$ 129 / mes | Hasta 100 usuarios | Todo lo del plan Professional + Auditoría (trazabilidad completa) + Soporte prioritario |
+
+**Condiciones generales del acuerdo de servicio:**
+
+1. **Vigencia**: la suscripción se renueva automáticamente de forma mensual mientras el cliente (institución de salud) mantenga el pago activo.
+2. **Cambio de plan**: el cliente puede subir o bajar de plan en cualquier momento; el cambio aplica de forma inmediata sobre los límites de asientos y funcionalidades disponibles.
+3. **Datos clínicos**: la información de pacientes, signos vitales, eventos clínicos y traspasos SBAR pertenece a la institución cliente; NursePulse actúa únicamente como proveedor de la plataforma (Data Processor).
+4. **Disponibilidad**: el proveedor procura una disponibilidad continua del servicio, monitoreada mediante UptimeRobot sobre el backend desplegado en Render.
+5. **Soporte**: los planes Professional y Enterprise incluyen soporte prioritario vía canal de contacto directo; el plan Essential recibe soporte por el canal estándar (formulario de contacto de la Landing Page).
+6. **Cancelación**: el cliente puede cancelar la suscripción en cualquier momento, sin penalidad, manteniendo acceso hasta el final del periodo ya pagado.
+
+> **Nota:** en esta etapa del proyecto, el pago de suscripciones se encuentra **simulado** dentro de la propia aplicación (no se procesan pagos reales con una pasarela como Stripe); la integración con una pasarela de pago real queda planteada como trabajo futuro (ver sección de recomendaciones).
+
+📸 *[FOTO AQUÍ: capturar la vista `/subscription-plans` de la Web Application mostrando las 3 tarjetas de planes]*
+
+![Frontend - Planes de suscripción](assets/chapter-5/frontend-subscription-plans.png)
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
+A continuación se presenta evidencia visual de la aplicación móvil multiplataforma (Flutter), la cual replica las funcionalidades clínicas principales de la Web Application para su uso desde el celular del personal de enfermería y médico durante el turno.
+
+**Inicio de sesión y registro**
+
+📸 *[FOTO AQUÍ: capturar en un emulador o dispositivo Android la pantalla de sign-in y sign-up de la app móvil]*
+
+![Mobile - Sign in](assets/chapter-5/mobile-sign-in.png)
+
+**Gestión de pacientes**
+
+📸 *[FOTO AQUÍ: capturar la lista de pacientes y el formulario de registro en la app móvil]*
+
+![Mobile - Pacientes](assets/chapter-5/mobile-patients.png)
+
+**Signos vitales y alertas**
+
+📸 *[FOTO AQUÍ: capturar el registro de signos vitales y la lista de alertas en la app móvil]*
+
+![Mobile - Signos vitales y alertas](assets/chapter-5/mobile-vitals-alerts.png)
+
+**Descarga del APK**
+
+La aplicación se distribuye como archivo APK, generado automáticamente mediante el pipeline de CI/CD del repositorio `MultiPlatform-App-NursePulse` (ver Capítulo VII) y publicado como GitHub Release. El botón "Download" de la Landing Page enlaza directamente a la última versión disponible:
+
+`https://github.com/NursePulse/MultiPlatform-App-NursePulse/releases/latest/download/app-release.apk`
+
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+
+El backend de NursePulse se implementó como una RESTful API utilizando Spring Boot, siguiendo una arquitectura de módulos por *Bounded Context* (Domain-Driven Design). El servicio se encuentra desplegado como contenedor Docker en Render y documentado con Swagger/OpenAPI.
+
+**Swagger UI del backend desplegado**
+
+📸 *[FOTO AQUÍ: abrir `https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html` y capturar la lista de controladores/endpoints documentados]*
+
+![Backend - Swagger UI](assets/chapter-5/backend-swagger.png)
+
+**Módulos (Bounded Contexts) implementados:**
+
+| Módulo | Responsabilidad |
+| :--- | :--- |
+| `iam` | Autenticación (sign-in/sign-up), gestión de usuarios y roles (NURSE, DOCTOR, ADMIN) |
+| `patients` | Registro, consulta, actualización, alta y eliminación de pacientes |
+| `vitalsigns` | Registro y consulta de signos vitales por paciente |
+| `clinicalevents` | Registro de eventos clínicos del turno (observación, medicación, complicación, emergencia, etc.) |
+| `handover` | Traspasos de turno estructurados en formato SBAR |
+| `criticalevents` | Alertas clínicas (creación, atención y cierre) |
+| `auditlogs` | Trazabilidad/auditoría de todas las acciones clínicas del sistema, con exportación a PDF |
+
+**Evidencia de ejecución del servicio en producción**
+
+📸 *[FOTO AQUÍ: capturar `https://backend-nursepulse-qfct.onrender.com/actuator/health` mostrando `{"status":"UP"}`]*
+
+![Backend - Health check](assets/chapter-5/backend-health.png)
 
 ### 5.2.7. RESTful API documentation
 
+La siguiente tabla resume los endpoints principales expuestos por el backend, agrupados por módulo, junto con los roles autorizados para consumirlos según la configuración de seguridad (`WebSecurityConfiguration`):
+
+**Autenticación (`/api/v1/authentication`)** — público
+
+| Método | Endpoint | Descripción |
+| :--- | :--- | :--- |
+| POST | `/sign-in` | Inicio de sesión, retorna JWT |
+| POST | `/sign-up` | Registro público de enfermería/médico (ROLE_NURSE o ROLE_DOCTOR) |
+
+**Usuarios (`/api/v1/users`)** — NURSE, DOCTOR, ADMIN (lectura) / ADMIN (gestión)
+
+| Método | Endpoint | Roles | Descripción |
+| :--- | :--- | :--- | :--- |
+| GET | `/users` | NURSE, DOCTOR, ADMIN | Lista de usuarios registrados (directorio de personal) |
+| GET | `/users/{userId}` | ADMIN | Detalle de un usuario |
+| PATCH | `/users/{userId}/roles` | ADMIN | Cambiar el rol asignado a un usuario |
+
+**Pacientes (`/api/v1/patients`)**
+
+| Método | Endpoint | Roles | Descripción |
+| :--- | :--- | :--- | :--- |
+| POST | `/patients` | NURSE, ADMIN | Registrar un nuevo paciente |
+| GET | `/patients` | NURSE, DOCTOR, ADMIN | Listar pacientes |
+| GET | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Detalle de un paciente |
+| PUT | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Actualizar datos de un paciente |
+| DELETE | `/patients/{patientId}` | ADMIN | Eliminar un paciente |
+
+**Signos vitales (`/api/v1/vital-sign-records`)**
+
+| Método | Endpoint | Roles | Descripción |
+| :--- | :--- | :--- | :--- |
+| POST | `/vital-sign-records` | NURSE, ADMIN | Registrar signos vitales |
+| GET | `/vital-sign-records` | NURSE, DOCTOR, ADMIN | Listar registros |
+| GET | `/vital-sign-records/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Historial de un paciente |
+| GET | `/vital-sign-records/patients/{patientId}/latest` | NURSE, DOCTOR, ADMIN | Último registro de un paciente |
+| GET | `/vital-sign-records/{vitalSignRecordId}` | NURSE, DOCTOR, ADMIN | Detalle de un registro |
+
+**Eventos clínicos (`/api/v1/clinical-events`)**
+
+| Método | Endpoint | Roles | Descripción |
+| :--- | :--- | :--- | :--- |
+| POST | `/clinical-events` | NURSE, DOCTOR, ADMIN | Registrar un evento clínico |
+| GET | `/clinical-events` | NURSE, DOCTOR, ADMIN | Listar eventos |
+| GET | `/clinical-events/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Eventos de un paciente |
+
+**Traspasos SBAR (`/api/v1/handovers`)**
+
+| Método | Endpoint | Roles | Descripción |
+| :--- | :--- | :--- | :--- |
+| POST | `/handovers` | NURSE, ADMIN | Crear un traspaso SBAR |
+| GET | `/handovers/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Traspasos de un paciente |
+| GET | `/handovers/{handoverId}` | NURSE, DOCTOR, ADMIN | Detalle de un traspaso |
+| PATCH | `/handovers/{handoverId}/acknowledge` | NURSE, ADMIN | Confirmar recepción del traspaso |
+
+**Alertas clínicas (`/api/v1/alerts`)**
+
+| Método | Endpoint | Roles | Descripción |
+| :--- | :--- | :--- | :--- |
+| POST | `/alerts` | NURSE, DOCTOR, ADMIN | Crear una alerta manual |
+| GET | `/alerts` | NURSE, DOCTOR, ADMIN | Listar alertas |
+| GET | `/alerts/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Alertas de un paciente |
+| PATCH | `/alerts/{alertId}/attend` | NURSE, DOCTOR, ADMIN | Marcar alerta como atendida |
+| PATCH | `/alerts/{alertId}/close` | DOCTOR, ADMIN | Cerrar (resolver) una alerta — cierre clínico exclusivo del médico |
+
+**Auditoría (`/api/v1/audit-logs`)**
+
+| Método | Endpoint | Roles | Descripción |
+| :--- | :--- | :--- | :--- |
+| POST | `/audit-logs` | NURSE, DOCTOR, ADMIN | Registrar una entrada de auditoría |
+| GET | `/audit-logs` | DOCTOR, ADMIN | Listar entradas de auditoría |
+| GET | `/audit-logs/export/pdf` | DOCTOR, ADMIN | Exportar el registro de auditoría en PDF |
+| GET | `/audit-logs/{auditLogId}` | DOCTOR, ADMIN | Detalle de una entrada |
+| GET | `/audit-logs/patients/{patientId}/timeline` | DOCTOR, ADMIN | Línea de tiempo de auditoría de un paciente |
+| GET | `/audit-logs/entities/{entityType}/{entityId}` | DOCTOR, ADMIN | Auditoría de una entidad específica |
+
+La documentación interactiva y siempre actualizada de todos los endpoints (con esquemas de request/response) está disponible públicamente en Swagger UI: [https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html](https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html)
+
 ### 5.2.8. Team Collaboration Insights
 
-## 5.3. Video About-the-Product.
+Durante el desarrollo de NursePulse, el equipo mantuvo una dinámica de colaboración apoyada en las herramientas descritas en la sección 5.1.1:
 
+- **Jira Software** se utilizó como tablero central del Sprint Backlog, permitiendo visualizar el estado de cada tarea (To-do, In-Process, To-Review, Done) y distribuir el trabajo entre los integrantes según su rol dentro del equipo (frontend, backend, diseño, documentación).
+- **GitHub** funcionó como plataforma de integración de código: cada funcionalidad se desarrolló en una rama `feature/*` independiente y se integró mediante Pull Requests, lo que permitió revisión de código entre pares antes de fusionar cambios a `develop`/`main`.
+- **Google Docs y Google Drive** se usaron para la redacción colaborativa en tiempo real del informe, las historias de usuario y las actas de reunión, permitiendo que todos los integrantes aportaran simultáneamente sin conflictos de versión.
+- **Comunicación diaria**: el equipo sostuvo coordinaciones periódicas (estilo daily/stand-up) para reportar avances, bloqueos y reasignar tareas cuando algún integrante encontraba un impedimento técnico.
+- **Revisión cruzada**: los cambios de un módulo (por ejemplo, un endpoint nuevo en el backend) se comunicaban al integrante responsable del frontend correspondiente para mantener sincronizados los contratos de datos entre ambas capas, evitando desalineaciones entre lo que el cliente esperaba y lo que el servidor exponía.
+
+Esta forma de trabajo permitió que, pese a ser un equipo distribuido y con integrantes enfocados en distintas capas de la solución (Landing Page, Frontend Web, Backend, Mobile), el producto final mantuviera coherencia funcional y visual entre todos sus componentes.
+
+## 5.3. Validation Interviews.
+
+> **⚠️ Sección pendiente de completar con información real.** Las secciones 5.3.1 y 5.3.2 no se pueden redactar de forma fidedigna sin los datos originales de las entrevistas/evaluación heurística que ya se mencionan en la sección "Conclusiones" de este mismo capítulo (que hace referencia a "sección 5.3" y "sección 5.3.2"). Para completarlas necesito que me compartas:
+>
+> 1. Las notas, grabaciones o transcripciones de las Validation Interviews realizadas (participantes, rol, fecha, hallazgos).
+> 2. El resultado de la evaluación heurística mencionada en las conclusiones (severidades encontradas, heurísticas evaluadas).
+>
+> No completé esta sección con datos inventados para no comprometer la integridad de la investigación de usuario del informe.
+
+### 5.3.1. Heuristic Evaluation.
+
+*(pendiente — ver nota arriba)*
+
+### 5.3.2. Interview Sample and Findings.
+
+*(pendiente — ver nota arriba)*
 
 ## 5.4. Video About-the-Product
 
