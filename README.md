@@ -818,24 +818,7 @@ Durante el desarrollo de NursePulse, el equipo mantuvo una dinámica de colabora
 
 Esta forma de trabajo permitió que, pese a ser un equipo distribuido y con integrantes enfocados en distintas capas de la solución (Landing Page, Frontend Web, Backend, Mobile), el producto final mantuviera coherencia funcional y visual entre todos sus componentes.
 
-## 5.3. Validation Interviews.
-
-> **⚠️ Sección pendiente de completar con información real.** Las secciones 5.3.1 y 5.3.2 no se pueden redactar de forma fidedigna sin los datos originales de las entrevistas/evaluación heurística que ya se mencionan en la sección "Conclusiones" de este mismo capítulo (que hace referencia a "sección 5.3" y "sección 5.3.2"). Para completarlas necesito que me compartas:
->
-> 1. Las notas, grabaciones o transcripciones de las Validation Interviews realizadas (participantes, rol, fecha, hallazgos).
-> 2. El resultado de la evaluación heurística mencionada en las conclusiones (severidades encontradas, heurísticas evaluadas).
->
-> No completé esta sección con datos inventados para no comprometer la integridad de la investigación de usuario del informe.
-
-### 5.3.1. Heuristic Evaluation.
-
-*(pendiente — ver nota arriba)*
-
-### 5.3.2. Interview Sample and Findings.
-
-*(pendiente — ver nota arriba)*
-
-## 5.4. Video About-the-Product
+## 5.3. Video About-the-Product
 
 En esta sección se presenta el video "About the Product", en el cual el equipo muestra el funcionamiento general del sistema NursePulse, explicando su propósito, principales funcionalidades y valor dentro del contexto clínico.
 
