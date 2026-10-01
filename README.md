@@ -29,7 +29,7 @@ Cada uno de los tres repositorios de código de NursePulse cuenta con su propio 
 | :--- | :--- | :--- |
 | Checkout | `actions/checkout@v4` | Descarga el código fuente del repositorio. |
 | Set up JDK | `actions/setup-java@v4` (Temurin 26) | Configura el entorno de ejecución de Java, con caché de dependencias Maven. |
-| Build and run tests | `./mvnw -B clean verify` | Compila el proyecto y ejecuta la suite completa de pruebas unitarias e de integración (actualmente 43 pruebas). |
+| Build and run tests | `./mvnw -B clean verify` | Compila el proyecto y ejecuta la suite completa de pruebas unitarias e de integración (actualmente 61 pruebas, ver Capítulo VI sección 6.1). |
 
 **Frontend CI** (`Application-Web-Nurse-Pulse/.github/workflows/ci.yml`)
 
@@ -151,9 +151,22 @@ El pipeline de monitoreo actual consiste en un único flujo programado:
 
 ### 7.4.3. Alerting Pipeline Components
 
-NursePulse no cuenta todavía con un sistema de alertas dedicado (como Prometheus/Alertmanager o Grafana). El mecanismo de alerta actual es el nativo de GitHub Actions: si el workflow `keep-alive.yml` falla (por ejemplo, porque el backend no responde), GitHub notifica automáticamente por correo electrónico a los mantenedores del repositorio sobre la ejecución fallida.
+NursePulse no cuenta todavía con un sistema de alertas dedicado (como Prometheus/Alertmanager o Grafana). Las alertas actuales provienen de las capacidades nativas de las plataformas que ya forman parte del pipeline (GitHub, Render, Vercel, Firebase), sin configuración adicional de parte del equipo:
 
-> Implementar un sistema de alertas dedicado (por ejemplo, UptimeRobot para disponibilidad HTTP externa, o Prometheus + Alertmanager para métricas de la aplicación) queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
+**Alertas configuradas (nativas de la plataforma):**
+
+- Fallo del workflow `Backend CI`, `Frontend CI` o `Mobile CI/CD` ante un error de compilación o una prueba rota (GitHub Actions → correo al autor del commit/PR).
+- Fallo del workflow programado `keep-alive.yml` cuando el backend no responde en Render (GitHub Actions → correo a los mantenedores del repositorio).
+- Fallo de build o de despliegue del Frontend Web Application en Vercel (notificación nativa de Vercel por correo al equipo del proyecto).
+- Fallo de build de la imagen Docker o caída del servicio del backend en Render (notificación nativa de Render por correo al dueño del servicio).
+- Fallo en la distribución del APK a través de Firebase App Distribution, si el build sube correctamente pero la subida al grupo de *testers* falla.
+
+**Lo que todavía no existe:**
+
+- Umbrales de rendimiento (latencia, uso de CPU/memoria) que generen una alerta automática — hoy solo se detectan caídas totales del servicio, no degradaciones graduales.
+- Un canal de alertas centralizado para el equipo (Slack, Microsoft Teams); cada integrante depende del correo asociado a su propia cuenta de GitHub/Render/Vercel.
+
+> Implementar un sistema de alertas dedicado (por ejemplo, UptimeRobot para disponibilidad HTTP externa desde fuera de la plataforma de hosting, o Prometheus + Alertmanager para métricas de la aplicación) queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
 
 ### 7.4.4. Notification Pipeline Components
 
