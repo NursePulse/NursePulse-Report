@@ -592,6 +592,28 @@ A continuación se presenta evidencia visual de los módulos implementados en la
 
 ![Frontend - Sign in](assets/chapter-5/frontend-sign-in.png)
 
+**Registro con verificación de cuenta por correo**
+
+Para evitar que alguien se registre con un correo que no le pertenece, el registro de nuevos usuarios (enfermería/médico) requiere confirmar la cuenta antes de poder iniciar sesión:
+
+1. El usuario completa el formulario de `/sign-up` con sus datos (nombre, apellido, teléfono, edad, correo, rol clínico y contraseña).
+2. El backend crea la cuenta marcada como **no verificada** y genera un token de verificación de un solo uso con vigencia de 24 horas.
+3. Se envía automáticamente (vía Brevo) un correo de bienvenida con un botón **"Verificar mi cuenta"**.
+4. Mientras la cuenta no esté verificada, cualquier intento de inicio de sesión es rechazado (`HTTP 422`) con un mensaje indicando que debe confirmar su correo.
+5. Al hacer clic en el botón del correo, el backend valida el token y marca la cuenta como verificada, mostrando una página de confirmación; desde ahí el usuario ya puede iniciar sesión normalmente.
+
+📸 *[FOTO AQUÍ: en `/sign-up`, completar el formulario y capturar la pantalla "Confirma tu correo" que aparece después de registrarse]*
+
+![Frontend - Verificación de cuenta](assets/chapter-5/frontend-verify-account.png)
+
+📸 *[FOTO AQUÍ: abrir el correo de bienvenida recibido y capturar el botón "Verificar mi cuenta"]*
+
+![Frontend - Correo de verificación](assets/chapter-5/email-verification-button.png)
+
+📸 *[FOTO AQUÍ: capturar la página de confirmación que muestra el backend al hacer clic en el botón del correo ("Cuenta verificada")]*
+
+![Backend - Página de verificación exitosa](assets/chapter-5/backend-verify-success.png)
+
 **Dashboard**
 
 📸 *[FOTO AQUÍ: iniciar sesión con un usuario y capturar el Dashboard principal, con el resumen de pacientes en monitoreo y alertas]*
@@ -735,8 +757,9 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 
 | Método | Endpoint | Descripción |
 | :--- | :--- | :--- |
-| POST | `/sign-in` | Inicio de sesión, retorna JWT |
-| POST | `/sign-up` | Registro público de enfermería/médico (ROLE_NURSE o ROLE_DOCTOR) |
+| POST | `/sign-in` | Inicio de sesión, retorna JWT (rechaza con `422` si el correo no ha sido verificado) |
+| POST | `/sign-up` | Registro público de enfermería/médico (ROLE_NURSE o ROLE_DOCTOR); envía un correo de verificación |
+| GET | `/verify-email?token=...` | Confirma la cuenta a partir del link enviado por correo; renderiza una página HTML de confirmación |
 
 **Usuarios (`/api/v1/users`)** — NURSE, DOCTOR, ADMIN (lectura) / ADMIN (gestión)
 
