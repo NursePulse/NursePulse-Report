@@ -107,6 +107,7 @@ Para mantener un historial claro de cambios, el equipo utiliza Conventional Comm
 
 
 ![convencionalcommits.png](assets/convencionalcommits.png)
+
 ##### Tipos de commits utilizados:
 
 - `feat`: Nueva funcionalidad
@@ -291,7 +292,7 @@ La Landing Page es un sitio web responsivo construido con HTML5, CSS3 y JS.
     - **Source**: Deploy from branch
     - **Branch**: main
     - **Folder**: / (root)
-    - 
+
 ![landindgdeployment.png](assets/landindgdeployment.png)
 
 #### Resultado: 
@@ -310,6 +311,8 @@ La aplicación es una *Single Page Application* (SPA) desarrollada en Angular 21
 - `git commit -m "deploy frontend"`
 - `git push origin main`
 
+![frontend1.png](assets/frontend1.png)
+
 #### 2. Configurar el proyecto en Vercel
 - Acceder a: https://vercel.com/
 - Iniciar sesión con la cuenta de GitHub e importar el repositorio `Application-Web-Nurse-Pulse`.
@@ -318,36 +321,55 @@ La aplicación es una *Single Page Application* (SPA) desarrollada en Angular 21
   - **Output directory**: `dist/FrontNursePulse/browser`
   - Una regla de *rewrite* que redirige todas las rutas sin extensión a `index.html`, necesaria para el enrutamiento de Angular (SPA).
 
+![addnewproyectvercel.png](assets/addnewproyectvercel.png)
+
+---
+
+![importprojectvercel.png](assets/importprojectvercel.png)
 #### 3. Configurar variables de entorno
 - Configurar en el panel de Vercel (**Settings → Environment Variables**) la URL pública del RESTful API consumida por el `environment.prod.ts`, apuntando al backend desplegado en Render.
+
+![variablesfront.png](assets/variablesfront.png)
 
 #### 4. Despliegue automático
 - A partir de la primera conexión, cada `git push origin main` dispara un nuevo build y despliegue automático en Vercel.
 - Vercel genera una URL pública HTTPS (`https://application-web-nurse-pulse.vercel.app`) accesible desde cualquier dispositivo.
 
-
+![deployverceldone.png](assets/deployverceldone.png)
 ### 4. Despliegue de los Web Services RESTful API (Cloud Provider)
 
 El backend desarrollado en Spring Boot y documentado con OpenAPI (Swagger) ha sido configurado para su despliegue continuo en un servicio Platform as a Service (PaaS) como Render o Heroku.
 
 ### Pasos de despliegue
 
+
 #### 1. Configurar credenciales y entorno
 - Ajustar la configuración del archivo `application-prod.properties`.
 - Inyectar dinámicamente las credenciales de entorno para la conexión segura a la base de datos (MySQL gestionado en la nube).
+
+![propropertiesbackend.png](assets/propropertiesbackend.png)
+
+--- 
+
+![enviromentvariables.png](assets/enviromentvariables.png)
 
 #### 2. Construcción del artefacto
 - Empaquetar y construir el archivo `.jar` usando Maven ejecutando el comando:
   - `mvn clean package -DskipTests`
 
+![encapsulatemvn.png](assets/encapsulatemvn.png)
+
 #### 3. Publicación en el servicio Cloud
-- Vincular el repositorio (rama `main`) al servicio PaaS (ej. Render/Heroku) para disparar el despliegue de la imagen/artefacto.
+- Vincular el repositorio (rama `deploy/render-docker`) al servicio PaaS (ej. Render/Heroku) para disparar el despliegue de la imagen/artefacto.
 - El Cloud Provider asigna los recursos, levanta el servidor y genera una URL HTTPS pública.
+
+![deployselectionbranch.png](assets/deployselectionbranch.png)
 
 #### 4. Documentación desplegada
 - Una vez levantado el servidor, la documentación estandarizada Swagger UI queda expuesta públicamente.
-- **Ruta de acceso:** `https://<backend-url>/swagger-ui.html`
+- **Ruta de acceso:** `https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html`
 
+![swagerdocumentation.png](assets/swagerdocumentation.png)
 
 ### 5. Integración de Componentes
 
