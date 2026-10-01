@@ -846,23 +846,3 @@ Microsft Sharepoint:
 
 El video permite validar el funcionamiento del sistema desarrollado, mostrando evidencia real de las funcionalidades implementadas durante el proyecto. Asimismo, refuerza la propuesta de valor de NursePulse, evidenciando su utilidad en la gestión de información clínica y su potencial uso en escenarios reales.
 
-## Bibliografía
-
-- Pressman, R. S., & Maxim, B. R. (2020). Software Engineering: A Practitioner’s Approach (9th ed.). McGraw-Hill Education.
-- Angular. (2026). Angular Documentation. Retrieved from https://angular.dev/
-- Spring. (2026). Spring Boot Documentation. Retrieved from https://docs.spring.io/spring-boot/
-- OpenAPI Initiative. (2026). OpenAPI Specification. Retrieved from https://spec.openapis.org/oas/latest.html
-- Swagger. (2026). Swagger UI Documentation. Retrieved from https://swagger.io/tools/swagger-ui/
-- GitHub Docs. (2026). GitHub Documentation. Retrieved from https://docs.github.com/
-- Vercel. (2026). Vercel Documentation. Retrieved from https://vercel.com/docs
-- Railway. (2026). Railway Documentation. Retrieved from https://docs.railway.com/
-- World Health Organization. (2025). Cardiovascular diseases. Retrieved from https://www.who.int/
-
-## Anexos
-- Link de la organización de GitHub: https://github.com/NursePulse
-- Link del repositorio del reporte: https://github.com/NursePulse/NursePulse-Report
-- Link de la landing page desplegada: https://nursepulse.github.io/Landing-NursePulse/#funciona
-- Link del repositorio del frontend: https://github.com/NursePulse/Application-Web-Nurse-Pulse
-- Link del frontend desplegado: https://application-web-nurse-pulse.vercel.app/sign-in
-- Link del backend desplegado / Swagger UI: https://backpulsereport-production-7576.up.railway.app/swagger-ui/index.html
-- Link del repositorio del backend: https://github.com/NursePulse/Backend-NursePulse
