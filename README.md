@@ -48,10 +48,38 @@ No existe automatización de pruebas de sistema end-to-end (tipo Selenium/Playwr
 > Automatizar estos flujos con un framework de pruebas de sistema (end-to-end) queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
 
 ## 6.2. Static testing & Verification
+
+A diferencia de la sección 6.1 (pruebas dinámicas, que ejecutan el código), esta sección cubre la verificación **estática** del proyecto: revisión de convenciones de código y de la calidad/seguridad del código fuente sin necesidad de ejecutarlo.
+
 ### 6.2.1. Static Code Analysis
+
 #### 6.2.1.1. Coding standard & Code conventions
+
+NursePulse define una guía de estilo de código explícita por tecnología (HTML/CSS, Angular/TypeScript, Java/Spring Boot), documentada en el Capítulo V, sección 5.1.3. El cumplimiento de esta guía se verifica de dos formas:
+
+- **TypeScript Strict Mode**: el compilador de Angular (`tsc --strict`) rechaza el build (`ng build`, ejecutado en `Frontend CI`) ante tipos implícitos `any`, variables no inicializadas o accesos nulos no controlados, forzando el cumplimiento de la convención de "Seguridad de tipos" definida en 5.1.3.
+- **Jakarta Bean Validation** en el backend actúa como verificación declarativa de las reglas de negocio en el límite de la API (`@NotBlank`, `@Pattern`, `@Size`, `@Email`), en línea con la convención de "Validación de datos" de 5.1.3.
+- **Revisión por pares obligatoria**: ningún Pull Request se fusiona sin que un integrante distinto al autor confirme que el código sigue la nomenclatura (`camelCase`/`PascalCase`/`kebab-case` según corresponda) y la arquitectura por capas (DDD) descrita en 5.1.3.
+
 #### 6.2.1.2. Code Quality & Code Security
+
+El proyecto **no cuenta todavía con una herramienta dedicada de análisis estático** (como SonarQube, SonarLint o ESLint) integrada al repositorio ni al pipeline de CI. La calidad y seguridad del código se sostienen actualmente mediante:
+
+- **Inspecciones del IDE**: IntelliJ IDEA (backend) y WebStorm (frontend) señalan en tiempo real código muerto, imports no utilizados, complejidad excesiva y antipatrones comunes mientras se escribe el código, aunque sin un reporte centralizado ni umbrales de calidad exigidos por el pipeline.
+- **Spring Security** gestiona la autorización por rol de forma centralizada (`WebSecurityConfiguration`), evitando que la lógica de permisos quede dispersa o implementada de forma inconsistente entre controladores.
+- **Manejo centralizado de secretos**: credenciales de base de datos, JWT y de los proveedores externos (Brevo, Twilio) se inyectan exclusivamente mediante variables de entorno (`${VARIABLE:}`), nunca como valores hardcodeados en el repositorio.
+
+> Incorporar una herramienta de análisis estático automatizada (SonarQube/SonarCloud para el backend, ESLint para el frontend) como paso del pipeline de CI queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto — actualmente la detección de problemas de calidad depende del criterio del desarrollador y del revisor, no de una herramienta objetiva.
+
 ### 6.2.2. Reviews
+
+La revisión de código en NursePulse se realiza exclusivamente a través de **Pull Requests en GitHub**, como se describe en el Capítulo V (sección 5.1.2) y el Capítulo VII (sección 7.2.1):
+
+- Toda funcionalidad se desarrolla en una rama `feature/*` y se integra a la rama principal únicamente mediante un Pull Request.
+- El pipeline de CI correspondiente (`Backend CI`, `Frontend CI` o `Mobile CI/CD`) debe finalizar en estado exitoso antes de que el Pull Request pueda fusionarse.
+- Un integrante distinto al autor revisa el cambio, verificando correctitud funcional, cumplimiento de la guía de estilo (sección 6.2.1.1) y que no se introduzcan credenciales ni datos sensibles en el código.
+
+No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o Crucible); todo el proceso ocurre dentro de la interfaz nativa de Pull Requests de GitHub.
 
 ## 6.3. Validation Interviews
 
