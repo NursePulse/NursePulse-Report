@@ -45,7 +45,7 @@ Las herramientas se organizan según las principales actividades del ciclo de vi
 
 - [**GitHub Pages**](https://pages.github.com/):  Es el servicio utilizado para desplegar la Landing Page de NursePulse. Permite publicar el sitio web directamente desde el repositorio de GitHub, haciendo que esté disponible de forma pública y accesible desde internet.
 
-- [**Firebase Hosting**](https://firebase.google.com/):  Es una plataforma en la nube utilizada para el despliegue de aplicaciones web. En futuras etapas del proyecto, se utilizará para publicar tanto el frontend como el backend del sistema, permitiendo su acceso desde cualquier dispositivo conectado a internet.
+- [**Vercel**](https://vercel.com/):  Es la plataforma en la nube utilizada para el despliegue del Frontend Web Application (Angular). Realiza despliegue continuo automático sobre la rama `main` del repositorio, generando una URL pública accesible desde cualquier dispositivo conectado a internet.
 
 - [**Swagger / OpenAPI**](https://swagger.io/): Herramienta utilizada para la documentación interactiva y estandarizada del RESTful API.
 
@@ -76,20 +76,9 @@ Las ramas principales utilizadas son:
 - **feature/**: ramas utilizadas para el desarrollo de funcionalidades específicas del sistema.
 - **release/** : Ramas utilizadas para preparar versiones finales para despliegue y corregir errores críticos en producción, respectivamente.
 
-### Feature Branches utilizados en el proyecto  PENDIENTEE
+### Gestión de ramas en la Landing Page
 
-El desarrollo de la Landing Page de NursePulse se ha organizado mediante ramas feature específicas por componente funcional:
-
-- feature/hero → sección principal de presentación
-- feature/benefits → sección de beneficios del sistema
-- feature/call-to-action → botones y acciones de conversión
-- feature/characteristic → características del producto
-- feature/footer → pie de página del sistema
-- feature/how-it-works → explicación del funcionamiento de NursePulse
-- feature/pricing → sección de planes o precios
-- feature/team → sección de equipo desarrollador
-
-Esta organización permite un desarrollo modular, donde cada funcionalidad se implementa de forma independiente antes de integrarse a la rama develop.
+En la práctica, el repositorio de la Landing Page (`Landing-NursePulse`) se mantuvo con una estrategia simplificada de dos ramas (`main` y `development`), sin desglosar el trabajo en ramas `feature/*` por sección (hero, benefits, footer, etc.). Los cambios de cada sección se integraron mediante commits directos y, en una etapa posterior, mediante un Pull Request hacia `main`, dado que se trata de un sitio estático de bajo acoplamiento entre secciones y con un equipo reducido trabajando sobre él.
 
 
 ### Convención de ramas
@@ -116,6 +105,8 @@ Versión actual del proyecto: v1.0.0 (Landing Page inicial)
 
 Para mantener un historial claro de cambios, el equipo utiliza Conventional Commits en todos los commits del repositorio.
 
+
+![convencionalcommits.png](assets/convencionalcommits.png)
 ##### Tipos de commits utilizados:
 
 - `feat`: Nueva funcionalidad
@@ -261,7 +252,7 @@ independiente utilizando plataformas especializadas en la nube, lo que permite m
 ### Componentes de Despliegue
 
 - **Landing Page**: desplegada en GitHub Pages.
-- **Frontend Web Application (Angular)**: desplegada en Firebase Hosting.
+- **Frontend Web Application (Angular)**: desplegada en Vercel.
 - **Web Services RESTful API (Backend)**: desplegado como contenedor Docker en Render (PaaS).
 - **Base de Datos (MySQL)**: gestionada como servicio administrado en Aiven.
 - **Monitoreo de Disponibilidad**: UptimeRobot, encargado de mantener activo el backend y notificar caídas.
@@ -300,14 +291,17 @@ La Landing Page es un sitio web responsivo construido con HTML5, CSS3 y JS.
     - **Source**: Deploy from branch
     - **Branch**: main
     - **Folder**: / (root)
+    - 
+![landindgdeployment.png](assets/landindgdeployment.png)
 
 #### Resultado: 
 Publicación automática bajo un subdominio HTTPS gestionado por GitHub (ejemplo: `https://nursepulse.github.io/Landing-NursePulse/`).
 
+![landingpagecap5.png](assets/landingpagecap5.png)
 
-### 3. Despliegue del Frontend Web Application (Angular en Firebase Hosting)
+### 3. Despliegue del Frontend Web Application (Angular en Vercel)
 
-La aplicación es una *Single Page Application* (SPA) desarrollada en Angular 17+ y se despliega utilizando Firebase Hosting.
+La aplicación es una *Single Page Application* (SPA) desarrollada en Angular 21 y se despliega en Vercel mediante integración continua directa con el repositorio de GitHub: cada push a la rama `main` dispara automáticamente un nuevo build y despliegue, sin pasos manuales adicionales.
 
 ### Pasos de despliegue
 
@@ -316,33 +310,20 @@ La aplicación es una *Single Page Application* (SPA) desarrollada en Angular 17
 - `git commit -m "deploy frontend"`
 - `git push origin main`
 
-#### 2. Configurar en Firebase
-- Acceder a: https://firebase.google.com/
-- Iniciar Sesión y dirigirse a 'Ir a Consola'.
-- Seleccionar **Crear un proyecto de Firebase nuevo → Escribir el nombre del proyecto (`application-web-nurse-pulse`) → Crear Proyecto**.
-- Instalar Firebase CLI: `npm install -g firebase-tools`
-- Iniciar sesión en Firebase CLI: `firebase login`
-- Inicializar el proyecto: `firebase init`
-    - Seleccionar **Hosting**.
-    - Seleccionar el proyecto creado en Firebase.
-    - Configurar el directorio público: `dist/browser` (o `dist/`).
-    - Configurar como SPA: Sí.
-    - Por el momento decimos que no se configure GitHub Action para despliegue automático.
+#### 2. Configurar el proyecto en Vercel
+- Acceder a: https://vercel.com/
+- Iniciar sesión con la cuenta de GitHub e importar el repositorio `Application-Web-Nurse-Pulse`.
+- Vercel detecta el archivo `vercel.json` del repositorio, donde se define:
+  - **Build command**: `npm run build -- --configuration production`
+  - **Output directory**: `dist/FrontNursePulse/browser`
+  - Una regla de *rewrite* que redirige todas las rutas sin extensión a `index.html`, necesaria para el enrutamiento de Angular (SPA).
 
 #### 3. Configurar variables de entorno
-- Configurar el archivo `environment.prod.ts` para apuntar a la URL pública del RESTful API:
-  - `apiBaseUrl: 'https://<backend-url>'`
+- Configurar en el panel de Vercel (**Settings → Environment Variables**) la URL pública del RESTful API consumida por el `environment.prod.ts`, apuntando al backend desplegado en Render.
 
-#### 4. Configurar el build
-- **Build command**:
-  - `ng build`
-- **Publish directory**:
-  - `dist/browser`
-
-#### 5. Ejecutar Despliegue
-- Ejecutamos el comando de compilación: `ng build`
-- Ejecutamos el comando de publicación: `firebase deploy --only hosting`
-- Firebase genera una URL pública accesible.
+#### 4. Despliegue automático
+- A partir de la primera conexión, cada `git push origin main` dispara un nuevo build y despliegue automático en Vercel.
+- Vercel genera una URL pública HTTPS (`https://application-web-nurse-pulse.vercel.app`) accesible desde cualquier dispositivo.
 
 
 ### 4. Despliegue de los Web Services RESTful API (Cloud Provider)
