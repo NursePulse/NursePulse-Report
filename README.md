@@ -557,33 +557,31 @@ A continuación se presenta evidencia visual de las secciones implementadas de l
 
 **Sección Hero (presentación y propuesta de valor)**
 
-📸 *[FOTO AQUÍ: captura de la parte superior de la Landing Page — abrir la URL de arriba y capturar el hero con el título, el pitch y los botones de llamada a la acción]*
+![heroladingcap5.png](assets/heroladingcap5.png)
 
-![Landing - Hero](assets/chapter-5/landing-hero.png)
+---
+
+![valor.png](assets/valor.png)
 
 **Sección de características / cómo funciona**
 
-📸 *[FOTO AQUÍ: scrollear hasta la sección "Cómo funciona" / "Características" y capturarla]*
+![howitworkscap5.png](assets/howitworkscap5.png)
 
-![Landing - Características](assets/chapter-5/landing-features.png)
+---
+
+![capabilitiescap5.png](assets/capabilitiescap5.png)
 
 **Sección de planes (pricing)**
 
-📸 *[FOTO AQUÍ: scrollear hasta la sección de planes Essential / Professional / Enterprise]*
-
-![Landing - Pricing](assets/chapter-5/landing-pricing.png)
+![planscap5.png](assets/planscap5.png)
 
 **Sección de equipo y testimonios**
 
-📸 *[FOTO AQUÍ: capturar la sección "Equipo" y la sección "Testimonios"]*
-
-![Landing - Equipo](assets/chapter-5/landing-team.png)
+![testimoniescap5.png](assets/testimoniescap5.png)
 
 **Página de descarga de la app móvil**
 
-📸 *[FOTO AQUÍ: abrir [https://nursepulse.github.io/Landing-NursePulse/download.html](https://nursepulse.github.io/Landing-NursePulse/download.html) y capturar la tarjeta de descarga con el botón "Download on the App Store or Google Play Store"]*
-
-![Landing - Descarga app](assets/chapter-5/landing-download.png)
+![downloadscap5.png](assets/downloadscap5.png)
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
@@ -591,9 +589,7 @@ A continuación se presenta evidencia visual de los módulos implementados en la
 
 **Inicio de sesión**
 
-📸 *[FOTO AQUÍ: abrir `/sign-in` y capturar la pantalla de acceso clínico]*
-
-![Frontend - Sign in](assets/chapter-5/frontend-sign-in.png)
+![signincap5.png](assets/signincap5.png)
 
 **Registro con verificación de cuenta por correo**
 
@@ -605,71 +601,59 @@ Para evitar que alguien se registre con un correo que no le pertenece, el regist
 4. Mientras la cuenta no esté verificada, cualquier intento de inicio de sesión es rechazado (`HTTP 422`) con un mensaje indicando que debe confirmar su correo.
 5. Al hacer clic en el botón del correo, el backend valida el token y marca la cuenta como verificada, mostrando una página de confirmación; desde ahí el usuario ya puede iniciar sesión normalmente.
 
-📸 *[FOTO AQUÍ: en `/sign-up`, completar el formulario y capturar la pantalla "Confirma tu correo" que aparece después de registrarse]*
 
-![Frontend - Verificación de cuenta](assets/chapter-5/frontend-verify-account.png)
+![formscompletecap5.png](assets/formscompletecap5.png)
 
-📸 *[FOTO AQUÍ: abrir el correo de bienvenida recibido y capturar el botón "Verificar mi cuenta"]*
+--- 
+![verficationemail.png](assets/verficationemail.png)
 
-![Frontend - Correo de verificación](assets/chapter-5/email-verification-button.png)
+---
 
-📸 *[FOTO AQUÍ: capturar la página de confirmación que muestra el backend al hacer clic en el botón del correo ("Cuenta verificada")]*
+![emailverified.png](assets/emailverified.png)
 
-![Backend - Página de verificación exitosa](assets/chapter-5/backend-verify-success.png)
+---
+
+![verifiedaccount.png](assets/verifiedaccount.png)
 
 **Dashboard**
 
-📸 *[FOTO AQUÍ: iniciar sesión con un usuario y capturar el Dashboard principal, con el resumen de pacientes en monitoreo y alertas]*
 
-![Frontend - Dashboard](assets/chapter-5/frontend-dashboard.png)
+![dashboardcap5.png](assets/dashboardcap5.png)
 
 **Gestión de pacientes**
 
-📸 *[FOTO AQUÍ: capturar la vista `/patients`, la tabla de pacientes y el formulario de registro/edición abierto (con el campo "Médico tratante" como select)]*
 
-![Frontend - Pacientes](assets/chapter-5/frontend-patients.png)
+![gestiondepaceintes.png](assets/gestiondepaceintes.png)
 
 **Signos vitales**
 
-📸 *[FOTO AQUÍ: entrar al detalle clínico de un paciente, pestaña de Signos Vitales, con el formulario de registro abierto]*
-
-![Frontend - Signos vitales](assets/chapter-5/frontend-vital-signs.png)
+![vitalsign.png](assets/vitalsign.png)
 
 **Eventos clínicos**
 
-📸 *[FOTO AQUÍ: capturar la vista de Eventos Clínicos con el formulario de registro abierto]*
-
-![Frontend - Eventos clínicos](assets/chapter-5/frontend-clinical-events.png)
+![clinicalconditions.png](assets/clinicalconditions.png)
 
 **Traspasos SBAR**
 
-📸 *[FOTO AQUÍ: capturar la vista de SBAR con el formulario de Situación/Antecedentes/Evaluación/Recomendación abierto]*
-
-![Frontend - SBAR](assets/chapter-5/frontend-sbar.png)
+![sbar.png](assets/sbar.png)
 
 **Alertas clínicas**
 
-📸 *[FOTO AQUÍ: capturar el Centro de Alertas, mostrando alertas pendientes y el botón de atender/cerrar]*
-
-![Frontend - Alertas](assets/chapter-5/frontend-alerts.png)
+![alert.png](assets/alert.png)
 
 **Auditoría (trazabilidad) y exportación a PDF**
 
-📸 *[FOTO AQUÍ: capturar la vista de Auditoría con la tabla de movimientos y el botón "Exportar PDF"]*
-
-![Frontend - Auditoría](assets/chapter-5/frontend-audit.png)
+![audit.png](assets/audit.png)
 
 **Gestión de usuarios (solo Administrador)**
 
-📸 *[FOTO AQUÍ: iniciar sesión como admin, capturar `/users` con la lista de usuarios y el selector de roles]*
-
-![Frontend - Usuarios](assets/chapter-5/frontend-users.png)
+![userdashboard.png](assets/userdashboard.png)
 
 **Reportes**
 
-📸 *[FOTO AQUÍ: capturar la vista de Reportes con un reporte generado]*
+![reportsbashboard.png](assets/reportsbashboard.png)
 
-![Frontend - Reportes](assets/chapter-5/frontend-reports.png)
+![eachreport.png](assets/eachreport.png)
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
@@ -690,11 +674,8 @@ NursePulse se ofrece bajo un modelo de suscripción SaaS (Software as a Service)
 5. **Soporte**: los planes Professional y Enterprise incluyen soporte prioritario vía canal de contacto directo; el plan Essential recibe soporte por el canal estándar (formulario de contacto de la Landing Page).
 6. **Cancelación**: el cliente puede cancelar la suscripción en cualquier momento, sin penalidad, manteniendo acceso hasta el final del periodo ya pagado.
 
-> **Nota:** en esta etapa del proyecto, el pago de suscripciones se encuentra **simulado** dentro de la propia aplicación (no se procesan pagos reales con una pasarela como Stripe); la integración con una pasarela de pago real queda planteada como trabajo futuro (ver sección de recomendaciones).
 
-📸 *[FOTO AQUÍ: capturar la vista `/subscription-plans` de la Web Application mostrando las 3 tarjetas de planes]*
-
-![Frontend - Planes de suscripción](assets/chapter-5/frontend-subscription-plans.png)
+![planscap5.png](assets/planscap5.png)
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
@@ -730,9 +711,7 @@ El backend de NursePulse se implementó como una RESTful API utilizando Spring B
 
 **Swagger UI del backend desplegado**
 
-📸 *[FOTO AQUÍ: abrir `https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html` y capturar la lista de controladores/endpoints documentados]*
-
-![Backend - Swagger UI](assets/chapter-5/backend-swagger.png)
+![swagerdocumentation.png](assets/swagerdocumentation.png)
 
 **Módulos (Bounded Contexts) implementados:**
 
@@ -750,7 +729,7 @@ El backend de NursePulse se implementó como una RESTful API utilizando Spring B
 
 📸 *[FOTO AQUÍ: capturar `https://backend-nursepulse-qfct.onrender.com/actuator/health` mostrando `{"status":"UP"}`]*
 
-![Backend - Health check](assets/chapter-5/backend-health.png)
+![statusupbackend.png](assets/statusupbackend.png)
 
 ### 5.2.7. RESTful API documentation
 
@@ -830,7 +809,6 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 | GET | `/audit-logs/patients/{patientId}/timeline` | DOCTOR, ADMIN | Línea de tiempo de auditoría de un paciente | US-21, TS-05 |
 | GET | `/audit-logs/entities/{entityType}/{entityId}` | DOCTOR, ADMIN | Auditoría de una entidad específica | US-21, TS-05 |
 
-> Los endpoints marcados como *"Pendiente de incorporar al backlog"* corresponden a funcionalidades implementadas durante el desarrollo (verificación de cuenta por correo, gestión de roles, exportación de auditoría a PDF) que todavía no cuentan con una Historia de Usuario formal en el Capítulo III. Se identifica como mejora pendiente redactar y priorizar esas historias para cerrar la trazabilidad completa del backlog.
 
 La documentación interactiva y siempre actualizada de todos los endpoints (con esquemas de request/response) está disponible públicamente en Swagger UI: [https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html](https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html)
 
