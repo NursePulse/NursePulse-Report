@@ -136,10 +136,15 @@ El objetivo de Continuous Deployment en NursePulse es que cada cambio fusionado 
 
 ### 7.4.1. Tools and Practices
 
-A diferencia de las secciones anteriores, el monitoreo continuo de NursePulse se mantiene deliberadamente simple en esta etapa del proyecto, priorizando la disponibilidad básica del backend sobre un stack de observabilidad completo:
+El monitoreo continuo de NursePulse combina dos capas complementarias: un *ping* interno programado (keep-alive) y un monitor externo independiente de la plataforma de hosting.
 
 - **Spring Boot Actuator**: expone el endpoint `/actuator/health`, utilizado tanto manualmente (verificación post-despliegue) como automáticamente (ver siguiente punto) para confirmar que el backend y su conexión a base de datos están operativos.
 - **GitHub Actions (workflow programado)**: el workflow `keep-alive.yml` del repositorio Backend se ejecuta automáticamente cada 6 horas (`cron: '0 */6 * * *'`) y hace una petición HTTP al endpoint de salud del backend en producción.
+- **UptimeRobot**: monitor externo (SaaS) configurado directamente desde su propio dashboard sobre `https://backend-nursepulse-qfct.onrender.com/swagger-ui.html`, con chequeos cada 5 minutos desde fuera de la infraestructura de Render. **No requiere ningún cambio de código ni credenciales en el proyecto** — a diferencia del Actuator o del workflow `keep-alive.yml`, que sí forman parte del repositorio, UptimeRobot es configuración externa: solo se le indica la URL a vigilar y la frecuencia, y notifica al equipo por correo ante cualquier caída detectada.
+
+📸 *Dashboard de UptimeRobot mostrando el monitor del backend con 100% de disponibilidad en las últimas 24 horas/7 días, tiempo de respuesta promedio de 351 ms y 5 días consecutivos activo sin incidentes:*
+
+![Monitoreo UptimeRobot del backend](assets/chapter-7/uptimerobot-dashboard.png)
 
 ### 7.4.2. Monitoring Pipeline Components
 
@@ -151,10 +156,11 @@ El pipeline de monitoreo actual consiste en un único flujo programado:
 
 ### 7.4.3. Alerting Pipeline Components
 
-NursePulse no cuenta todavía con un sistema de alertas dedicado (como Prometheus/Alertmanager o Grafana). Las alertas actuales provienen de las capacidades nativas de las plataformas que ya forman parte del pipeline (GitHub, Render, Vercel, Firebase), sin configuración adicional de parte del equipo:
+NursePulse no cuenta con un sistema de alertas de métricas (como Prometheus/Alertmanager o Grafana), pero sí combina alertas nativas de cada plataforma del pipeline con un monitor externo de disponibilidad (UptimeRobot, sección 7.4.1):
 
-**Alertas configuradas (nativas de la plataforma):**
+**Alertas configuradas:**
 
+- **UptimeRobot** notifica por correo al equipo ante cualquier caída detectada en los chequeos cada 5 minutos sobre el backend — es la única alerta de disponibilidad verificada *desde fuera* de la infraestructura de hosting (ver evidencia en 7.4.1).
 - Fallo del workflow `Backend CI`, `Frontend CI` o `Mobile CI/CD` ante un error de compilación o una prueba rota (GitHub Actions → correo al autor del commit/PR).
 - Fallo del workflow programado `keep-alive.yml` cuando el backend no responde en Render (GitHub Actions → correo a los mantenedores del repositorio).
 - Fallo de build o de despliegue del Frontend Web Application en Vercel (notificación nativa de Vercel por correo al equipo del proyecto).
@@ -163,10 +169,10 @@ NursePulse no cuenta todavía con un sistema de alertas dedicado (como Prometheu
 
 **Lo que todavía no existe:**
 
-- Umbrales de rendimiento (latencia, uso de CPU/memoria) que generen una alerta automática — hoy solo se detectan caídas totales del servicio, no degradaciones graduales.
-- Un canal de alertas centralizado para el equipo (Slack, Microsoft Teams); cada integrante depende del correo asociado a su propia cuenta de GitHub/Render/Vercel.
+- Umbrales de rendimiento (latencia, uso de CPU/memoria) que generen una alerta automática — UptimeRobot detecta caídas totales del servicio, pero no degradaciones graduales de performance.
+- Un canal de alertas centralizado para el equipo (Slack, Microsoft Teams); cada integrante depende del correo asociado a su propia cuenta de GitHub/Render/Vercel/UptimeRobot.
 
-> Implementar un sistema de alertas dedicado (por ejemplo, UptimeRobot para disponibilidad HTTP externa desde fuera de la plataforma de hosting, o Prometheus + Alertmanager para métricas de la aplicación) queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
+> Implementar un sistema de alertas de métricas (por ejemplo, Prometheus + Alertmanager o Grafana) para detectar degradaciones de rendimiento antes de que se conviertan en una caída total queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
 
 ### 7.4.4. Notification Pipeline Components
 
