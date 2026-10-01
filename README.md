@@ -830,41 +830,15 @@ En esta sección se presenta el video "About the Product", en el cual el equipo 
 
 El objetivo del video es evidenciar de manera práctica cómo la solución desarrollada permite mejorar la gestión de información clínica, específicamente en el registro y consulta de signos vitales, facilitando el acceso a datos relevantes para el personal de salud.
 
----
-
-### Descripción del contenido del video
-
-El video desarrollado incluye los siguientes elementos:
-
-- **Introducción del problema:**  
-  Se explica la problemática relacionada a la gestión manual o poco estructurada de la información clínica, especialmente en el registro de signos vitales.
-
-- **Presentación de la solución:**  
-  Se introduce NursePulse como una herramienta que busca digitalizar y estructurar la información clínica, mejorando la accesibilidad y organización de los datos.
-
-- **Demostración del Landing Page:**  
-  Se muestra la interfaz del landing page, destacando la propuesta de valor, funcionalidades principales y secciones informativas del producto.
-
-- **Demostración del sistema (backend):**  
-  Se realiza una demostración utilizando Swagger UI, donde se evidencian los principales endpoints implementados:
-  - Registro de signos vitales
-  - Consulta de registros por paciente
-  - Obtención del último registro clínico
-
-- **Explicación de funcionalidades clave:**  
-  Se explica cómo cada endpoint contribuye a resolver el problema identificado, facilitando el trabajo del personal de salud.
-
-- **Conclusión del equipo:**  
-  Se resume el impacto de la solución y su potencial aplicación en entornos reales.
-
----
 
 ### Enlace del video
 
 El video "About the Product" se encuentra disponible en el siguiente enlace:
-Youtube: [https://youtu.be/3A5RHi0I9Y0]
 
-Upc:[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202217893_upc_edu_pe/IQAYdJDORBeKRLUWSeZyVdoNAbQq78Aig73g8Ok6sZhPcbA?e=5Ar5CS&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D]
+Youtube: 
+
+Microsft Sharepoint: 
+
 
 ---
 
