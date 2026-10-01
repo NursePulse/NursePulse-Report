@@ -751,81 +751,83 @@ El backend de NursePulse se implementó como una RESTful API utilizando Spring B
 
 ### 5.2.7. RESTful API documentation
 
-La siguiente tabla resume los endpoints principales expuestos por el backend, agrupados por módulo, junto con los roles autorizados para consumirlos según la configuración de seguridad (`WebSecurityConfiguration`):
+La siguiente tabla resume los endpoints principales expuestos por el backend, agrupados por módulo, junto con los roles autorizados para consumirlos según la configuración de seguridad (`WebSecurityConfiguration`) y la Historia de Usuario o Technical Story del Capítulo III que cada uno satisface. Esta trazabilidad permite confirmar que cada recurso del API responde a una necesidad documentada del negocio, y no a una funcionalidad añadida sin respaldo en el backlog.
 
 **Autenticación (`/api/v1/authentication`)** — público
 
-| Método | Endpoint | Descripción |
-| :--- | :--- | :--- |
-| POST | `/sign-in` | Inicio de sesión, retorna JWT (rechaza con `422` si el correo no ha sido verificado) |
-| POST | `/sign-up` | Registro público de enfermería/médico (ROLE_NURSE o ROLE_DOCTOR); envía un correo de verificación |
-| GET | `/verify-email?token=...` | Confirma la cuenta a partir del link enviado por correo; renderiza una página HTML de confirmación |
+| Método | Endpoint | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- |
+| POST | `/sign-in` | Inicio de sesión, retorna JWT (rechaza con `422` si el correo no ha sido verificado) | TS-01 |
+| POST | `/sign-up` | Registro público de enfermería/médico (ROLE_NURSE o ROLE_DOCTOR); envía un correo de verificación | TS-01 |
+| GET | `/verify-email?token=...` | Confirma la cuenta a partir del link enviado por correo; renderiza una página HTML de confirmación | *Pendiente de incorporar al backlog* |
 
 **Usuarios (`/api/v1/users`)** — NURSE, DOCTOR, ADMIN (lectura) / ADMIN (gestión)
 
-| Método | Endpoint | Roles | Descripción |
-| :--- | :--- | :--- | :--- |
-| GET | `/users` | NURSE, DOCTOR, ADMIN | Lista de usuarios registrados (directorio de personal) |
-| GET | `/users/{userId}` | ADMIN | Detalle de un usuario |
-| PATCH | `/users/{userId}/roles` | ADMIN | Cambiar el rol asignado a un usuario |
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| GET | `/users` | NURSE, DOCTOR, ADMIN | Lista de usuarios registrados (directorio de personal) | TS-01 |
+| GET | `/users/{userId}` | ADMIN | Detalle de un usuario | TS-01 |
+| PATCH | `/users/{userId}/roles` | ADMIN | Cambiar el rol asignado a un usuario | *Pendiente de incorporar al backlog* |
 
 **Pacientes (`/api/v1/patients`)**
 
-| Método | Endpoint | Roles | Descripción |
-| :--- | :--- | :--- | :--- |
-| POST | `/patients` | NURSE, ADMIN | Registrar un nuevo paciente |
-| GET | `/patients` | NURSE, DOCTOR, ADMIN | Listar pacientes |
-| GET | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Detalle de un paciente |
-| PUT | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Actualizar datos de un paciente |
-| DELETE | `/patients/{patientId}` | ADMIN | Eliminar un paciente |
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| POST | `/patients` | NURSE, ADMIN | Registrar un nuevo paciente | TS-02 |
+| GET | `/patients` | NURSE, DOCTOR, ADMIN | Listar pacientes | TS-02 |
+| GET | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Detalle de un paciente | TS-02 |
+| PUT | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Actualizar datos de un paciente | TS-02 |
+| DELETE | `/patients/{patientId}` | ADMIN | Eliminar un paciente | TS-02 |
 
 **Signos vitales (`/api/v1/vital-sign-records`)**
 
-| Método | Endpoint | Roles | Descripción |
-| :--- | :--- | :--- | :--- |
-| POST | `/vital-sign-records` | NURSE, ADMIN | Registrar signos vitales |
-| GET | `/vital-sign-records` | NURSE, DOCTOR, ADMIN | Listar registros |
-| GET | `/vital-sign-records/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Historial de un paciente |
-| GET | `/vital-sign-records/patients/{patientId}/latest` | NURSE, DOCTOR, ADMIN | Último registro de un paciente |
-| GET | `/vital-sign-records/{vitalSignRecordId}` | NURSE, DOCTOR, ADMIN | Detalle de un registro |
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| POST | `/vital-sign-records` | NURSE, ADMIN | Registrar signos vitales | US-16, TS-03 |
+| GET | `/vital-sign-records` | NURSE, DOCTOR, ADMIN | Listar registros | US-16, TS-03 |
+| GET | `/vital-sign-records/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Historial de un paciente | US-17, TS-03 |
+| GET | `/vital-sign-records/patients/{patientId}/latest` | NURSE, DOCTOR, ADMIN | Último registro de un paciente | US-17, TS-03 |
+| GET | `/vital-sign-records/{vitalSignRecordId}` | NURSE, DOCTOR, ADMIN | Detalle de un registro | US-17, TS-03 |
 
 **Eventos clínicos (`/api/v1/clinical-events`)**
 
-| Método | Endpoint | Roles | Descripción |
-| :--- | :--- | :--- | :--- |
-| POST | `/clinical-events` | NURSE, DOCTOR, ADMIN | Registrar un evento clínico |
-| GET | `/clinical-events` | NURSE, DOCTOR, ADMIN | Listar eventos |
-| GET | `/clinical-events/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Eventos de un paciente |
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| POST | `/clinical-events` | NURSE, DOCTOR, ADMIN | Registrar un evento clínico | US-18, TS-03 |
+| GET | `/clinical-events` | NURSE, DOCTOR, ADMIN | Listar eventos | US-18, TS-03 |
+| GET | `/clinical-events/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Eventos de un paciente | US-18, TS-03 |
 
 **Traspasos SBAR (`/api/v1/handovers`)**
 
-| Método | Endpoint | Roles | Descripción |
-| :--- | :--- | :--- | :--- |
-| POST | `/handovers` | NURSE, ADMIN | Crear un traspaso SBAR |
-| GET | `/handovers/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Traspasos de un paciente |
-| GET | `/handovers/{handoverId}` | NURSE, DOCTOR, ADMIN | Detalle de un traspaso |
-| PATCH | `/handovers/{handoverId}/acknowledge` | NURSE, ADMIN | Confirmar recepción del traspaso |
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| POST | `/handovers` | NURSE, ADMIN | Crear un traspaso SBAR | US-13, TS-04 |
+| GET | `/handovers/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Traspasos de un paciente | US-14, TS-04 |
+| GET | `/handovers/{handoverId}` | NURSE, DOCTOR, ADMIN | Detalle de un traspaso | US-14, TS-04 |
+| PATCH | `/handovers/{handoverId}/acknowledge` | NURSE, ADMIN | Confirmar recepción del traspaso | US-15, TS-04 |
 
 **Alertas clínicas (`/api/v1/alerts`)**
 
-| Método | Endpoint | Roles | Descripción |
-| :--- | :--- | :--- | :--- |
-| POST | `/alerts` | NURSE, DOCTOR, ADMIN | Crear una alerta manual |
-| GET | `/alerts` | NURSE, DOCTOR, ADMIN | Listar alertas |
-| GET | `/alerts/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Alertas de un paciente |
-| PATCH | `/alerts/{alertId}/attend` | NURSE, DOCTOR, ADMIN | Marcar alerta como atendida |
-| PATCH | `/alerts/{alertId}/close` | DOCTOR, ADMIN | Cerrar (resolver) una alerta — cierre clínico exclusivo del médico |
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| POST | `/alerts` | NURSE, DOCTOR, ADMIN | Crear una alerta manual | US-24 |
+| GET | `/alerts` | NURSE, DOCTOR, ADMIN | Listar alertas | US-24 |
+| GET | `/alerts/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Alertas de un paciente | US-24 |
+| PATCH | `/alerts/{alertId}/attend` | NURSE, DOCTOR, ADMIN | Marcar alerta como atendida | US-24 |
+| PATCH | `/alerts/{alertId}/close` | DOCTOR, ADMIN | Cerrar (resolver) una alerta — cierre clínico exclusivo del médico | US-24 |
 
 **Auditoría (`/api/v1/audit-logs`)**
 
-| Método | Endpoint | Roles | Descripción |
-| :--- | :--- | :--- | :--- |
-| POST | `/audit-logs` | NURSE, DOCTOR, ADMIN | Registrar una entrada de auditoría |
-| GET | `/audit-logs` | DOCTOR, ADMIN | Listar entradas de auditoría |
-| GET | `/audit-logs/export/pdf` | DOCTOR, ADMIN | Exportar el registro de auditoría en PDF |
-| GET | `/audit-logs/{auditLogId}` | DOCTOR, ADMIN | Detalle de una entrada |
-| GET | `/audit-logs/patients/{patientId}/timeline` | DOCTOR, ADMIN | Línea de tiempo de auditoría de un paciente |
-| GET | `/audit-logs/entities/{entityType}/{entityId}` | DOCTOR, ADMIN | Auditoría de una entidad específica |
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| POST | `/audit-logs` | NURSE, DOCTOR, ADMIN | Registrar una entrada de auditoría | US-19, TS-05 |
+| GET | `/audit-logs` | DOCTOR, ADMIN | Listar entradas de auditoría | US-20, TS-05 |
+| GET | `/audit-logs/export/pdf` | DOCTOR, ADMIN | Exportar el registro de auditoría en PDF | *Pendiente de incorporar al backlog* |
+| GET | `/audit-logs/{auditLogId}` | DOCTOR, ADMIN | Detalle de una entrada | US-20, TS-05 |
+| GET | `/audit-logs/patients/{patientId}/timeline` | DOCTOR, ADMIN | Línea de tiempo de auditoría de un paciente | US-21, TS-05 |
+| GET | `/audit-logs/entities/{entityType}/{entityId}` | DOCTOR, ADMIN | Auditoría de una entidad específica | US-21, TS-05 |
+
+> Los endpoints marcados como *"Pendiente de incorporar al backlog"* corresponden a funcionalidades implementadas durante el desarrollo (verificación de cuenta por correo, gestión de roles, exportación de auditoría a PDF) que todavía no cuentan con una Historia de Usuario formal en el Capítulo III. Se identifica como mejora pendiente redactar y priorizar esas historias para cerrar la trazabilidad completa del backlog.
 
 La documentación interactiva y siempre actualizada de todos los endpoints (con esquemas de request/response) está disponible públicamente en Swagger UI: [https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html](https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html)
 
