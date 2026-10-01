@@ -142,7 +142,6 @@ El monitoreo continuo de NursePulse combina dos capas complementarias: un *ping*
 - **GitHub Actions (workflow programado)**: el workflow `keep-alive.yml` del repositorio Backend se ejecuta automáticamente cada 6 horas (`cron: '0 */6 * * *'`) y hace una petición HTTP al endpoint de salud del backend en producción.
 - **UptimeRobot**: monitor externo (SaaS) configurado directamente desde su propio dashboard sobre `https://backend-nursepulse-qfct.onrender.com/swagger-ui.html`, con chequeos cada 5 minutos desde fuera de la infraestructura de Render. **No requiere ningún cambio de código ni credenciales en el proyecto** — a diferencia del Actuator o del workflow `keep-alive.yml`, que sí forman parte del repositorio, UptimeRobot es configuración externa: solo se le indica la URL a vigilar y la frecuencia, y notifica al equipo por correo ante cualquier caída detectada.
 
-📸 *Dashboard de UptimeRobot mostrando el monitor del backend con 100% de disponibilidad en las últimas 24 horas/7 días, tiempo de respuesta promedio de 351 ms y 5 días consecutivos activo sin incidentes:*
 
 ![Monitoreo UptimeRobot del backend](assets/chapter-7/uptimerobot-dashboard.png)
 
