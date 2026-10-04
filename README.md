@@ -32,7 +32,7 @@ Las herramientas se organizan según las principales actividades del ciclo de vi
 
 ### Software Development
 
-- [**Webstorm**](https://code.visualstudio.com/) Es el editor de código utilizado para el desarrollo de la Landing Page de NursePulse. Permite trabajar de manera eficiente con tecnologías como HTML, CSS y JavaScript, ofreciendo soporte para extensiones, terminal integrada y herramientas de depuración.
+- [**Webstorm**](https://www.jetbrains.com/webstorm/) Es el editor de código utilizado para el desarrollo de la Landing Page de NursePulse. Permite trabajar de manera eficiente con tecnologías como HTML, CSS y JavaScript, ofreciendo soporte para extensiones, terminal integrada y herramientas de depuración.
 
 - [**IntelliJ IDEA**](https://www.jetbrains.com/idea/): Entorno de desarrollo integrado utilizado para la construcción del Server Side Software (RESTful API) implementado con Spring Boot y Java.
 
@@ -65,16 +65,14 @@ El repositorio principal del proyecto es el siguiente:
 - **Backend (Web Services) Repository**: [https://github.com/NursePulse/Backend-NursePulse](https://github.com/NursePulse/Backend-NursePulse)
 - **Mobile Multiplatform Application:**: [https://github.com/NursePulse/MultiPlatform-App-NursePulse](https://github.com/NursePulse/MultiPlatform-App-NursePulse)
 
-### GitFlow Workflow implementado
+### Flujo de ramas implementado
 
-El equipo ha adoptado la metodología GitFlow como modelo de control de versiones, lo cual permite separar el desarrollo de nuevas funcionalidades, la integración de cambios y la preparación de versiones estables.
+El equipo tomó GitFlow como referencia, pero en la práctica trabajó con un flujo simplificado, sin las ramas `develop` ni `release/` (no existen en ninguno de los cuatro repositorios). Las ramas utilizadas son:
 
-Las ramas principales utilizadas son:
-
-- **main**: rama principal que contiene la versión estable del proyecto.
-- **develop**: rama de integración donde se consolidan todas las funcionalidades completadas antes de ser llevadas a producción.
-- **feature/**: ramas utilizadas para el desarrollo de funcionalidades específicas del sistema.
-- **release/** : Ramas utilizadas para preparar versiones finales para despliegue y corregir errores críticos en producción, respectivamente.
+- **main**: rama principal de cada repositorio; en Frontend, Landing Page y Mobile contiene la versión desplegada o publicada.
+- **deploy/render-docker** (Backend): rama de producción; cada cambio que llega a ella se despliega automáticamente en Render. Desde el 3 de octubre de 2026 está protegida y solo admite cambios mediante Pull Request con una aprobación y el check `build-and-test` (ver Capítulo VI, sección 6.2.2).
+- **test** (Mobile): rama de integración previa a `main`; la distribución del APK ocurre únicamente al llegar a `main`.
+- **feature/\***, **fix/\*** y **chore/\***: ramas de trabajo para nuevas funcionalidades, correcciones y tareas de mantenimiento (por ejemplo `feature/sbar-structured-fields`, `fix/audit-log-null-metadata-and-500-handling` y `chore/mobile-foundation`). Se integran mediante Pull Request, aunque no de forma exclusiva: en las etapas finales parte de los cambios se publicó directamente en la rama principal.
 
 ### Gestión de ramas en la Landing Page
 
@@ -86,12 +84,14 @@ En la práctica, el repositorio de la Landing Page (`Landing-NursePulse`) se man
 El proyecto sigue la siguiente convención de nomenclatura:
 
 - feature/nombre-descriptivo → nuevas funcionalidades
-- develop → integración de funcionalidades
+- fix/nombre-descriptivo → correcciones de errores
+- chore/nombre-descriptivo → mantenimiento y configuración
 - main → versión estable del sistema
+- deploy/render-docker → producción del Backend
 
 ### Semantic Versioning
 
-Aunque en esta primera etapa se ha trabajado principalmente en la Landing Page, el proyecto adopta el estándar de versionado semántico:
+El proyecto adopta el estándar de versionado semántico:
 
 MAJOR.MINOR.PATCH
 
@@ -99,11 +99,18 @@ MAJOR.MINOR.PATCH
 - MINOR: nuevas funcionalidades
 - PATCH: corrección de errores
 
-Versión actual del proyecto: v1.0.0 (Landing Page inicial)
+Versiones declaradas en cada repositorio al 3 de octubre de 2026:
+
+- Backend: 0.30.3 (`pom.xml`)
+- Frontend Web: 0.16.0 (`package.json`)
+- Aplicación móvil: 1.0.0+1 (`pubspec.yaml`); cada compilación publica una GitHub Release con la etiqueta `v1.0.0+1-<número de build>`
+- Landing Page: sin versión declarada (sitio estático)
+
+Backend, Frontend y Landing Page no tienen etiquetas (*tags*) de Git.
 
 ### Conventional Commits
 
-Para mantener un historial claro de cambios, el equipo utiliza Conventional Commits en todos los commits del repositorio.
+Para mantener un historial claro de cambios, el equipo adoptó Conventional Commits. No se aplicó de forma uniforme: al 3 de octubre de 2026, y sin contar los commits de fusión, lo siguen 19 de 27 commits recientes de la rama `deploy/render-docker` del Backend, 16 de 29 del Frontend, 15 de 17 de la rama `test` de Mobile y 1 de 17 de la Landing Page.
 
 
 ![convencionalcommits.png](assets/convencionalcommits.png)
@@ -152,7 +159,7 @@ Por lo que todas las variables, funciones, clases, componentes y archivos se nom
 - Se organiza el CSS de forma modular por componentes o secciones.
 
 
-### AngularJS (Frontend Web Application)
+### Angular (Frontend Web Application)
 
 **Guías adoptadas:** *Angular Coding Style Guide* y *Google TypeScript Style Guide*.
 
@@ -160,8 +167,8 @@ Por lo que todas las variables, funciones, clases, componentes y archivos se nom
 - `camelCase` para variables, funciones, métodos y propiedades.
 - `PascalCase` para clases, interfaces, componentes y enumeraciones (`enums`).
 - `UPPER_SNAKE_CASE` para constantes globales.
-- `kebab-case` para nombres de archivos y carpetas (ej. `patient-list.component.ts`).
-- Prefijo `_` para propiedades privadas y *signals* privados.
+- `kebab-case` para nombres de archivos y carpetas (ej. `patient-list.ts`).
+- Prefijo `_` para los *signals* privados de los stores (ej. `_patients`).
 
 ### Buenas prácticas
 - Clean Architecture junto con Domain-Driven Design (DDD): Separación lógica en capas (`application`, `domain`, `infrastructure` y `presentation`).
@@ -181,13 +188,13 @@ Por lo que todas las variables, funciones, clases, componentes y archivos se nom
 
 ### Java / Spring Boot (RESTful API Backend)
 
-**Guía adoptada:** *Google Java Style Guide* y convenciones de *Spring Boot Features*.
+**Guía de referencia:** *Google Java Style Guide*, con indentación de 4 espacios en lugar de los 2 que propone, y convenciones de *Spring Boot Features*.
 
 ### Nomenclatura
 - `camelCase` para variables, métodos, atributos y parámetros.
 - `PascalCase` para clases, interfaces, registros (*records*) y enumeraciones.
 - `UPPER_SNAKE_CASE` para constantes (`static final`).
-- `kebab-case` para las rutas (URLs) de los endpoints REST (ej. `/api/v1/vital-signs`).
+- `kebab-case` para las rutas (URLs) de los endpoints REST (ej. `/api/v1/vital-sign-records`).
 - Minúsculas (sin guiones ni mayúsculas) para la estructura de paquetes (ej. `com.brainspark.nursepulse.platform.patients`).
 
 ### Buenas prácticas
@@ -264,9 +271,9 @@ El proyecto utiliza **Git** como sistema de control de versiones y **GitHub** co
 
 ### Estrategia de ramas
 
-- `main`: contiene la versión estable lista para producción.
-- `develop`: integra las funcionalidades en desarrollo.
-- `feature/*`: ramas destinadas al desarrollo de nuevas funcionalidades.
+- `main`: contiene la versión estable de cada repositorio.
+- `deploy/render-docker`: rama de producción del Backend, desplegada automáticamente en Render.
+- `feature/*`, `fix/*` y `chore/*`: ramas de trabajo para funcionalidades, correcciones y mantenimiento (ver 5.1.2).
 
 
 ### 2. Despliegue de Landing Page (GitHub Pages)
@@ -338,7 +345,7 @@ La aplicación es una *Single Page Application* (SPA) desarrollada en Angular 21
 ![deployverceldone.png](assets/deployverceldone.png)
 ### 4. Despliegue de los Web Services RESTful API (Cloud Provider)
 
-El backend desarrollado en Spring Boot y documentado con OpenAPI (Swagger) ha sido configurado para su despliegue continuo en un servicio Platform as a Service (PaaS) como Render o Heroku.
+El backend desarrollado en Spring Boot y documentado con OpenAPI (Swagger) ha sido configurado para su despliegue continuo en Render, un servicio Platform as a Service (PaaS), como contenedor Docker construido a partir del `Dockerfile` del repositorio.
 
 ### Pasos de despliegue
 
@@ -360,7 +367,7 @@ El backend desarrollado en Spring Boot y documentado con OpenAPI (Swagger) ha si
 ![encapsulatemvn.png](assets/encapsulatemvn.png)
 
 #### 3. Publicación en el servicio Cloud
-- Vincular el repositorio (rama `deploy/render-docker`) al servicio PaaS (ej. Render/Heroku) para disparar el despliegue de la imagen/artefacto.
+- Vincular el repositorio (rama `deploy/render-docker`) al servicio PaaS (Render) para disparar el despliegue de la imagen/artefacto.
 - El Cloud Provider asigna los recursos, levanta el servidor y genera una URL HTTPS pública.
 
 ![deployselectionbranch.png](assets/deployselectionbranch.png)
@@ -727,8 +734,6 @@ El backend de NursePulse se implementó como una RESTful API utilizando Spring B
 
 **Evidencia de ejecución del servicio en producción**
 
-📸 *[FOTO AQUÍ: capturar `https://backend-nursepulse-qfct.onrender.com/actuator/health` mostrando `{"status":"UP"}`]*
-
 ![statusupbackend.png](assets/statusupbackend.png)
 
 ### 5.2.7. RESTful API documentation
@@ -750,6 +755,12 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 | GET | `/users` | NURSE, DOCTOR, ADMIN | Lista de usuarios registrados (directorio de personal) | TS-01 |
 | GET | `/users/{userId}` | ADMIN | Detalle de un usuario | TS-01 |
 | PATCH | `/users/{userId}/roles` | ADMIN | Cambiar el rol asignado a un usuario | *Pendiente de incorporar al backlog* |
+
+**Roles (`/api/v1/roles`)**
+
+| Método | Endpoint | Roles | Descripción | Historia relacionada |
+| :--- | :--- | :--- | :--- | :--- |
+| GET | `/roles` | ADMIN | Lista de roles disponibles para asignar | *Pendiente de incorporar al backlog* |
 
 **Pacientes (`/api/v1/patients`)**
 
@@ -794,6 +805,7 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 | :--- | :--- | :--- | :--- | :--- |
 | POST | `/alerts` | NURSE, DOCTOR, ADMIN | Crear una alerta manual | US-24 |
 | GET | `/alerts` | NURSE, DOCTOR, ADMIN | Listar alertas | US-24 |
+| GET | `/alerts/{alertId}` | NURSE, DOCTOR, ADMIN | Detalle de una alerta | US-24 |
 | GET | `/alerts/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Alertas de un paciente | US-24 |
 | PATCH | `/alerts/{alertId}/attend` | NURSE, DOCTOR, ADMIN | Marcar alerta como atendida | US-24 |
 | PATCH | `/alerts/{alertId}/close` | DOCTOR, ADMIN | Cerrar (resolver) una alerta — cierre clínico exclusivo del médico | US-24 |
@@ -804,7 +816,7 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 | :--- | :--- | :--- | :--- | :--- |
 | POST | `/audit-logs` | NURSE, DOCTOR, ADMIN | Registrar una entrada de auditoría | US-19, TS-05 |
 | GET | `/audit-logs` | DOCTOR, ADMIN | Listar entradas de auditoría | US-20, TS-05 |
-| GET | `/audit-logs/export/pdf` | DOCTOR, ADMIN | Exportar el registro de auditoría en PDF | *Pendiente de incorporar al backlog* |
+| GET | `/audit-logs/export/pdf` | DOCTOR, ADMIN | Exportar el registro de auditoría en PDF; cada exportación queda registrada en la propia auditoría | *Pendiente de incorporar al backlog* |
 | GET | `/audit-logs/{auditLogId}` | DOCTOR, ADMIN | Detalle de una entrada | US-20, TS-05 |
 | GET | `/audit-logs/patients/{patientId}/timeline` | DOCTOR, ADMIN | Línea de tiempo de auditoría de un paciente | US-21, TS-05 |
 | GET | `/audit-logs/entities/{entityType}/{entityId}` | DOCTOR, ADMIN | Auditoría de una entidad específica | US-21, TS-05 |
@@ -817,7 +829,7 @@ La documentación interactiva y siempre actualizada de todos los endpoints (con 
 Durante el desarrollo de NursePulse, el equipo mantuvo una dinámica de colaboración apoyada en las herramientas descritas en la sección 5.1.1:
 
 - **Jira Software** se utilizó como tablero central del Sprint Backlog, permitiendo visualizar el estado de cada tarea (To-do, In-Process, To-Review, Done) y distribuir el trabajo entre los integrantes según su rol dentro del equipo (frontend, backend, diseño, documentación).
-- **GitHub** funcionó como plataforma de integración de código: cada funcionalidad se desarrolló en una rama `feature/*` independiente y se integró mediante Pull Requests, lo que permitió revisión de código entre pares antes de fusionar cambios a `develop`/`main`.
+- **GitHub** funcionó como plataforma de integración de código: las funcionalidades y correcciones se desarrollaron en ramas `feature/*` o `fix/*` y buena parte se integró mediante Pull Requests (21 al 3 de octubre de 2026). Sin embargo, ninguno de esos Pull Requests registra una revisión en GitHub y varios cambios se publicaron directamente en la rama principal (ver Capítulo VI, sección 6.2.2).
 - **Google Docs y Google Drive** se usaron para la redacción colaborativa en tiempo real del informe, las historias de usuario y las actas de reunión, permitiendo que todos los integrantes aportaran simultáneamente sin conflictos de versión.
 - **Comunicación diaria**: el equipo sostuvo coordinaciones periódicas (estilo daily/stand-up) para reportar avances, bloqueos y reasignar tareas cuando algún integrante encontraba un impedimento técnico.
 - **Revisión cruzada**: los cambios de un módulo (por ejemplo, un endpoint nuevo en el backend) se comunicaban al integrante responsable del frontend correspondiente para mantener sincronizados los contratos de datos entre ambas capas, evitando desalineaciones entre lo que el cliente esperaba y lo que el servidor exponía.
