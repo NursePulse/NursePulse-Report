@@ -17,9 +17,9 @@ El equipo utiliza un conjunto de herramientas de pruebas automatizadas para aseg
 
 **Prácticas:**
 
-- **Feature Branching**: la convención del proyecto es desarrollar cada funcionalidad en una rama `feature/*` independiente (ver Capítulo V, sección 5.1.2) e integrarla mediante Pull Request. En la práctica se aplicó en parte de los cambios; en las etapas finales muchos commits se publicaron directamente a la rama principal (ver Capítulo VI, sección 6.2.2).
+- **Feature Branching**: la convención del proyecto es desarrollar cada funcionalidad en una rama `feature/*` independiente (ver Capítulo V, sección 5.1.2) e integrarla mediante Pull Request. En la práctica se aplicó en parte de los cambios; en las etapas finales muchos commits se publicaron directamente a la rama principal. Desde el 3 de octubre de 2026 la rama de producción del Backend (`deploy/render-docker`) ya no admite `push` directo y exige Pull Request (ver Capítulo VI, sección 6.2.2).
 - **Conventional Commits**: todos los commits siguen el estándar `tipo(scope): descripción` (`feat`, `fix`, `docs`, `test`, `ci`, etc.), lo que permite identificar rápidamente el propósito de cada cambio dentro del pipeline.
-- **Build en cada integración**: el pipeline de CI se ejecuta en cada `push` y `pull request` hacia la rama principal. No es una condición técnicamente forzada: las ramas principales no tienen reglas de protección, por lo que un cambio puede integrarse aunque el pipeline falle (ver Capítulo VI, sección 6.2.2).
+- **Build en cada integración**: el pipeline de CI se ejecuta en cada `push` y `pull request` hacia la rama principal. Es una condición técnicamente forzada únicamente en `deploy/render-docker` del Backend, donde el check `build-and-test` debe finalizar en éxito para poder fusionar. En `main` del Backend, del Frontend, de Mobile y de Landing no hay reglas de protección, por lo que un cambio puede integrarse aunque el pipeline falle (ver Capítulo VI, sección 6.2.2).
 
 ### 7.1.2. Build & Test Suite Pipeline Components.
 
@@ -59,29 +59,29 @@ En los tres casos, un fallo en cualquiera de los pasos obligatorios (instalació
 
 ## 7.2. Continuous Delivery
 
-En el estado actual del proyecto, NursePulse no cuenta con un entorno de *staging* independiente ni con un paso de aprobación manual explícito entre la integración continua y el despliegue a producción: una vez que el pipeline de CI finaliza exitosamente sobre la rama principal, el mismo pipeline continúa automáticamente hacia Continuous Deployment (sección 7.3). Por este motivo, la "entrega continua" del proyecto se sostiene en el pipeline de CI posterior a cada integración y, cuando se usa Pull Request, en la revisión de código entre integrantes.
+En el estado actual del proyecto, NursePulse no cuenta con un entorno de *staging* independiente ni con un paso de aprobación manual explícito entre la integración continua y el despliegue a producción: una vez que el pipeline de CI finaliza exitosamente sobre la rama principal, el mismo pipeline continúa automáticamente hacia Continuous Deployment (sección 7.3). Por este motivo, la "entrega continua" del proyecto se sostiene en el pipeline de CI posterior a cada integración y, cuando se usa Pull Request, en la revisión de código entre integrantes. La excepción es el Backend: desde el 3 de octubre de 2026 su rama de producción (`deploy/render-docker`) exige un Pull Request con una aprobación y el check `build-and-test` en verde antes de fusionar, lo que funciona como aprobación previa al despliegue en Render.
 
 ### 7.2.1. Tools and Practices.
 
 **Tools:**
 
-- **GitHub** (Pull Requests): los cambios propuestos a `main` (o a `deploy/render-docker` en el caso del backend) pueden integrarse mediante Pull Request, donde el pipeline de CI se ejecuta y un integrante del equipo puede revisar el cambio antes de fusionarlo. El proyecto registra 10 PRs en Backend, 4 en Frontend, 4 en Mobile y 1 en Landing; el resto de los cambios se publicó por `push` directo.
+- **GitHub** (Pull Requests): los cambios a `main` (o a `deploy/render-docker` en el caso del backend) pueden integrarse mediante Pull Request, donde el pipeline de CI se ejecuta y un integrante del equipo puede revisar el cambio antes de fusionarlo. En `deploy/render-docker` esto es obligatorio mediante una regla de protección de rama (1 aprobación, check `build-and-test`, vigente también para administradores, sin *force push* ni borrado de la rama). El proyecto registra 10 PRs en Backend, 4 en Frontend, 4 en Mobile y 1 en Landing al 3 de octubre de 2026; el resto de los cambios se publicó por `push` directo.
 - **GitHub Actions**: el mismo motor de CI (sección 7.1.2) sirve como validador de que el código está en un estado "desplegable" en todo momento.
 
 **Practices (Prácticas):**
 
 - **Feature Branching y Pull Requests**: las funcionalidades que se integran mediante Pull Request se desarrollan en ramas separadas, y el PR documenta el cambio y deja trazabilidad de quién lo revisó.
-- **Revisión por pares (Code Review)**: en los cambios que pasan por Pull Request, un integrante distinto al autor puede revisarlo antes de fusionarlo. No hay aprobación obligatoria configurada en el repositorio, por lo que no equivale a una aprobación formal de despliegue.
-- **Build verde recomendado**: el equipo espera que el pipeline de CI esté en verde antes de fusionar, pero GitHub no lo impide: las ramas principales no tienen protección y un PR con CI fallido sí puede fusionarse.
+- **Revisión por pares (Code Review)**: en los cambios que pasan por Pull Request, un integrante distinto al autor puede revisarlo antes de fusionarlo. En `deploy/render-docker` (Backend) la aprobación de otro integrante es obligatoria y actúa como aprobación previa al despliegue en producción; en el resto de las ramas principales no hay aprobación obligatoria configurada.
+- **Build verde**: en `deploy/render-docker` (Backend) GitHub impide fusionar si el check `build-and-test` no está en éxito. En las demás ramas principales el equipo espera que el CI esté en verde antes de fusionar, pero GitHub no lo impide: no tienen protección y un PR con CI fallido sí puede fusionarse.
 
-> **Nota:** a diferencia de un esquema clásico de Continuous Delivery con *staging* y aprobación manual del despliegue, en NursePulse el paso de "listo para desplegar" y el despliegue mismo ocurren en el mismo pipeline (ver sección 7.3). Introducir un entorno de staging y un paso de aprobación manual explícito queda identificado como una mejora pendiente del proyecto.
+> **Nota:** a diferencia de un esquema clásico de Continuous Delivery con *staging* y aprobación manual del despliegue, en NursePulse el paso de "listo para desplegar" y el despliegue mismo ocurren en el mismo pipeline (ver sección 7.3). Introducir un entorno de staging independiente, y extender las reglas de protección de rama a `main` del Backend, del Frontend, de Mobile y de Landing, queda identificado como una mejora pendiente del proyecto.
 
 ### 7.2.2. Stages Deployment Pipeline Components.
 
 - **Apertura del Pull Request** (cuando se usa): un desarrollador abre un PR desde su rama `feature/*` o `fix/*` hacia la rama principal del repositorio correspondiente.
 - **Integración Continua (CI)**: se ejecuta automáticamente el pipeline de build y pruebas (sección 7.1.2) sobre el código del PR.
 - **Revisión del equipo**: un integrante distinto puede revisar los cambios y verificar que el CI haya finalizado correctamente.
-- **Fusión o `push` a la rama principal**: el cambio llega a `main` (Frontend, Mobile, Landing) o a `deploy/render-docker` (Backend), ya sea fusionando un PR o mediante `push` directo.
+- **Fusión o `push` a la rama principal**: el cambio llega a `main` (Frontend, Mobile, Landing) fusionando un PR o mediante `push` directo. En `deploy/render-docker` (Backend) solo puede llegar fusionando un PR aprobado y con el check `build-and-test` en verde.
 - **Disparo automático del despliegue**: la llegada de un cambio a la rama principal dispara automáticamente el pipeline de Continuous Deployment (sección 7.3), sin pasos manuales adicionales.
 
 ## 7.3. Continuous Deployment
