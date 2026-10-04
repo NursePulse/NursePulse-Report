@@ -899,33 +899,33 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 
 | Método | Endpoint | Descripción | Historia relacionada |
 | :--- | :--- | :--- | :--- |
-| POST | `/sign-in` | Inicio de sesión, retorna JWT (rechaza con `422` si el correo no ha sido verificado) | TS-01 |
-| POST | `/sign-up` | Registro público de enfermería/médico (ROLE_NURSE o ROLE_DOCTOR); envía un correo de verificación | TS-01 |
-| GET | `/verify-email?token=...` | Confirma la cuenta a partir del link enviado por correo; renderiza una página HTML de confirmación | *Pendiente de incorporar al backlog* |
+| POST | `/sign-in` | Inicio de sesión, retorna JWT (rechaza con `422` si el correo no ha sido verificado) | US-25, TS-01 |
+| POST | `/sign-up` | Registro público de enfermería/médico (ROLE_NURSE o ROLE_DOCTOR); envía un correo de verificación | US-23, TS-01 |
+| GET | `/verify-email?token=...` | Confirma la cuenta a partir del link enviado por correo; renderiza una página HTML de confirmación | US-24 |
 
 **Usuarios (`/api/v1/users`)** — NURSE, DOCTOR, ADMIN (lectura) / ADMIN (gestión)
 
 | Método | Endpoint | Roles | Descripción | Historia relacionada |
 | :--- | :--- | :--- | :--- | :--- |
-| GET | `/users` | NURSE, DOCTOR, ADMIN | Lista de usuarios registrados (directorio de personal) | TS-01 |
-| GET | `/users/{userId}` | ADMIN | Detalle de un usuario | TS-01 |
-| PATCH | `/users/{userId}/roles` | ADMIN | Cambiar el rol asignado a un usuario | *Pendiente de incorporar al backlog* |
+| GET | `/users` | NURSE, DOCTOR, ADMIN | Lista de usuarios registrados (directorio de personal) | US-26, TS-01 |
+| GET | `/users/{userId}` | ADMIN | Detalle de un usuario | US-26 |
+| PATCH | `/users/{userId}/roles` | ADMIN | Cambiar el rol asignado a un usuario | US-26, TS-07 |
 
 **Roles (`/api/v1/roles`)**
 
 | Método | Endpoint | Roles | Descripción | Historia relacionada |
 | :--- | :--- | :--- | :--- | :--- |
-| GET | `/roles` | ADMIN | Lista de roles disponibles para asignar | *Pendiente de incorporar al backlog* |
+| GET | `/roles` | ADMIN | Lista de roles disponibles para asignar | US-26 |
 
 **Pacientes (`/api/v1/patients`)**
 
 | Método | Endpoint | Roles | Descripción | Historia relacionada |
 | :--- | :--- | :--- | :--- | :--- |
-| POST | `/patients` | NURSE, ADMIN | Registrar un nuevo paciente | TS-02 |
-| GET | `/patients` | NURSE, DOCTOR, ADMIN | Listar pacientes | TS-02 |
-| GET | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Detalle de un paciente | TS-02 |
-| PUT | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Actualizar datos de un paciente | TS-02 |
-| DELETE | `/patients/{patientId}` | ADMIN | Eliminar un paciente | TS-02 |
+| POST | `/patients` | NURSE, ADMIN | Registrar un nuevo paciente | US-27, TS-02 |
+| GET | `/patients` | NURSE, DOCTOR, ADMIN | Listar pacientes | US-28, TS-02 |
+| GET | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Detalle de un paciente | US-28, TS-02 |
+| PUT | `/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Actualizar datos de un paciente | US-27, TS-02 |
+| DELETE | `/patients/{patientId}` | ADMIN | Eliminar un paciente | US-27, TS-02 |
 
 **Signos vitales (`/api/v1/vital-sign-records`)**
 
@@ -933,8 +933,8 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 | :--- | :--- | :--- | :--- | :--- |
 | POST | `/vital-sign-records` | NURSE, ADMIN | Registrar signos vitales | US-16, TS-03 |
 | GET | `/vital-sign-records` | NURSE, DOCTOR, ADMIN | Listar registros | US-16, TS-03 |
-| GET | `/vital-sign-records/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Historial de un paciente | US-17, TS-03 |
-| GET | `/vital-sign-records/patients/{patientId}/latest` | NURSE, DOCTOR, ADMIN | Último registro de un paciente | US-17, TS-03 |
+| GET | `/vital-sign-records/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Historial de un paciente | US-17, US-29, TS-03 |
+| GET | `/vital-sign-records/patients/{patientId}/latest` | NURSE, DOCTOR, ADMIN | Último registro de un paciente | US-17, US-29, TS-03 |
 | GET | `/vital-sign-records/{vitalSignRecordId}` | NURSE, DOCTOR, ADMIN | Detalle de un registro | US-17, TS-03 |
 
 **Eventos clínicos (`/api/v1/clinical-events`)**
@@ -943,7 +943,7 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 | :--- | :--- | :--- | :--- | :--- |
 | POST | `/clinical-events` | NURSE, DOCTOR, ADMIN | Registrar un evento clínico | US-18, TS-03 |
 | GET | `/clinical-events` | NURSE, DOCTOR, ADMIN | Listar eventos | US-18, TS-03 |
-| GET | `/clinical-events/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Eventos de un paciente | US-18, TS-03 |
+| GET | `/clinical-events/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Eventos de un paciente | US-18, US-19, TS-03 |
 
 **Traspasos SBAR (`/api/v1/handovers`)**
 
@@ -958,23 +958,23 @@ La siguiente tabla resume los endpoints principales expuestos por el backend, ag
 
 | Método | Endpoint | Roles | Descripción | Historia relacionada |
 | :--- | :--- | :--- | :--- | :--- |
-| POST | `/alerts` | NURSE, DOCTOR, ADMIN | Crear una alerta manual | US-24 |
-| GET | `/alerts` | NURSE, DOCTOR, ADMIN | Listar alertas | US-24 |
-| GET | `/alerts/{alertId}` | NURSE, DOCTOR, ADMIN | Detalle de una alerta | US-24 |
-| GET | `/alerts/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Alertas de un paciente | US-24 |
-| PATCH | `/alerts/{alertId}/attend` | NURSE, DOCTOR, ADMIN | Marcar alerta como atendida | US-24 |
-| PATCH | `/alerts/{alertId}/close` | DOCTOR, ADMIN | Cerrar (resolver) una alerta — cierre clínico exclusivo del médico | US-24 |
+| POST | `/alerts` | NURSE, DOCTOR, ADMIN | Crear una alerta (la genera la aplicación al evaluar el riesgo) | US-31 |
+| GET | `/alerts` | NURSE, DOCTOR, ADMIN | Listar alertas | US-33 |
+| GET | `/alerts/{alertId}` | NURSE, DOCTOR, ADMIN | Detalle de una alerta | US-33 |
+| GET | `/alerts/patients/{patientId}` | NURSE, DOCTOR, ADMIN | Alertas de un paciente | US-29, US-33 |
+| PATCH | `/alerts/{alertId}/attend` | NURSE, DOCTOR, ADMIN | Marcar alerta como atendida | US-32 |
+| PATCH | `/alerts/{alertId}/close` | DOCTOR, ADMIN | Cerrar (resolver) una alerta — cierre clínico exclusivo del médico | US-32 |
 
 **Auditoría (`/api/v1/audit-logs`)**
 
 | Método | Endpoint | Roles | Descripción | Historia relacionada |
 | :--- | :--- | :--- | :--- | :--- |
-| POST | `/audit-logs` | NURSE, DOCTOR, ADMIN | Registrar una entrada de auditoría | US-19, TS-05 |
-| GET | `/audit-logs` | DOCTOR, ADMIN | Listar entradas de auditoría | US-20, TS-05 |
-| GET | `/audit-logs/export/pdf` | DOCTOR, ADMIN | Exportar el registro de auditoría en PDF; cada exportación queda registrada en la propia auditoría | *Pendiente de incorporar al backlog* |
-| GET | `/audit-logs/{auditLogId}` | DOCTOR, ADMIN | Detalle de una entrada | US-20, TS-05 |
-| GET | `/audit-logs/patients/{patientId}/timeline` | DOCTOR, ADMIN | Línea de tiempo de auditoría de un paciente | US-21, TS-05 |
-| GET | `/audit-logs/entities/{entityType}/{entityId}` | DOCTOR, ADMIN | Auditoría de una entidad específica | US-21, TS-05 |
+| POST | `/audit-logs` | NURSE, DOCTOR, ADMIN | Registrar una entrada de auditoría | TS-05 |
+| GET | `/audit-logs` | DOCTOR, ADMIN | Listar entradas de auditoría | US-35, TS-05 |
+| GET | `/audit-logs/export/pdf` | DOCTOR, ADMIN | Exportar el registro de auditoría en PDF; cada exportación queda registrada en la propia auditoría | US-36, TS-05 |
+| GET | `/audit-logs/{auditLogId}` | DOCTOR, ADMIN | Detalle de una entrada | US-35, TS-05 |
+| GET | `/audit-logs/patients/{patientId}/timeline` | DOCTOR, ADMIN | Línea de tiempo de auditoría de un paciente | US-35, TS-05 |
+| GET | `/audit-logs/entities/{entityType}/{entityId}` | DOCTOR, ADMIN | Auditoría de una entidad específica | US-35, TS-05 |
 
 
 La documentación interactiva y siempre actualizada de todos los endpoints (con esquemas de request/response) está disponible públicamente en Swagger UI: [https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html](https://backend-nursepulse-qfct.onrender.com/swagger-ui/index.html)
