@@ -1020,10 +1020,4 @@ Youtube:
 
 Microsft Sharepoint: 
 
-
 ---
-
-### Conclusión
-
-El video permite validar el funcionamiento del sistema desarrollado, mostrando evidencia real de las funcionalidades implementadas durante el proyecto. Asimismo, refuerza la propuesta de valor de NursePulse, evidenciando su utilidad en la gestión de información clínica y su potencial uso en escenarios reales.
-
