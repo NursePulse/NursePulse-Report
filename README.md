@@ -2,7 +2,7 @@
 
 ## 6.1. Testing Suites & Validation
 
-NursePulse cuenta con una suite de pruebas automatizadas de 63 pruebas en el backend (JUnit 5 + Mockito), 31 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
+NursePulse cuenta con una suite de pruebas automatizadas de 63 pruebas en el backend (JUnit 5 + Mockito), 32 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
 
 **Backend**
 
