@@ -2,7 +2,7 @@
 
 ## 6.1. Testing Suites & Validation
 
-NursePulse cuenta con una suite de pruebas automatizadas de 63 pruebas en el backend (JUnit 5 + Mockito), 32 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
+NursePulse cuenta con una suite de pruebas automatizadas de 99 pruebas en el backend (JUnit 5 + Mockito), 32 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
 
 **Backend**
 
@@ -101,7 +101,7 @@ Para cada historia con prueba unitaria asociada se indica cómo ejecutarla en la
 | TS-06 Errores del API | Enviar una solicitud inválida (por ejemplo un registro con contraseña corta): el API responde con `code`, `message` y `details`. | No modifica tablas. | `ErrorHandlingTest` (estado HTTP por código de error, cuerpo y manejador global) |
 | US-38 Aplicación móvil | `flutter run`: iniciar sesión y navegar. | Las mismas tablas que la web. | `connection_test.dart`, `session_test.dart`, `sign_up_view_test.dart` |
 
-Las pruebas nuevas se entregaron en tres PR: pacientes, traspasos SBAR, signos vitales y eventos clínicos en [Backend-NursePulse#11](https://github.com/NursePulse/Backend-NursePulse/pull/11); roles y errores del API en [Backend-NursePulse#12](https://github.com/NursePulse/Backend-NursePulse/pull/12); reglas de riesgo, reportes, idioma y suscripciones en [Application-Web-Nurse-Pulse#5](https://github.com/NursePulse/Application-Web-Nurse-Pulse/pull/5). Una vez integrados, el backend suma 99 pruebas y el frontend 50.
+Las pruebas nuevas se entregaron en tres PR: pacientes, traspasos SBAR, signos vitales y eventos clínicos en [Backend-NursePulse#11](https://github.com/NursePulse/Backend-NursePulse/pull/11) y roles y errores del API en [Backend-NursePulse#12](https://github.com/NursePulse/Backend-NursePulse/pull/12), ambos aprobados e integrados en `deploy/render-docker` (la suite del backend suma 99 pruebas, con 0 fallos); y reglas de riesgo, reportes, idioma y suscripciones en [Application-Web-Nurse-Pulse#5](https://github.com/NursePulse/Application-Web-Nurse-Pulse/pull/5), que llevan el frontend a 50 pruebas.
 
 **Historias que todavía no tienen prueba unitaria propia:** US-01 a US-12 (Landing, sitio estático sin suite de pruebas), US-20, US-21, US-29 y US-30 (vistas de la aplicación web), TS-02 (se cubre de forma indirecta con `PatientServicesTest`), TS-08 y TS-09 (configuración de CI y observabilidad, no código probable de forma unitaria). TS-10 se cubre con `OpenApiConfigurationTest`. Para estas historias la verificación se hizo ejecutándolas contra el sistema y comprobando la base de datos, no con una prueba automatizada.
 
