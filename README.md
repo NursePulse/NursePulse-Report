@@ -2,9 +2,13 @@
 
 ## 6.1. Testing Suites & Validation
 
-NursePulse cuenta con una suite de pruebas automatizadas de 61 pruebas en el backend (JUnit 5 + Mockito) y 29 pruebas en el frontend (Vitest), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI` y `Frontend CI` (ver Capítulo VII, sección 7.1).
+NursePulse cuenta con una suite de pruebas automatizadas de 61 pruebas en el backend (JUnit 5 + Mockito) y 29 pruebas en el frontend (Vitest), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI` y `Frontend CI`.
 
-![Resultado de la suite del backend: 61 pruebas, 0 fallos, BUILD SUCCESS](assets/chapter-6/backend-tests-61.png)
+**Backend**
+
+![Resultado de la suite del backend: 61 pruebas, 0 fallos, BUILD SUCCESS](assets/chapter-6/61pruebas.png)
+
+**Front-end**
 
 ![Resultado de la suite del frontend: 29 pruebas aprobadas](assets/chapter-6/frontend-tests-29.png)
 
@@ -62,8 +66,6 @@ Evidencia del flujo de exportación de auditoría:
 **Auditoría automatizada de calidad web (Lighthouse).** La única verificación automatizada que se ejecuta contra la aplicación desplegada es una auditoría de Lighthouse sobre la pantalla de inicio de sesión del frontend, integrada en `Frontend CI` (ver Capítulo VII, secciones 7.1.2 y 7.4.1). La medición del 3 de octubre de 2026 arrojó Rendimiento 96, Accesibilidad 100, Buenas prácticas 100 y SEO 82. Esta auditoría mide calidad no funcional (carga, accesibilidad, buenas prácticas); no recorre flujos de negocio ni reemplaza las pruebas de sistema.
 
 ![Reporte de Lighthouse sobre la pantalla de inicio de sesión desplegada](assets/chapter-6/lighthouse-report.png)
-
-> Automatizar los flujos funcionales con un framework de pruebas de sistema (end-to-end) queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
 
 ## 6.2. Static testing & Verification
 
