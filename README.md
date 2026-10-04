@@ -522,43 +522,29 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
 - **Done**: Finalizado
 
 
+##### Evidencia de commits del Sprint 1: Landing Page
+
+Commits de la rama `main` del repositorio `Landing-NursePulse`, sin contar los de fusión. El historial del repositorio comienza el 1 de septiembre de 2026.
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| NursePulse/Landing-NursePulse | Development | 9ff4a793ddf7ff1873134c071741c287ff50a4c8 | Resolve merge conflicts keeping local version | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 55b09037de17a616ab3ed8665b8b6506849a3394 | Actualizar README y resolver conflictos restantes | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | c6e40f12a70340ac1c0e2566ec1df686a0536cd6 | Clean conflict markers from angular files | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 541b310e8007861f3592d9f91685d80ef3d0aff1 | Trigger GitHub Pages deployment | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 663bc7f2ca819a443b193750f644808035221969 | Fix GitHub Pages artifact path | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 4ea13236773fc4bbf077099cab40c29f64344e04 | Fix logo path for GitHub Pages | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 7d04f51cff7f222f8f4ca0f000b7782d84de3545 | Remove unused app.ts and keep bootstrap in main.ts | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | ecf95865b356bb30db6c25c4907b5b392fdcb5dc | Remove duplicated CSS rules | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | b7a5d1e876657e069a3c867cddccc53f6dae48bb | Remove duplicated HTML and CSS | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 9baa03f8bf6fce32ba693a0a5112aeb4d5189b9d | Update favicon | - | 17/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 99921715b9b5216afff51a55171bf845550ca0a8 | feat(landing): add testimonials section with styles and mock data | Added testimonials section to landing page, Included sample testimonial data in component y Styled section with separators and highlighted ratings | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 3159ea4356ed8fe07b91cd0c074548009b1fc8fc | feat(team): add team section with member profiles and styles | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 283ac5e8519ed3e425bbfad5e8661bf58ef5e9cf | fix: update favicon file name to match new naming convention. All in kebab-case | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | d07dba9c161d526743692e87746f95333d637244 | refactor: update section IDs and links to use kebab-case for consistency | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 6a5443642f334dc1c4aa91ff00d3ce47cbc08d25 | feat(ui): add header actions and improve navigation layout | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 00b0d5a842a06e24b8314a513447c84b15fc0ed0 | feat(i18n): implement internationalization for navigation and header components | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | d3d73e8eedf656ec4fb9fdf6ccd4cf050aac1ebb | feat(i18n): integrate I18nService and LanguageSwitcher component | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 2da46c1213b6a28aebc3564cf0de5d6746c7d41c | test(i18n): add unit tests for I18n service | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 64b091e281796d2243c96e7a9c0a5c7a4d7cf30d | feat(i18n): create I18nService with Signal state and localStorage persistence | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | 6940588d45bb1a41d404277839b89bd0dc563343 | feat(i18n): create LanguageSwitcher component and toggle logic | - | 23/04/2026 |
-| NursePulse/Landing-NursePulse | Development | bd0c467ec2e47510f2e09f1165dffcb5e340681c | Delete .github/workflows directory | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | 8e27b36bf65f70792da689add050baeca363ea6e | Delete .vscode directory | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | 2b2e6f919a12325ceecba774ece0c465da0241af | Delete public directory | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | ad2a49e391500a25ac18bdd7d61ebbd31e01cefe | Delete src directory | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | cb0cd1dd35a8ca27a758c4f2527897095b0c3cf9 | Delete .editorconfig | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | 714456b7713ffcdf30b51eb2f1d8bb616b68cee6 | Delete .gitignore | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | ee0ecb8ed16ca62fdfb9a289dfebcd05e7dbef82 | Delete .prettierrc | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | cc790fa7d47a027d667ed35876468c3c8d9e6eca | Delete README.md | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | 6c021310eae77681cb09e152b11cbc4d380efca5 | Delete angular.json | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | c1c2c99efa9a461733ea7497cddeb38ed89de71f | Delete package-lock.json | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | 7544d9392a8430c57f806755a5c9d0e561e42081 | Delete package.json | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | 2d6620d94abc89652f1f99f408a193de3267d5b6 | Delete tsconfig.app.json | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | cd761a5c564e4408764f6e985a86e7076405f231 | Delete tsconfig.json | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | 509148aa54b4ebaf08717e97b323b079c5fd386c | Delete tsconfig.spec.json | - | 11/05/2026 |
-| NursePulse/Landing-NursePulse | Development | fac634067aca0bc95ad4471ecca765aa5a3338c0 | Add files via upload | - | 11/05/2026 |
+| NursePulse/Landing-NursePulse | main | 7cf8b05b279cb0b914203f36227bc09ad7f9c0f1 | Initial commit | - | 01/09/2026 |
+| NursePulse/Landing-NursePulse | main | c5719472097ba56f88307cd8d260cbd80b9a000c | Initial commit: NursePulse landing page | Contenido renombrado de PulseReport a NursePulse y archivos del sitio movidos a la raíz del repositorio. | 04/09/2026 |
+| NursePulse/Landing-NursePulse | main | d3ed82750571740433486d61646e90b8b6982593 | Update team member details and add new photos for Jorge Taipe | - | 04/09/2026 |
+| NursePulse/Landing-NursePulse | main | 026ee060e10caf13e2b7b8b46116f192406327b2 | chore: Update team affiliation to HatunSolutions and replace team member photos | - | 06/09/2026 |
+| NursePulse/Landing-NursePulse | main | 31e3b75b4780adb961a919e40701814392acb704 | Update team member details and roles in English and Spanish translations | - | 06/09/2026 |
+| NursePulse/Landing-NursePulse | main | ba8f89374a933e37d0bf4ad29e3a08a33d2ac4ad | Replace logo image with new NursePulse logo | - | 10/09/2026 |
+| NursePulse/Landing-NursePulse | main | 581246fcbdd80dd6785319f0b012e0bf1549ba54 | Update footer logo image to new NursePulse design | - | 10/09/2026 |
+| NursePulse/Landing-NursePulse | main | 1d0149986424cd475d5b8dd1c2a12590bb4d2378 | Add files via upload | - | 10/09/2026 |
+| NursePulse/Landing-NursePulse | main | cf6eaa0a8593af134bd7aa4735b52ef0c7dc32ca | update: student profile photo | - | 12/09/2026 |
+| NursePulse/Landing-NursePulse | main | 3efcb28f0fa1f89783f9723d8dd848aecf8185c7 | (index): Update student profile photo | - | 13/09/2026 |
+| NursePulse/Landing-NursePulse | main | 7a44e2cd0f79c7964094b138b007d6e7daef0920 | Update hero title to reflect brand name as "Nurse Pulse" | - | 13/09/2026 |
+| NursePulse/Landing-NursePulse | main | b1e2e622b4b0eafeff187de6ae642a51f7a41918 | Update hero title components to reflect brand name as "Nurse Pulse" | - | 13/09/2026 |
+| NursePulse/Landing-NursePulse | main | 0a4f54d2b4e3251500cad6c6dd9846ec2b5ed07b | Update hero title components to reflect brand name as "Nurse Pulse" | - | 13/09/2026 |
+| NursePulse/Landing-NursePulse | main | efa0bac1787fe4b6787f5ce18ee77aa3637d40be | Update product demo video URL in the about section | - | 13/09/2026 |
+| NursePulse/Landing-NursePulse | main | 4c5c336f6cb81dd17b84ef25ddb65691a24baf9d | Update demo button link in index.html | - | 29/09/2026 |
+| NursePulse/Landing-NursePulse | main | ca01b07035a4c711d41f506584b5af47ad1655c1 | Add download page and hero CTA for the mobile app | Agrega download.html (pantalla de descarga iOS/Android) y un botón "Download the app" en la sección hero, con sus textos i18n en inglés y español. | 29/09/2026 |
+| NursePulse/Landing-NursePulse | main | 5d8e7a42105e8b69062ffe759f837d134faddf78 | Update download page with new app icon and improved download links | - | 29/09/2026 |
 
 #### Sprint 2: Web Application y RESTful API
 
