@@ -11,6 +11,7 @@ El equipo utiliza un conjunto de herramientas de pruebas automatizadas para aseg
 | **JUnit 5** | Framework de pruebas unitarias (TDD) | Incluido mediante `spring-boot-starter-test`, se usa para probar entidades de dominio, servicios de aplicación y recursos REST del backend (Spring Boot). | Verificar que las unidades de lógica de negocio (agregados, command services, validaciones) se comporten como se espera. |
 | **Mockito** | Herramienta de simulaciones (TDD) | Se usa en pruebas como `UserCommandServiceImplTest` y `AuditLogsControllerTest` para simular repositorios y servicios colaboradores sin depender de la base de datos real. | Aislar la unidad bajo prueba de sus dependencias externas. |
 | **Vitest** | Framework de pruebas unitarias (Frontend) | Ejecutado mediante el builder `@angular/build:unit-test` de Angular, corre las pruebas de componentes, stores y assemblers del Frontend Web Application. | Validar la lógica de los componentes standalone, signals y stores de Angular antes de integrarlos. |
+| **flutter test / flutter analyze / dart format** | Pruebas y análisis estático (Mobile) | `flutter test` ejecuta 21 pruebas unitarias y de widgets de la aplicación móvil; `flutter analyze` aplica las reglas de `flutter_lints`; `dart format --set-exit-if-changed` verifica el formato del código. Los tres son pasos del job `Verify Flutter`. | Validar el registro y el inicio de sesión de la app móvil y mantener un código consistente. Son pasos obligatorios: si fallan, el pipeline se detiene. |
 | **ESLint** (`angular-eslint`) | Análisis estático (Frontend) | Se ejecuta con `npm run lint` dentro del pipeline del Frontend; revisa el código TypeScript y las plantillas de Angular. | Detectar problemas de calidad y malas prácticas sin ejecutar el código. Corre en modo informativo (`continue-on-error`), por lo que sus hallazgos no bloquean el pipeline. |
 | **Lighthouse** | Auditoría de calidad web (Frontend) | Se ejecuta con `npx lighthouse` en el pipeline del Frontend contra la página de inicio de sesión desplegada en Vercel y genera un reporte JSON y HTML. | Medir rendimiento, accesibilidad, buenas prácticas y SEO de la aplicación en producción. Es informativo y no bloquea el pipeline. |
 | **GitHub Actions** | Orquestador de CI/CD | Ejecuta automáticamente los pipelines de build y pruebas en cada repositorio (Backend, Frontend, Mobile) ante cada `push`/`pull request`. | Automatizar la integración continua sin depender de ejecución manual. |
@@ -18,12 +19,12 @@ El equipo utiliza un conjunto de herramientas de pruebas automatizadas para aseg
 **Prácticas:**
 
 - **Feature Branching**: la convención del proyecto es desarrollar cada funcionalidad en una rama `feature/*` independiente (ver Capítulo V, sección 5.1.2) e integrarla mediante Pull Request. En la práctica se aplicó en parte de los cambios; en las etapas finales muchos commits se publicaron directamente a la rama principal. Desde el 3 de octubre de 2026 la rama de producción del Backend (`deploy/render-docker`) ya no admite `push` directo y exige Pull Request (ver Capítulo VI, sección 6.2.2).
-- **Conventional Commits**: todos los commits siguen el estándar `tipo(scope): descripción` (`feat`, `fix`, `docs`, `test`, `ci`, etc.), lo que permite identificar rápidamente el propósito de cada cambio dentro del pipeline.
+- **Conventional Commits**: el equipo adoptó el estándar `tipo(scope): descripción` (`feat`, `fix`, `docs`, `test`, `ci`, etc.) para identificar rápidamente el propósito de cada cambio. No se aplicó de forma uniforme: al 3 de octubre de 2026, y sin contar los commits de fusión, lo siguen 19 de 27 commits recientes de la rama `deploy/render-docker` del Backend, 15 de 28 del Frontend, 13 de 15 de Mobile y 1 de 17 de la Landing Page.
 - **Build en cada integración**: el pipeline de CI se ejecuta en cada `push` y `pull request` hacia la rama principal. Es una condición técnicamente forzada únicamente en `deploy/render-docker` del Backend, donde el check `build-and-test` debe finalizar en éxito para poder fusionar. En `main` del Backend, del Frontend, de Mobile y de Landing no hay reglas de protección, por lo que un cambio puede integrarse aunque el pipeline falle (ver Capítulo VI, sección 6.2.2).
 
 ### 7.1.2. Build & Test Suite Pipeline Components.
 
-Cada uno de los tres repositorios de código de NursePulse cuenta con su propio workflow de GitHub Actions, disparado en cada `push` y `pull request` hacia su rama principal:
+Cada uno de los tres repositorios de código de NursePulse cuenta con su propio workflow de GitHub Actions, disparado en cada `push` y `pull request` hacia sus ramas principales (en Mobile, también hacia la rama `test`):
 
 **Backend CI** (`Backend-NursePulse/.github/workflows/ci.yml`)
 
@@ -48,24 +49,33 @@ Cada uno de los tres repositorios de código de NursePulse cuenta con su propio 
 
 **Mobile CI/CD** (`MultiPlatform-App-NursePulse/.github/workflows/ci.yml`)
 
+El workflow tiene dos jobs. El primero, `Verify Flutter`, corre en todo `push` y `pull request`:
+
 | Paso | Herramienta | Descripción |
 | :--- | :--- | :--- |
 | Checkout | `actions/checkout@v4` | Descarga el código fuente del repositorio. |
-| Set up Flutter | `subosito/flutter-action@v2` (canal stable) | Configura el SDK de Flutter/Dart. |
+| Set up Java | `actions/setup-java@v4` (Temurin 17) | Configura el JDK requerido por la compilación de Android. |
+| Set up Flutter | `subosito/flutter-action@v2` (3.47.2, canal stable) | Configura el SDK de Flutter/Dart, con caché. |
 | Install dependencies | `flutter pub get` | Resuelve las dependencias del proyecto móvil. |
+| Check formatting | `dart format --output=none --set-exit-if-changed lib test` | Falla si algún archivo no respeta el formato estándar de Dart. |
+| Analyze | `flutter analyze` | Análisis estático con las reglas de `flutter_lints`. |
+| Run tests | `flutter test` | Ejecuta las 21 pruebas unitarias y de widgets de la app móvil. |
 | Build release APK | `flutter build apk --release` | Compila el APK de producción, apuntando a la URL pública del backend mediante `--dart-define`. |
+| Upload APK | `actions/upload-artifact@v4` | Guarda el APK verificado como artifact (7 días) para el job siguiente. |
 
-En los tres casos, un fallo en cualquiera de los pasos obligatorios (instalación, pruebas y build) detiene el pipeline e impide que el código avance hacia las siguientes etapas (Delivery/Deployment), evitando que código roto llegue a producción. Las únicas excepciones son los pasos informativos del Frontend (Lint y Lighthouse), que reportan resultados sin bloquear el flujo.
+El segundo job, `Distribute Android`, depende de `Verify Flutter` (`needs: verify`) y solo se ejecuta en un `push` a `main`: descarga el APK verificado, lo distribuye por Firebase App Distribution y publica una GitHub Release (ver 7.3.2).
+
+En los tres casos, un fallo en cualquiera de los pasos obligatorios (instalación, formato y análisis en Mobile, pruebas y build) detiene el pipeline e impide que el código avance hacia las siguientes etapas (Delivery/Deployment), evitando que código roto llegue a producción. Las únicas excepciones son los pasos informativos del Frontend (Lint y Lighthouse), que reportan resultados sin bloquear el flujo.
 
 ## 7.2. Continuous Delivery
 
-En el estado actual del proyecto, NursePulse no cuenta con un entorno de *staging* independiente ni con un paso de aprobación manual explícito entre la integración continua y el despliegue a producción: una vez que el pipeline de CI finaliza exitosamente sobre la rama principal, el mismo pipeline continúa automáticamente hacia Continuous Deployment (sección 7.3). Por este motivo, la "entrega continua" del proyecto se sostiene en el pipeline de CI posterior a cada integración y, cuando se usa Pull Request, en la revisión de código entre integrantes. La excepción es el Backend: desde el 3 de octubre de 2026 su rama de producción (`deploy/render-docker`) exige un Pull Request con una aprobación y el check `build-and-test` en verde antes de fusionar, lo que funciona como aprobación previa al despliegue en Render.
+En el estado actual del proyecto, NursePulse no cuenta con un entorno de *staging* independiente ni con un paso de aprobación manual explícito entre la integración continua y el despliegue a producción: solo en la aplicación móvil el despliegue forma parte del mismo workflow y depende de que la verificación termine en éxito (`needs: verify`). En Backend, Frontend y Landing Page, el despliegue lo dispara directamente el `push` a la rama (Render, Vercel y GitHub Pages escuchan el repositorio) y corre en paralelo al CI: según la configuración revisada en los repositorios, el resultado del workflow no condiciona técnicamente ese despliegue (sección 7.3). Por este motivo, la "entrega continua" del proyecto se sostiene en el pipeline de CI posterior a cada integración y, cuando se usa Pull Request, en la revisión de código entre integrantes. La excepción es el Backend: desde el 3 de octubre de 2026 su rama de producción (`deploy/render-docker`) exige un Pull Request con una aprobación y el check `build-and-test` en verde antes de fusionar, lo que funciona como aprobación previa al despliegue en Render.
 
 ### 7.2.1. Tools and Practices.
 
 **Tools:**
 
-- **GitHub** (Pull Requests): los cambios a `main` (o a `deploy/render-docker` en el caso del backend) pueden integrarse mediante Pull Request, donde el pipeline de CI se ejecuta y un integrante del equipo puede revisar el cambio antes de fusionarlo. En `deploy/render-docker` esto es obligatorio mediante una regla de protección de rama (1 aprobación, check `build-and-test`, vigente también para administradores, sin *force push* ni borrado de la rama). El proyecto registra 10 PRs en Backend, 4 en Frontend, 4 en Mobile y 1 en Landing al 3 de octubre de 2026; el resto de los cambios se publicó por `push` directo.
+- **GitHub** (Pull Requests): los cambios a `main` (o a `deploy/render-docker` en el caso del backend) pueden integrarse mediante Pull Request, donde el pipeline de CI se ejecuta y un integrante del equipo puede revisar el cambio antes de fusionarlo. En `deploy/render-docker` esto es obligatorio mediante una regla de protección de rama (1 aprobación, check `build-and-test`, vigente también para administradores, sin *force push* ni borrado de la rama). El proyecto registra 10 PRs en Backend, 4 en Frontend, 5 en Mobile y 1 en Landing al 3 de octubre de 2026; el resto de los cambios se publicó por `push` directo.
 - **GitHub Actions**: el mismo motor de CI (sección 7.1.2) sirve como validador de que el código está en un estado "desplegable" en todo momento.
 
 **Practices (Prácticas):**
@@ -74,7 +84,7 @@ En el estado actual del proyecto, NursePulse no cuenta con un entorno de *stagin
 - **Revisión por pares (Code Review)**: en los cambios que pasan por Pull Request, un integrante distinto al autor puede revisarlo antes de fusionarlo. En `deploy/render-docker` (Backend) la aprobación de otro integrante es obligatoria y actúa como aprobación previa al despliegue en producción; en el resto de las ramas principales no hay aprobación obligatoria configurada.
 - **Build verde**: en `deploy/render-docker` (Backend) GitHub impide fusionar si el check `build-and-test` no está en éxito. En las demás ramas principales el equipo espera que el CI esté en verde antes de fusionar, pero GitHub no lo impide: no tienen protección y un PR con CI fallido sí puede fusionarse.
 
-> **Nota:** a diferencia de un esquema clásico de Continuous Delivery con *staging* y aprobación manual del despliegue, en NursePulse el paso de "listo para desplegar" y el despliegue mismo ocurren en el mismo pipeline (ver sección 7.3). Introducir un entorno de staging independiente, y extender las reglas de protección de rama a `main` del Backend, del Frontend, de Mobile y de Landing, queda identificado como una mejora pendiente del proyecto.
+> **Nota:** a diferencia de un esquema clásico de Continuous Delivery con *staging* y aprobación manual del despliegue, en NursePulse el paso de "listo para desplegar" y el despliegue mismo ocurren en el mismo flujo, sin una etapa intermedia (ver sección 7.3). Introducir un entorno de staging independiente, y extender las reglas de protección de rama a `main` del Backend, del Frontend, de Mobile y de Landing, queda identificado como una mejora pendiente del proyecto.
 
 ### 7.2.2. Stages Deployment Pipeline Components.
 
@@ -86,7 +96,7 @@ En el estado actual del proyecto, NursePulse no cuenta con un entorno de *stagin
 
 ## 7.3. Continuous Deployment
 
-El objetivo de Continuous Deployment en NursePulse es que cada cambio fusionado a la rama principal de cada repositorio llegue automáticamente a producción, sin intervención manual, siempre que el pipeline de CI haya finalizado exitosamente.
+El objetivo de Continuous Deployment en NursePulse es que cada cambio que llega a la rama principal de cada repositorio se despliegue automáticamente a producción, sin intervención manual. El despliegue lo dispara el propio `push`; en el Backend, además, la protección de rama de `deploy/render-docker` garantiza que solo llegue código cuyo check `build-and-test` pasó en el Pull Request, y en la app móvil el job de distribución exige que la verificación haya terminado en éxito.
 
 ### 7.3.1. Tools and Practices.
 
@@ -102,14 +112,14 @@ El objetivo de Continuous Deployment en NursePulse es que cada cambio fusionado 
 
 **Commit-based deployment:**
 
-- Cada push a la rama principal de un repositorio dispara automáticamente su respectivo pipeline de despliegue — no existe un botón de "deploy" manual en ninguno de los cuatro componentes.
-- **Rollback**: actualmente el rollback no es automático; ante un despliegue defectuoso, el equipo revierte el cambio mediante un nuevo commit (`git revert`) que dispara un nuevo despliegue automático con la versión anterior del código. No existe todavía un mecanismo de rollback automático ante fallos detectados en producción — se identifica como mejora pendiente.
+- Cada push a la rama principal de un repositorio dispara automáticamente su respectivo pipeline de despliegue — el flujo normal de despliegue no requiere ninguna acción manual (las plataformas permiten, además, redesplegar a mano desde su panel).
+- **Rollback**: actualmente el rollback no es automático; ante un despliegue defectuoso, el equipo revierte el cambio mediante un nuevo commit (`git revert`) que dispara un nuevo despliegue automático con la versión anterior del código (en el Backend, ese revert también debe pasar por Pull Request, por la protección de rama). No existe todavía un mecanismo de rollback automático ante fallos detectados en producción — se identifica como mejora pendiente.
 
 ### 7.3.2. Production Deployment Pipeline Components.
 
 **Componentes del Pipeline del Backend (Render):**
 
-1. **Integración continua**: al hacer push a `deploy/render-docker`, el workflow `Backend CI` compila y ejecuta las pruebas (`mvn clean verify`).
+1. **Integración continua**: el cambio llega a `deploy/render-docker` ya aprobado en un Pull Request con el check `build-and-test` en verde (regla de protección de rama). Al llegar, el workflow `Backend CI` se ejecuta de nuevo sobre la rama (`mvn clean verify`), en paralelo al despliegue.
 2. **Construcción de la imagen Docker**: Render toma el `Dockerfile` del repositorio y construye la imagen en dos etapas (build con Maven, runtime con JRE únicamente), minimizando el tamaño final de la imagen.
 3. **Despliegue**: Render reemplaza el contenedor en ejecución por la nueva imagen, exponiendo el servicio en `https://backend-nursepulse-qfct.onrender.com`.
 4. **Verificación de salud**: el endpoint `/actuator/health` (Spring Boot Actuator) permite confirmar que el servicio quedó arriba tras el despliegue (ver sección 7.4).
@@ -117,12 +127,12 @@ El objetivo de Continuous Deployment en NursePulse es que cada cambio fusionado 
 **Componentes del Pipeline de la Base de Datos (Aiven MySQL):**
 
 1. **Actualización de esquema automática**: al desplegarse una nueva versión del backend con cambios en las entidades JPA, Hibernate aplica automáticamente los cambios de esquema (`ddl-auto=update`) contra la base de datos en Aiven al arrancar la aplicación.
-2. **Conexión segura**: la conexión se establece mediante SSL (`--ssl-mode=REQUIRED`), con las credenciales inyectadas como variables de entorno en Render.
+2. **Conexión segura**: la conexión se establece mediante SSL (Aiven exige conexiones cifradas), con las credenciales inyectadas como variables de entorno en Render.
 
 **Componentes del Pipeline del Frontend (Vercel):**
 
 1. **Compilación**: al detectar un nuevo push a `main`, Vercel ejecuta `ng build` sobre el proyecto Angular en modo producción.
-2. **Ejecución de pruebas**: el workflow `Frontend CI` de GitHub Actions ya validó las pruebas unitarias (Vitest) antes de que el cambio llegara a `main`.
+2. **Verificación en paralelo**: el workflow `Frontend CI` de GitHub Actions ejecuta lint, pruebas unitarias (Vitest), build y Lighthouse sobre el mismo cambio. El despliegue de Vercel no espera su resultado, porque `main` del Frontend no tiene regla de protección.
 3. **Despliegue en Vercel**: si el build es exitoso, Vercel publica automáticamente la nueva versión en `https://application-web-nurse-pulse.vercel.app`, distribuida mediante su CDN global.
 
 **Componentes del Pipeline de la Landing Page (GitHub Pages):**
@@ -132,8 +142,8 @@ El objetivo de Continuous Deployment en NursePulse es que cada cambio fusionado 
 
 **Componentes del Pipeline Móvil (GitHub Actions + Firebase + GitHub Releases):**
 
-1. **Build del APK**: el workflow `Mobile CI/CD` compila el APK de release con Flutter.
-2. **Distribución a testers**: el APK se sube a Firebase App Distribution, notificando al grupo `testers`.
+1. **Verificación y build del APK**: el job `Verify Flutter` revisa el formato, ejecuta `flutter analyze` y las 21 pruebas, y compila el APK de release.
+2. **Distribución a testers**: el job `Distribute Android`, que solo corre tras una verificación exitosa y únicamente en un `push` a `main`, sube el APK a Firebase App Distribution y notifica al grupo `testers`.
 3. **Publicación de versión pública**: el mismo workflow crea una GitHub Release (`softprops/action-gh-release`) con el APK como asset, marcada como `latest`.
 4. **Descarga desde la Landing Page**: el botón de descarga de la Landing Page apunta a la URL estable `.../releases/latest/download/app-release.apk`, que siempre resuelve a la versión más reciente sin necesidad de actualizar el enlace manualmente.
 
