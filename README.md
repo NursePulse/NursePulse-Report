@@ -397,7 +397,9 @@ El sistema funciona de la siguiente manera:
 
 ## 5.2. Landing Page, Services & Applications Implementation.
 
-### 5.2.1 Sprint Backlog 1
+### 5.2.1 Sprint Backlogs
+
+#### Sprint 1: Landing Page
 
 El Sprint 1 se enfocó en el desarrollo e implementación de la Landing Page de NursePulse, la cual representa el primer punto de contacto entre la solución y los usuarios potenciales.
 Este sprint tuvo como objetivo establecer una presencia digital sólida que comunique de manera clara la propuesta de valor del producto.
@@ -406,7 +408,7 @@ Durante este sprint, se desarrollaron e integraron las secciones principales de 
 preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamientos de diseño y los wireframes definidos previamente en el Capítulo IV. Asimismo, se priorizó la usabilidad, accesibilidad y coherencia visual, con el fin de ofrecer una experiencia atractiva y profesional.
 
 
-###  Sprint Backlog
+##### Backlog del Sprint 1
 
 <table>
   <thead>
@@ -557,6 +559,173 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
 | NursePulse/Landing-NursePulse | Development | cd761a5c564e4408764f6e985a86e7076405f231 | Delete tsconfig.json | - | 11/05/2026 |
 | NursePulse/Landing-NursePulse | Development | 509148aa54b4ebaf08717e97b323b079c5fd386c | Delete tsconfig.spec.json | - | 11/05/2026 |
 | NursePulse/Landing-NursePulse | Development | fac634067aca0bc95ad4471ecca765aa5a3338c0 | Add files via upload | - | 11/05/2026 |
+
+#### Sprint 2: Web Application y RESTful API
+
+El Sprint 2 se enfocó en la Web Application (Angular) y en el RESTful API (Spring Boot), que sostienen las primeras vistas clínicas del producto: traspaso SBAR, registro de signos vitales y consulta de la evolución del paciente. Los repositorios de ambos componentes registran actividad entre el 3 y el 14 de septiembre de 2026.
+
+Durante este sprint se consolidó el flujo SBAR con campos estructurados y receptor real, el registro y la consulta de signos vitales, los endpoints de pacientes, registros clínicos y traspasos, y la política de contraseñas del registro. También se corrigieron fallos de estabilidad detectados en las pruebas manuales y se preparó el despliegue del backend en Render mediante un `Dockerfile`.
+
+##### Backlog del Sprint 2
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Sprint #</th>
+      <th align="left" colspan="7">Sprint 2</th>
+    </tr>
+    <tr>
+      <th align="left" colspan="2">User Story</th>
+      <th align="left" colspan="6">Work-Item / Task</th>
+    </tr>
+    <tr>
+      <th align="left">Id</th>
+      <th align="left">Title</th>
+      <th align="left">Id</th>
+      <th align="left">Title</th>
+      <th align="left">Description</th>
+      <th align="left">Estimation<br>(Hours)</th>
+      <th align="left">Assigned To</th>
+      <th align="left">Status<br>(To-do / In-Process / To-Review / Done)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-13</td>
+      <td>Registrar traspaso SBAR (8 SP)</td>
+      <td>T-13.1</td>
+      <td>Formulario SBAR en la Web App</td>
+      <td>Formulario de traspaso con paciente, enfermero receptor real y los cuatro campos Situation, Background, Assessment y Recommendation.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-13</td>
+      <td>Registrar traspaso SBAR (8 SP)</td>
+      <td>T-13.2</td>
+      <td>Campos SBAR estructurados en el backend</td>
+      <td>Migrar el traspaso a columnas propias por campo SBAR, con el receptor elegido y el emisor tomado de la sesión (JWT).</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-14</td>
+      <td>Consultar traspaso de turno (5 SP)</td>
+      <td>T-14.1</td>
+      <td>Consulta de traspasos</td>
+      <td>Listado de traspasos por paciente y detalle de cada uno, en la web y mediante el API.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-15</td>
+      <td>Confirmar recepción de traspaso (3 SP)</td>
+      <td>T-15.1</td>
+      <td>Confirmar recepción</td>
+      <td>Acción de la enfermera entrante para confirmar el traspaso (`PATCH /handovers/{id}/acknowledge`).</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-16</td>
+      <td>Registrar signos vitales (5 SP)</td>
+      <td>T-16.1</td>
+      <td>Registro de signos vitales</td>
+      <td>Formulario web y endpoint para registrar signos vitales de un paciente, con evaluación de riesgo.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-17</td>
+      <td>Consultar evolución clínica (5 SP)</td>
+      <td>T-17.1</td>
+      <td>Historial y último registro por paciente</td>
+      <td>Consulta del historial y del último registro de signos vitales, y vista de seguimiento por paciente.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-02</td>
+      <td>Gestión de pacientes mediante API (5 SP)</td>
+      <td>T-TS02.1</td>
+      <td>Endpoints de pacientes</td>
+      <td>Crear, consultar, actualizar y eliminar pacientes; corrección del fallo silencioso al crear un paciente desde la web.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-03</td>
+      <td>Gestión de registros clínicos mediante API (8 SP)</td>
+      <td>T-TS03.1</td>
+      <td>Endpoints de signos vitales y eventos clínicos</td>
+      <td>Registro y consulta de signos vitales y eventos clínicos, por listado y por paciente.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-04</td>
+      <td>Gestión de traspasos SBAR mediante API (5 SP)</td>
+      <td>T-TS04.1</td>
+      <td>Endpoints de traspasos SBAR</td>
+      <td>Crear, consultar y confirmar traspasos; directorio de personal para que enfermería elija un receptor real.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-01</td>
+      <td>Autenticación de usuarios (5 SP)</td>
+      <td>T-TS01.1</td>
+      <td>Política de contraseñas del registro</td>
+      <td>Exigir de 12 a 20 caracteres, una mayúscula y un carácter especial, de forma coherente en el backend y en la web.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-06</td>
+      <td>Manejo consistente de errores del API (3 SP)</td>
+      <td>T-TS06.1</td>
+      <td>Errores 500 y auditoría con metadatos nulos</td>
+      <td>Corregir el fallo de auditoría con metadatos nulos y añadir una respuesta 500 de respaldo.</td>
+      <td>—</td>
+      <td>Taipe Sangama, Jorge Francisco</td>
+      <td>Done</td>
+    </tr>
+  </tbody>
+</table>
+
+Las historias se estiman en Story Points (SP) según el Product Backlog del Capítulo III y se indican junto al título de cada una; las horas por tarea no se incluyen en esta tabla.
+
+##### Evidencia de commits del Sprint 2: Web Application y Backend (resumen)
+
+Selección de los commits funcionales del periodo; el historial completo está en cada repositorio.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| NursePulse/Application-Web-Nurse-Pulse | main | 6c7bbf07b565fabfaf47e4e4cb5168e0e4a01e78 | Initial commit: Angular Frontend Nurse Pulse | - | 03/09/2026 |
+| NursePulse/Application-Web-Nurse-Pulse | main | 28b3b469e22fadd0d8066c5f5a1aff2a58f70422 | Fix SBAR field parsing regex (Background/Assessment/Recommendation never matched) | El regex de `SbarAssembler.extract()` tenía las barras invertidas duplicadas y nunca coincidía. | 10/09/2026 |
+| NursePulse/Application-Web-Nurse-Pulse | main | c4dd54b1f42602b6f9570c2067c0accef2b14977 | Fix silent failures on patient creation and add error handling to clinical stores | La fecha de ingreso en UTC pasaba al día siguiente por la noche y el backend la rechazaba sin que la web mostrara el error. | 10/09/2026 |
+| NursePulse/Application-Web-Nurse-Pulse | main | 532ccab4e7fd32900ac03530c5b66d7c0a99af1e | Replace the hardcoded SBAR receiver list with real nurse accounts | La lista fija de receptores no estaba ligada a usuarios reales; ahora se eligen cuentas de enfermería registradas. | 11/09/2026 |
+| NursePulse/Application-Web-Nurse-Pulse | main | 988210fbe1757ccac9d31783ac18ed49869aaa1d | feat(sbar): consume structured SBAR fields, drop regex parsing | La web usa el nuevo contrato de campos situation/background/assessment/recommendation en lugar de un texto libre. | 11/09/2026 |
+| NursePulse/Application-Web-Nurse-Pulse | main | da549ac7d52d57f30144bc8756dff1e0e68e7623 | Fix sign-up error mapping and sync password validation with the real policy | Los errores 400 y 409 se mostraban como "usuario no disponible"; se alinea la validación con la política real de contraseñas. | 11/09/2026 |
+| NursePulse/Application-Web-Nurse-Pulse | main | 2d6aaceacda4c9f1dc39a70f0c9c65924e084959 | Update production API base URL | - | 14/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | b37b622f975ed73e0d112bbc41845bc9055f92b4 | Initial Commit: Backend NursePulse | - | 03/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | 6c94bc299b1dc1a5e0e206f12c00f2549d1cfe8a | Tolerate legacy/unknown role names instead of crashing GET /users | Un rol almacenado con un nombre desconocido ya no rompe la consulta de usuarios. | 11/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | a9d278038b6fa5831bedf194b26e75e25f24ccf3 | Expose a real triggeredAt timestamp on alerts instead of a client-fabricated one | Las alertas exponen su fecha real de creación; antes la web la fabricaba al mostrarla. | 11/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | f6865f933343ff12365ae42fc9dfe799030850f6 | Fix NPE on audit logs with null metadata and add fallback 500 handler | Corrige el error con entradas de auditoría sin metadatos y agrega una respuesta 500 de respaldo. | 11/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | 29a879e86d76ba35a47ae8a543f9a756916d7e04 | Enforce password complexity policy on sign-up (TS-01) | La validación solo exigía longitud; ahora exige de 12 a 20 caracteres, mayúscula y carácter especial. | 11/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | aa55b90f5dc1ea172e931b936227385a50c48e1c | Allow clinical staff to list users as a staff directory | Enfermería y médicos pueden listar usuarios para elegir el receptor de un traspaso SBAR. | 11/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | 0866820872e79c73e639dfab5c186eeb077c3bd2 | feat(handover): migrate SBAR to structured fields with real receiver | Columnas propias por campo SBAR, receptor elegido y emisor tomado del JWT. | 11/09/2026 |
+| NursePulse/Backend-NursePulse | deploy/render-docker | 9e2f4a50bcc24e232300a449f3d4cb8a2d283190 | feat(deploy): add Dockerfile for Render deployment | Construcción en dos etapas (JDK 26 y JRE 26) con el perfil `prod` y el puerto de Render. | 14/09/2026 |
 
 ### 5.2.2. Implemented Landing Page Evidence
 
