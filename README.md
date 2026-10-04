@@ -90,15 +90,15 @@ NursePulse define una guía de estilo de código explícita por tecnología (HTM
 - **ESLint** (`angular-eslint` + `typescript-eslint`) en el frontend: analiza el código TypeScript y las plantillas de Angular con las reglas recomendadas (por ejemplo, uso de `inject()`, accesibilidad de elementos interactivos en las plantillas y restricciones sobre el tipo `any`). Se ejecuta con `npm run lint` y como paso del pipeline `Frontend CI` (ver 6.2.1.2).
 - **TypeScript Strict Mode**: el compilador de Angular (`tsc --strict`) rechaza el build (`ng build`, ejecutado en `Frontend CI`) ante tipos implícitos `any`, variables no inicializadas o accesos nulos no controlados, forzando el cumplimiento de la convención de "Seguridad de tipos" definida en 5.1.3.
 - **Jakarta Bean Validation** en el backend actúa como verificación declarativa de las reglas de negocio en el límite de la API (`@NotBlank`, `@Pattern`, `@Size`, `@Email`), en línea con la convención de "Validación de datos" de 5.1.3.
-- **Revisión por pares**: en los cambios que se integran mediante Pull Request, un integrante distinto al autor puede verificar que el código sigue la nomenclatura (`camelCase`/`PascalCase`/`kebab-case` según corresponda) y la arquitectura por capas (DDD) descrita en 5.1.3. Esta revisión solo está forzada por el repositorio en la rama de producción del Backend; en el resto es una práctica del equipo (ver el alcance real en 6.2.2).
+- **Revisión por pares**: es una práctica prevista por el equipo para verificar la nomenclatura (`camelCase`/`PascalCase`/`kebab-case` según corresponda) y la arquitectura por capas (DDD) descrita en 5.1.3, pero hasta ahora no queda registrada en GitHub. Solo la exige el repositorio en la rama de producción del Backend, desde el 3 de octubre de 2026 (ver 6.2.2).
 
 #### 6.2.1.2. Code Quality & Code Security
 
-El frontend cuenta con **ESLint** como herramienta de análisis estático, integrada al repositorio (`eslint.config.js`, script `npm run lint`) y al pipeline `Frontend CI` como paso informativo: tiene `continue-on-error`, por lo que reporta hallazgos sin detener el pipeline. En la ejecución del 3 de octubre de 2026 detectó **44 problemas (todos de nivel error) en 19 archivos**, que corresponden a código previo a la incorporación de la herramienta y todavía no se han corregido:
+El frontend cuenta con **ESLint** como herramienta de análisis estático, integrada al repositorio (`eslint.config.js`, script `npm run lint`) y al pipeline `Frontend CI` como paso informativo: tiene `continue-on-error`, por lo que reporta hallazgos sin detener el pipeline. En la ejecución del 3 de octubre de 2026 detectó **45 problemas (todos de nivel error) en 19 archivos**, que corresponden a código previo a la incorporación de la herramienta y todavía no se han corregido:
 
 | Regla | Hallazgos | Qué detecta |
 | :--- | :---: | :--- |
-| `@typescript-eslint/no-explicit-any` | 12 | Uso del tipo `any`, que desactiva la verificación de tipos. |
+| `@typescript-eslint/no-explicit-any` | 13 | Uso del tipo `any`, que desactiva la verificación de tipos. |
 | `@angular-eslint/template/click-events-have-key-events` | 11 | Elementos con evento `click` sin equivalente de teclado (accesibilidad). |
 | `@angular-eslint/prefer-inject` | 9 | Inyección por constructor en lugar de la función `inject()`. |
 | `@angular-eslint/template/interactive-supports-focus` | 9 | Elementos interactivos que no reciben foco con el teclado (accesibilidad). |
@@ -106,7 +106,7 @@ El frontend cuenta con **ESLint** como herramienta de análisis estático, integ
 | `@angular-eslint/directive-selector` | 2 | Selectores de directiva que no siguen la convención configurada. |
 | `@typescript-eslint/array-type` | 1 | Estilo de declaración de tipos de arreglo. |
 
-![Salida de ESLint con los 44 hallazgos del frontend](assets/chapter-6/eslint-report.png)
+![Salida de ESLint con los 45 hallazgos del frontend](assets/chapter-6/eslint-report.png)
 
 La aplicación móvil tiene configurado el paquete `flutter_lints` (`analysis_options.yaml`), y el job `Verify Flutter` de `Mobile CI/CD` ejecuta `flutter analyze` y `dart format --set-exit-if-changed` como pasos obligatorios: a diferencia del lint del frontend, aquí un hallazgo detiene el pipeline. El backend **no cuenta con una herramienta dedicada de análisis estático** (como SonarQube o SonarLint) integrada al pipeline. La calidad y seguridad del código se sostienen adicionalmente mediante:
 
@@ -114,24 +114,30 @@ La aplicación móvil tiene configurado el paquete `flutter_lints` (`analysis_op
 - **Spring Security** gestiona la autorización por rol de forma centralizada (`WebSecurityConfiguration`), evitando que la lógica de permisos quede dispersa o implementada de forma inconsistente entre controladores.
 - **Manejo centralizado de secretos**: credenciales de base de datos, JWT y de los proveedores externos (Brevo, Twilio) se inyectan exclusivamente mediante variables de entorno (`${VARIABLE:}`), nunca como valores hardcodeados en el repositorio.
 
-> Quedan identificadas dos mejoras pendientes: (1) corregir los 44 hallazgos de ESLint y, una vez resueltos, volver el paso de lint bloqueante en el pipeline; y (2) incorporar análisis estático al backend (por ejemplo, SonarQube/SonarCloud). Hasta entonces, en el backend la detección de problemas de calidad depende del criterio del desarrollador y del revisor, no de una herramienta objetiva.
+> Quedan identificadas dos mejoras pendientes: (1) corregir los 45 hallazgos de ESLint y, una vez resueltos, volver el paso de lint bloqueante en el pipeline; y (2) incorporar análisis estático al backend (por ejemplo, SonarQube/SonarCloud). Hasta entonces, en el backend la detección de problemas de calidad depende del criterio del desarrollador y del revisor, no de una herramienta objetiva.
 
 ### 6.2.2. Reviews
 
-La revisión de código en NursePulse se apoya en los **Pull Requests de GitHub**, como se describe en el Capítulo V (sección 5.1.2) y el Capítulo VII (sección 7.2.1). Según el historial de los repositorios al 3 de octubre de 2026, se registraron 10 Pull Requests en Backend, 4 en Frontend, 5 en la aplicación móvil y 1 en la Landing Page. Varios del Backend siguen la convención de ramas descrita en el Capítulo V (`feature/sbar-structured-fields`, `feature/password-policy-ts01`, `fix/audit-log-null-metadata-and-500-handling`, entre otras).
+La revisión de código en NursePulse se apoya en los **Pull Requests de GitHub**, como se describe en el Capítulo V (sección 5.1.2) y el Capítulo VII (sección 7.2.1). Según el historial de los repositorios al 3 de octubre de 2026, se registraron 21 Pull Requests: 10 en Backend (2 generados por una herramienta de despliegue), 4 en Frontend, 6 en la aplicación móvil y 1 en la Landing Page. Varios del Backend siguen la convención de ramas descrita en el Capítulo V (`feature/sbar-structured-fields`, `feature/password-policy-ts01`, `fix/audit-log-null-metadata-and-500-handling`, entre otras).
 
 Alcance real de esta práctica:
 
 - **La rama de producción del Backend tiene protección activa desde el 3 de octubre de 2026**: `deploy/render-docker`, cuyo `push` despliega automáticamente a Render, cuenta con una regla de protección de rama que exige (a) Pull Request antes de fusionar, (b) la aprobación de otro integrante y (c) que el check `build-and-test` del workflow `Backend CI` finalice en éxito. La regla rige también para los administradores y bloquea el *force push* y el borrado de la rama. Es el único caso en que la revisión y el CI son condiciones técnicamente forzadas.
 - **El resto de las ramas principales no tiene protección**: `main` del Backend, `main` del Frontend, `main` de Mobile y `main` de Landing no tienen reglas de protección. En ellas la revisión y el CI en verde siguen siendo prácticas del equipo, no condiciones que GitHub verifique.
 - **Parte de los cambios se integró por `push` directo**: antes de activar la protección, y todavía hoy en las ramas sin ella, muchos commits se publicaron directamente a la rama principal, y cada `push` dispara el despliegue automático (ver Capítulo VII, sección 7.3). En esos casos la verificación recae en el pipeline de CI posterior al `push` y en la comprobación manual en producción (6.1.4).
-- **Cuando hay Pull Request**, otro integrante revisa el cambio verificando correctitud funcional, cumplimiento de la guía de estilo (sección 6.2.1.1) y que no se introduzcan credenciales ni datos sensibles.
+- **Las revisiones en Pull Request no quedan registradas**: ninguno de los 21 PRs tiene una revisión en GitHub, y los 19 abiertos por integrantes fueron fusionados por su propio autor. Si hubo revisión entre pares, fue informal y no quedó trazada. Solo los PRs de la aplicación móvil (#3 a #6) muestran verificaciones de CI.
 
-![Ejemplo de Pull Request revisado en el repositorio Backend, con sus verificaciones de CI](assets/chapter-6/pull-request-review.png)
+Evidencia de la regla de protección activa en la rama de producción del Backend:
+
+![Regla de protección de la rama deploy/render-docker en GitHub](assets/chapter-6/branch-protection-rule.png)
+
+Ejemplo de la práctica anterior a esa regla, el Pull Request #8 del Backend, fusionado por su autor, sin revisores ni verificaciones de CI:
+
+![Pull Request #8 del Backend, sin revisores ni verificaciones de CI](assets/chapter-6/pull-request-review.png)
 
 No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o Crucible); el proceso ocurre dentro de la interfaz nativa de Pull Requests de GitHub.
 
-> Extender las mismas reglas de protección de rama (CI exitoso y una aprobación obligatoria antes de fusionar) a `main` del Backend, del Frontend, de Mobile y de Landing queda identificado como una mejora pendiente, para que la práctica de revisión sea verificable en todos los repositorios y no dependa de la disciplina del equipo.
+> Extender las mismas reglas de protección de rama (CI exitoso y una aprobación obligatoria antes de fusionar) a `main` del Backend, del Frontend, de Mobile y de Landing queda identificado como una mejora pendiente, y exigir que los PRs tengan una revisión registrada, para que la práctica sea verificable en todos los repositorios y no dependa de la disciplina del equipo.
 
 ## 6.3. Validation Interviews
 
