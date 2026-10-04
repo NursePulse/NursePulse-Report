@@ -292,6 +292,186 @@ Cuadro de Epics, User Stories y Technical Stories
   </tr>
 </table>
 
+<!-- EP-07 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Visitante / Administrador</td>
+    <td>Media</td>
+    <td>EP-07</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Cuenta y acceso</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario de NursePulse, quiero registrarme, verificar mi correo e iniciar sesión, y como administrador gestionar roles, para acceder de forma segura a la plataforma.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que una persona desea usar NursePulse, <b>When</b> completa el registro y verifica su correo, <b>Then</b> accede con su rol correspondiente.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- EP-08 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Personal clínico</td>
+    <td>Media</td>
+    <td>EP-08</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Pacientes y monitoreo</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero gestionar pacientes y revisar su monitoreo y los indicadores de la unidad para tener visibilidad del estado de la atención.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen pacientes registrados, <b>When</b> el personal clínico consulta lista, monitoreo o dashboard, <b>Then</b> visualiza información actualizada de la unidad.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- EP-09 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Media</td>
+    <td>EP-09</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Alertas clínicas</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera cardiovascular, quiero que se generen y gestionen alertas ante signos vitales fuera de rango para actuar oportunamente.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un registro excede los umbrales clínicos, <b>When</b> la aplicación lo evalúa, <b>Then</b> genera una alerta que el equipo puede atender y cerrar.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- EP-10 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Administrador / Médico</td>
+    <td>Media</td>
+    <td>EP-10</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Reportes y auditoría</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como administrador o médico, quiero generar reportes y consultar la auditoría para sustentar el seguimiento y la trazabilidad.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen datos clínicos y entradas de auditoría, <b>When</b> el usuario autorizado los consulta o exporta, <b>Then</b> obtiene un reporte o documento verificable.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- EP-11 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>—</b></td>
+    <td>Usuario</td>
+    <td>Media</td>
+    <td>EP-11</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Plataforma y multiplataforma</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero usar NursePulse en español o inglés y desde la aplicación móvil para acceder desde mi contexto de trabajo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el usuario accede desde web o móvil, <b>When</b> usa las funciones disponibles, <b>Then</b> obtiene la misma información desde cualquier plataforma.
+    </td>
+  </tr>
+</table>
+
+<br>
+
 <!-- US-01 -->
 <table width="100%">
   <tr>
@@ -758,15 +938,15 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como enfermera cardiovascular, quiero registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno[cite: 1, 2].</td>
+    <td colspan="4">Como enfermera cardiovascular, quiero registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que la enfermera necesita entregar información clínica, <b>When</b> registra situación, antecedentes, evaluación y recomendación, <b>Then</b> el traspaso queda registrado con estructura SBAR[cite: 1, 2].<br><br>
-      <b>Given</b> que falta información obligatoria, <b>When</b> la enfermera intenta guardar el traspaso, <b>Then</b> el sistema solicita completar la información requerida.
+      <b>Given</b> que la enfermera necesita entregar información clínica, <b>When</b> registra situación, antecedentes, evaluación y recomendación, <b>Then</b> el traspaso queda registrado con estructura SBAR.<br><br>
+      <b>Given</b> que falta información obligatoria, <b>When</b> la enfermera intenta guardar el traspaso, <b>Then</b> la aplicación (web o móvil) impide el envío y solicita completar la información requerida.
     </td>
   </tr>
 </table>
@@ -795,14 +975,14 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como enfermera entrante, quiero consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante[cite: 2].</td>
+    <td colspan="4">Como enfermera entrante, quiero consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que existe un traspaso registrado, <b>When</b> la enfermera entrante consulta la información del paciente, <b>Then</b> visualiza la información clínica entregada por el turno anterior[cite: 2].<br><br>
+      <b>Given</b> que existe un traspaso registrado, <b>When</b> la enfermera entrante consulta la información del paciente, <b>Then</b> visualiza la información clínica entregada por el turno anterior.<br><br>
       <b>Given</b> que el traspaso contiene pendientes, <b>When</b> la enfermera lo revisa, <b>Then</b> identifica acciones pendientes para el nuevo turno.
     </td>
   </tr>
@@ -832,7 +1012,7 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como enfermera entrante, quiero confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención[cite: 2].</td>
+    <td colspan="4">Como enfermera entrante, quiero confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
@@ -869,14 +1049,14 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como enfermera cardiovascular, quiero registrar signos vitales del paciente para mantener actualizado el monitoreo clínico[cite: 1, 2].</td>
+    <td colspan="4">Como enfermera cardiovascular, quiero registrar signos vitales del paciente para mantener actualizado el monitoreo clínico.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que la enfermera registra signos vitales, <b>When</b> ingresa los valores requeridos, <b>Then</b> el sistema guarda el registro asociado al paciente[cite: 1].<br><br>
+      <b>Given</b> que la enfermera registra signos vitales, <b>When</b> ingresa los valores requeridos, <b>Then</b> el sistema guarda el registro asociado al paciente.<br><br>
       <b>Given</b> que falta un valor obligatorio, <b>When</b> la enfermera intenta guardar el registro, <b>Then</b> el sistema informa que falta información requerida.
     </td>
   </tr>
@@ -906,14 +1086,14 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como médico especialista cardiovascular, quiero consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada[cite: 1, 2].</td>
+    <td colspan="4">Como médico especialista cardiovascular, quiero consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que existen registros clínicos del paciente, <b>When</b> el médico consulta su evolución, <b>Then</b> el sistema muestra eventos y registros recientes asociados al paciente[cite: 1, 2].<br><br>
+      <b>Given</b> que existen registros clínicos del paciente, <b>When</b> el médico consulta su evolución, <b>Then</b> el sistema muestra eventos y registros recientes asociados al paciente.<br><br>
       <b>Given</b> que no existen registros recientes, <b>When</b> el médico consulta la evolución, <b>Then</b> el sistema informa que no hay información registrada en el periodo consultado.
     </td>
   </tr>
@@ -943,15 +1123,15 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como enfermera cardiovascular, quiero registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente[cite: 1, 2].</td>
+    <td colspan="4">Como enfermera cardiovascular, quiero registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que ocurre un evento clínico relevante, <b>When</b> la enfermera registra el evento, <b>Then</b> el sistema guarda descripción, fecha, hora y responsable[cite: 1, 2].<br><br>
-      <b>Given</b> que un médico consulta la evolución del paciente, <b>When</b> existen eventos relevantes registrados, <b>Then</b> aparecen asociados al historial clínico del paciente[cite: 1, 2].
+      <b>Given</b> que ocurre un evento clínico relevante, <b>When</b> la enfermera registra el evento, <b>Then</b> el sistema guarda descripción, fecha, hora y responsable.<br><br>
+      <b>Given</b> que un médico consulta la evolución del paciente, <b>When</b> existen eventos relevantes registrados, <b>Then</b> aparecen asociados al historial clínico del paciente.
     </td>
   </tr>
 </table>
@@ -980,15 +1160,15 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como médico especialista cardiovascular, quiero consultar el historial de eventos clínicos para reconstruir la evolución del paciente[cite: 1, 2].</td>
+    <td colspan="4">Como médico especialista cardiovascular, quiero consultar el historial de eventos clínicos para reconstruir la evolución del paciente.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que el paciente tiene eventos registrados, <b>When</b> el médico consulta el historial, <b>Then</b> el sistema muestra los eventos ordenados cronológicamente[cite: 1, 2].<br><br>
-      <b>Given</b> que el médico necesita validar un evento específico, <b>When</b> revisa el historial, <b>Then</b> identifica fecha, hora y responsable del registro[cite: 1, 2].
+      <b>Given</b> que el paciente tiene eventos registrados, <b>When</b> el médico consulta el historial, <b>Then</b> el sistema muestra los eventos ordenados cronológicamente.<br><br>
+      <b>Given</b> que el médico necesita validar un evento específico, <b>When</b> revisa el historial, <b>Then</b> identifica fecha, hora y responsable del registro.
     </td>
   </tr>
 </table>
@@ -1017,15 +1197,15 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como usuario clínico, quiero identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional[cite: 1, 2].</td>
+    <td colspan="4">Como usuario clínico, quiero identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que existe un registro clínico guardado, <b>When</b> el usuario consulta el detalle del registro, <b>Then</b> el sistema muestra el responsable asociado[cite: 1, 2].<br><br>
-      <b>Given</b> que el registro fue actualizado, <b>When</b> se consulta su información, <b>Then</b> el sistema conserva evidencia del responsable de la actualización[cite: 1, 2].
+      <b>Given</b> que la aplicación guarda un registro clínico, <b>When</b> lo envía al API, <b>Then</b> el registro conserva el identificador del responsable informado por la aplicación a partir de la sesión activa.<br><br>
+      <b>Given</b> que se consulta el historial de eventos clínicos o la auditoría, <b>When</b> existen registros, <b>Then</b> se muestra el responsable de cada uno.
     </td>
   </tr>
 </table>
@@ -1054,15 +1234,15 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como médico especialista cardiovascular, quiero consultar un resumen clínico del paciente para comprender rápidamente su estado actual[cite: 1, 2].</td>
+    <td colspan="4">Como médico especialista cardiovascular, quiero consultar un resumen clínico del paciente para comprender rápidamente su estado actual.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que el paciente tiene información clínica registrada, <b>When</b> el médico consulta el resumen, <b>Then</b> el sistema muestra datos relevantes del estado actual del paciente[cite: 2].<br><br>
-      <b>Given</b> que existe información reciente, <b>When</b> el médico revisa el resumen, <b>Then</b> identifica evolución, eventos e indicaciones relevantes[cite: 1, 2].
+      <b>Given</b> que el paciente tiene información clínica registrada, <b>When</b> el médico abre el dashboard o el monitoreo del paciente, <b>Then</b> la aplicación consolida y muestra los datos relevantes del estado actual a partir de los recursos del API.<br><br>
+      <b>Given</b> que existe información reciente, <b>When</b> el médico revisa el monitoreo, <b>Then</b> identifica evolución, eventos y alertas relevantes.
     </td>
   </tr>
 </table>
@@ -1091,15 +1271,15 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como médico especialista cardiovascular, quiero identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos[cite: 1, 2].</td>
+    <td colspan="4">Como médico especialista cardiovascular, quiero identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que existen registros clínicos recientes, <b>When</b> se identifica un cambio crítico definido por reglas clínicas, <b>Then</b> el sistema marca el evento como relevante[cite: 1, 2].<br><br>
-      <b>Given</b> que el médico consulta la evolución, <b>When</b> existen cambios críticos registrados, <b>Then</b> puede identificarlos dentro del historial del paciente[cite: 1, 2].
+      <b>Given</b> que se registran signos vitales fuera de los umbrales clínicos definidos, <b>When</b> la aplicación evalúa el registro, <b>Then</b> clasifica el nivel de riesgo y registra una alerta en el API.<br><br>
+      <b>Given</b> que el médico consulta la evolución, <b>When</b> existen alertas críticas registradas, <b>Then</b> puede identificarlas dentro del monitoreo del paciente.
     </td>
   </tr>
 </table>
@@ -1128,7 +1308,7 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como Developer, quiero implementar autenticación para proteger el acceso a recursos clínicos del sistema, incluyendo una política de contraseñas seguras en el registro de nuevas cuentas[cite: 1, 2].</td>
+    <td colspan="4">Como Developer, quiero implementar autenticación para proteger el acceso a recursos clínicos del sistema, incluyendo una política de contraseñas seguras en el registro de nuevas cuentas.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
@@ -1136,7 +1316,7 @@ Cuadro de Epics, User Stories y Technical Stories
   <tr>
     <td colspan="4">
       <b>Given</b> que un usuario envía credenciales válidas, <b>When</b> el API procesa la autenticación, <b>Then</b> responde con un token válido.<br><br>
-      <b>Given</b> que un usuario envía credenciales inválidas, <b>When</b> el API procesa la autenticación, <b>Then</b> responde con estado 401.<br><br>
+      <b>Given</b> que un usuario envía credenciales inválidas, <b>When</b> el API procesa la autenticación, <b>Then</b> responde con estado 400 y el detalle "Invalid username or password".<br><br>
       <b>Given</b> que un usuario se registra con una contraseña de entre 12 y 20 caracteres, que incluye al menos una mayúscula y un carácter especial, <b>When</b> el API procesa el registro, <b>Then</b> crea la cuenta correctamente.<br><br>
       <b>Given</b> que un usuario se registra con una contraseña que no cumple la longitud requerida, <b>When</b> el API procesa el registro, <b>Then</b> responde con estado 400 indicando el requisito de longitud.<br><br>
       <b>Given</b> que un usuario se registra con una contraseña sin mayúscula o sin carácter especial, <b>When</b> el API procesa el registro, <b>Then</b> responde con estado 400 indicando qué requisito de complejidad falta.
@@ -1168,7 +1348,7 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como Developer, quiero exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular[cite: 1, 2].</td>
+    <td colspan="4">Como Developer, quiero exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
@@ -1205,7 +1385,7 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como Developer, quiero exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones[cite: 1, 2].</td>
+    <td colspan="4">Como Developer, quiero exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
@@ -1242,15 +1422,15 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como Developer, quiero implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno[cite: 1, 2].</td>
+    <td colspan="4">Como Developer, quiero implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que un cliente autorizado envía un traspaso SBAR válido, <b>When</b> el API procesa la solicitud, <b>Then</b> guarda el traspaso asociado al paciente y responde con estado 201[cite: 1, 2].<br><br>
-      <b>Given</b> que falta un campo requerido del SBAR, <b>When</b> el API procesa la solicitud, <b>Then</b> responde con estado 400[cite: 1, 2].
+      <b>Given</b> que un cliente autorizado envía un traspaso SBAR válido, <b>When</b> el API procesa la solicitud, <b>Then</b> guarda el traspaso asociado al paciente y responde con estado 201.<br><br>
+      <b>Given</b> que falta un campo requerido del SBAR, <b>When</b> el cliente prepara el envío, <b>Then</b> la aplicación impide la llamada al API hasta completar los campos obligatorios.
     </td>
   </tr>
 </table>
@@ -1279,15 +1459,16 @@ Cuadro de Epics, User Stories y Technical Stories
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como Developer, quiero registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada[cite: 1, 2].</td>
+    <td colspan="4">Como Developer, quiero registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
     <td colspan="4">
-      <b>Given</b> que un usuario autorizado crea o actualiza un registro clínico, <b>When</b> el API completa la operación, <b>Then</b> almacena usuario, fecha, hora y tipo de acción[cite: 1, 2].<br><br>
-      <b>Given</b> que se consulta la auditoría de un registro, <b>When</b> existe información de trazabilidad, <b>Then</b> el API responde con la secuencia de acciones registradas[cite: 1, 2].
+      <b>Given</b> que la aplicación registra una acción clínica en el API de auditoría, <b>When</b> el usuario autenticado la envía, <b>Then</b> el API almacena el usuario tomado del token, fecha, hora y tipo de acción.<br><br>
+      <b>Given</b> que se consulta la auditoría de un registro, <b>When</b> existe información de trazabilidad, <b>Then</b> el API responde con la secuencia de acciones registradas.<br><br>
+      <b>Given</b> que un administrador exporta la auditoría a PDF, <b>When</b> el API genera el documento, <b>Then</b> la propia exportación queda registrada en la auditoría con el usuario que la realizó.
     </td>
   </tr>
 </table>
@@ -1330,6 +1511,782 @@ Cuadro de Epics, User Stories y Technical Stories
 </table>
 
 
+<!-- US-23 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-23</b></td>
+    <td>Visitante</td>
+    <td>Alta</td>
+    <td>EP-07</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrarme como usuario</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero registrarme como enfermería o médico para acceder a NursePulse.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el visitante completa sus datos con una contraseña que cumple la política, <b>When</b> envía el registro, <b>Then</b> el sistema crea la cuenta y envía un correo de verificación.<br><br>
+      <b>Given</b> que el nombre de usuario, el correo o el teléfono ya están registrados, <b>When</b> el visitante envía el registro, <b>Then</b> el sistema informa cuál de esos datos ya está en uso.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-24 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-24</b></td>
+    <td>Usuario nuevo</td>
+    <td>Alta</td>
+    <td>EP-07</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Verificar mi correo antes de iniciar sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario nuevo, quiero confirmar mi correo para activar mi cuenta.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el usuario abre el enlace de verificación recibido, <b>When</b> el sistema valida el token, <b>Then</b> la cuenta queda verificada.<br><br>
+      <b>Given</b> que el correo aún no fue verificado, <b>When</b> el usuario intenta iniciar sesión, <b>Then</b> el sistema rechaza el acceso e indica que debe verificar su correo.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-25 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-25</b></td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>EP-07</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Iniciar y cerrar sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario registrado, quiero iniciar y cerrar sesión para proteger mi información.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el usuario tiene una cuenta verificada, <b>When</b> envía credenciales válidas, <b>Then</b> accede a la aplicación con el rol asignado.<br><br>
+      <b>Given</b> que el usuario envía credenciales inválidas, <b>When</b> intenta iniciar sesión, <b>Then</b> la aplicación muestra un mensaje de credenciales incorrectas.<br><br>
+      <b>Given</b> que el usuario tiene una sesión activa, <b>When</b> cierra sesión, <b>Then</b> la aplicación descarta la sesión y solicita autenticarse de nuevo.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-26 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-26</b></td>
+    <td>Administrador</td>
+    <td>Media</td>
+    <td>EP-07</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Gestionar usuarios y asignar roles</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como administrador, quiero ver los usuarios y cambiar su rol para controlar los permisos de acceso.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen usuarios registrados, <b>When</b> el administrador consulta el directorio, <b>Then</b> visualiza los usuarios y su rol.<br><br>
+      <b>Given</b> que el administrador selecciona un rol válido (enfermería, médico o administrador), <b>When</b> confirma el cambio, <b>Then</b> el sistema actualiza el rol del usuario.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-27 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-27</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Alta</td>
+    <td>EP-08</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar y editar pacientes</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera cardiovascular, quiero registrar y actualizar los datos de un paciente para mantener su ficha vigente.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que la enfermera completa los datos obligatorios del paciente, <b>When</b> guarda el registro, <b>Then</b> el paciente queda disponible en el sistema.<br><br>
+      <b>Given</b> que existe un paciente registrado, <b>When</b> la enfermera actualiza sus datos o lo da de alta, <b>Then</b> el sistema conserva los cambios.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-28 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-28</b></td>
+    <td>Personal clínico</td>
+    <td>Alta</td>
+    <td>EP-08</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar lista y detalle de pacientes</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero consultar la lista y el detalle de pacientes para identificar a quién atender.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen pacientes registrados, <b>When</b> el usuario abre la lista, <b>Then</b> visualiza los pacientes con su estado.<br><br>
+      <b>Given</b> que el usuario selecciona un paciente, <b>When</b> abre su detalle, <b>Then</b> visualiza sus datos registrados.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-29 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-29</b></td>
+    <td>Personal clínico</td>
+    <td>Media</td>
+    <td>EP-08</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Ver el monitoreo de un paciente</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero ver el monitoreo de un paciente para revisar su evolución en un solo lugar.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el paciente tiene signos vitales, eventos o alertas, <b>When</b> el usuario abre su monitoreo, <b>Then</b> visualiza los datos recientes y su evolución.<br><br>
+      <b>Given</b> que el paciente no tiene información registrada, <b>When</b> el usuario abre su monitoreo, <b>Then</b> la aplicación indica que aún no hay datos.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-30 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-30</b></td>
+    <td>Personal clínico</td>
+    <td>Media</td>
+    <td>EP-08</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Ver el dashboard de la unidad</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero ver un dashboard con indicadores para tener una visión general de la unidad.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen pacientes, registros y alertas, <b>When</b> el usuario abre el dashboard, <b>Then</b> visualiza indicadores consolidados de la unidad.<br><br>
+      <b>Given</b> que existen alertas pendientes, <b>When</b> el usuario abre el dashboard, <b>Then</b> identifica la cantidad de alertas activas.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-31 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-31</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Alta</td>
+    <td>EP-09</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Generar alertas clínicas por umbrales</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera cardiovascular, quiero que se genere una alerta cuando un signo vital sale de rango para actuar a tiempo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que se registra un signo vital fuera del rango definido, <b>When</b> la aplicación evalúa el registro, <b>Then</b> crea una alerta con el nivel de riesgo correspondiente.<br><br>
+      <b>Given</b> que los signos vitales están dentro del rango, <b>When</b> la aplicación evalúa el registro, <b>Then</b> no crea una alerta.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-32 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-32</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Media</td>
+    <td>EP-09</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Atender y cerrar alertas</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero marcar una alerta como atendida y cerrarla para llevar el control de su resolución.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existe una alerta abierta, <b>When</b> la enfermera o el médico la marca como atendida, <b>Then</b> la alerta cambia a estado atendida.<br><br>
+      <b>Given</b> que existe una alerta atendida, <b>When</b> el médico la cierra, <b>Then</b> la alerta cambia a estado cerrada; la enfermera no puede cerrarla.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-33 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-33</b></td>
+    <td>Personal clínico</td>
+    <td>Media</td>
+    <td>EP-09</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Recibir notificaciones de alertas</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como personal clínico, quiero ver las notificaciones de alertas pendientes para no perder eventos relevantes.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen alertas sin cerrar, <b>When</b> el usuario abre la sección de notificaciones, <b>Then</b> visualiza las alertas con su estado y paciente.<br><br>
+      <b>Given</b> que no existen alertas pendientes, <b>When</b> el usuario abre la sección, <b>Then</b> la aplicación indica que no hay notificaciones.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-34 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-34</b></td>
+    <td>Médico especialista cardiovascular</td>
+    <td>Baja</td>
+    <td>EP-10</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Generar reportes clínicos</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como médico, quiero generar un reporte de un periodo para sustentar el seguimiento clínico.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen registros en el periodo seleccionado, <b>When</b> el usuario genera el reporte, <b>Then</b> la aplicación consolida pacientes, signos vitales y alertas del periodo.<br><br>
+      <b>Given</b> que el usuario generó reportes, <b>When</b> vuelve a abrir la sección, <b>Then</b> visualiza los reportes generados en ese navegador.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-35 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-35</b></td>
+    <td>Administrador</td>
+    <td>Media</td>
+    <td>EP-10</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar el registro de auditoría</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como administrador o médico, quiero consultar la auditoría para conocer quién hizo qué y cuándo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen entradas de auditoría, <b>When</b> el usuario autorizado abre la auditoría, <b>Then</b> visualiza acción, usuario, fecha y hora.<br><br>
+      <b>Given</b> que el usuario no tiene rol de médico o administrador, <b>When</b> intenta consultarla, <b>Then</b> el API responde con estado 403.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-36 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-36</b></td>
+    <td>Administrador</td>
+    <td>Baja</td>
+    <td>EP-10</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Exportar la auditoría a PDF</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como administrador, quiero exportar la auditoría a PDF para compartir evidencia verificable.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen entradas de auditoría, <b>When</b> el administrador solicita la exportación, <b>Then</b> el sistema entrega un documento PDF.<br><br>
+      <b>Given</b> que se genera la exportación, <b>When</b> el sistema la completa, <b>Then</b> registra la exportación en la propia auditoría con el usuario que la realizó.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-37 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-37</b></td>
+    <td>Usuario</td>
+    <td>Baja</td>
+    <td>EP-11</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Cambiar el idioma de la aplicación</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero cambiar el idioma entre español e inglés para usar la aplicación en mi idioma.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el usuario elige un idioma, <b>When</b> confirma el cambio, <b>Then</b> la interfaz se muestra en ese idioma.<br><br>
+      <b>Given</b> que el usuario volvió a abrir la aplicación, <b>When</b> la aplicación carga, <b>Then</b> conserva el idioma elegido.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-38 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-38</b></td>
+    <td>Enfermera cardiovascular</td>
+    <td>Media</td>
+    <td>EP-11</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Usar NursePulse desde la aplicación móvil</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como enfermera cardiovascular, quiero usar NursePulse desde mi celular para registrar y consultar información en el punto de atención.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el usuario tiene una cuenta verificada, <b>When</b> inicia sesión en la aplicación móvil, <b>Then</b> accede a pacientes, signos vitales, eventos, traspasos y alertas según su rol.<br><br>
+      <b>Given</b> que la aplicación móvil no logra conectarse, <b>When</b> el usuario intenta operar, <b>Then</b> muestra un mensaje de error comprensible.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- US-39 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>US-39</b></td>
+    <td>Administrador</td>
+    <td>Baja</td>
+    <td>EP-11</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar los planes de suscripción</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como administrador, quiero ver los planes disponibles para conocer las opciones del servicio.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que existen planes definidos, <b>When</b> el administrador abre la sección, <b>Then</b> visualiza los planes y sus características.<br><br>
+      <b>Given</b> que el administrador selecciona un plan, <b>When</b> confirma la selección, <b>Then</b> la aplicación conserva la elección en el navegador (sin cobro real).
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-07 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-07</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Control de acceso por rol</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero restringir cada recurso del API según el rol del usuario para proteger la información clínica.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que un usuario autenticado tiene un rol con permiso sobre el recurso, <b>When</b> envía la solicitud, <b>Then</b> el API la procesa.<br><br>
+      <b>Given</b> que el rol del usuario no tiene permiso sobre el recurso, <b>When</b> envía la solicitud, <b>Then</b> el API responde con estado 403.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-08 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-08</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Integración y despliegue continuos</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero ejecutar pruebas y análisis automáticos en cada cambio y desplegar de forma continua para detectar errores a tiempo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que se sube un cambio al repositorio, <b>When</b> se ejecuta el flujo de CI, <b>Then</b> se compilan, prueban y analizan el código y la calidad web.<br><br>
+      <b>Given</b> que se actualiza la rama de despliegue, <b>When</b> el proveedor detecta el cambio, <b>Then</b> publica la nueva versión del servicio.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-09 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-09</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Observabilidad con Grafana Cloud</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero enviar métricas del backend a Grafana Cloud para monitorear su salud.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el backend está en ejecución en producción, <b>When</b> exporta métricas por OTLP, <b>Then</b> las métricas de JVM y HTTP son visibles en Grafana Cloud.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- TS-10 -->
+<table width="100%">
+  <tr>
+    <th width="20%">Story ID</th>
+    <th width="30%">User</th>
+    <th width="25%">Priority</th>
+    <th width="25%">Epic</th>
+  </tr>
+  <tr>
+    <td align="center"><b>TS-10</b></td>
+    <td>Developer</td>
+    <td>Baja</td>
+    <td>EP-06</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Documentación OpenAPI del API</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero documentar el API con OpenAPI para facilitar su consumo por el frontend y la app móvil.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Given</b> que el backend está en ejecución, <b>When</b> se consulta la documentación, <b>Then</b> se listan los endpoints con sus esquemas de solicitud y respuesta.
+    </td>
+  </tr>
+</table>
+
+<br>
+
 #### Resumen de Epics, User Stories y Technical Stories
 
 | Epic ID   | Bloque                                      | Historias relacionadas | Propósito                                                                                                                                                      |
@@ -1337,9 +2294,14 @@ Cuadro de Epics, User Stories y Technical Stories
 | **EP-01** | Landing Page informativa                    | US-01 a US-12          | Comunicar la propuesta de valor de Nurse Pulse, explicar el problema, presentar beneficios, generar confianza y facilitar contacto con visitantes interesados. |
 | **EP-02** | Gestión de traspaso clínico SBAR            | US-13 a US-15          | Estructurar la comunicación clínica durante cambios de turno mediante el modelo SBAR.                                                                          |
 | **EP-03** | Registro y seguimiento clínico del paciente | US-16 a US-18          | Registrar información clínica relevante como signos vitales, eventos clínicos.                                                |
-| **EP-04** | Trazabilidad clínica                        | US-19 a US-21          | Consultar historial, responsables y cumplimiento de indicaciones para fortalecer seguimiento, auditoría y continuidad clínica.                                 |
-| **EP-05** | Soporte a la toma de decisiones clínicas    | US-22 a US-23          | Facilitar consulta de información consolidada, identificación de cambios críticos y validación de información con enfermería.                                  |
-| **EP-06** | RESTful API de Nurse Pulse                  | TS-01 a TS-06          | Implementar recursos técnicos del backend necesarios para exponer pacientes, registros clínicos, traspasos, trazabilidad, autenticación y manejo de errores.   |
+| **EP-04** | Trazabilidad clínica                        | US-19 y US-20          | Consultar historial y responsables de los registros para fortalecer seguimiento, auditoría y continuidad clínica.                                 |
+| **EP-05** | Soporte a la toma de decisiones clínicas    | US-21 y US-22          | Facilitar consulta de información consolidada, identificación de cambios críticos y validación de información con enfermería.                                  |
+| **EP-06** | RESTful API de Nurse Pulse                  | TS-01 a TS-10          | Implementar recursos técnicos del backend necesarios para exponer pacientes, registros clínicos, traspasos, trazabilidad, autenticación y manejo de errores.   |
+| **EP-07** | Cuenta y acceso | US-23 a US-26 | Registrar usuarios, verificar su correo, iniciar sesión y administrar roles. |
+| **EP-08** | Pacientes y monitoreo | US-27 a US-30 | Gestionar pacientes y consultar su monitoreo y los indicadores de la unidad. |
+| **EP-09** | Alertas clínicas | US-31 a US-33 | Generar, atender, cerrar y notificar alertas por signos vitales fuera de rango. |
+| **EP-10** | Reportes y auditoría | US-34 a US-36 | Generar reportes y consultar o exportar la auditoría. |
+| **EP-11** | Plataforma y multiplataforma | US-37 a US-39 | Idioma de la aplicación, aplicación móvil y planes de suscripción. |
 
 La distribución de Epics, User Stories y Technical Stories permite mantener trazabilidad entre la investigación de usuarios, los Business Goals, el Impact Mapping, el Product Backlog y las funcionalidades implementadas en los sprints del proyecto.
 
@@ -1382,18 +2344,39 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 | 14 | US-14 | Consultar traspaso de turno | Como enfermera entrante, deseo consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante. | 5 |
 | 15 | US-15 | Confirmar recepción de traspaso | Como enfermera entrante, deseo confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención. | 3 |
 | 16 | US-16 | Registrar signos vitales | Como enfermera cardiovascular, deseo registrar signos vitales del paciente para mantener actualizado el monitoreo clínico. | 5 |
-| 17 | US-19 | Registrar evento clínico relevante | Como enfermera cardiovascular, deseo registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente. | 5 |
+| 17 | US-18 | Registrar evento clínico relevante | Como enfermera cardiovascular, deseo registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente. | 5 |
 | 18 | US-17 | Consultar evolución clínica | Como médico especialista cardiovascular, deseo consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada. | 5 |
-| 20 | US-23 | Consultar resumen clínico del paciente | Como médico especialista cardiovascular, deseo consultar un resumen clínico del paciente para comprender rápidamente su estado actual. | 8 |
-| 21 | US-20 | Consultar historial de eventos | Como médico especialista cardiovascular, deseo consultar el historial de eventos clínicos para reconstruir la evolución del paciente. | 5 |
-| 22 | US-21 | Identificar responsable de registro | Como usuario clínico, deseo identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional. | 5 |
-| 23 | US-24 | Identificar cambios críticos | Como médico especialista cardiovascular, deseo identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos. | 8 |
-| 24 | TS-02 | Gestión de pacientes mediante API | Como Developer, deseo exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular. | 5 |
-| 25 | TS-03 | Gestión de registros clínicos mediante API | Como Developer, deseo exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones. | 8 |
-| 26 | TS-04 | Gestión de traspasos SBAR mediante API | Como Developer, deseo implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno. | 5 |
-| 27 | TS-05 | Trazabilidad de acciones clínicas | Como Developer, deseo registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada. | 5 |
-| 28 | TS-01 | Autenticación de usuarios | Como Developer, deseo implementar autenticación para proteger el acceso a recursos clínicos del sistema. | 5 |
-| 29 | TS-06 | Manejo consistente de errores del API | Como Developer, deseo estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend. | 3 |
+| 19 | US-21 | Consultar resumen clínico del paciente | Como médico especialista cardiovascular, deseo consultar un resumen clínico del paciente para comprender rápidamente su estado actual. | 8 |
+| 20 | US-19 | Consultar historial de eventos | Como médico especialista cardiovascular, deseo consultar el historial de eventos clínicos para reconstruir la evolución del paciente. | 5 |
+| 21 | US-20 | Identificar responsable de registro | Como usuario clínico, deseo identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional. | 5 |
+| 22 | US-22 | Identificar cambios críticos | Como médico especialista cardiovascular, deseo identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos. | 8 |
+| 23 | US-23 | Registrarme como usuario | Como visitante, quiero registrarme como enfermería o médico para acceder a NursePulse. | 5 |
+| 24 | US-24 | Verificar mi correo antes de iniciar sesión | Como usuario nuevo, quiero confirmar mi correo para activar mi cuenta. | 5 |
+| 25 | US-25 | Iniciar y cerrar sesión | Como usuario registrado, quiero iniciar y cerrar sesión para proteger mi información. | 3 |
+| 26 | US-26 | Gestionar usuarios y asignar roles | Como administrador, quiero ver los usuarios y cambiar su rol para controlar los permisos de acceso. | 5 |
+| 27 | US-27 | Registrar y editar pacientes | Como enfermera cardiovascular, quiero registrar y actualizar los datos de un paciente para mantener su ficha vigente. | 5 |
+| 28 | US-28 | Consultar lista y detalle de pacientes | Como personal clínico, quiero consultar la lista y el detalle de pacientes para identificar a quién atender. | 3 |
+| 29 | US-29 | Ver el monitoreo de un paciente | Como personal clínico, quiero ver el monitoreo de un paciente para revisar su evolución en un solo lugar. | 5 |
+| 30 | US-30 | Ver el dashboard de la unidad | Como personal clínico, quiero ver un dashboard con indicadores para tener una visión general de la unidad. | 5 |
+| 31 | US-31 | Generar alertas clínicas por umbrales | Como enfermera cardiovascular, quiero que se genere una alerta cuando un signo vital sale de rango para actuar a tiempo. | 8 |
+| 32 | US-32 | Atender y cerrar alertas | Como personal clínico, quiero marcar una alerta como atendida y cerrarla para llevar el control de su resolución. | 5 |
+| 33 | US-33 | Recibir notificaciones de alertas | Como personal clínico, quiero ver las notificaciones de alertas pendientes para no perder eventos relevantes. | 5 |
+| 34 | US-34 | Generar reportes clínicos | Como médico, quiero generar un reporte de un periodo para sustentar el seguimiento clínico. | 5 |
+| 35 | US-35 | Consultar el registro de auditoría | Como administrador o médico, quiero consultar la auditoría para conocer quién hizo qué y cuándo. | 5 |
+| 36 | US-36 | Exportar la auditoría a PDF | Como administrador, quiero exportar la auditoría a PDF para compartir evidencia verificable. | 3 |
+| 37 | US-37 | Cambiar el idioma de la aplicación | Como usuario, quiero cambiar el idioma entre español e inglés para usar la aplicación en mi idioma. | 2 |
+| 38 | US-38 | Usar NursePulse desde la aplicación móvil | Como enfermera cardiovascular, quiero usar NursePulse desde mi celular para registrar y consultar información en el punto de atención. | 8 |
+| 39 | US-39 | Consultar los planes de suscripción | Como administrador, quiero ver los planes disponibles para conocer las opciones del servicio. | 3 |
+| 40 | TS-02 | Gestión de pacientes mediante API | Como Developer, deseo exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular. | 5 |
+| 41 | TS-03 | Gestión de registros clínicos mediante API | Como Developer, deseo exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones. | 8 |
+| 42 | TS-04 | Gestión de traspasos SBAR mediante API | Como Developer, deseo implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno. | 5 |
+| 43 | TS-05 | Trazabilidad de acciones clínicas | Como Developer, deseo registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada. | 5 |
+| 44 | TS-01 | Autenticación de usuarios | Como Developer, deseo implementar autenticación para proteger el acceso a recursos clínicos del sistema. | 5 |
+| 45 | TS-06 | Manejo consistente de errores del API | Como Developer, deseo estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend. | 3 |
+| 46 | TS-07 | Control de acceso por rol | Como Developer, quiero restringir cada recurso del API según el rol del usuario para proteger la información clínica. | 5 |
+| 47 | TS-08 | Integración y despliegue continuos | Como Developer, quiero ejecutar pruebas y análisis automáticos en cada cambio y desplegar de forma continua para detectar errores a tiempo. | 5 |
+| 48 | TS-09 | Observabilidad con Grafana Cloud | Como Developer, quiero enviar métricas del backend a Grafana Cloud para monitorear su salud. | 3 |
+| 49 | TS-10 | Documentación OpenAPI del API | Como Developer, quiero documentar el API con OpenAPI para facilitar su consumo por el frontend y la app móvil. | 2 |
 
 #### Distribución por bloques funcionales
 
@@ -1401,28 +2384,31 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 | ------ | ------------------- | --------- |
 | **Landing Page** | US-01 a US-12 | Comunicar la propuesta de valor, captar interesados y validar interés inicial. |
 | **Traspaso SBAR** | US-13 a US-15 | Mejorar comunicación clínica durante cambios de turno. |
-| **Registro clínico** | US-16, US-18, US-19 | Reducir duplicidad, registrar información relevante y disminuir dependencia de papel. |
-| **Consulta clínica** | US-17, US-20, US-23 | Facilitar acceso rápido a evolución, historial y estado actual del paciente. |
-| **Trazabilidad clínica** | US-21, US-22 | Reconstruir responsables, horarios y cumplimiento de indicaciones. |
-| **Soporte a decisiones clínicas** | US-24, US-25 | Identificar cambios críticos y validar información relevante con enfermería. |
-| **RESTful API** | TS-01 a TS-06 | Habilitar recursos técnicos para pacientes, registros, traspasos, trazabilidad, autenticación y errores. |
+| **Registro clínico** | US-16, US-18 | Registrar signos vitales y eventos clínicos de forma digital. |
+| **Consulta clínica** | US-17, US-19, US-21 | Facilitar acceso rápido a evolución, historial y estado actual del paciente. |
+| **Trazabilidad clínica** | US-20, US-35, US-36 | Reconstruir responsables, horarios y acciones realizadas. |
+| **Soporte a decisiones clínicas** | US-22, US-31 a US-33 | Identificar cambios críticos y gestionar alertas. |
+| **Cuenta y acceso** | US-23 a US-26 | Registro, verificación de correo, inicio de sesión y roles. |
+| **Pacientes y monitoreo** | US-27 a US-30 | Gestión de pacientes, monitoreo y dashboard. |
+| **Reportes y plataforma** | US-34, US-37 a US-39 | Reportes, idioma, aplicación móvil y planes de suscripción. |
+| **RESTful API y plataforma técnica** | TS-01 a TS-10 | Recursos técnicos del backend, seguridad, CI/CD, observabilidad y documentación. |
 
 #### Relación del Product Backlog con los Business Goals
 
 | Business Goal | Historias principales relacionadas | Justificación |
 | ------------- | ---------------------------------- | ------------- |
-| **BG-01** | US-01 a US-12 | Estas historias permiten comunicar el valor de Nurse Pulse, generar confianza y facilitar contacto desde la Landing Page. |
+| **BG-01** | US-01 a US-12, US-37 | Estas historias permiten comunicar el valor de Nurse Pulse, generar confianza y facilitar contacto desde la Landing Page. |
 | **BG-02** | US-13, US-14, US-15, TS-04 | Estas historias permiten validar el flujo de traspaso SBAR digital con usuarios clínicos e instituciones. |
-| **BG-03** | US-16, US-17, US-20, US-23 | Estas historias reducen fricción al registrar y consultar información clínica relevante. |
-| **BG-04** | US-13, US-16, US-18, US-19, TS-02, TS-03, TS-04 | Estas historias permiten reemplazar registros físicos complementarios por flujos digitales funcionales. |
-| **BG-05** | US-20, US-21, US-22, US-24, US-25, TS-01, TS-05, TS-06 | Estas historias fortalecen trazabilidad clínica, seguridad, auditoría y soporte a decisiones clínicas. |
+| **BG-03** | US-16, US-17, US-19, US-21, US-29, US-30 | Estas historias reducen fricción al registrar y consultar información clínica relevante. |
+| **BG-04** | US-13, US-16, US-18, US-27, US-38, TS-02, TS-03, TS-04 | Estas historias permiten reemplazar registros físicos complementarios por flujos digitales funcionales en web y móvil. |
+| **BG-05** | US-20, US-22, US-23 a US-26, US-31 a US-36, TS-01, TS-05 a TS-10 | Estas historias fortalecen trazabilidad clínica, seguridad, auditoría y soporte a decisiones clínicas. |
 
 #### Relación del Product Backlog con los sprints
 
 | Sprint | Historias principales consideradas | Enfoque |
 | ------ | --------------------------------- | ------- |
-| **Sprint 1** | US-01, US-02, US-03, US-04, US-05, US-06, US-07, US-08, US-09, US-10, US-11, US-12, US-13, US-14, US-15, US-16, US-17, US-18, US-19, US-20, US-21, US-22 | Desarrollo inicial de Landing Page, comunicación de propuesta de valor, secciones principales, contacto y responsive design. Mejora de Landing Page, primeras vistas de Web Application, traspaso SBAR, signos vitales y consulta clínica inicial  Implementación de Web Services, registros clínicos, eventos, trazabilidad, endpoints REST y documentación de API. Cierre de funcionalidades, validación final, autenticación, manejo de errores, evidencias finales y mejoras del producto.
-|
+| **Sprint 1** | US-01 a US-12 | Landing Page: propuesta de valor, secciones principales, contacto, idioma y diseño responsive. |
+| **Sprint 2** | US-13 a US-39, TS-01 a TS-10 | Web Application, RESTful API y aplicación móvil: autenticación y roles, pacientes, registros clínicos, traspasos SBAR, alertas, reportes, auditoría, observabilidad y despliegue. |
 
 #### Captura y URL del Product Backlog
 
@@ -1434,6 +2420,10 @@ La siguiente captura corresponde al Product Backlog elaborado en la herramienta 
 
 **URL del Product Backlog:**  
 https://jorgefrantas1.atlassian.net/jira/software/projects/HAT/boards/101/backlog
+
+#### Alcance y limitaciones conocidas
+
+Los criterios de aceptación describen lo implementado y verificado contra el sistema en ejecución. Quedan como limitaciones conocidas: el nivel de riesgo y las alertas automáticas se calculan en la aplicación cliente y el backend las almacena; el identificador del responsable de un registro lo informa la aplicación a partir de la sesión y el backend no lo contrasta con el token; el backend no valida que el paciente exista al registrar signos vitales, eventos, traspasos o alertas; los reportes se generan en el navegador y se guardan localmente; los planes de suscripción no incluyen una pasarela de pago real; y la recuperación de contraseña existe en la interfaz web pero aún no cuenta con endpoint en el backend, por lo que no se incluye como historia.
 
 #### Conclusión del Product Backlog
 
@@ -1507,11 +2497,11 @@ Debido a que las capturas visuales presentan los identificadores principales par
 | **BG-01** | Visitante de la Landing Page | Acceder a la información desde distintos dispositivos y revisar el contenido en su idioma de preferencia. | Landing Page responsive e internacionalizada. | **US-11:** Como visitante, deseo cambiar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia. <br><br> **US-12:** Como visitante, deseo acceder al sitio web desde dispositivos móviles para revisar información de Nurse Pulse desde cualquier lugar. |
 | **BG-02** | Daniela Ríos — Personal de enfermería cardiovascular | Registrar información del cambio de turno de manera estructurada para reducir omisiones y mejorar continuidad clínica. | Módulo de traspaso clínico SBAR. | **US-13:** Como enfermera cardiovascular, deseo registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno. <br><br> **US-14:** Como enfermera entrante, deseo consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante. <br><br> **US-15:** Como enfermera entrante, deseo confirmar que recibí el traspaso clínico para dejar constancia de continuidad de atención. |
 | **BG-02** | Cliente institucional | Validar si el flujo SBAR digital puede aplicarse como apoyo operativo dentro de áreas cardiovasculares. | Flujo demostrable de traspaso SBAR, evidencias de uso, documentación del proceso y validación con usuarios. | **US-13:** Como enfermera cardiovascular, deseo registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno. <br><br> **US-14:** Como enfermera entrante, deseo consultar el traspaso clínico del turno anterior para continuar la atención del paciente sin perder información relevante. <br><br> **TS-04:** Como Developer, deseo implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno. |
-| **BG-03** | Dr. Alejandro Torres — Médico especialista cardiovascular | Consultar información clínica consolidada y reducir el tiempo de búsqueda entre múltiples fuentes. | Vista de evolución clínica, resumen clínico del paciente e historial de eventos. | **US-17:** Como médico especialista cardiovascular, deseo consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada. <br><br> **US-20:** Como médico especialista cardiovascular, deseo consultar el historial de eventos clínicos para reconstruir la evolución del paciente. <br><br> **US-22:** Como médico especialista cardiovascular, deseo consultar un resumen clínico del paciente para comprender rápidamente su estado actual. |
+| **BG-03** | Dr. Alejandro Torres — Médico especialista cardiovascular | Consultar información clínica consolidada y reducir el tiempo de búsqueda entre múltiples fuentes. | Vista de evolución clínica, resumen clínico del paciente e historial de eventos. | **US-17:** Como médico especialista cardiovascular, deseo consultar la evolución clínica reciente del paciente para tomar decisiones con información actualizada. <br><br> **US-19:** Como médico especialista cardiovascular, deseo consultar el historial de eventos clínicos para reconstruir la evolución del paciente. <br><br> **US-21:** Como médico especialista cardiovascular, deseo consultar un resumen clínico del paciente para comprender rápidamente su estado actual. |
 | **BG-03** | Daniela Ríos — Personal de enfermería cardiovascular | Registrar información clínica de manera ordenada para que luego pueda ser consultada con menor fricción por otros profesionales. | Formularios de registro clínico para signos vitales y eventos relevantes. | **US-16:** Como enfermera cardiovascular, deseo registrar signos vitales del paciente para mantener actualizado el monitoreo clínico. <br><br> **US-18:** Como enfermera cardiovascular, deseo registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente. |
 | **BG-04** | Daniela Ríos — Personal de enfermería cardiovascular | Registrar signos vitales, eventos y traspasos en un flujo digital para reducir dependencia de apuntes físicos complementarios. | Módulos digitales de registro clínico, eventos relevantes y traspaso SBAR. | **US-13:** Como enfermera cardiovascular, deseo registrar un traspaso clínico usando SBAR para comunicar información relevante al siguiente turno. <br><br> **US-16:** Como enfermera cardiovascular, deseo registrar signos vitales del paciente para mantener actualizado el monitoreo clínico. <br><br> **US-18:** Como enfermera cardiovascular, deseo registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente. |
 | **BG-04** | Developer | Exponer recursos técnicos que permitan al frontend registrar y consultar información clínica desde el RESTful API. | Endpoints de pacientes, registros clínicos, traspasos y manejo consistente de errores. | **TS-02:** Como Developer, deseo exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular. <br><br> **TS-03:** Como Developer, deseo exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones. <br><br> **TS-04:** Como Developer, deseo implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno. <br><br> **TS-06:** Como Developer, deseo estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend. |
-| **BG-05** | Dr. Alejandro Torres — Médico especialista cardiovascular | Identificar responsables, horarios, secuencia de eventos y cumplimiento de indicaciones para tomar decisiones con información trazable. | Historial de eventos, detalle de responsable de registro, cumplimiento de indicaciones y resumen clínico. | **US-19:** Como médico especialista cardiovascular, deseo consultar el historial de eventos clínicos para reconstruir la evolución del paciente. <br><br> **US-20:** Como usuario clínico, deseo identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional. <br><br> **US-22:** Como médico especialista cardiovascular, deseo consultar un resumen clínico del paciente para comprender rápidamente su estado actual. |
+| **BG-05** | Dr. Alejandro Torres — Médico especialista cardiovascular | Identificar responsables, horarios, secuencia de eventos y cumplimiento de indicaciones para tomar decisiones con información trazable. | Historial de eventos, detalle de responsable de registro, cumplimiento de indicaciones y resumen clínico. | **US-19:** Como médico especialista cardiovascular, deseo consultar el historial de eventos clínicos para reconstruir la evolución del paciente. <br><br> **US-20:** Como usuario clínico, deseo identificar quién registró una información clínica para asegurar trazabilidad y responsabilidad profesional. <br><br> **US-21:** Como médico especialista cardiovascular, deseo consultar un resumen clínico del paciente para comprender rápidamente su estado actual. |
 | **BG-05** | Daniela Ríos — Personal de enfermería cardiovascular | Registrar información con responsable, fecha, hora y estado para fortalecer continuidad de atención. | Registro trazable de signos vitales, eventos y traspasos. | **US-16:** Como enfermera cardiovascular, deseo registrar signos vitales del paciente para mantener actualizado el monitoreo clínico. <br><br> **US-19:** Como enfermera cardiovascular, deseo registrar eventos clínicos relevantes para que el equipo pueda dar seguimiento oportuno al paciente. |
 | **BG-05** | Developer | Garantizar que las acciones clínicas registradas mantengan evidencia técnica de auditoría, seguridad y trazabilidad. | Auditoría de acciones clínicas, autenticación, autorización y protección de recursos del API. | **TS-01:** Como Developer, deseo implementar autenticación para proteger el acceso a recursos clínicos del sistema. <br><br> **TS-05:** Como Developer, deseo registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada. <br><br> **TS-06:** Como Developer, deseo estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend. |
 | **BG-05** | Dr. Alejandro Torres — Médico especialista cardiovascular | Identificar cambios críticos y validar información con enfermería para responder oportunamente ante deterioros clínicos. | Alertas o marcadores de cambios críticos y registro de validación clínica entre médico y enfermería. | **US-24:** Como médico especialista cardiovascular, deseo identificar cambios críticos del paciente para responder oportunamente ante deterioros clínicos. <br><br> **US-25:** Como médico especialista cardiovascular, deseo validar información relevante con enfermería para reducir incertidumbre antes de tomar una decisión clínica. |
