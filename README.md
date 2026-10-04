@@ -103,7 +103,7 @@ Para cada historia con prueba unitaria asociada se indica cómo ejecutarla en la
 
 Las pruebas nuevas se entregaron en tres PR: pacientes, traspasos SBAR, signos vitales y eventos clínicos en [Backend-NursePulse#11](https://github.com/NursePulse/Backend-NursePulse/pull/11); roles y errores del API en [Backend-NursePulse#12](https://github.com/NursePulse/Backend-NursePulse/pull/12); reglas de riesgo, reportes, idioma y suscripciones en [Application-Web-Nurse-Pulse#5](https://github.com/NursePulse/Application-Web-Nurse-Pulse/pull/5). Una vez integrados, el backend suma 99 pruebas y el frontend 50.
 
-**Historias que todavía no tienen prueba unitaria propia:** US-01 a US-12 (Landing, sitio estático sin suite de pruebas), US-20, US-21, US-29 y US-30 (vistas de la aplicación web), TS-02 (se cubre de forma indirecta con `PatientServicesTest`), TS-08 y TS-09 (configuración de CI y observabilidad, no código probable de forma unitaria) y TS-10 (`OpenApiConfigurationTest`). Para estas historias la verificación se hizo ejecutándolas contra el sistema y comprobando la base de datos, no con una prueba automatizada.
+**Historias que todavía no tienen prueba unitaria propia:** US-01 a US-12 (Landing, sitio estático sin suite de pruebas), US-20, US-21, US-29 y US-30 (vistas de la aplicación web), TS-02 (se cubre de forma indirecta con `PatientServicesTest`), TS-08 y TS-09 (configuración de CI y observabilidad, no código probable de forma unitaria). TS-10 se cubre con `OpenApiConfigurationTest`. Para estas historias la verificación se hizo ejecutándolas contra el sistema y comprobando la base de datos, no con una prueba automatizada.
 
 ## 6.2. Static testing & Verification
 
