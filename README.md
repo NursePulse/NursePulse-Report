@@ -2,7 +2,7 @@
 
 ## 6.1. Testing Suites & Validation
 
-NursePulse cuenta con una suite de pruebas automatizadas de 107 pruebas en el backend (JUnit 5 + Mockito), 50 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
+NursePulse cuenta con una suite de pruebas automatizadas de 119 pruebas en el backend (JUnit 5 + Mockito), 50 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
 
 **Backend**
 
@@ -49,9 +49,33 @@ Pruebas que levantan el contexto completo de Spring Boot (`@SpringBootTest`) par
 
 ### 6.1.3. Core Behavior-Driven Development
 
-El proyecto **no implementa BDD ejecutable** (no se utiliza Cucumber ni un runner de Gherkin sobre el código). Lo que sí existe es la especificación de criterios de aceptación en formato Gherkin (`Given/When/Then`) a nivel de documentación, como parte de las User Stories del Capítulo III y de la guía de estilo de código (Capítulo V, sección 5.1.3) — pero estos escenarios no están automatizados ni se ejecutan como parte del pipeline de CI.
+El backend implementa BDD ejecutable con **Cucumber 8.0.4** (`cucumber-java`, `cucumber-spring` y `cucumber-junit-platform-engine`), integrado en la suite de JUnit 5 que se ejecuta en el CI ([Backend-NursePulse#14](https://github.com/NursePulse/Backend-NursePulse/pull/14), integrado). Los criterios de aceptación del Capítulo III se escribieron como escenarios Gherkin en español (`# language: es`, con `Dado`, `Cuando` y `Entonces`), guardados en `src/test/resources/features/`. Cada escenario arranca la aplicación completa con el perfil de pruebas (H2), llama a la API con seguridad real y comprueba la respuesta HTTP y el dato guardado.
 
-> Implementar BDD ejecutable (por ejemplo, con Cucumber + Spring) sobre los escenarios Gherkin ya documentados queda identificado como una mejora pendiente del proyecto.
+| Archivo `.feature` | Escenarios | Historias |
+| :--- | :-: | :--- |
+| `pacientes.feature` | 2 | US-27, US-28, TS-02 |
+| `signos_vitales.feature` | 2 | US-16, US-17, TS-03 |
+| `eventos_clinicos.feature` | 1 | US-18, US-19, US-20 |
+| `traspaso_sbar.feature` | 1 | US-13, US-14, US-15, TS-04 |
+| `alertas.feature` | 1 | US-31, US-32 |
+| `acceso_y_errores.feature` | 5 | TS-01, TS-06, TS-07 |
+
+Ejemplo (`traspaso_sbar.feature`):
+
+```gherkin
+# language: es
+Característica: Traspaso de turno SBAR (US-13, US-14, US-15, TS-04)
+
+  Escenario: Registrar, consultar y confirmar un traspaso
+    Dado que la enfermera inició sesión
+    Y existe un paciente registrado
+    Cuando registra un traspaso SBAR dirigido a la enfermera entrante
+    Entonces el traspaso queda guardado con estado "PENDING"
+    Cuando la enfermera entrante confirma la recepción
+    Entonces el traspaso queda con estado "ACKNOWLEDGED"
+```
+
+Los pasos están implementados en `StepDefinitions.java` y el ejecutor es `CucumberBddTest`, que Maven recoge con el resto de las pruebas: los 12 escenarios se ejecutan en cada `push` junto con las demás pruebas del backend (119 en total, con 0 fallos). Los escenarios cubren únicamente comportamientos que el sistema cumple hoy; los casos que el backend aún no resuelve de la forma descrita (por ejemplo, rechazar un traspaso incompleto con 400) quedan fuera y se documentan como limitaciones en el Capítulo III. El resto de los criterios Gherkin de las historias se mantiene como especificación y se verifica con las pruebas unitarias e integrales de la sección 6.1.5.
 
 ### 6.1.4. Core System Tests
 
@@ -103,7 +127,7 @@ Para cada historia con prueba unitaria asociada se indica cómo ejecutarla en la
 
 Las pruebas nuevas se entregaron en tres PR: pacientes, traspasos SBAR, signos vitales y eventos clínicos en [Backend-NursePulse#11](https://github.com/NursePulse/Backend-NursePulse/pull/11) y roles y errores del API en [Backend-NursePulse#12](https://github.com/NursePulse/Backend-NursePulse/pull/12), ambos integrados en `deploy/render-docker` (la suite del backend suma 99 pruebas con ambos, con 0 fallos); y reglas de riesgo, reportes, idioma y suscripciones en [Application-Web-Nurse-Pulse#5](https://github.com/NursePulse/Application-Web-Nurse-Pulse/pull/5), también integrado (el frontend suma 50 pruebas, con 0 fallos).
 
-**Pruebas integrales por historia.** Además de las unitarias, `UserStoryJourneyIntegrationTest` ([Backend-NursePulse#13](https://github.com/NursePulse/Backend-NursePulse/pull/13), integrado) ejecuta recorridos completos por la capa HTTP real, con seguridad y una base H2, y comprueba tanto la respuesta como la fila guardada. Con sus 8 pruebas, la suite del backend llega a 107 pruebas, con 0 fallos: US-27 y US-28 (alta, edición y consulta de pacientes, y 404 de un paciente inexistente), US-16 y US-17 (signos vitales y último registro, y 400 con un valor fuera de rango), US-18, US-19 y US-20 (evento clínico con el responsable tomado de la sesión), US-13, US-14 y US-15 (traspaso SBAR desde su creación hasta la confirmación por la enfermera entrante), US-21 (los datos del resumen disponibles juntos) y US-31 y US-32 (ciclo de la alerta, donde solo el médico puede cerrarla).
+**Pruebas integrales por historia.** Además de las unitarias, `UserStoryJourneyIntegrationTest` ([Backend-NursePulse#13](https://github.com/NursePulse/Backend-NursePulse/pull/13), integrado) ejecuta recorridos completos por la capa HTTP real, con seguridad y una base H2, y comprueba tanto la respuesta como la fila guardada. Con sus 8 pruebas, la suite del backend llegó a 107 pruebas (119 con los escenarios BDD de la sección 6.1.3), con 0 fallos: US-27 y US-28 (alta, edición y consulta de pacientes, y 404 de un paciente inexistente), US-16 y US-17 (signos vitales y último registro, y 400 con un valor fuera de rango), US-18, US-19 y US-20 (evento clínico con el responsable tomado de la sesión), US-13, US-14 y US-15 (traspaso SBAR desde su creación hasta la confirmación por la enfermera entrante), US-21 (los datos del resumen disponibles juntos) y US-31 y US-32 (ciclo de la alerta, donde solo el médico puede cerrarla).
 
 **Historias sin prueba automatizada propia:** US-01 a US-12 (Landing), US-29 y US-30 (vistas de la aplicación web), TS-08 y TS-09. La Landing es un sitio informativo estático, sin lógica ni API, por lo que se verifica con Lighthouse en el CI (rendimiento, accesibilidad, buenas prácticas y SEO) y con revisión visual. TS-08 se demuestra con la ejecución del CI y TS-09 con las métricas visibles en Grafana Cloud. US-29 y US-30 se verifican ejecutándolas en la aplicación y comprobando los datos que muestran. TS-02 se cubre con `PatientServicesTest` y con el recorrido de pacientes, y TS-10 con `OpenApiConfigurationTest`.
 
