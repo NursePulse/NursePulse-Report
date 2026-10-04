@@ -78,7 +78,7 @@ NursePulse define una guía de estilo de código explícita por tecnología (HTM
 - **ESLint** (`angular-eslint` + `typescript-eslint`) en el frontend: analiza el código TypeScript y las plantillas de Angular con las reglas recomendadas (por ejemplo, uso de `inject()`, accesibilidad de elementos interactivos en las plantillas y restricciones sobre el tipo `any`). Se ejecuta con `npm run lint` y como paso del pipeline `Frontend CI` (ver 6.2.1.2).
 - **TypeScript Strict Mode**: el compilador de Angular (`tsc --strict`) rechaza el build (`ng build`, ejecutado en `Frontend CI`) ante tipos implícitos `any`, variables no inicializadas o accesos nulos no controlados, forzando el cumplimiento de la convención de "Seguridad de tipos" definida en 5.1.3.
 - **Jakarta Bean Validation** en el backend actúa como verificación declarativa de las reglas de negocio en el límite de la API (`@NotBlank`, `@Pattern`, `@Size`, `@Email`), en línea con la convención de "Validación de datos" de 5.1.3.
-- **Revisión por pares**: en los cambios que se integran mediante Pull Request, un integrante distinto al autor puede verificar que el código sigue la nomenclatura (`camelCase`/`PascalCase`/`kebab-case` según corresponda) y la arquitectura por capas (DDD) descrita en 5.1.3. Esta revisión no está forzada por el repositorio (ver el alcance real en 6.2.2).
+- **Revisión por pares**: en los cambios que se integran mediante Pull Request, un integrante distinto al autor puede verificar que el código sigue la nomenclatura (`camelCase`/`PascalCase`/`kebab-case` según corresponda) y la arquitectura por capas (DDD) descrita en 5.1.3. Esta revisión solo está forzada por el repositorio en la rama de producción del Backend; en el resto es una práctica del equipo (ver el alcance real en 6.2.2).
 
 #### 6.2.1.2. Code Quality & Code Security
 
@@ -110,15 +110,16 @@ La revisión de código en NursePulse se apoya en los **Pull Requests de GitHub*
 
 Alcance real de esta práctica:
 
-- **No es un requisito forzado por el repositorio**: las ramas principales (`main` en Frontend y Backend, `deploy/render-docker` en el despliegue del Backend) no tienen reglas de protección de rama. Por eso el pipeline de CI no es técnicamente una condición para integrar cambios y no se exige la aprobación de un revisor.
-- **Parte de los cambios se integró por `push` directo**: en las etapas finales del proyecto, muchos commits se publicaron directamente a la rama principal, y cada `push` dispara el despliegue automático (ver Capítulo VII, sección 7.3). En esos casos la verificación recae en el pipeline de CI posterior al `push` y en la comprobación manual en producción (6.1.4).
-- **Cuando sí hay Pull Request**, otro integrante revisa el cambio verificando correctitud funcional, cumplimiento de la guía de estilo (sección 6.2.1.1) y que no se introduzcan credenciales ni datos sensibles.
+- **La rama de producción del Backend tiene protección activa desde el 3 de octubre de 2026**: `deploy/render-docker`, cuyo `push` despliega automáticamente a Render, cuenta con una regla de protección de rama que exige (a) Pull Request antes de fusionar, (b) la aprobación de otro integrante y (c) que el check `build-and-test` del workflow `Backend CI` finalice en éxito. La regla rige también para los administradores y bloquea el *force push* y el borrado de la rama. Es el único caso en que la revisión y el CI son condiciones técnicamente forzadas.
+- **El resto de las ramas principales no tiene protección**: `main` del Backend, `main` del Frontend, `main` de Mobile y `main` de Landing no tienen reglas de protección. En ellas la revisión y el CI en verde siguen siendo prácticas del equipo, no condiciones que GitHub verifique.
+- **Parte de los cambios se integró por `push` directo**: antes de activar la protección, y todavía hoy en las ramas sin ella, muchos commits se publicaron directamente a la rama principal, y cada `push` dispara el despliegue automático (ver Capítulo VII, sección 7.3). En esos casos la verificación recae en el pipeline de CI posterior al `push` y en la comprobación manual en producción (6.1.4).
+- **Cuando hay Pull Request**, otro integrante revisa el cambio verificando correctitud funcional, cumplimiento de la guía de estilo (sección 6.2.1.1) y que no se introduzcan credenciales ni datos sensibles.
 
 ![Ejemplo de Pull Request revisado en el repositorio Backend, con sus verificaciones de CI](assets/chapter-6/pull-request-review.png)
 
 No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o Crucible); el proceso ocurre dentro de la interfaz nativa de Pull Requests de GitHub.
 
-> Activar reglas de protección de rama (CI exitoso y al menos una aprobación obligatoria antes de fusionar) queda identificado como una mejora pendiente para que la práctica de revisión sea verificable y no dependa de la disciplina del equipo.
+> Extender las mismas reglas de protección de rama (CI exitoso y una aprobación obligatoria antes de fusionar) a `main` del Backend, del Frontend, de Mobile y de Landing queda identificado como una mejora pendiente, para que la práctica de revisión sea verificable en todos los repositorios y no dependa de la disciplina del equipo.
 
 ## 6.3. Validation Interviews
 
