@@ -2,7 +2,11 @@
 
 ## 6.1. Testing Suites & Validation
 
-NursePulse cuenta con una suite de pruebas automatizadas de 61 pruebas en el backend (JUnit 5 + Mockito) y 25 pruebas en el frontend (Vitest), ejecutadas automáticamente en cada Pull Request mediante los workflows `Backend CI` y `Frontend CI` (ver Capítulo VII, sección 7.1).
+NursePulse cuenta con una suite de pruebas automatizadas de 61 pruebas en el backend (JUnit 5 + Mockito) y 29 pruebas en el frontend (Vitest), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI` y `Frontend CI` (ver Capítulo VII, sección 7.1).
+
+![Resultado de la suite del backend: 61 pruebas, 0 fallos, BUILD SUCCESS](assets/chapter-6/backend-tests-61.png)
+
+![Resultado de la suite del frontend: 29 pruebas aprobadas](assets/chapter-6/frontend-tests-29.png)
 
 ### 6.1.1. Core Entities Unit Tests.
 
@@ -41,11 +45,25 @@ No existe automatización de pruebas de sistema end-to-end (tipo Selenium/Playwr
 
 - Registro de usuario → verificación de cuenta por correo (Brevo) → inicio de sesión.
 - Creación de pacientes, registro de signos vitales, eventos clínicos y traspasos SBAR con las validaciones de formato (nombres, documento, fecha de nacimiento, límites de caracteres).
-- Generación de una alerta crítica → notificación SMS a médicos registrados (Twilio).
+- Generación de una alerta crítica → solicitud de SMS a los médicos registrados (Twilio). La solicitud llega correctamente a la API de Twilio, pero la entrega del mensaje **no pudo completarse**: la cuenta de prueba (*trial*) de Twilio solo permite enviar a números verificados y exige una plantilla de contenido que requiere una cuenta de pago. Por eso esta integración queda validada a nivel de código y de pruebas unitarias (6.1.2), no de entrega real.
 - Exportación del registro de auditoría a PDF, descargado y verificado directamente desde la interfaz.
 - Flujo de permisos por rol (NURSE/DOCTOR/ADMIN) replicado en la interfaz real, no solo a nivel de API.
 
-> Automatizar estos flujos con un framework de pruebas de sistema (end-to-end) queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
+Evidencia del primer flujo: el correo de verificación recibido y la pantalla de confirmación de cuenta.
+
+![Correo de verificación de cuenta recibido con el botón de confirmación](assets/chapter-6/flow-verify-email-inbox.png)
+
+![Pantalla de cuenta verificada tras abrir el enlace del correo](assets/chapter-6/flow-verify-email-page.png)
+
+Evidencia del flujo de exportación de auditoría:
+
+![PDF del registro de auditoría exportado desde la interfaz](assets/chapter-6/flow-audit-pdf.png)
+
+**Auditoría automatizada de calidad web (Lighthouse).** La única verificación automatizada que se ejecuta contra la aplicación desplegada es una auditoría de Lighthouse sobre la pantalla de inicio de sesión del frontend, integrada en `Frontend CI` (ver Capítulo VII, secciones 7.1.2 y 7.4.1). La medición del 3 de octubre de 2026 arrojó Rendimiento 96, Accesibilidad 100, Buenas prácticas 100 y SEO 82. Esta auditoría mide calidad no funcional (carga, accesibilidad, buenas prácticas); no recorre flujos de negocio ni reemplaza las pruebas de sistema.
+
+![Reporte de Lighthouse sobre la pantalla de inicio de sesión desplegada](assets/chapter-6/lighthouse-report.png)
+
+> Automatizar los flujos funcionales con un framework de pruebas de sistema (end-to-end) queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
 
 ## 6.2. Static testing & Verification
 
@@ -55,31 +73,52 @@ A diferencia de la sección 6.1 (pruebas dinámicas, que ejecutan el código), e
 
 #### 6.2.1.1. Coding standard & Code conventions
 
-NursePulse define una guía de estilo de código explícita por tecnología (HTML/CSS, Angular/TypeScript, Java/Spring Boot), documentada en el Capítulo V, sección 5.1.3. El cumplimiento de esta guía se verifica de dos formas:
+NursePulse define una guía de estilo de código explícita por tecnología (HTML/CSS, Angular/TypeScript, Java/Spring Boot), documentada en el Capítulo V, sección 5.1.3. El cumplimiento de esta guía se verifica de las siguientes formas:
 
+- **ESLint** (`angular-eslint` + `typescript-eslint`) en el frontend: analiza el código TypeScript y las plantillas de Angular con las reglas recomendadas (por ejemplo, uso de `inject()`, accesibilidad de elementos interactivos en las plantillas y restricciones sobre el tipo `any`). Se ejecuta con `npm run lint` y como paso del pipeline `Frontend CI` (ver 6.2.1.2).
 - **TypeScript Strict Mode**: el compilador de Angular (`tsc --strict`) rechaza el build (`ng build`, ejecutado en `Frontend CI`) ante tipos implícitos `any`, variables no inicializadas o accesos nulos no controlados, forzando el cumplimiento de la convención de "Seguridad de tipos" definida en 5.1.3.
 - **Jakarta Bean Validation** en el backend actúa como verificación declarativa de las reglas de negocio en el límite de la API (`@NotBlank`, `@Pattern`, `@Size`, `@Email`), en línea con la convención de "Validación de datos" de 5.1.3.
-- **Revisión por pares obligatoria**: ningún Pull Request se fusiona sin que un integrante distinto al autor confirme que el código sigue la nomenclatura (`camelCase`/`PascalCase`/`kebab-case` según corresponda) y la arquitectura por capas (DDD) descrita en 5.1.3.
+- **Revisión por pares**: en los cambios que se integran mediante Pull Request, un integrante distinto al autor puede verificar que el código sigue la nomenclatura (`camelCase`/`PascalCase`/`kebab-case` según corresponda) y la arquitectura por capas (DDD) descrita en 5.1.3. Esta revisión no está forzada por el repositorio (ver el alcance real en 6.2.2).
 
 #### 6.2.1.2. Code Quality & Code Security
 
-El proyecto **no cuenta todavía con una herramienta dedicada de análisis estático** (como SonarQube, SonarLint o ESLint) integrada al repositorio ni al pipeline de CI. La calidad y seguridad del código se sostienen actualmente mediante:
+El frontend cuenta con **ESLint** como herramienta de análisis estático, integrada al repositorio (`eslint.config.js`, script `npm run lint`) y al pipeline `Frontend CI` como paso informativo: tiene `continue-on-error`, por lo que reporta hallazgos sin detener el pipeline. En la ejecución del 3 de octubre de 2026 detectó **44 problemas (todos de nivel error) en 19 archivos**, que corresponden a código previo a la incorporación de la herramienta y todavía no se han corregido:
+
+| Regla | Hallazgos | Qué detecta |
+| :--- | :---: | :--- |
+| `@typescript-eslint/no-explicit-any` | 12 | Uso del tipo `any`, que desactiva la verificación de tipos. |
+| `@angular-eslint/template/click-events-have-key-events` | 11 | Elementos con evento `click` sin equivalente de teclado (accesibilidad). |
+| `@angular-eslint/prefer-inject` | 9 | Inyección por constructor en lugar de la función `inject()`. |
+| `@angular-eslint/template/interactive-supports-focus` | 9 | Elementos interactivos que no reciben foco con el teclado (accesibilidad). |
+| `@typescript-eslint/no-duplicate-enum-values` | 4 | Valores duplicados dentro de un `enum`. |
+| `@angular-eslint/directive-selector` | 2 | Selectores de directiva que no siguen la convención configurada. |
+| `@typescript-eslint/array-type` | 1 | Estilo de declaración de tipos de arreglo. |
+
+![Salida de ESLint con los 44 hallazgos del frontend](assets/chapter-6/eslint-report.png)
+
+La aplicación móvil tiene configurado el paquete `flutter_lints` (`analysis_options.yaml`), que aplica reglas recomendadas de Dart/Flutter en el IDE y con `flutter analyze`, pero el pipeline `Mobile CI/CD` no ejecuta ese comando. El backend **no cuenta con una herramienta dedicada de análisis estático** (como SonarQube o SonarLint) integrada al pipeline. La calidad y seguridad del código se sostienen adicionalmente mediante:
 
 - **Inspecciones del IDE**: IntelliJ IDEA (backend) y WebStorm (frontend) señalan en tiempo real código muerto, imports no utilizados, complejidad excesiva y antipatrones comunes mientras se escribe el código, aunque sin un reporte centralizado ni umbrales de calidad exigidos por el pipeline.
 - **Spring Security** gestiona la autorización por rol de forma centralizada (`WebSecurityConfiguration`), evitando que la lógica de permisos quede dispersa o implementada de forma inconsistente entre controladores.
 - **Manejo centralizado de secretos**: credenciales de base de datos, JWT y de los proveedores externos (Brevo, Twilio) se inyectan exclusivamente mediante variables de entorno (`${VARIABLE:}`), nunca como valores hardcodeados en el repositorio.
 
-> Incorporar una herramienta de análisis estático automatizada (SonarQube/SonarCloud para el backend, ESLint para el frontend) como paso del pipeline de CI queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto — actualmente la detección de problemas de calidad depende del criterio del desarrollador y del revisor, no de una herramienta objetiva.
+> Quedan identificadas dos mejoras pendientes: (1) corregir los 44 hallazgos de ESLint y, una vez resueltos, volver el paso de lint bloqueante en el pipeline; y (2) incorporar análisis estático al backend (por ejemplo, SonarQube/SonarCloud). Hasta entonces, en el backend la detección de problemas de calidad depende del criterio del desarrollador y del revisor, no de una herramienta objetiva.
 
 ### 6.2.2. Reviews
 
-La revisión de código en NursePulse se realiza exclusivamente a través de **Pull Requests en GitHub**, como se describe en el Capítulo V (sección 5.1.2) y el Capítulo VII (sección 7.2.1):
+La revisión de código en NursePulse se apoya en los **Pull Requests de GitHub**, como se describe en el Capítulo V (sección 5.1.2) y el Capítulo VII (sección 7.2.1). Según el historial de los repositorios al 3 de octubre de 2026, se registraron 10 Pull Requests en Backend, 4 en Frontend, 4 en la aplicación móvil y 1 en la Landing Page. Varios del Backend siguen la convención de ramas descrita en el Capítulo V (`feature/sbar-structured-fields`, `feature/password-policy-ts01`, `fix/audit-log-null-metadata-and-500-handling`, entre otras).
 
-- Toda funcionalidad se desarrolla en una rama `feature/*` y se integra a la rama principal únicamente mediante un Pull Request.
-- El pipeline de CI correspondiente (`Backend CI`, `Frontend CI` o `Mobile CI/CD`) debe finalizar en estado exitoso antes de que el Pull Request pueda fusionarse.
-- Un integrante distinto al autor revisa el cambio, verificando correctitud funcional, cumplimiento de la guía de estilo (sección 6.2.1.1) y que no se introduzcan credenciales ni datos sensibles en el código.
+Alcance real de esta práctica:
 
-No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o Crucible); todo el proceso ocurre dentro de la interfaz nativa de Pull Requests de GitHub.
+- **No es un requisito forzado por el repositorio**: las ramas principales (`main` en Frontend y Backend, `deploy/render-docker` en el despliegue del Backend) no tienen reglas de protección de rama. Por eso el pipeline de CI no es técnicamente una condición para integrar cambios y no se exige la aprobación de un revisor.
+- **Parte de los cambios se integró por `push` directo**: en las etapas finales del proyecto, muchos commits se publicaron directamente a la rama principal, y cada `push` dispara el despliegue automático (ver Capítulo VII, sección 7.3). En esos casos la verificación recae en el pipeline de CI posterior al `push` y en la comprobación manual en producción (6.1.4).
+- **Cuando sí hay Pull Request**, otro integrante revisa el cambio verificando correctitud funcional, cumplimiento de la guía de estilo (sección 6.2.1.1) y que no se introduzcan credenciales ni datos sensibles.
+
+![Ejemplo de Pull Request revisado en el repositorio Backend, con sus verificaciones de CI](assets/chapter-6/pull-request-review.png)
+
+No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o Crucible); el proceso ocurre dentro de la interfaz nativa de Pull Requests de GitHub.
+
+> Activar reglas de protección de rama (CI exitoso y al menos una aprobación obligatoria antes de fusionar) queda identificado como una mejora pendiente para que la práctica de revisión sea verificable y no dependa de la disciplina del equipo.
 
 ## 6.3. Validation Interviews
 
