@@ -2,15 +2,15 @@
 
 ## 6.1. Testing Suites & Validation
 
-NursePulse cuenta con una suite de pruebas automatizadas de 61 pruebas en el backend (JUnit 5 + Mockito) y 29 pruebas en el frontend (Vitest), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI` y `Frontend CI`.
+NursePulse cuenta con una suite de pruebas automatizadas de 63 pruebas en el backend (JUnit 5 + Mockito), 31 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
 
 **Backend**
 
-![Resultado de la suite del backend: 61 pruebas, 0 fallos, BUILD SUCCESS](assets/chapter-6/61pruebas.png)
+![Resultado de la suite del backend: 0 fallos, BUILD SUCCESS](assets/chapter-6/61pruebas.png)
 
 **Front-end**
 
-![Resultado de la suite del frontend: 29 pruebas aprobadas](assets/chapter-6/frontend-tests-29.png)
+![Resultado de la suite del frontend: todas las pruebas aprobadas](assets/chapter-6/frontend-tests-29.png)
 
 ### 6.1.1. Core Entities Unit Tests.
 
@@ -18,8 +18,8 @@ Pruebas unitarias puras sobre entidades y value objects del dominio, sin depende
 
 | Clase de prueba | Módulo | Qué valida |
 | :--- | :--- | :--- |
-| `RoleTest` | IAM | Reglas del value object `Role` (rol por defecto, comparación por nombre). |
-| `SignUpResourceValidationTest` | IAM | Las 10 reglas de validación del registro (usuario, contraseña, nombre, email, teléfono, edad) mediante Jakarta Bean Validation. |
+| `RoleTest` | IAM | Reglas del value object `Role`: rol por defecto (`NURSE`), interpretación de nombres sin distinguir mayúsculas y rechazo de nombres vacíos. |
+| `SignUpResourceValidationTest` | IAM | 10 casos de validación del registro (usuario, contraseña, nombre, email, teléfono, edad y rechazo del rol `ADMIN`) mediante Jakarta Bean Validation. |
 | `SignUpCommandFromResourceAssemblerTest` | IAM | Transformación correcta de `SignUpResource` a `SignUpCommand`. |
 
 ### 6.1.2. Core Integration Tests.
@@ -29,13 +29,23 @@ Pruebas que levantan el contexto completo de Spring Boot (`@SpringBootTest`) par
 | Clase de prueba | Tipo | Qué valida |
 | :--- | :--- | :--- |
 | `ClinicalAuthorizationIntegrationTest` | Integración (`@SpringBootTest` + `MockMvc`) | 19 escenarios de autorización por rol (NURSE/DOCTOR/ADMIN) contra los endpoints reales de pacientes, signos vitales, SBAR, alertas y auditoría. |
-| `UserCommandServiceImplTest` | Unitaria con Mockito | Registro, inicio de sesión (incluyendo el bloqueo por email no verificado), conflictos de usuario/email/teléfono duplicado y verificación de cuenta. |
-| `AlertCommandServiceImplTest` | Unitaria con Mockito | Creación, atención y cierre de alertas; envío de SMS a médicos cuando la alerta es crítica. |
-| `AuditLogsControllerTest` | Unitaria con Mockito | Respuesta del controlador de auditoría ante resultados exitosos y fallidos. |
-| `AuditLogPdfExportServiceTest` | Unitaria | Generación de un PDF válido (magic bytes `%PDF`) a partir de una lista de entradas de auditoría. |
-| `BrevoEmailNotificationServiceTest` / `TwilioSmsNotificationServiceTest` | Unitaria | Manejo seguro de credenciales inválidas, destinatarios vacíos y fallos del proveedor externo, sin interrumpir el flujo principal. |
-| `TokenServiceImplTest` | Unitaria | Generación y validación de tokens JWT. |
-| `OpenApiConfigurationTest` | Unitaria | Configuración de la documentación Swagger/OpenAPI. |
+| `UserCommandServiceImplTest` | Unitaria con Mockito | Registro, inicio de sesión (incluyendo el bloqueo por email no verificado), conflictos de correo y de teléfono duplicados, y verificación de cuenta (token válido, desconocido y vencido). |
+| `AlertCommandServiceImplTest` | Unitaria con Mockito | Envío de SMS a los médicos con teléfono cuando la alerta es crítica (y no cuando no lo es), atención de una alerta abierta y cierre de una alerta atendida. |
+| `AuditLogsControllerTest` | Unitaria con Mockito | El actor de una entrada de auditoría se toma del usuario autenticado y no del cuerpo de la petición; cada exportación del PDF queda registrada en la auditoría con el usuario y la cantidad de entradas; y un fallo al registrar la exportación no impide la descarga. |
+| `AuditLogPdfExportServiceTest` | Unitaria | Generación de un PDF válido (magic bytes `%PDF`) a partir de una lista de entradas de auditoría, también cuando la lista está vacía. |
+| `BrevoEmailNotificationServiceTest` / `TwilioSmsNotificationServiceTest` | Unitaria | Manejo seguro de destinatario vacío, remitente o número de origen sin configurar y fallos del proveedor externo, sin interrumpir el flujo principal. |
+| `TokenServiceImplTest` | Unitaria | Generación y validación de tokens JWT, rechazo de tokens mal formados y de secretos débiles. |
+| `OpenApiConfigurationTest` | Unitaria | Configuración de la documentación Swagger/OpenAPI (origen de las peticiones interactivas de Swagger UI). |
+| `BackendNursepulseApplicationTests` | Integración (`@SpringBootTest`) | Que el contexto completo de la aplicación arranque sin errores. |
+
+**Pruebas de la aplicación móvil (Flutter).** La app móvil se verifica con `flutter test` (21 pruebas unitarias y de widgets), un paso obligatorio del job `Verify Flutter` de `Mobile CI/CD` (ver Capítulo VII, sección 7.1.2). Cubren el módulo de identidad y acceso:
+
+| Archivo de prueba | Pruebas | Qué valida |
+| :--- | :---: | :--- |
+| `test/iam/registration_test.dart` | 11 | Reglas de registro y acceso: usuario, nombres, teléfono de nueve dígitos, edad, correo, contraseña, rechazo del rol Admin en el registro público, payload exacto enviado a la API y conservación de los roles reales sin conceder Nurse por defecto. |
+| `test/iam/session_test.dart` | 4 | Restauración de sesión: rol Doctor real, rol desconocido sin sesión autenticada, fallo de almacenamiento sin dejar el *splash* cargando y cierre de sesión ante un evento 401. |
+| `test/iam/sign_up_view_test.dart` | 5 | Pantalla de registro (widget): errores con campos vacíos, bloqueo por edad o confirmación inválidas, envío completo una sola vez, mensaje real ante un HTTP 400 y normalización del teléfono pegado. |
+| `test/widget_test.dart` | 1 | Sin sesión, la aplicación abre la pantalla de inicio de sesión. |
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -50,7 +60,7 @@ No existe automatización de pruebas de sistema end-to-end (tipo Selenium/Playwr
 - Registro de usuario → verificación de cuenta por correo (Brevo) → inicio de sesión.
 - Creación de pacientes, registro de signos vitales, eventos clínicos y traspasos SBAR con las validaciones de formato (nombres, documento, fecha de nacimiento, límites de caracteres).
 - Generación de una alerta crítica → solicitud de SMS a los médicos registrados (Twilio). La solicitud llega correctamente a la API de Twilio, pero la entrega del mensaje **no pudo completarse**: la cuenta de prueba (*trial*) de Twilio solo permite enviar a números verificados y exige una plantilla de contenido que requiere una cuenta de pago. Por eso esta integración queda validada a nivel de código y de pruebas unitarias (6.1.2), no de entrega real.
-- Exportación del registro de auditoría a PDF, descargado y verificado directamente desde la interfaz.
+- Exportación del registro de auditoría a PDF, descargado y verificado directamente desde la interfaz. Cada exportación queda registrada en la propia auditoría (usuario y cantidad de entradas exportadas); el PDF en sí no se almacena.
 - Flujo de permisos por rol (NURSE/DOCTOR/ADMIN) replicado en la interfaz real, no solo a nivel de API.
 
 Evidencia del primer flujo: el correo de verificación recibido y la pantalla de confirmación de cuenta.
@@ -98,7 +108,7 @@ El frontend cuenta con **ESLint** como herramienta de análisis estático, integ
 
 ![Salida de ESLint con los 44 hallazgos del frontend](assets/chapter-6/eslint-report.png)
 
-La aplicación móvil tiene configurado el paquete `flutter_lints` (`analysis_options.yaml`), que aplica reglas recomendadas de Dart/Flutter en el IDE y con `flutter analyze`, pero el pipeline `Mobile CI/CD` no ejecuta ese comando. El backend **no cuenta con una herramienta dedicada de análisis estático** (como SonarQube o SonarLint) integrada al pipeline. La calidad y seguridad del código se sostienen adicionalmente mediante:
+La aplicación móvil tiene configurado el paquete `flutter_lints` (`analysis_options.yaml`), y el job `Verify Flutter` de `Mobile CI/CD` ejecuta `flutter analyze` y `dart format --set-exit-if-changed` como pasos obligatorios: a diferencia del lint del frontend, aquí un hallazgo detiene el pipeline. El backend **no cuenta con una herramienta dedicada de análisis estático** (como SonarQube o SonarLint) integrada al pipeline. La calidad y seguridad del código se sostienen adicionalmente mediante:
 
 - **Inspecciones del IDE**: IntelliJ IDEA (backend) y WebStorm (frontend) señalan en tiempo real código muerto, imports no utilizados, complejidad excesiva y antipatrones comunes mientras se escribe el código, aunque sin un reporte centralizado ni umbrales de calidad exigidos por el pipeline.
 - **Spring Security** gestiona la autorización por rol de forma centralizada (`WebSecurityConfiguration`), evitando que la lógica de permisos quede dispersa o implementada de forma inconsistente entre controladores.
@@ -108,7 +118,7 @@ La aplicación móvil tiene configurado el paquete `flutter_lints` (`analysis_op
 
 ### 6.2.2. Reviews
 
-La revisión de código en NursePulse se apoya en los **Pull Requests de GitHub**, como se describe en el Capítulo V (sección 5.1.2) y el Capítulo VII (sección 7.2.1). Según el historial de los repositorios al 3 de octubre de 2026, se registraron 10 Pull Requests en Backend, 4 en Frontend, 4 en la aplicación móvil y 1 en la Landing Page. Varios del Backend siguen la convención de ramas descrita en el Capítulo V (`feature/sbar-structured-fields`, `feature/password-policy-ts01`, `fix/audit-log-null-metadata-and-500-handling`, entre otras).
+La revisión de código en NursePulse se apoya en los **Pull Requests de GitHub**, como se describe en el Capítulo V (sección 5.1.2) y el Capítulo VII (sección 7.2.1). Según el historial de los repositorios al 3 de octubre de 2026, se registraron 10 Pull Requests en Backend, 4 en Frontend, 5 en la aplicación móvil y 1 en la Landing Page. Varios del Backend siguen la convención de ramas descrita en el Capítulo V (`feature/sbar-structured-fields`, `feature/password-policy-ts01`, `fix/audit-log-null-metadata-and-500-handling`, entre otras).
 
 Alcance real de esta práctica:
 
