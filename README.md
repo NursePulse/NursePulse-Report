@@ -31,7 +31,7 @@ Cada uno de los tres repositorios de código de NursePulse cuenta con su propio 
 | :--- | :--- | :--- |
 | Checkout | `actions/checkout@v4` | Descarga el código fuente del repositorio. |
 | Set up JDK | `actions/setup-java@v4` (Temurin 26) | Configura el entorno de ejecución de Java, con caché de dependencias Maven. |
-| Build and run tests | `./mvnw -B clean verify` | Compila el proyecto y ejecuta la suite completa de pruebas unitarias e de integración (actualmente 61 pruebas, ver Capítulo VI sección 6.1). |
+| Build and run tests | `./mvnw -B clean verify` | Compila el proyecto y ejecuta la suite completa de pruebas unitarias e de integración (actualmente 63 pruebas, ver Capítulo VI sección 6.1). |
 
 **Frontend CI** (`Application-Web-Nurse-Pulse/.github/workflows/ci.yml`)
 
