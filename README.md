@@ -11,6 +11,8 @@ El equipo utiliza un conjunto de herramientas de pruebas automatizadas para aseg
 | **JUnit 5** | Framework de pruebas unitarias (TDD) | Incluido mediante `spring-boot-starter-test`, se usa para probar entidades de dominio, servicios de aplicación y recursos REST del backend (Spring Boot). | Verificar que las unidades de lógica de negocio (agregados, command services, validaciones) se comporten como se espera. |
 | **Mockito** | Herramienta de simulaciones (TDD) | Se usa en pruebas como `UserCommandServiceImplTest` y `AuditLogsControllerTest` para simular repositorios y servicios colaboradores sin depender de la base de datos real. | Aislar la unidad bajo prueba de sus dependencias externas. |
 | **Vitest** | Framework de pruebas unitarias (Frontend) | Ejecutado mediante el builder `@angular/build:unit-test` de Angular, corre las pruebas de componentes, stores y assemblers del Frontend Web Application. | Validar la lógica de los componentes standalone, signals y stores de Angular antes de integrarlos. |
+| **ESLint** (`angular-eslint`) | Análisis estático (Frontend) | Se ejecuta con `npm run lint` dentro del pipeline del Frontend; revisa el código TypeScript y las plantillas de Angular. | Detectar problemas de calidad y malas prácticas sin ejecutar el código. Corre en modo informativo (`continue-on-error`), por lo que sus hallazgos no bloquean el pipeline. |
+| **Lighthouse** | Auditoría de calidad web (Frontend) | Se ejecuta con `npx lighthouse` en el pipeline del Frontend contra la página de inicio de sesión desplegada en Vercel y genera un reporte JSON y HTML. | Medir rendimiento, accesibilidad, buenas prácticas y SEO de la aplicación en producción. Es informativo y no bloquea el pipeline. |
 | **GitHub Actions** | Orquestador de CI/CD | Ejecuta automáticamente los pipelines de build y pruebas en cada repositorio (Backend, Frontend, Mobile) ante cada `push`/`pull request`. | Automatizar la integración continua sin depender de ejecución manual. |
 
 **Prácticas:**
@@ -38,8 +40,11 @@ Cada uno de los tres repositorios de código de NursePulse cuenta con su propio 
 | Checkout | `actions/checkout@v4` | Descarga el código fuente del repositorio. |
 | Set up Node | `actions/setup-node@v4` (Node 22.x) | Configura el entorno de ejecución de Node.js, con caché de dependencias npm. |
 | Install dependencies | `npm ci` | Instala las dependencias de forma reproducible según `package-lock.json`. |
+| Lint | `npm run lint` (ESLint) | Análisis estático del código. Tiene `continue-on-error: true`: informa hallazgos pero no detiene el pipeline. |
 | Run unit tests | `npm test` (Vitest) | Ejecuta las pruebas unitarias de componentes, stores y servicios de Angular. |
 | Build | `npm run build` (`ng build`) | Genera el build de producción, validando que no existan errores de compilación de TypeScript/Angular. |
+| Lighthouse audit | `npx lighthouse` | Audita la página `/sign-in` desplegada en Vercel y genera un reporte JSON y HTML. Tiene `continue-on-error: true`. |
+| Upload Lighthouse report | `actions/upload-artifact@v4` | Publica el reporte como artifact `lighthouse-report` del run, descargable desde la pestaña Actions de GitHub. |
 
 **Mobile CI/CD** (`MultiPlatform-App-NursePulse/.github/workflows/ci.yml`)
 
@@ -50,7 +55,7 @@ Cada uno de los tres repositorios de código de NursePulse cuenta con su propio 
 | Install dependencies | `flutter pub get` | Resuelve las dependencias del proyecto móvil. |
 | Build release APK | `flutter build apk --release` | Compila el APK de producción, apuntando a la URL pública del backend mediante `--dart-define`. |
 
-En los tres casos, un fallo en cualquiera de los pasos detiene el pipeline e impide que el código avance hacia las siguientes etapas (Delivery/Deployment), evitando que código roto llegue a producción.
+En los tres casos, un fallo en cualquiera de los pasos obligatorios (instalación, pruebas y build) detiene el pipeline e impide que el código avance hacia las siguientes etapas (Delivery/Deployment), evitando que código roto llegue a producción. Las únicas excepciones son los pasos informativos del Frontend (Lint y Lighthouse), que reportan resultados sin bloquear el flujo.
 
 ## 7.2. Continuous Delivery
 
@@ -136,7 +141,7 @@ El objetivo de Continuous Deployment en NursePulse es que cada cambio fusionado 
 
 ### 7.4.1. Tools and Practices
 
-El monitoreo continuo de NursePulse combina dos capas complementarias: un *ping* interno programado (keep-alive) y un monitor externo independiente de la plataforma de hosting.
+El monitoreo continuo de NursePulse combina tres capas complementarias: un *ping* interno programado (keep-alive), un monitor externo de disponibilidad independiente de la plataforma de hosting, y la telemetría de métricas del backend enviada a Grafana Cloud. Además, una auditoría de Lighthouse sobre el frontend desplegado mide su calidad web en cada ejecución del CI.
 
 - **Spring Boot Actuator**: expone el endpoint `/actuator/health`, utilizado tanto manualmente (verificación post-despliegue) como automáticamente (ver siguiente punto) para confirmar que el backend y su conexión a base de datos están operativos.
 - **GitHub Actions (workflow programado)**: el workflow `keep-alive.yml` del repositorio Backend se ejecuta automáticamente cada 6 horas (`cron: '0 */6 * * *'`) y hace una petición HTTP al endpoint de salud del backend en producción.
@@ -145,17 +150,51 @@ El monitoreo continuo de NursePulse combina dos capas complementarias: un *ping*
 
 ![Monitoreo UptimeRobot del backend](assets/chapter-7/uptimerobot-dashboard.png)
 
+- **Grafana Cloud (métricas del backend)**: el backend envía sus métricas de ejecución a una cuenta gratuita de Grafana Cloud mediante el protocolo OpenTelemetry (OTLP). A diferencia de UptimeRobot, que solo informa si el servicio responde o no, Grafana permite observar su comportamiento interno: uso de memoria de la JVM por área (*heap* y *non-heap*), solicitudes HTTP atendidas, tiempo de actividad del proceso, entre otras. La integración sí forma parte del repositorio Backend:
+  - **Código**: la dependencia `micrometer-registry-otlp` y el módulo `spring-boot-starter-opentelemetry` en el `pom.xml`, junto con tres propiedades de `application-prod.properties` (`management.otlp.metrics.export.url`, `...headers.Authorization` y `...step=1m`). No se escribió ninguna clase adicional.
+  - **Credenciales**: el endpoint y el encabezado de autenticación se leen de las variables de entorno `GRAFANA_OTLP_ENDPOINT` y `GRAFANA_OTLP_AUTH_HEADER`, configuradas en el panel de Render y nunca versionadas en el repositorio.
+  - **Modelo de envío (*push*)**: es el propio backend quien envía las métricas cada minuto. Se descartó el modelo *pull* (que Grafana consulte un endpoint `/actuator/prometheus`) porque exigiría mantener un agente recolector (Grafana Alloy) ejecutándose de forma permanente en algún servidor, que el proyecto no tiene.
+
+![Métricas de memoria de la JVM del backend en Grafana Cloud (Explore)](assets/chapter-7/grafana-jvm-memory.png)
+
+- **Lighthouse (calidad web del frontend)**: el pipeline `Frontend CI` ejecuta una auditoría de Lighthouse sobre la página de inicio de sesión desplegada en Vercel (`/sign-in`) y publica el reporte como artifact de GitHub Actions. La medición realizada el 3 de octubre de 2026 arrojó:
+
+| Categoría | Puntaje |
+| :--- | :---: |
+| Rendimiento (*Performance*) | 96 |
+| Accesibilidad (*Accessibility*) | 100 |
+| Buenas prácticas (*Best Practices*) | 100 |
+| SEO | 82 |
+
+  Las métricas de carga que sustentan el puntaje de rendimiento fueron: *First Contentful Paint* 1,8 s, *Largest Contentful Paint* 2,3 s, *Total Blocking Time* 140 ms, *Cumulative Layout Shift* 0 y *Speed Index* 2,3 s. El puntaje de SEO es el más bajo de las cuatro categorías y queda identificado como oportunidad de mejora. La auditoría cubre únicamente la pantalla de inicio de sesión, que es la única accesible sin autenticar; las vistas internas no se auditan.
+
+![Reporte de Lighthouse sobre la página de inicio de sesión desplegada](assets/chapter-7/lighthouse-report.png)
+
 ### 7.4.2. Monitoring Pipeline Components
 
-El pipeline de monitoreo actual consiste en un único flujo programado:
+El pipeline de monitoreo actual consiste en tres flujos independientes:
+
+**Flujo 1: ping programado (keep-alive)**
 
 1. **Disparo programado**: GitHub Actions ejecuta el workflow `Keep-alive (Render + Aiven MySQL)` cada 6 horas, o manualmente mediante `workflow_dispatch`.
 2. **Ping de salud**: el workflow ejecuta `curl` contra `https://backend-nursepulse-qfct.onrender.com/actuator/health`.
 3. **Efecto doble**: la petición cumple dos propósitos — (a) verificar que el servicio responde, y (b) evitar que el backend (en el plan gratuito de Render) entre en estado inactivo por falta de tráfico, y que la conexión a la base de datos en Aiven se mantenga activa.
 
+**Flujo 2: telemetría de métricas (Grafana Cloud)**
+
+1. **Recolección**: Micrometer, integrado en Spring Boot Actuator, registra de forma continua las métricas de la JVM y de las solicitudes HTTP del backend en ejecución en Render.
+2. **Envío**: cada minuto, el registro OTLP de Micrometer envía las métricas por HTTPS al *gateway* OTLP de Grafana Cloud, autenticándose con el encabezado leído de la variable de entorno.
+3. **Consulta**: las métricas quedan disponibles para consulta y graficación en Grafana (sección *Explore*), con una retención definida por el plan gratuito.
+
+**Flujo 3: auditoría de calidad web (Lighthouse)**
+
+1. **Disparo**: se ejecuta en cada `push` o `pull request` hacia `main` del repositorio Frontend, después del build.
+2. **Auditoría**: Lighthouse analiza la versión desplegada en Vercel de la página `/sign-in`.
+3. **Publicación**: el reporte JSON y HTML se sube como artifact `lighthouse-report` del run de GitHub Actions. Como el paso tiene `continue-on-error`, un puntaje bajo no detiene el pipeline.
+
 ### 7.4.3. Alerting Pipeline Components
 
-NursePulse no cuenta con un sistema de alertas de métricas (como Prometheus/Alertmanager o Grafana), pero sí combina alertas nativas de cada plataforma del pipeline con un monitor externo de disponibilidad (UptimeRobot, sección 7.4.1):
+NursePulse recibe métricas de ejecución del backend en Grafana Cloud (sección 7.4.1), pero todavía no tiene reglas de alerta configuradas sobre ellas. Las alertas actuales combinan las notificaciones nativas de cada plataforma del pipeline con un monitor externo de disponibilidad (UptimeRobot, sección 7.4.1):
 
 **Alertas configuradas:**
 
@@ -168,10 +207,10 @@ NursePulse no cuenta con un sistema de alertas de métricas (como Prometheus/Ale
 
 **Lo que todavía no existe:**
 
-- Umbrales de rendimiento (latencia, uso de CPU/memoria) que generen una alerta automática — UptimeRobot detecta caídas totales del servicio, pero no degradaciones graduales de performance.
+- Umbrales de rendimiento (latencia, uso de memoria) que generen una alerta automática — UptimeRobot detecta caídas totales del servicio, pero no degradaciones graduales de performance. Las métricas necesarias ya llegan a Grafana, por lo que falta únicamente definir las reglas de alerta.
 - Un canal de alertas centralizado para el equipo (Slack, Microsoft Teams); cada integrante depende del correo asociado a su propia cuenta de GitHub/Render/Vercel/UptimeRobot.
 
-> Implementar un sistema de alertas de métricas (por ejemplo, Prometheus + Alertmanager o Grafana) para detectar degradaciones de rendimiento antes de que se conviertan en una caída total queda identificado como una mejora pendiente, priorizada en las recomendaciones del proyecto.
+> Definir reglas de alerta en Grafana (por ejemplo, sobre uso de memoria de la JVM o tiempo de respuesta HTTP) para detectar degradaciones de rendimiento antes de que se conviertan en una caída total queda identificado como la mejora pendiente más inmediata, ya que la recolección de métricas está operativa.
 
 ### 7.4.4. Notification Pipeline Components
 
