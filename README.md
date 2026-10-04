@@ -77,6 +77,28 @@ Evidencia del flujo de exportación de auditoría:
 
 ![Reporte de Lighthouse sobre la pantalla de inicio de sesión desplegada](assets/chapter-6/lighthouse-report.png)
 
+### 6.1.5. Trazabilidad: historia de usuario → aplicación → base de datos → prueba
+
+Para cada historia con prueba unitaria asociada se indica cómo ejecutarla en la aplicación, qué tabla de MySQL cambia (y la consulta para comprobarlo) y la prueba que la respalda. Las pruebas del backend se ejecutan con `./mvnw test -Dtest=<Clase>`; las del frontend con `npm test`; las de la aplicación móvil con `flutter test`.
+
+| Historia | Cómo ejecutarla en la aplicación | Tabla y consulta de verificación | Prueba unitaria asociada |
+| :--- | :--- | :--- | :--- |
+| US-23 Registro, TS-01 | Web `/sign-up` o app móvil: completar el formulario. | `users`, `user_roles`: `SELECT id, username, email, email_verified FROM users ORDER BY id DESC LIMIT 1;` | `SignUpResourceValidationTest`, `SignUpCommandFromResourceAssemblerTest`, `UserCommandServiceImplTest` (`shouldCreateUserWithEncodedPasswordAndResolvedRole`, correo y teléfono duplicados), `sign-up.spec.ts`, `registration_test.dart` |
+| US-24 Verificar correo | Abrir el enlace recibido por correo. | `users`: `SELECT username, email_verified, verification_token FROM users WHERE username = '<usuario>';` | `UserCommandServiceImplTest` (token válido, desconocido y vencido), `BrevoEmailNotificationServiceTest` |
+| US-25 Iniciar sesión | Web `/sign-in` o app móvil. | No modifica tablas; el resultado es el token JWT. | `UserCommandServiceImplTest` (correo verificado, no verificado y credenciales inválidas), `TokenServiceImplTest`, `sign-in.spec.ts`, `auth.store.spec.ts`, `session_test.dart` |
+| US-27 y US-28 Pacientes | Web `/patients`: registrar, editar, ver lista y detalle. | `patients`: `SELECT id, first_name, last_name, document_number, status FROM patients ORDER BY id DESC LIMIT 5;` | `PatientServicesTest` (alta con valores por defecto, documento duplicado, fechas inválidas, edición, 404, eliminación, consulta) |
+| US-13, US-14 y US-15 Traspaso SBAR, TS-04 | Web `/sbar`: crear traspaso, consultar y confirmar recepción. | `handovers`: `SELECT id, patient_id, status, incoming_nurse_id, description FROM handovers ORDER BY id DESC LIMIT 5;` | `HandoverServicesTest` (estructura SBAR y estado `PENDING`, campos obligatorios, confirmación, 404, consulta por paciente y rango de fechas) |
+| US-16 y US-17 Signos vitales, TS-03 | Web `/vital-signs`: registrar y ver historial del paciente. | `vital_sign_records`: `SELECT id, patient_id, heart_rate, oxygen_saturation, risk_level, recorded_at FROM vital_sign_records ORDER BY id DESC LIMIT 5;` | `VitalSignServicesTest` (registro válido, valores fuera de rango, presión arterial, historial y último registro) |
+| US-18 y US-19 Eventos clínicos, TS-03 | Web `/clinical-events`: registrar y ver historial. | `clinical_events`: `SELECT id, patient_id, event_type, severity, registered_by, occurred_at FROM clinical_events ORDER BY id DESC LIMIT 5;` | `ClinicalEventServicesTest` (registro con responsable y fecha, error de persistencia, historial por paciente) |
+| US-31, US-32 y US-33 Alertas | Web `/alerts` o `/patients/:id/monitoring`: ver, atender y cerrar alertas. | `alerts`: `SELECT id, patient_id, severity, status FROM alerts ORDER BY id DESC LIMIT 5;` | `AlertCommandServiceImplTest` (alerta crítica y aviso por SMS a médicos, atender y cerrar), `notification.store.spec.ts` |
+| US-35 y US-36 Auditoría y PDF, TS-05 | Web `/audit` como médico o administrador: consultar y exportar a PDF. | `audit_logs`: `SELECT id, action_type, actor, created_at FROM audit_logs ORDER BY id DESC LIMIT 5;` (la exportación genera una entrada nueva). | `AuditLogsControllerTest`, `AuditLogPdfExportServiceTest`, `audit.store.spec.ts` |
+| TS-07 Control de acceso por rol | Iniciar sesión con otro rol e intentar una acción no permitida: el API responde 403. | No modifica tablas. | `ClinicalAuthorizationIntegrationTest` (19 casos), `RoleTest` |
+| US-38 Aplicación móvil | `flutter run`: iniciar sesión y navegar. | Las mismas tablas que la web. | `connection_test.dart`, `session_test.dart`, `sign_up_view_test.dart` |
+
+Las pruebas de pacientes, traspasos SBAR, signos vitales y eventos clínicos se agregaron en el PR [NursePulse/Backend-NursePulse#11](https://github.com/NursePulse/Backend-NursePulse/pull/11) (89 pruebas en total en el backend una vez integrado).
+
+**Historias que todavía no tienen prueba unitaria propia:** US-01 a US-12 (Landing), US-20, US-21, US-22, US-26, US-29, US-30, US-34, US-37, US-39, TS-02 (se cubre de forma indirecta con `PatientServicesTest`), TS-06, TS-08, TS-09 y TS-10 (`OpenApiConfigurationTest`). Para estas historias la verificación se hizo ejecutándolas contra el sistema y comprobando la base de datos, no con una prueba automatizada.
+
 ## 6.2. Static testing & Verification
 
 A diferencia de la sección 6.1 (pruebas dinámicas, que ejecutan el código), esta sección cubre la verificación **estática** del proyecto: revisión de convenciones de código y de la calidad/seguridad del código fuente sin necesidad de ejecutarlo.
