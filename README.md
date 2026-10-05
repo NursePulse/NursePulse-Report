@@ -2030,43 +2030,6 @@ Cuadro de Epics, User Stories y Technical Stories
 
 <br>
 
-<!-- US-37 -->
-<table width="100%">
-  <tr>
-    <th width="20%">Story ID</th>
-    <th width="30%">User</th>
-    <th width="25%">Priority</th>
-    <th width="25%">Epic</th>
-  </tr>
-  <tr>
-    <td align="center"><b>US-37</b></td>
-    <td>Usuario</td>
-    <td>Baja</td>
-    <td>EP-11</td>
-  </tr>
-  <tr>
-    <th>Title</th>
-    <td colspan="3">Cambiar el idioma de la aplicación</td>
-  </tr>
-  <tr>
-    <th colspan="4">Description</th>
-  </tr>
-  <tr>
-    <td colspan="4">Como usuario, quiero cambiar el idioma entre español e inglés para usar la aplicación en mi idioma.</td>
-  </tr>
-  <tr>
-    <th colspan="4">Acceptance Criteria</th>
-  </tr>
-  <tr>
-    <td colspan="4">
-      <b>Given</b> que el usuario elige un idioma, <b>When</b> confirma el cambio, <b>Then</b> la interfaz se muestra en ese idioma.<br><br>
-      <b>Given</b> que el usuario volvió a abrir la aplicación, <b>When</b> la aplicación carga, <b>Then</b> conserva el idioma elegido.
-    </td>
-  </tr>
-</table>
-
-<br>
-
 <!-- US-38 -->
 <table width="100%">
   <tr>
@@ -2301,7 +2264,7 @@ Cuadro de Epics, User Stories y Technical Stories
 | **EP-08** | Pacientes y monitoreo | US-27 a US-30 | Gestionar pacientes y consultar su monitoreo y los indicadores de la unidad. |
 | **EP-09** | Alertas clínicas | US-31 a US-33 | Generar, atender, cerrar y notificar alertas por signos vitales fuera de rango. |
 | **EP-10** | Reportes y auditoría | US-34 a US-36 | Generar reportes y consultar o exportar la auditoría. |
-| **EP-11** | Plataforma y multiplataforma | US-37 a US-39 | Idioma de la aplicación, aplicación móvil y planes de suscripción. |
+| **EP-11** | Plataforma y multiplataforma | US-38 y US-39 | Aplicación móvil y planes de suscripción. |
 
 La distribución de Epics, User Stories y Technical Stories permite mantener trazabilidad entre la investigación de usuarios, los Business Goals, el Impact Mapping, el Product Backlog y las funcionalidades implementadas en los sprints del proyecto.
 
@@ -2364,19 +2327,18 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 | 34 | US-34 | Generar reportes clínicos | Como médico, quiero generar un reporte de un periodo para sustentar el seguimiento clínico. | 5 |
 | 35 | US-35 | Consultar el registro de auditoría | Como administrador o médico, quiero consultar la auditoría para conocer quién hizo qué y cuándo. | 5 |
 | 36 | US-36 | Exportar la auditoría a PDF | Como administrador, quiero exportar la auditoría a PDF para compartir evidencia verificable. | 3 |
-| 37 | US-37 | Cambiar el idioma de la aplicación | Como usuario, quiero cambiar el idioma entre español e inglés para usar la aplicación en mi idioma. | 2 |
-| 38 | US-38 | Usar NursePulse desde la aplicación móvil | Como enfermera cardiovascular, quiero usar NursePulse desde mi celular para registrar y consultar información en el punto de atención. | 8 |
-| 39 | US-39 | Consultar los planes de suscripción | Como administrador, quiero ver los planes disponibles para conocer las opciones del servicio. | 3 |
-| 40 | TS-02 | Gestión de pacientes mediante API | Como Developer, deseo exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular. | 5 |
-| 41 | TS-03 | Gestión de registros clínicos mediante API | Como Developer, deseo exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones. | 8 |
-| 42 | TS-04 | Gestión de traspasos SBAR mediante API | Como Developer, deseo implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno. | 5 |
-| 43 | TS-05 | Trazabilidad de acciones clínicas | Como Developer, deseo registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada. | 5 |
-| 44 | TS-01 | Autenticación de usuarios | Como Developer, deseo implementar autenticación para proteger el acceso a recursos clínicos del sistema. | 5 |
-| 45 | TS-06 | Manejo consistente de errores del API | Como Developer, deseo estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend. | 3 |
-| 46 | TS-07 | Control de acceso por rol | Como Developer, quiero restringir cada recurso del API según el rol del usuario para proteger la información clínica. | 5 |
-| 47 | TS-08 | Integración y despliegue continuos | Como Developer, quiero ejecutar pruebas y análisis automáticos en cada cambio y desplegar de forma continua para detectar errores a tiempo. | 5 |
-| 48 | TS-09 | Observabilidad con Grafana Cloud | Como Developer, quiero enviar métricas del backend a Grafana Cloud para monitorear su salud. | 3 |
-| 49 | TS-10 | Documentación OpenAPI del API | Como Developer, quiero documentar el API con OpenAPI para facilitar su consumo por el frontend y la app móvil. | 2 |
+| 37 | US-38 | Usar NursePulse desde la aplicación móvil | Como enfermera cardiovascular, quiero usar NursePulse desde mi celular para registrar y consultar información en el punto de atención. | 8 |
+| 38 | US-39 | Consultar los planes de suscripción | Como administrador, quiero ver los planes disponibles para conocer las opciones del servicio. | 3 |
+| 39 | TS-02 | Gestión de pacientes mediante API | Como Developer, deseo exponer endpoints de pacientes para crear, consultar y actualizar información básica del paciente cardiovascular. | 5 |
+| 40 | TS-03 | Gestión de registros clínicos mediante API | Como Developer, deseo exponer endpoints de registros clínicos para permitir el registro y consulta de signos vitales, eventos e indicaciones. | 8 |
+| 41 | TS-04 | Gestión de traspasos SBAR mediante API | Como Developer, deseo implementar endpoints de traspasos SBAR para registrar y consultar entregas de turno. | 5 |
+| 42 | TS-05 | Trazabilidad de acciones clínicas | Como Developer, deseo registrar auditoría de acciones clínicas para conservar responsable, fecha y tipo de operación realizada. | 5 |
+| 43 | TS-01 | Autenticación de usuarios | Como Developer, deseo implementar autenticación para proteger el acceso a recursos clínicos del sistema. | 5 |
+| 44 | TS-06 | Manejo consistente de errores del API | Como Developer, deseo estandarizar las respuestas de error para facilitar el consumo del API por parte del frontend. | 3 |
+| 45 | TS-07 | Control de acceso por rol | Como Developer, quiero restringir cada recurso del API según el rol del usuario para proteger la información clínica. | 5 |
+| 46 | TS-08 | Integración y despliegue continuos | Como Developer, quiero ejecutar pruebas y análisis automáticos en cada cambio y desplegar de forma continua para detectar errores a tiempo. | 5 |
+| 47 | TS-09 | Observabilidad con Grafana Cloud | Como Developer, quiero enviar métricas del backend a Grafana Cloud para monitorear su salud. | 3 |
+| 48 | TS-10 | Documentación OpenAPI del API | Como Developer, quiero documentar el API con OpenAPI para facilitar su consumo por el frontend y la app móvil. | 2 |
 
 #### Distribución por bloques funcionales
 
@@ -2390,14 +2352,14 @@ La estimación se realiza utilizando Story Points con valores **1, 2, 3, 5 y 8**
 | **Soporte a decisiones clínicas** | US-22, US-31 a US-33 | Identificar cambios críticos y gestionar alertas. |
 | **Cuenta y acceso** | US-23 a US-26 | Registro, verificación de correo, inicio de sesión y roles. |
 | **Pacientes y monitoreo** | US-27 a US-30 | Gestión de pacientes, monitoreo y dashboard. |
-| **Reportes y plataforma** | US-34, US-37 a US-39 | Reportes, idioma, aplicación móvil y planes de suscripción. |
+| **Reportes y plataforma** | US-34, US-38 y US-39 | Reportes, aplicación móvil y planes de suscripción. |
 | **RESTful API y plataforma técnica** | TS-01 a TS-10 | Recursos técnicos del backend, seguridad, CI/CD, observabilidad y documentación. |
 
 #### Relación del Product Backlog con los Business Goals
 
 | Business Goal | Historias principales relacionadas | Justificación |
 | ------------- | ---------------------------------- | ------------- |
-| **BG-01** | US-01 a US-12, US-37 | Estas historias permiten comunicar el valor de Nurse Pulse, generar confianza y facilitar contacto desde la Landing Page. |
+| **BG-01** | US-01 a US-12 | Estas historias permiten comunicar el valor de Nurse Pulse, generar confianza y facilitar contacto desde la Landing Page. |
 | **BG-02** | US-13, US-14, US-15, TS-04 | Estas historias permiten validar el flujo de traspaso SBAR digital con usuarios clínicos e instituciones. |
 | **BG-03** | US-16, US-17, US-19, US-21, US-29, US-30 | Estas historias reducen fricción al registrar y consultar información clínica relevante. |
 | **BG-04** | US-13, US-16, US-18, US-27, US-38, TS-02, TS-03, TS-04 | Estas historias permiten reemplazar registros físicos complementarios por flujos digitales funcionales en web y móvil. |
