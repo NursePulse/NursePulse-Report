@@ -307,3 +307,150 @@ No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o C
 - **Conclusiones y Veredicto:**
   - **Puntos Fuertes y Débiles:** Destacó la centralización instantánea de constantes críticas y la eliminación del rastreo de carpetas físicas; señaló como deficiencia la falta de visualización gráfica de tendencias temporales y la ausencia del plan farmacológico activo en la misma interfaz.
   - **Disposición de Adopción:** Disposición inmediata para integrar la plataforma en sus pases de visita y guardias médicas. Identificó como barrera de adopción crítica la ausencia de interoperabilidad con el sistema informático hospitalario central (HIS/EHR) de la clínica, subrayando que el cuerpo médico rechazaría la solución si los obliga a consultar o alimentar dos sistemas paralelos desarticulados.
+
+### 6.3.3. Evaluaciones según heurísticas
+
+#### APP A EVALUAR: **NursePulse**
+
+---
+
+El alcance de esta evaluación heurística comprende la revisión de la usabilidad de las siguientes tareas clave en la plataforma web y la aplicación móvil de NursePulse:
+
+1. Inicio de sesión y control de acceso basado en roles (NURSE, DOCTOR, ADMIN).
+2. Registro de constantes y signos vitales al pie de cama desde la aplicación móvil.
+3. Formulación y envío de traspasos de turno clínico bajo la metodología estructurada SBAR.
+4. Visualización, priorización y atención de alertas clínicas críticas en la consola web.
+5. Cierre y resolución de alertas médicas por parte de perfiles autorizados.
+6. Consulta de la bitácora de eventos y exportación de reportes de auditoría clínica en PDF.
+7. Visualización del perfil del paciente y consulta de evolución clínica reciente.
+8. Gestión y listado de usuarios clínicos en el panel administrativo.
+
+**No están incluidas en esta versión de la evaluación las siguientes tareas:**
+
+1. Configuración de infraestructura externa y tuberías de monitoreo DevOps (Grafana Cloud, UptimeRobot).
+2. Procesamiento de pagos y pasarela de suscripción para clínicas en el portal SaaS.
+
+---
+
+##### ESCALA DE SEVERIDAD:
+
+| Nivel | Descripción |
+| :---: | :--- |
+| **1** | **Problema superficial:** puede ser fácilmente superado por el usuario u ocurre con muy poca frecuencia. No necesita ser corregido a no ser que exista disponibilidad de tiempo. |
+| **2** | **Problema menor:** puede ocurrir con mayor frecuencia o es un poco más difícil de superar para el usuario. Se le debe asignar una prioridad baja de cara al siguiente release. |
+| **3** | **Problema mayor:** ocurre frecuentemente o los usuarios no son capaces de resolverlo con facilidad. Es importante que sea corregido y se le debe asignar una prioridad alta. |
+| **4** | **Problema muy grave:** un error de gran impacto o bloqueo que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+---
+
+##### TABLA RESUMEN
+
+| # | Problema | Escala de severidad | Heurística/Principio violado |
+| :---: | :--- | :---: | :--- |
+| 1 | Cierre inmediato de alertas clínicas críticas sin diálogo de confirmación ni justificación obligatoria | 3 | Prevención de errores |
+| 2 | Obligatoriedad de redigitar manualmente antecedentes basales en el formulario de Traspaso SBAR | 2 | Reconocimiento antes que recuerdo |
+| 3 | Ausencia de curvas gráficas de tendencia temporal hemodinámica en la ficha del paciente | 3 | Correspondencia entre el sistema y el mundo real |
+| 4 | Falta de retroalimentación de estado de sincronización al registrar signos vitales en la aplicación móvil | 2 | Visibilidad del estado del sistema |
+| 5 | Sobrecarga visual y ausencia de filtros inmediatos por nivel de gravedad en la consola de alertas | 2 | Diseño estético y minimalista |
+
+---
+
+##### DESCRIPCIÓN DE PROBLEMAS
+
+###### PROBLEMA #1: Cierre inmediato de alertas clínicas críticas sin diálogo de confirmación ni justificación obligatoria
+
+**Severidad:** 3
+
+**Heurística violada:** Prevención de errores
+
+**Descripción:**  
+En la consola de gestión de alertas de la aplicación web, al presionar la acción de "Cerrar" o "Resolver" sobre una alerta clínica activa, el sistema ejecuta la transición de estado inmediatamente sin desplegar un modal de confirmación ni solicitar una nota médica o motivo clínico que justifique el cierre.
+
+<p align="center">
+  <img alt="problem-1" src="assets/chapter-6/heuristic-problem-1.png">
+</p>
+
+En un entorno asistencial crítico de alta presión (como una sala de hospitalización cardiovascular o emergencia), un clic involuntario o accidental puede dar por resuelta una alerta de taquicardia o descompensación hemodinámica. Esto oculta el evento del panel de atención sin dejar un registro explicativo de qué conducta médica o terapéutica se adoptó, introduciendo un riesgo significativo para la seguridad del paciente y para la trazabilidad legal.
+
+**Recomendación:**  
+Se recomienda implementar un diálogo modal de confirmación obligatorio al intentar cerrar alertas críticas y moderadas. Dicho modal debe exigir al usuario ingresar una breve justificación clínica (por ejemplo, medicación administrada o estabilización de constantes) antes de persistir el cierre en la base de datos, garantizando una barrera preventiva contra pulsaciones accidentales.
+
+---
+
+###### PROBLEMA #2: Obligatoriedad de redigitar manualmente antecedentes basales en el formulario de Traspaso SBAR
+
+**Severidad:** 2
+
+**Heurística violada:** Reconocimiento antes que recuerdo
+
+**Descripción:**  
+Al iniciar el flujo de entrega de turno mediante el formulario estructurado SBAR (*Situation, Background, Assessment, Recommendation*), el campo correspondiente a "Antecedentes" (*Background*) se presenta completamente en blanco. El personal de enfermería se ve forzado a recordar o tipear nuevamente antecedentes patológicos relevantes (como hipertensión arterial, marcapasos o intervenciones previas) que ya fueron registrados durante la admisión del paciente.
+
+<p align="center">
+  <img alt="problem-2" src="assets/chapter-6/heuristic-problem-2.png">
+</p>
+
+Este comportamiento incrementa la carga cognitiva y el tiempo de redacción en un momento crítico como el cambio de guardia, incentivando que el personal omita antecedentes importantes por premura o cometa errores tipográficos en diagnósticos ya existentes en el sistema.
+
+**Recomendación:**  
+Se recomienda precargar automáticamente en el cuadrante de Antecedentes del formulario SBAR los diagnósticos y antecedentes clínicos ya almacenados en el expediente del paciente, presentándolos en un formato editable o mediante etiquetas de selección rápida. De esta forma, el enfermero solo valida o añade novedades del turno en lugar de redactar desde cero información histórica.
+
+---
+
+###### PROBLEMA #3: Ausencia de curvas gráficas de tendencia temporal hemodinámica en la ficha del paciente
+
+**Severidad:** 3
+
+**Heurística violada:** Correspondencia entre el sistema y el mundo real
+
+**Descripción:**  
+En la vista de seguimiento clínico del paciente, los registros de constantes vitales se exponen exclusivamente a través de valores numéricos individuales en tarjetas y en tablas cronológicas planas. En la práctica médica cardiovascular real, los especialistas toman decisiones evaluando curvas de tendencia continua (variabilidad de la presión arterial media, pulso y saturación en las últimas 24 a 48 horas) para anticipar deterioros antes de que ocurra una crisis aguda.
+
+<p align="center">
+  <img alt="problem-3" src="assets/chapter-6/heuristic-problem-3.png">
+</p>
+
+Al carecer de representaciones gráficas evolutivas, el profesional debe reconstruir mentalmente la trayectoria hemodinámica leyendo múltiples filas de datos tabulares, lo cual ralentiza el pase de visita médica y dificulta correlacionar el efecto de fármacos antihipertensivos o antiarrítmicos administrados.
+
+**Recomendación:**  
+Se recomienda integrar un componente visual de gráficas de líneas temporales (*Sparklines* o gráficos multieje interactivos) en la cabecera del perfil clínico del paciente, permitiendo alternar vistas de evolución de 12, 24 y 48 horas con delimitación visual de rangos fisiológicos seguros y de alarma.
+
+---
+
+###### PROBLEMA #4: Falta de retroalimentación de estado de sincronización al registrar signos vitales en la aplicación móvil
+
+**Severidad:** 2
+
+**Heurística violada:** Visibilidad del estado del sistema
+
+**Descripción:**  
+Durante el uso de la aplicación móvil en Flutter junto a la cama del paciente, al presionar el botón "Guardar signos vitales", la interfaz no presenta un indicador de progreso visual explícito (como un estado deshabilitado con rueda de carga) si la conexión de red inalámbrica presenta latencia o baja cobertura en el pabellón hospitalario.
+
+<p align="center">
+  <img alt="problem-4" src="assets/chapter-6/heuristic-problem-4.png">
+</p>
+
+La ausencia de retroalimentación en tiempo real provoca incertidumbre en el personal asistencial, quien desconoce si la información fue transmitida al servidor o si se encuentra pendiente de envío, lo que suele propiciar múltiples pulsaciones repetidas sobre el botón de envío y posibles duplicidades de peticiones HTTP en el backend.
+
+**Recomendación:**  
+Se recomienda mostrar inmediatamente un spinner o estado de carga dentro del botón de acción tras el primer toque, bloqueando eventos adicionales de clic, y acompañar la finalización del proceso con un banner contextual (*SnackBar*) que confirme el estado exacto: "Signos vitales sincronizados correctamente" o "Guardado localmente en modo sin conexión".
+
+---
+
+###### PROBLEMA #5: Sobrecarga visual y ausencia de filtros inmediatos por nivel de gravedad en la consola de alertas
+
+**Severidad:** 2
+
+**Heurística violada:** Diseño estético y minimalista
+
+**Descripción:**  
+La bandeja general de alertas clínicas en la aplicación web despliega todas las notificaciones del servicio de manera uniforme en una lista consecutiva, combinando alertas de riesgo hemodinámico inminente con advertencias de mantenimiento y recordatorios de rutina sin una segregación espacial evidente.
+
+<p align="center">
+  <img alt="problem-5" src="assets/chapter-6/heuristic-problem-5.png">
+</p>
+
+La falta de filtros directos o pestañas por nivel de severidad (Crítica, Moderada, Informativa) obliga al personal de guardia a escanear visualmente filas secundarias mientras busca atender una contingencia, generando saturación visual ("fatiga de alarmas") y aumentando el tiempo de respuesta frente a eventos que comprometen la vida del paciente.
+
+**Recomendación:**  
+Se recomienda rediseñar el encabezado de la consola de alertas agregando pestañas de acceso rápido o chips de filtrado persistentes según la severidad del evento (*Crítica*, *Moderada*, *Leve*) y por habitación/piso asignado, ocultando por defecto las alertas ya atendidas o informativas para concentrar la atención del usuario en los pacientes en riesgo.
