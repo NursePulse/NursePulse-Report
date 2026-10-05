@@ -845,21 +845,21 @@ A continuación se presenta evidencia visual de la aplicación móvil multiplata
 
 **Inicio de sesión y registro**
 
-📸 *[FOTO AQUÍ: capturar en un emulador o dispositivo Android la pantalla de sign-in y sign-up de la app móvil]*
+Pantalla de inicio de sesión (izquierda) y formulario "Crear cuenta clínica" (derecha), con el rol clínico y los requisitos de la contraseña.
 
-![Mobile - Sign in](assets/chapter-5/mobile-sign-in.png)
+![Mobile - Inicio de sesión y registro](assets/chapter-5/mobile-sign-in.png)
 
 **Gestión de pacientes**
 
-📸 *[FOTO AQUÍ: capturar la lista de pacientes y el formulario de registro en la app móvil]*
+Lista de pacientes con su estado, habitación y diagnóstico (izquierda) y formulario "Nuevo paciente" (derecha).
 
 ![Mobile - Pacientes](assets/chapter-5/mobile-patients.png)
 
-**Signos vitales y alertas**
+**Signos vitales**
 
-📸 *[FOTO AQUÍ: capturar el registro de signos vitales y la lista de alertas en la app móvil]*
+Lista de registros con el nivel de riesgo calculado (izquierda) y formulario "Registrar signos vitales" con el rango válido de cada medición (derecha).
 
-![Mobile - Signos vitales y alertas](assets/chapter-5/mobile-vitals-alerts.png)
+![Mobile - Signos vitales](assets/chapter-5/mobile-vitals.png)
 
 **Descarga del APK**
 
