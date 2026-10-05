@@ -204,7 +204,6 @@ No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o C
 > Extender las mismas reglas de protección de rama (CI exitoso y una aprobación obligatoria antes de fusionar) a `main` del Backend, del Frontend, de Mobile y de Landing queda identificado como una mejora pendiente, y exigir que los PRs tengan una revisión registrada, para que la práctica sea verificable en todos los repositorios y no dependa de la disciplina del equipo.
 
 ## 6.3. Validation Interviews
-Ran command: `git show "origin/docs/Chapter6:README.md"`
 
 ## 6.3.1. Diseño de Entrevista
 
