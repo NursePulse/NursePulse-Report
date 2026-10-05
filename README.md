@@ -2,7 +2,7 @@
 
 ## 6.1. Testing Suites & Validation
 
-NursePulse cuenta con una suite de pruebas automatizadas de 119 pruebas en el backend (JUnit 5 + Mockito), 50 en el frontend (Vitest) y 21 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
+NursePulse cuenta con una suite de pruebas automatizadas de 121 pruebas en el backend (JUnit 5 + Mockito), 50 en el frontend (Vitest) y 902 en la aplicación móvil (`flutter test`), ejecutadas automáticamente en cada `push` y `pull request` hacia la rama principal mediante los workflows `Backend CI`, `Frontend CI` y `Mobile CI/CD`.
 
 **Backend**
 
@@ -38,14 +38,22 @@ Pruebas que levantan el contexto completo de Spring Boot (`@SpringBootTest`) par
 | `OpenApiConfigurationTest` | Unitaria | Configuración de la documentación Swagger/OpenAPI (origen de las peticiones interactivas de Swagger UI). |
 | `BackendNursepulseApplicationTests` | Integración (`@SpringBootTest`) | Que el contexto completo de la aplicación arranque sin errores. |
 
-**Pruebas de la aplicación móvil (Flutter).** La app móvil se verifica con `flutter test` (21 pruebas unitarias y de widgets), un paso obligatorio del job `Verify Flutter` de `Mobile CI/CD` (ver Capítulo VII, sección 7.1.2). Cubren el módulo de identidad y acceso:
+**Pruebas de la aplicación móvil (Flutter).** La app móvil se verifica con `flutter test`: 902 pruebas unitarias, de widgets e integrales, con 0 fallos ni omitidas (ejecución del 4 de octubre de 2026 sobre la rama `test`, commit `789e70e`). Es un paso obligatorio del job `Verify Flutter` de `Mobile CI/CD` (ver Capítulo VII, sección 7.1.2). Cada módulo de la aplicación tiene su carpeta bajo `test/`:
 
-| Archivo de prueba | Pruebas | Qué valida |
-| :--- | :---: | :--- |
-| `test/iam/registration_test.dart` | 11 | Reglas de registro y acceso: usuario, nombres, teléfono de nueve dígitos, edad, correo, contraseña, rechazo del rol Admin en el registro público, payload exacto enviado a la API y conservación de los roles reales sin conceder Nurse por defecto. |
-| `test/iam/session_test.dart` | 4 | Restauración de sesión: rol Doctor real, rol desconocido sin sesión autenticada, fallo de almacenamiento sin dejar el *splash* cargando y cierre de sesión ante un evento 401. |
-| `test/iam/sign_up_view_test.dart` | 5 | Pantalla de registro (widget): errores con campos vacíos, bloqueo por edad o confirmación inválidas, envío completo una sola vez, mensaje real ante un HTTP 400 y normalización del teléfono pegado. |
-| `test/widget_test.dart` | 1 | Sin sesión, la aplicación abre la pantalla de inicio de sesión. |
+| Carpeta de `test/` | Pruebas | Historias | Qué valida |
+| :--- | :---: | :--- | :--- |
+| `iam/` | 20 | US-23, US-25 | Reglas de registro (usuario, nombres, teléfono, edad, correo, contraseña, rechazo del rol Admin y payload exacto enviado a la API), restauración de sesión y cierre de sesión ante un 401, y la pantalla de registro. |
+| `patient/` | 26 | US-27, US-28 | Validación del formulario de paciente (nombres, documento de 8 a 20 dígitos, fechas, género y longitudes), acceso a datos, notificador y vistas. |
+| `vital-sign/` | 27 | US-16, US-17, US-22 | Rangos de cada medición, enteros y temperatura, presión sistólica mayor que la diastólica y `nurseId` tomado de la sesión autenticada. |
+| `clinical_event/` | 68 | US-18, US-19, US-20 | Límites de título y descripción, responsable tomado de la sesión, notificador y vistas. |
+| `sbar/` | 98 | US-13, US-14, US-15 | Campos Situación, Antecedentes, Evaluación y Recomendación con sus límites, rechazo sin escritura ante datos inválidos, y confirmación de recepción. |
+| `notification/` | 133 | US-31, US-32, US-33 | Validación de alertas, atención y cierre según el rol, notificador y vistas. |
+| `dashboard/` | 114 | US-29, US-30 | Dashboard de la unidad y monitoreo del paciente: validación de identificadores, refresco de datos y vistas. |
+| `reports/` | 90 | US-34 | Reportes permitidos solo a médico y administrador, validación de título y periodo, y almacenamiento local. |
+| `audit_users/` | 193 | US-26, US-35, US-36 | Consulta de auditoría, exportación y guardado del PDF, administración de usuarios y roles, y rechazo sin consultas ni escrituras para los roles sin permiso. |
+| `subscriptions/` | 61 | US-39 | Catálogo de planes, validación del pago simulado y recibo. |
+| `core/`, `integration/` y `widget_test.dart` | 72 | US-38 | Conexión (producción por defecto, mensajes del backend en español y errores de inicio de sesión), navegación, aislamiento entre sesiones, interfaz adaptable a pantallas pequeñas y el recorrido de un reporte clínico. |
+| **Total** | **902** | | |
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -75,7 +83,7 @@ Característica: Traspaso de turno SBAR (US-13, US-14, US-15, TS-04)
     Entonces el traspaso queda con estado "ACKNOWLEDGED"
 ```
 
-Los pasos están implementados en `StepDefinitions.java` y el ejecutor es `CucumberBddTest`, que Maven recoge con el resto de las pruebas: los 12 escenarios se ejecutan en cada `push` junto con las demás pruebas del backend (119 en total, con 0 fallos). Los escenarios cubren únicamente comportamientos que el sistema cumple hoy; los casos que el backend aún no resuelve de la forma descrita (por ejemplo, rechazar un traspaso incompleto con 400) quedan fuera y se documentan como limitaciones en el Capítulo III. El resto de los criterios Gherkin de las historias se mantiene como especificación y se verifica con las pruebas unitarias e integrales de la sección 6.1.5.
+Los pasos están implementados en `StepDefinitions.java` y el ejecutor es `CucumberBddTest`, que Maven recoge con el resto de las pruebas: los 12 escenarios se ejecutan en cada `push` junto con las demás pruebas del backend (121 en total, con 0 fallos). Los escenarios cubren únicamente comportamientos que el sistema cumple hoy; los casos que el backend aún no resuelve de la forma descrita (por ejemplo, rechazar un traspaso incompleto con 400) quedan fuera y se documentan como limitaciones en el Capítulo III. El resto de los criterios Gherkin de las historias se mantiene como especificación y se verifica con las pruebas unitarias e integrales de la sección 6.1.5.
 
 ### 6.1.4. Core System Tests
 
@@ -122,13 +130,15 @@ Para cada historia con prueba unitaria asociada se indica cómo ejecutarla en la
 | US-34 Reportes | Web `/reports`: generar un reporte de un periodo. | No usa tablas: el reporte se guarda en el navegador (`localStorage`) y deja una entrada en `audit_logs`. | `report.store.spec.ts` (conteo por periodo, alertas críticas, guardado y restauración, datos corruptos) |
 | US-39 Suscripciones | Web `/subscriptions`: elegir un plan. | No usa tablas (se guarda en el navegador). | `subscription.store.spec.ts` |
 | TS-06 Errores del API | Enviar una solicitud inválida (por ejemplo un registro con contraseña corta): el API responde con `code`, `message` y `details`. | No modifica tablas. | `ErrorHandlingTest` (estado HTTP por código de error, cuerpo y manejador global) |
-| US-38 Aplicación móvil | `flutter run`: iniciar sesión y navegar. | Las mismas tablas que la web. | `connection_test.dart`, `session_test.dart`, `sign_up_view_test.dart` |
+| US-38 Aplicación móvil | `flutter run`: iniciar sesión y navegar. | Las mismas tablas que la web. | `core/connection_test.dart`, `iam/session_test.dart`, `iam/sign_up_view_test.dart`, `integration/navigation_test.dart` |
 
 Las pruebas nuevas se entregaron en tres PR: pacientes, traspasos SBAR, signos vitales y eventos clínicos en [Backend-NursePulse#11](https://github.com/NursePulse/Backend-NursePulse/pull/11) y roles y errores del API en [Backend-NursePulse#12](https://github.com/NursePulse/Backend-NursePulse/pull/12), ambos integrados en `deploy/render-docker` (la suite del backend suma 99 pruebas con ambos, con 0 fallos); y reglas de riesgo, reportes, idioma y suscripciones en [Application-Web-Nurse-Pulse#5](https://github.com/NursePulse/Application-Web-Nurse-Pulse/pull/5), también integrado (el frontend suma 50 pruebas, con 0 fallos).
 
+**Correcciones del backend detectadas al probar la aplicación móvil.** [Backend-NursePulse#15](https://github.com/NursePulse/Backend-NursePulse/pull/15), integrado en `deploy/render-docker` y desplegado, corrigió la exportación del PDF de auditoría cuando una entrada no tiene `metadata` (devolvía 500) y la fecha de generación (`triggeredAt`) de una alerta que se atiende o se cierra (llegaba vacía). Cada corrección tiene su prueba, que falla sin el arreglo, y con ellas la suite del backend suma 121 pruebas, con 0 fallos.
+
 **Pruebas integrales por historia.** Además de las unitarias, `UserStoryJourneyIntegrationTest` ([Backend-NursePulse#13](https://github.com/NursePulse/Backend-NursePulse/pull/13), integrado) ejecuta recorridos completos por la capa HTTP real, con seguridad y una base H2, y comprueba tanto la respuesta como la fila guardada. Con sus 8 pruebas, la suite del backend llegó a 107 pruebas (119 con los escenarios BDD de la sección 6.1.3), con 0 fallos: US-27 y US-28 (alta, edición y consulta de pacientes, y 404 de un paciente inexistente), US-16 y US-17 (signos vitales y último registro, y 400 con un valor fuera de rango), US-18, US-19 y US-20 (evento clínico con el responsable tomado de la sesión), US-13, US-14 y US-15 (traspaso SBAR desde su creación hasta la confirmación por la enfermera entrante), US-21 (los datos del resumen disponibles juntos) y US-31 y US-32 (ciclo de la alerta, donde solo el médico puede cerrarla).
 
-**Historias sin prueba automatizada propia:** US-01 a US-12 (Landing), US-29 y US-30 (vistas de la aplicación web), TS-08 y TS-09. La Landing es un sitio informativo estático, sin lógica ni API, por lo que se verifica con Lighthouse en el CI (rendimiento, accesibilidad, buenas prácticas y SEO) y con revisión visual. TS-08 se demuestra con la ejecución del CI y TS-09 con las métricas visibles en Grafana Cloud. US-29 y US-30 se verifican ejecutándolas en la aplicación y comprobando los datos que muestran. TS-02 se cubre con `PatientServicesTest` y con el recorrido de pacientes, y TS-10 con `OpenApiConfigurationTest`.
+**Historias sin prueba automatizada propia:** US-01 a US-12 (Landing), US-29 y US-30 (en la web), TS-08 y TS-09. La Landing es un sitio informativo estático, sin lógica ni API, por lo que se verifica con Lighthouse en el CI (rendimiento, accesibilidad, buenas prácticas y SEO) y con revisión visual. TS-08 se demuestra con la ejecución del CI y TS-09 con las métricas visibles en Grafana Cloud. US-29 y US-30 se verifican en la web ejecutándolas en la aplicación y comprobando los datos que muestran; en la aplicación móvil sí tienen pruebas automatizadas (carpeta `test/dashboard/`, 114 pruebas). TS-02 se cubre con `PatientServicesTest` y con el recorrido de pacientes, y TS-10 con `OpenApiConfigurationTest`.
 
 ## 6.2. Static testing & Verification
 
