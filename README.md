@@ -204,22 +204,107 @@ No se utiliza una herramienta externa de gestión de revisiones (como Gerrit o C
 > Extender las mismas reglas de protección de rama (CI exitoso y una aprobación obligatoria antes de fusionar) a `main` del Backend, del Frontend, de Mobile y de Landing queda identificado como una mejora pendiente, y exigir que los PRs tengan una revisión registrada, para que la práctica sea verificable en todos los repositorios y no dependa de la disciplina del equipo.
 
 ## 6.3. Validation Interviews
+Ran command: `git show "origin/docs/Chapter6:README.md"`
 
-> **⚠️ Sección pendiente de completar con información real.** Las subsecciones 6.3.1, 6.3.2 y 6.3.3 requieren los datos originales de las Validation Interviews y de la evaluación heurística ya referenciadas en el documento de "Conclusiones y Recomendaciones" (rama `docs/Conclusions`), que cita explícitamente "sección 6.3" y "sección 6.3.2". Para completarlas se necesita:
->
-> 1. Las notas, grabaciones o transcripciones de las Validation Interviews realizadas (participantes, rol/ocupación, fecha, hallazgos).
-> 2. El resultado de la evaluación heurística (heurísticas evaluadas, hallazgos y severidades encontradas).
->
-> No se completó esta sección con datos inventados para no comprometer la integridad de la investigación de usuario del informe.
+## 6.3.1. Diseño de Entrevista
 
-### 6.3.1. Diseño de Entrevistas
+### Guion y Banco de Preguntas Consolidado
 
-*(pendiente — ver nota arriba)*
+* **Introducción y Consentimiento (30 s):**
+  > *"Hola, gracias por tu tiempo. Estamos evaluando un prototipo interactivo para el sistema NursePulse, no tus conocimientos ni tu desempeño profesional. No existen respuestas correctas ni incorrectas; cualquier dificultad que encuentres nos ayuda a mejorar el diseño. ¿Aceptas que grabemos esta sesión únicamente con fines de análisis de usabilidad e investigación interna, manteniendo tu identidad de forma confidencial y anónima?"*
 
-### 6.3.2. Registro de Entrevistas
+* **Perfil del Entrevistado (30 s, general):**
+  1. ¿Cuál es tu cargo actual y en qué área o servicio clínico te desempeñas?
+  2. ¿Cuántos años de experiencia tienes en la atención de pacientes cardiovasculares o en hospitalización, y en qué tipo de institución médica laboras habitualmente?
 
-*(pendiente — ver nota arriba)*
+* **Bloque de Tareas y Preguntas de Validación por Segmento:**
 
-### 6.3.3. Evaluaciones según heurísticas
+  * **Enfermería (Problem Statement 1):**
+    * **A. Traspaso SBAR (H1):**
+      * *Tarea guiada:* *"Imagina que culmina tu turno: traspasa al paciente asignado al enfermero entrante utilizando este formulario digital estructurado."*
+      * *Preguntas de validación:*
+        1. ¿Hubo algún campo del formulario que no entendiste o sentiste que faltó para entregar el turno con seguridad?
+        2. ¿Cómo realizas este proceso de traspaso de turno hoy en día en tu servicio?
+    * **B. Alertas y Trazabilidad (H4, H5):**
+      * *Tarea guiada:* *"Observa la bandeja clínica: ¿cuál de estas alertas atenderías primero? Posteriormente, indícame quién registró el último signo vital del paciente y en qué momento exacto."*
+      * *Preguntas de validación:*
+        1. ¿Qué elementos de la interfaz te indicaron el nivel de prioridad de la alerta?
+        2. ¿Qué tan confiable te parece este mecanismo para verificar la autoría ante una auditoría médica o eventualidad legal?
+    * **C. Registro Móvil de Signos Vitales (H2, H6):**
+      * *Tarea guiada:* *"Toma el dispositivo móvil e ingresa la presión arterial, frecuencia cardíaca y saturación de oxígeno indicadas para este paciente."*
+      * *Preguntas de validación:*
+        1. ¿Utilizarías esta aplicación directamente al lado de la cama del paciente durante tu ronda de control?
+        2. ¿Qué dificultades o fricciones encontraste al digitar los valores en la pantalla?
 
-*(pendiente — ver nota arriba)*
+  * **Médicos Especialistas y Relacionados (Problem Statement 2):**
+    * **Tarea de Consulta Rápida y Toma de Decisiones (H3, H5):**
+      * *Tarea guiada:* *"Accede al perfil del paciente X e identifica su última cifra de presión arterial y la última alerta clínica registrada durante el turno previo."*
+      * *Preguntas de validación:*
+        1. ¿Cuánto tiempo tardas actualmente en tu práctica clínica habitual en conocer la evolución reciente de un paciente hospitalizado?
+        2. ¿Qué información o indicador crítico consideras que falta en esta vista para tomar una decisión terapéutica con absoluta confianza?
+
+  * **Instituciones y Representantes Clínicos (Problem Statement 3):**
+    * **Evaluación de Propuesta de Valor, Compatibilidad y Viabilidad (H7, H8, A-05):**
+      * *Tarea guiada:* *"Observa la página principal (landing page) durante 30 segundos."*
+      * *Preguntas de validación:*
+        1. *(H7)* Tras revisar la página: ¿cuál entiendes que es la función principal y el valor que ofrece NursePulse?
+        2. *(H8)* ¿Visualizas esta solución como un complemento de apoyo operativo o como un reemplazo directo del sistema informático actual de tu institución?
+        3. *(A-05)* ¿Qué estándares de seguridad de datos clínicos y qué esquema de costos requeriría tu institución para autorizar un piloto operativo?
+
+* **Cierre Común (1:30 min):**
+  1. En una sola frase, ¿qué fue lo mejor y qué fue lo peor del sistema que acabas de probar?
+  2. ¿Estarías dispuesto/a a utilizar NursePulse en tu rutina laboral diaria? ¿Qué factor técnico, operativo o institucional te lo impediría?
+
+---
+
+## 6.3.2. Registro de entrevistas
+
+### Entrevista 1 – Enfermero
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 1](assets/entrevista-1.png)
+- **Perfil:**
+  - **Cargo y Área:** Enfermero asistencial – Área de Hospitalización y Emergencias Cardiovasculares
+- **Perfil del Participante:** Marcelo Garriazo, 26 años de edad, con 2 años de experiencia clínica asistencial en hospitales generales y clínicas privadas. Su labor se desarrolla en turnos rotativos atendiendo emergencias cardiovasculares y pacientes hospitalizados con patologías agudas. Presenta buena adaptabilidad a herramientas informáticas tras una familiarización guiada, apoyándose actualmente en computadoras portátiles y WhatsApp para la coordinación operativa de su servicio.
+- **Resumen Descriptivo de la Sesión:** 
+  Marcelo ejecutó la **Prueba B de Enfermería: Alertas y trazabilidad (H4, H5)**. Al interactuar con la consola de alertas críticas, identificó de inmediato el evento prioritario correspondiente a una arritmia ventricular por encima de una desaturación leve, señalando que la jerarquía cromática en rojo y la etiqueta de severidad le permitieron discernir la urgencia sin titubeos. En la segunda parte de la tarea, navegó hacia la bitácora del paciente y ubicó con precisión el nombre del colega responsable, la fecha y la hora exacta del último registro hemodinámico. Destacó como un acierto determinante la visibilidad de la autoría para fines de responsabilidad legal, contrastándolo con su método actual donde debe interpretar firmas manuales ilegibles en hojas de kardex físico o afrontar caídas del sistema hospitalario principal. Como fricción, indicó que en turnos saturados una lista excesiva de alertas de baja gravedad podría entorpecer el flujo visual, recomendando filtros automáticos por gravedad y cama.
+- **Conclusiones y Veredicto:**
+  - **Puntos Fuertes y Débiles:** Destacó la claridad visual del código de criticidad y la certeza de la trazabilidad nominal por evento; observó como aspecto débil la carencia de filtros rápidos configurables para discriminar alarmas secundarias en horas de alta congestión.
+  - **Disposición de Adopción:** Alta disposición de adopción asistencial. Afirmó que la implementaría de inmediato en emergencias para evitar pérdidas de información. El principal impedimento identificado radica en la inestabilidad de conectividad en ciertas áreas hospitalarias y en la imposición administrativa de duplicar registros si la jefatura exige conservar el soporte en papel.
+
+---
+
+### Entrevista 2 – Enfermero
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 2](assets/entrevista-2.png)
+- **Perfil:**
+  - **Cargo y Área:** Enfermero – Servicio de Hospitalización
+- **Perfil del Participante:** Andrew Sánchez, 25 años de edad, con 5 años de trayectoria profesional en el área de hospitalización de pacientes cardiovasculares. Posee un enfoque de trabajo metódico y práctico, habituado al uso de computadoras de escritorio y mensajería instantánea para la coordinación de piso. Es altamente crítico ante plataformas lentas o flujos redundantes que resten tiempo al cuidado directo del paciente.
+- **Resumen Descriptivo de la Sesión:** 
+  Andrew desarrolló la **Prueba C de Enfermería: Móvil y signos vitales (H2, H6)**, interactuando directamente con el prototipo móvil en Flutter. Realizó el ingreso de una serie completa de constantes vitales (presión arterial, frecuencia cardíaca y SpO2) en menos de 20 segundos, beneficiándose del despliegue del teclado numérico contextual y las restricciones de validación fisiológica en pantalla. Manifestó una recepción muy positiva al comprobar que los datos impactaban de forma instantánea en el sistema central sin demoras de sincronización. Al comparar la herramienta con su rutina actual, remarcó que actualmente pierde entre 30 y 45 minutos por turno transcribiendo a la computadora notas manuscritas tomadas en trozos de papel al lado de la cama, lo que introduce un alto riesgo de error por agotamiento. Afirmó con entusiasmo que sí emplearía el dispositivo móvil junto al paciente, sugiriendo como mejora añadir retroalimentación háptica y confirmaciones de un toque para prevenir pulsaciones erróneas durante turnos nocturnos.
+- **Conclusiones y Veredicto:**
+  - **Puntos Fuertes y Débiles:** Resaltó la velocidad de captura numérica, la actualización en tiempo real y la eliminación radical de la doble digitación diferida; señaló como debilidad la ausencia de atajos de guardado rápido por paciente o entrada por voz en situaciones de aislamiento.
+  - **Disposición de Adopción:** Total disposición para adoptar la solución móvil en su rutina de hospitalización. Señaló que el único obstáculo real sería de orden institucional: normativas clínicas que prohíban el uso de teléfonos personales en áreas asistenciales o la falta de provisión de terminales móviles institucionales protegidos y desinfectables.
+
+---
+
+### Entrevista 3 – Personal de Enfermería
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 3](assets/entrevista-3.png)
+- **Perfil:**
+  - **Cargo y Área:** Practicante de Medicina Humana (funciones asistenciales de soporte clínico y monitoreo) – Área Cardiovascular y Hospitalización
+- **Perfil del Participante:** Sofía Ortega, 20 años de edad, estudiante de últimos ciclos con 8 meses de internado y rotación clínica continua en hospitalización y cardiología preventiva. Destaca por su dinamismo, destreza digital avanzada (nivel 9-10 en entornos móviles y tablets) y activa coordinación multidisciplinaria en el pase de visita y cambio de turno.
+- **Resumen Descriptivo de la Sesión:** 
+  Sofía llevó a cabo la **Prueba A de Enfermería: SBAR (H1)**, orientada al traspaso formal de guardia mediante el formulario digital estructurado. Completó el llenado de los cuatro cuadrantes (Situación, Antecedentes, Evaluación y Recomendación) en un minuto y medio sin experimentar bloqueos conceptuales. Subrayó la obligatoriedad del campo de "Recomendación" como el mayor acierto del diseño, explicando que en su práctica habitual los traspasos se realizan verbalmente a la prisa o en cuadernos informales, lo que provoca que pendientes farmacológicos o interconsultas programadas se pierdan en la transición. Durante la interacción, detectó como punto de fricción que el sistema requería redactar manualmente antecedentes cardiovasculares que ya estaban registrados en la admisión del paciente, sugiriendo una función de precarga automática o selección rápida de patologías de base para acelerar el relevo.
+- **Conclusiones y Veredicto:**
+  - **Puntos Fuertes y Débiles:** Calificó como fortaleza insustituible la estandarización del protocolo SBAR para blindar la continuidad del cuidado entre turnos; identificó como punto débil la necesidad de redigitante de antecedentes ya existentes en la base de datos sin opción de autocompletado.
+  - **Disposición de Adopción:** Plena intención de uso en la entrega y recepción de guardia clínica. Considera que la barrera principal radica en la brecha generacional y la resistencia al cambio de profesionales asistenciales de mayor antigüedad habituados exclusivamente al cuaderno físico de novedades.
+
+---
+
+### Entrevista 4 – Médico/a
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 4](assets/entrevista-4.png)
+- **Perfil:**
+  - **Cargo y Área:** Médico General – Área de Hospitalización y Seguimiento Cardiovascular
+- **Perfil del Participante:** Olenka Vela, 28 años de edad, médico general con 4 años de ejercicio profesional, dedicando los últimos 2 años de manera exclusiva a hospitalización y seguimiento de pacientes cardiovasculares. Es usuaria habitual de herramientas de soporte médico digital (MDCalc, UpToDate) y requiere acceso inmediato a parámetros fidedignos para conducir el manejo hemodinámico bajo presión.
+- **Resumen Descriptivo de la Sesión:** 
+  Olenka ejecutó la **Tarea de Validación para Médicos (H3, H5)**, consistente en ubicar la última presión arterial registrada y la última alerta clínica emitida para un paciente cardiovascular descompensado. Logró localizar ambos datos en menos de 8 segundos directamente desde la cabecera del expediente web. Comparó este desempeño con su realidad asistencial, donde evaluar la evolución reciente le demanda entre 5 y 10 minutos debido a la dispersión de hojas de signos vitales, notas de enfermería y carpetas físicas desordenadas. Apreció positivamente que las cifras fuera de rango fisiológico resalten en tonos de alerta visual. Al consultar sobre elementos faltantes para la toma de decisiones, advirtió que la vista carece de una curva de tendencia hemodinámica temporal (gráfica evolutiva de las últimas 24 horas) y de la correlación con la lista de medicamentos administrados, lo cual es vital para determinar si un pico hipertensivo respondió o no a la terapia antihipertensiva indicada.
+- **Conclusiones y Veredicto:**
+  - **Puntos Fuertes y Débiles:** Destacó la centralización instantánea de constantes críticas y la eliminación del rastreo de carpetas físicas; señaló como deficiencia la falta de visualización gráfica de tendencias temporales y la ausencia del plan farmacológico activo en la misma interfaz.
+  - **Disposición de Adopción:** Disposición inmediata para integrar la plataforma en sus pases de visita y guardias médicas. Identificó como barrera de adopción crítica la ausencia de interoperabilidad con el sistema informático hospitalario central (HIS/EHR) de la clínica, subrayando que el cuerpo médico rechazaría la solución si los obliga a consultar o alimentar dos sistemas paralelos desarticulados.
