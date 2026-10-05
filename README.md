@@ -260,7 +260,7 @@ Ran command: `git show "origin/docs/Chapter6:README.md"`
 ## 6.3.2. Registro de entrevistas
 
 ### Entrevista 1 – Enfermero
-- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 1](assets/entrevista-1.png)
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 1](assets/chapter-6/entrevista-1.png)
 - **Perfil:**
   - **Cargo y Área:** Enfermero asistencial – Área de Hospitalización y Emergencias Cardiovasculares
 - **Perfil del Participante:** Marcelo Garriazo, 26 años de edad, con 2 años de experiencia clínica asistencial en hospitales generales y clínicas privadas. Su labor se desarrolla en turnos rotativos atendiendo emergencias cardiovasculares y pacientes hospitalizados con patologías agudas. Presenta buena adaptabilidad a herramientas informáticas tras una familiarización guiada, apoyándose actualmente en computadoras portátiles y WhatsApp para la coordinación operativa de su servicio.
@@ -273,7 +273,7 @@ Ran command: `git show "origin/docs/Chapter6:README.md"`
 ---
 
 ### Entrevista 2 – Enfermero
-- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 2](assets/entrevista-2.png)
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 2](assets/chapter-6/entrevista-2.png)
 - **Perfil:**
   - **Cargo y Área:** Enfermero – Servicio de Hospitalización
 - **Perfil del Participante:** Andrew Sánchez, 25 años de edad, con 5 años de trayectoria profesional en el área de hospitalización de pacientes cardiovasculares. Posee un enfoque de trabajo metódico y práctico, habituado al uso de computadoras de escritorio y mensajería instantánea para la coordinación de piso. Es altamente crítico ante plataformas lentas o flujos redundantes que resten tiempo al cuidado directo del paciente.
@@ -286,7 +286,7 @@ Ran command: `git show "origin/docs/Chapter6:README.md"`
 ---
 
 ### Entrevista 3 – Personal de Enfermería
-- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 3](assets/entrevista-3.png)
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 3](assets/chapter-6/entrevista-3.png)
 - **Perfil:**
   - **Cargo y Área:** Practicante de Medicina Humana (funciones asistenciales de soporte clínico y monitoreo) – Área Cardiovascular y Hospitalización
 - **Perfil del Participante:** Sofía Ortega, 20 años de edad, estudiante de últimos ciclos con 8 meses de internado y rotación clínica continua en hospitalización y cardiología preventiva. Destaca por su dinamismo, destreza digital avanzada (nivel 9-10 en entornos móviles y tablets) y activa coordinación multidisciplinaria en el pase de visita y cambio de turno.
@@ -299,7 +299,7 @@ Ran command: `git show "origin/docs/Chapter6:README.md"`
 ---
 
 ### Entrevista 4 – Médico/a
-- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 4](assets/entrevista-4.png)
+- **Enlace de Evidencia/Captura:** ![Captura de Entrevista 4](assets/chapter-6/entrevista-4.png)
 - **Perfil:**
   - **Cargo y Área:** Médico General – Área de Hospitalización y Seguimiento Cardiovascular
 - **Perfil del Participante:** Olenka Vela, 28 años de edad, médico general con 4 años de ejercicio profesional, dedicando los últimos 2 años de manera exclusiva a hospitalización y seguimiento de pacientes cardiovasculares. Es usuaria habitual de herramientas de soporte médico digital (MDCalc, UpToDate) y requiere acceso inmediato a parámetros fidedignos para conducir el manejo hemodinámico bajo presión.
