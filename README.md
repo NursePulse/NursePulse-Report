@@ -4,13 +4,773 @@
 
 ### 8.1.1. As-Is Summary.
 
+Antes de introducir NursePulse, la comunicación y el registro de información clínica en los servicios de cardiología dependen principalmente de medios no estructurados y en parte físicos. El personal de enfermería transmite los cambios de turno de forma verbal o mediante mensajes libres, sin un formato que obligue a cubrir todos los puntos relevantes del estado del paciente. Los signos vitales y los eventos clínicos se anotan en registros complementarios (papel o planillas) que luego deben transcribirse o consultarse por separado, y la evolución de un paciente solo puede reconstruirse revisando varias fuentes de información dispersas. Tampoco existe un mecanismo uniforme para identificar quién registró una acción ni cuándo ocurrió, ni para priorizar visualmente los eventos que requieren atención inmediata.
+
+**Problemas identificados:**
+
+- **Comunicación no estructurada:** los traspasos de turno no siguen un formato fijo, lo que puede provocar la omisión de información relevante sobre el estado del paciente.
+- **Fragmentación de la información:** los signos vitales, los eventos clínicos y las indicaciones se registran en fuentes separadas, lo que aumenta el tiempo necesario para consultar la evolución de un paciente.
+- **Trazabilidad limitada:** no siempre es posible identificar con certeza quién realizó un registro ni en qué momento, lo que reduce la confianza en la información disponible.
+- **Dependencia de registros físicos:** buena parte de la información queda en papel o en formatos no digitales, lo que dificulta su consulta posterior y su consolidación.
+- **Falta de priorización visual de eventos:** los eventos y alertas relevantes no siempre destacan sobre el resto de la información, lo que puede retrasar su reconocimiento.
+- **Acceso limitado cerca del paciente:** el registro y la consulta de información suelen depender de estaciones de trabajo fijas, lo que dificulta su uso inmediato junto a la cama del paciente.
+
+**Objetivos de mejora:**
+
+- **Estructurar la comunicación de traspasos:** introducir un formulario digital basado en SBAR que guíe al personal de enfermería a cubrir situación, antecedentes, evaluación y recomendación en cada cambio de turno.
+- **Consolidar la información clínica:** ofrecer una vista resumida de evolución clínica que reúna signos vitales, eventos y antecedentes recientes del paciente en un mismo lugar.
+- **Fortalecer la trazabilidad:** registrar automáticamente el responsable, la fecha y la hora de cada acción clínica relevante.
+- **Reducir la dependencia del papel:** digitalizar el registro de signos vitales y eventos clínicos para que puedan consultarse sin recurrir a formatos físicos complementarios.
+- **Priorizar visualmente los eventos relevantes:** presentar alertas y eventos clínicos con una jerarquía visual que facilite reconocer lo que requiere atención inmediata.
+- **Permitir el registro cercano al paciente:** ofrecer una aplicación móvil nativa para tareas de registro y consulta que no dependan de una estación de trabajo fija.
+
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims.
+
+**Ideas**
+
+- Ofrecer un formulario digital estructurado con SBAR para los traspasos de turno.
+- Incorporar un módulo de registro de signos vitales con validación del rango de cada campo.
+- Consolidar una vista de evolución clínica que reúna signos vitales, eventos y alertas recientes del paciente.
+- Registrar automáticamente el responsable, la fecha y la hora de cada acción clínica relevante mediante un módulo de auditoría.
+- Presentar las alertas y los eventos clínicos con una jerarquía visual según severidad y estado.
+- Desarrollar una aplicación móvil nativa para registrar y consultar información cerca del paciente.
+- Construir una Landing Page que comunique la propuesta de valor de NursePulse a visitantes y representantes institucionales.
+
+**Claims**
+
+- El personal de enfermería cardiovascular necesita comunicar los cambios de turno sin omitir información relevante sobre el paciente.
+- Los médicos especialistas cardiovasculares necesitan consultar la evolución reciente del paciente sin revisar múltiples fuentes dispersas.
+- Los profesionales clínicos necesitan saber quién registró una acción, cuándo y sobre qué paciente, para confiar en la información disponible.
+- Los usuarios clínicos necesitan reconocer con rapidez qué eventos o alertas requieren atención prioritaria.
+- El personal de enfermería necesita registrar y consultar información clínica sin depender de una estación de trabajo fija.
+- Los visitantes y representantes institucionales necesitan comprender qué problema resuelve NursePulse antes de solicitar más información.
+- Las instituciones de salud necesitan diferenciar a NursePulse de su sistema hospitalario (HIS/EHR) para no interpretarlo como un reemplazo.
+- Los profesionales clínicos estarán dispuestos a adoptar NursePulse si aporta valor sin aumentar su carga operativa.
+
+**Assumptions**
+
+Estos supuestos retoman, con el mismo identificador, los definidos en la sección 1.2.2.2.
+
+- Un traspaso mediante SBAR reduce omisiones frente a una comunicación no estructurada (A-01).
+- El registro digital de signos vitales reduce la dependencia de medios complementarios como el papel (A-02).
+- Una vista resumida de evolución permite a los médicos encontrar información reciente con mayor rapidez (A-03).
+- La trazabilidad mediante responsable, fecha y hora aporta valor a los usuarios clínicos (A-04).
+- Las instituciones de salud reconocen valor en una solución complementaria especializada en comunicación y trazabilidad cardiovascular (A-05).
+- Una aplicación móvil facilita determinados registros realizados cerca del paciente (A-06).
+- Una Landing Page clara comunica adecuadamente la propuesta de valor del producto (A-07).
+
+**Knowledge Gaps**
+
+- Se desconoce cuántos elementos del traspaso SBAR el personal de enfermería considera realmente indispensables frente a los que completaría solo por obligación del formulario.
+- No se ha determinado si los profesionales clínicos valorarían recibir notificaciones push ante eventos críticos, además de verlos en la lista de alertas.
+- Falta información sobre con qué frecuencia los médicos especialistas consultan la evolución de un paciente durante un mismo turno, lo que afecta cuánto debe optimizarse ese flujo.
+- No se ha definido con qué frecuencia las instituciones de salud auditarían la trazabilidad de los registros, ni qué nivel de detalle esperan encontrar en ese historial.
+- Se desconoce qué proporción de las tareas de registro y consulta ocurre efectivamente cerca del paciente frente a en una estación de trabajo, lo que afecta el valor real de la aplicación móvil.
+- No se ha determinado qué tan dispuestos están los médicos especialistas a adoptar un formulario adicional de registro, aun cuando reduzca el tiempo de búsqueda de información.
+- Se desconoce qué objeciones concretas plantearían las instituciones de salud sobre seguridad, interoperabilidad o costo antes de evaluar la adopción de NursePulse.
 
 ### 8.1.3. Experiment-Ready Questions.
 
+A continuación, se presentan las preguntas generadas a partir de las Ideas, Claims, Assumptions y Knowledge Gaps identificados en la sección de Raw Material. Las preguntas impulsadas por creencias retoman directamente la pregunta y la creencia de cada una de las hipótesis Lean UX H-01 a H-08 de la sección 1.2.2.3, de modo que el diseño experimental de la sección 8.2 responda exactamente a estas preguntas. Las preguntas exploratorias, en cambio, se generaron aplicando la técnica de las 5W2H sobre los Knowledge Gaps, ya que todavía no cuentan con una hipótesis formulada.
+
+#### Preguntas impulsadas por creencias (Belief-led)
+
+**Creencia 1**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>La comunicación no estructurada durante un cambio de turno puede provocar omisiones, y un formulario basado en SBAR ayuda a estructurar la entrega de información.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿El personal de enfermería cardiovascular comunicará información más completa durante un cambio de turno si usa un formulario digital estructurado con SBAR que si usa un mensaje no estructurado?</td>
+    </tr>
+</table>
+
+**Creencia 2**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>El registro digital de signos vitales puede facilitar la toma de mediciones y reducir la dependencia de registros complementarios.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿El personal de enfermería completará correctamente el registro de signos vitales en NursePulse, sin omitir campos esenciales, en escenarios simulados de atención?</td>
+    </tr>
+</table>
+
+**Creencia 3**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>La fragmentación de la información aumenta el tiempo necesario para completar tareas de consulta, y una vista resumida facilita encontrar lo relevante.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Los médicos especialistas cardiovasculares localizarán más rápido la información reciente de un paciente con una vista resumida de evolución que con datos distribuidos en secciones separadas?</td>
+    </tr>
+</table>
+
+**Creencia 4**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>Los usuarios necesitan saber quién realizó determinados registros y cuándo ocurrieron, y mostrar responsable, fecha y hora genera confianza en los datos.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Los profesionales clínicos podrán identificar quién realizó una acción, cuándo y sobre qué registro al revisar el historial y la auditoría de NursePulse?</td>
+    </tr>
+</table>
+
+**Creencia 5**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>La presentación visual de las alertas ayuda a reconocer la información que requiere atención.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Los usuarios clínicos reconocerán más rápido la alerta que requiere atención prioritaria si la lista de alertas tiene jerarquía visual (severidad, estado y filtros) que si se presenta sin priorización?</td>
+    </tr>
+</table>
+
+**Creencia 6**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>Una aplicación móvil puede resultar útil para actividades realizadas cerca del paciente.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿El personal de enfermería realizará tareas de registro y consulta cerca del paciente con la aplicación móvil al menos igual de bien, y más rápido, que con la aplicación web en una estación de trabajo?</td>
+    </tr>
+</table>
+
+**Creencia 7**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>Una Landing Page con propuesta de valor clara, funcionalidades principales y llamados a la acción permite que el visitante comprenda el producto.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Los visitantes comprenderán qué problema resuelve NursePulse y encontrarán por su cuenta cómo solicitar información después de explorar la Landing Page?</td>
+    </tr>
+</table>
+
+**Creencia 8**
+
+<table>
+    <tr>
+        <th>Creencia</th>
+        <td>Presentar NursePulse como una herramienta digital complementaria enfocada en comunicación, trazabilidad y seguimiento cardiovascular facilita su comprensión y su evaluación.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Los representantes de instituciones de salud entenderán que NursePulse es una herramienta complementaria, y no un reemplazo de su sistema hospitalario, y mostrarán interés en evaluarla?</td>
+    </tr>
+</table>
+
+#### Preguntas exploratorias (Exploratory)
+
+Para estas preguntas se utilizaron los Knowledge Gaps identificados en la sección de Raw Material, aplicando la técnica de las 5W2H para obtener información relevante para el diseño del experimento.
+
+**Knowledge Gap 1**
+
+<table>
+    <tr>
+        <th>Knowledge Gap</th>
+        <td>Se desconoce cuántos elementos del traspaso SBAR el personal de enfermería considera realmente indispensables frente a los que completaría solo por obligación del formulario.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Qué elementos del traspaso SBAR considera el personal de enfermería realmente indispensables, quién los usa en el turno siguiente, en qué situaciones los omitiría si tuviera prisa y por qué los priorizaría sobre el resto del formulario?</td>
+    </tr>
+</table>
+
+**Knowledge Gap 2**
+
+<table>
+    <tr>
+        <th>Knowledge Gap</th>
+        <td>No se ha determinado si los profesionales clínicos valorarían recibir notificaciones push ante eventos críticos, además de verlos en la lista de alertas.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Qué interés tienen los profesionales clínicos en recibir notificaciones push ante eventos críticos, en qué momentos de su turno las considerarían útiles, con qué frecuencia esperarían recibirlas y por qué canal preferirían que llegaran?</td>
+    </tr>
+</table>
+
+**Knowledge Gap 3**
+
+<table>
+    <tr>
+        <th>Knowledge Gap</th>
+        <td>Falta información sobre con qué frecuencia los médicos especialistas consultan la evolución de un paciente durante un mismo turno.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Con qué frecuencia consultan los médicos especialistas la evolución de un paciente durante un mismo turno, en qué momentos lo hacen, qué información revisan primero y cuánto tiempo dedican actualmente a esa consulta?</td>
+    </tr>
+</table>
+
+**Knowledge Gap 4**
+
+<table>
+    <tr>
+        <th>Knowledge Gap</th>
+        <td>No se ha definido con qué frecuencia las instituciones de salud auditarían la trazabilidad de los registros, ni qué nivel de detalle esperan encontrar en ese historial.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Con qué frecuencia auditarían las instituciones de salud la trazabilidad de los registros clínicos, quién realizaría esa revisión, qué nivel de detalle esperarían encontrar y en qué situaciones recurrirían a ese historial?</td>
+    </tr>
+</table>
+
+**Knowledge Gap 5**
+
+<table>
+    <tr>
+        <th>Knowledge Gap</th>
+        <td>Se desconoce qué proporción de las tareas de registro y consulta ocurre efectivamente cerca del paciente frente a en una estación de trabajo.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Qué proporción de las tareas de registro y consulta realiza el personal de enfermería cerca del paciente en lugar de en una estación de trabajo, en qué momentos del turno ocurre esto y qué las motiva a hacerlo en un lugar u otro?</td>
+    </tr>
+</table>
+
+**Knowledge Gap 6**
+
+<table>
+    <tr>
+        <th>Knowledge Gap</th>
+        <td>No se ha determinado qué tan dispuestos están los médicos especialistas a adoptar un formulario adicional de registro, aun cuando reduzca el tiempo de búsqueda de información.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Qué tan dispuestos están los médicos especialistas a incorporar un paso adicional de registro en su rutina, qué beneficio mínimo esperarían a cambio y qué objeciones plantearían frente a ese cambio de hábito?</td>
+    </tr>
+</table>
+
+**Knowledge Gap 7**
+
+<table>
+    <tr>
+        <th>Knowledge Gap</th>
+        <td>Se desconoce qué objeciones concretas plantearían las instituciones de salud sobre seguridad, interoperabilidad o costo antes de evaluar la adopción de NursePulse.</td>
+    </tr>
+    <tr>
+        <th>Pregunta</th>
+        <td>¿Qué objeciones concretas sobre seguridad, interoperabilidad o costo plantearían las instituciones de salud antes de evaluar NursePulse, quién dentro de la institución las plantearía y qué información necesitarían para resolverlas?</td>
+    </tr>
+</table>
+
 ### 8.1.4. Question Backlog.
 
+A continuación, se muestra el backlog priorizado de las preguntas generadas en la sección anterior. Las preguntas se priorizan según su confianza, riesgo, impacto e interés, de modo que las más críticas para la propuesta de valor de NursePulse se evalúen primero. El Deep Backlog agrupa las preguntas de prioridad 1 a 6, y el Broad Backlog las de prioridad 7 a 15.
+
+<table>
+<tr>
+    <th>Prioridad</th>
+    <th>Pregunta</th>
+    <th>Motivación</th>
+    <th>Confianza</th>
+    <th>Riesgo</th>
+    <th>Impacto</th>
+    <th>Interés</th>
+    <th>Puntaje total</th>
+</tr>
+
+<tr>
+    <td>1</td>
+    <td>¿El personal de enfermería cardiovascular comunicará información más completa durante un cambio de turno si usa un formulario digital estructurado con SBAR que si usa un mensaje no estructurado? (H-01)</td>
+    <td>Valida el diferenciador principal del producto y está directamente ligada a BG-02.</td>
+    <td>6</td>
+    <td>10</td>
+    <td>10</td>
+    <td>8</td>
+    <td>34</td>
+</tr>
+
+<tr>
+    <td>2</td>
+    <td>¿Qué elementos del traspaso SBAR considera el personal de enfermería realmente indispensables, quién los usa en el turno siguiente, en qué situaciones los omitiría si tuviera prisa y por qué los priorizaría sobre el resto del formulario?</td>
+    <td>Permite calibrar el formulario SBAR antes de medir su efectividad frente al mensaje libre.</td>
+    <td>5</td>
+    <td>9</td>
+    <td>9</td>
+    <td>9</td>
+    <td>32</td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>¿Los profesionales clínicos podrán identificar quién realizó una acción, cuándo y sobre qué registro al revisar el historial y la auditoría de NursePulse? (H-04)</td>
+    <td>Sostiene la propuesta de trazabilidad, ligada a BG-05.</td>
+    <td>6</td>
+    <td>9</td>
+    <td>8</td>
+    <td>8</td>
+    <td>31</td>
+</tr>
+
+<tr>
+    <td>4</td>
+    <td>¿Los médicos especialistas cardiovasculares localizarán más rápido la información reciente de un paciente con una vista resumida de evolución que con datos distribuidos en secciones separadas? (H-03)</td>
+    <td>Valida la reducción de 30 % en el tiempo de búsqueda clínica definida en BG-03.</td>
+    <td>6</td>
+    <td>8</td>
+    <td>8</td>
+    <td>8</td>
+    <td>30</td>
+</tr>
+
+<tr>
+    <td>5</td>
+    <td>¿El personal de enfermería completará correctamente el registro de signos vitales en NursePulse, sin omitir campos esenciales, en escenarios simulados de atención? (H-02)</td>
+    <td>Confirma la viabilidad del reemplazo del registro físico de signos vitales, ligado a BG-03 y BG-04.</td>
+    <td>6</td>
+    <td>8</td>
+    <td>8</td>
+    <td>7</td>
+    <td>29</td>
+</tr>
+
+<tr>
+    <td>6</td>
+    <td>¿Con qué frecuencia consultan los médicos especialistas la evolución de un paciente durante un mismo turno, en qué momentos lo hacen, qué información revisan primero y cuánto tiempo dedican actualmente a esa consulta?</td>
+    <td>Define la línea base necesaria para medir la reducción de tiempo prometida en H-03.</td>
+    <td>5</td>
+    <td>8</td>
+    <td>8</td>
+    <td>7</td>
+    <td>28</td>
+</tr>
+
+<tr>
+    <td>7</td>
+    <td>¿Los usuarios clínicos reconocerán más rápido la alerta que requiere atención prioritaria si la lista de alertas tiene jerarquía visual que si se presenta sin priorización? (H-05)</td>
+    <td>Valida que la jerarquía visual de alertas aporte valor real en una situación de deterioro clínico.</td>
+    <td>6</td>
+    <td>7</td>
+    <td>7</td>
+    <td>7</td>
+    <td>27</td>
+</tr>
+
+<tr>
+    <td>8</td>
+    <td>¿Los representantes de instituciones de salud entenderán que NursePulse es una herramienta complementaria, y no un reemplazo de su sistema hospitalario, y mostrarán interés en evaluarla? (H-08)</td>
+    <td>Determina si existe adopción institucional viable, condición necesaria para cumplir BG-02.</td>
+    <td>5</td>
+    <td>7</td>
+    <td>7</td>
+    <td>7</td>
+    <td>26</td>
+</tr>
+
+<tr>
+    <td>9</td>
+    <td>¿Con qué frecuencia auditarían las instituciones de salud la trazabilidad de los registros clínicos, quién realizaría esa revisión, qué nivel de detalle esperarían encontrar y en qué situaciones recurrirían a ese historial?</td>
+    <td>Aporta contexto institucional para dimensionar correctamente el módulo de auditoría.</td>
+    <td>5</td>
+    <td>7</td>
+    <td>7</td>
+    <td>6</td>
+    <td>25</td>
+</tr>
+
+<tr>
+    <td>10</td>
+    <td>¿El personal de enfermería realizará tareas de registro y consulta cerca del paciente con la aplicación móvil al menos igual de bien, y más rápido, que con la aplicación web en una estación de trabajo? (H-06)</td>
+    <td>Justifica la inversión en una aplicación móvil nativa frente a mantener solo la versión web.</td>
+    <td>6</td>
+    <td>6</td>
+    <td>6</td>
+    <td>6</td>
+    <td>24</td>
+</tr>
+
+<tr>
+    <td>11</td>
+    <td>¿Qué proporción de las tareas de registro y consulta realiza el personal de enfermería cerca del paciente en lugar de en una estación de trabajo, en qué momentos del turno ocurre esto y qué las motiva a hacerlo en un lugar u otro?</td>
+    <td>Permite entender si el escenario de uso que justifica la app móvil ocurre con la frecuencia esperada.</td>
+    <td>5</td>
+    <td>6</td>
+    <td>6</td>
+    <td>6</td>
+    <td>23</td>
+</tr>
+
+<tr>
+    <td>12</td>
+    <td>¿Qué tan dispuestos están los médicos especialistas a incorporar un paso adicional de registro en su rutina, qué beneficio mínimo esperarían a cambio y qué objeciones plantearían frente a ese cambio de hábito?</td>
+    <td>Identifica posibles barreras de adopción entre el personal médico, no solo de enfermería.</td>
+    <td>5</td>
+    <td>6</td>
+    <td>6</td>
+    <td>5</td>
+    <td>22</td>
+</tr>
+
+<tr>
+    <td>13</td>
+    <td>¿Los visitantes comprenderán qué problema resuelve NursePulse y encontrarán por su cuenta cómo solicitar información después de explorar la Landing Page? (H-07)</td>
+    <td>Valida el primer punto de contacto con visitantes e instituciones, ligado a BG-01.</td>
+    <td>6</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>21</td>
+</tr>
+
+<tr>
+    <td>14</td>
+    <td>¿Qué interés tienen los profesionales clínicos en recibir notificaciones push ante eventos críticos, en qué momentos de su turno las considerarían útiles, con qué frecuencia esperarían recibirlas y por qué canal preferirían que llegaran?</td>
+    <td>Explora una mejora futura sobre el sistema de alertas, no crítica para la primera validación.</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>4</td>
+    <td>19</td>
+</tr>
+
+<tr>
+    <td>15</td>
+    <td>¿Qué objeciones concretas sobre seguridad, interoperabilidad o costo plantearían las instituciones de salud antes de evaluar NursePulse, quién dentro de la institución las plantearía y qué información necesitarían para resolverlas?</td>
+    <td>Es relevante para una futura negociación comercial, pero depende de validar primero el interés institucional (H-08).</td>
+    <td>4</td>
+    <td>5</td>
+    <td>4</td>
+    <td>4</td>
+    <td>17</td>
+</tr>
+</table>
+
 ### 8.1.5. Experiments Cards.
+
+Las siguientes tarjetas desarrollan las ocho preguntas impulsadas por creencias (H-01 a H-08), ordenadas según su prioridad en el Question Backlog. Las hipótesis, medidas, condiciones y métricas de cada tarjeta son las mismas que se detallan en las secciones 8.2.1 a 8.2.4, de modo que la planificación y el diseño del experimento sean consistentes entre sí.
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿El personal de enfermería cardiovascular comunicará información más completa durante un cambio de turno si usa un formulario digital estructurado con SBAR que si usa un mensaje no estructurado?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Valida el diferenciador principal del producto frente a la comunicación no estructurada actual, condición de BG-02.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Creemos que, al usar el formulario SBAR de NursePulse, el personal de enfermería omitirá menos elementos relevantes del traspaso porque el formulario exige completar situación, antecedentes, evaluación y recomendación, evidenciado por una tasa de omisión al menos 15 puntos porcentuales menor que con un mensaje libre.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Prototipo funcional del formulario SBAR de NursePulse, evaluado con traspasos simulados.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>SBAR Omission Rate (SOR): elementos relevantes omitidos sobre elementos relevantes del escenario.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>A) Traspaso con el formulario SBAR de NursePulse. B) Traspaso con mensaje libre, como se hace hoy.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Razón</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>M-01 Tasa de omisión SBAR.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿Qué elementos del traspaso SBAR considera el personal de enfermería realmente indispensables, quién los usa en el turno siguiente, en qué situaciones los omitiría si tuviera prisa y por qué los priorizaría sobre el resto del formulario?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Permite calibrar qué campos del formulario SBAR deben mantenerse obligatorios antes de medir su efectividad frente al mensaje libre.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Pregunta exploratoria: no cuenta con una hipótesis formulada en esta etapa, su resultado alimentará el diseño del formulario SBAR evaluado en H-01.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Entrevista semiestructurada con personal de enfermería sobre el contenido del formulario SBAR.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>Elementos señalados como indispensables; elementos señalados como prescindibles bajo presión de tiempo.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>Entrevista individual con un guion de preguntas abiertas sobre cada componente del formulario SBAR.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Nominal</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>No aplica (resultado cualitativo).</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿Los profesionales clínicos podrán identificar quién realizó una acción, cuándo y sobre qué registro al revisar el historial y la auditoría de NursePulse?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Sostiene la propuesta de trazabilidad completa definida en BG-05.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Creemos que al menos el 85 % de las respuestas sobre responsable, fecha, hora y registro involucrado serán correctas porque cada registro muestra esos datos, evidenciado por una tasa de respuestas correctas igual o superior al 85 %.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Cuestionario de escenario sobre el historial y la auditoría de NursePulse.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>Traceability Accuracy Rate (TAR): respuestas correctas sobre respuestas totales.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>A) Revisión del historial y la auditoría de NursePulse (responsable, fecha y hora visibles). B) Revisión de registros sin esos datos.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Razón</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>M-04 Tasa de respuestas correctas de trazabilidad.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿Los médicos especialistas cardiovasculares localizarán más rápido la información reciente de un paciente con una vista resumida de evolución que con datos distribuidos en secciones separadas?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Valida la reducción de 30 % en el tiempo de búsqueda de información clínica definida en BG-03.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Creemos que el tiempo medio para localizar la información solicitada será al menos 30 % menor con la vista de seguimiento del paciente de NursePulse que con una vista donde los datos están separados, sin aumentar las respuestas incorrectas, evidenciado por una reducción del tiempo medio de localización de 30 % o más.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Prototipo de la vista de seguimiento del paciente, evaluado con tareas de búsqueda cronometradas.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>Clinical Information Retrieval Time (CIRT): reducción porcentual del tiempo de localización frente al control.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>A) Consulta mediante la vista de seguimiento de NursePulse. B) Consulta con los mismos datos distribuidos en secciones separadas.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Razón</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>M-03 Tiempo de localización de información.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿El personal de enfermería completará correctamente el registro de signos vitales en NursePulse, sin omitir campos esenciales, en escenarios simulados de atención?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Confirma la viabilidad de reemplazar el registro físico de signos vitales, condición de BG-03 y BG-04.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Creemos que al menos el 90 % de los registros de signos vitales se completarán correctamente a la primera, con una omisión de campos esenciales de 5 % o menos, porque el formulario muestra el rango válido de cada medición, evidenciado por una tasa de finalización correcta igual o superior al 90 %.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Prototipo funcional del formulario de signos vitales, evaluado con mediciones de escenarios simulados.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>Vital Signs Completion Rate (VCR): registros correctos a la primera sobre registros intentados.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>A) Registro en el formulario digital de NursePulse. B) Registro en el formato físico o en planilla que se usa actualmente.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Razón</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>M-02 Tasa de finalización correcta de signos vitales.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿Los usuarios clínicos reconocerán más rápido la alerta que requiere atención prioritaria si la lista de alertas tiene jerarquía visual (severidad, estado y filtros) que si se presenta sin priorización?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Valida que la jerarquía visual de alertas acelere el reconocimiento de eventos que requieren atención inmediata.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Creemos que el tiempo para identificar la alerta de mayor prioridad será al menos 30 % menor con la jerarquía visual de NursePulse, con una identificación correcta de al menos 90 %, evidenciado por la reducción del tiempo de reconocimiento y la tasa de acierto.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Prototipo de la lista de alertas con severidad, estado y filtros visuales.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>Priority Alert Recognition Time (PART): tiempo hasta la primera selección y tasa de acierto.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>A) Lista de alertas con jerarquía visual. B) Lista de alertas plana, sin priorización visual.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Razón</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>M-05 Tiempo y acierto en reconocimiento de alertas.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿Los representantes de instituciones de salud entenderán que NursePulse es una herramienta complementaria, y no un reemplazo de su sistema hospitalario, y mostrarán interés en evaluarla?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Determina si existe una adopción institucional viable, condición necesaria para cumplir BG-02.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Creemos que al menos el 70 % de los representantes institucionales entrevistados diferenciará correctamente el alcance de NursePulse frente a un HIS o EHR, y que al menos 3 instituciones mostrarán interés en evaluarlo en un escenario definido, evidenciado por ambas condiciones.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Entrevista guiada y escenario de evaluación institucional con representantes de instituciones de salud.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>Scope Differentiation Rate (SDR): representantes que diferencian el alcance sobre entrevistados; número de instituciones interesadas.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>A) Presentación de NursePulse como herramienta complementaria. B) Presentación genérica de una plataforma de gestión clínica.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Razón</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>M-08 Diferenciación de alcance e interés institucional.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <th>Elemento</th>
+    <th>Descripción</th>
+</tr>
+<tr>
+    <td>Pregunta</td>
+    <td>¿El personal de enfermería realizará tareas de registro y consulta cerca del paciente con la aplicación móvil al menos igual de bien, y más rápido, que con la aplicación web en una estación de trabajo?</td>
+</tr>
+<tr>
+    <td>Por qué</td>
+    <td>Justifica mantener una aplicación móvil nativa, propuesta de valor de BG-04.</td>
+</tr>
+<tr>
+    <td>Hipótesis</td>
+    <td>Creemos que la aplicación móvil logrará una tasa de finalización de tareas no inferior a la de la web (margen de 10 puntos porcentuales) y un tiempo al menos 20 % menor, sin más errores, evidenciado por ambas medidas en el mismo conjunto de tareas.</td>
+</tr>
+<tr>
+    <td>Qué</td>
+    <td>Prototipo de la aplicación móvil, evaluado con el mismo guion de tareas que la aplicación web.</td>
+</tr>
+<tr>
+    <td>Medidas</td>
+    <td>Mobile Task Efficiency (MTE): tasa de finalización y tiempo por tarea en móvil frente a web.</td>
+</tr>
+<tr>
+    <td>Condiciones</td>
+    <td>A) Tareas realizadas con la aplicación móvil. B) Mismas tareas realizadas con la aplicación web en una estación de trabajo.</td>
+</tr>
+<tr>
+    <td>Escala</td>
+    <td>Razón</td>
+</tr>
+<tr>
+    <td>Métrica</td>
+    <td>M-06 Eficiencia de tareas móvil vs. web.</td>
+</tr>
+</table>
 
 
 ## 8.2. Experiment Design
