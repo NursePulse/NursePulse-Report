@@ -1168,6 +1168,791 @@ El objetivo del plan de seguimiento es registrar, en la aplicación web y en la 
 
 ## 8.3. Experimentation
 
-### 8.3.1. To-Be User Stories.
+La fase de *Experimentation* de NursePulse tiene como finalidad transformar los hallazgos obtenidos durante el análisis del estado actual (*As-Is*), las entrevistas de validación y el diseño experimental en propuestas concretas de mejora del producto digital. Esta etapa permite relacionar las necesidades identificadas en los usuarios con nuevas historias de usuario y un Product Backlog actualizado, orientado a generar evidencia sobre el valor de las funcionalidades propuestas.
 
-### 8.3.2. To-Be Product Backlog.
+El punto de partida de esta fase corresponde a los resultados documentados en los capítulos anteriores. En el Capítulo III se establecieron las historias de usuario y los requisitos funcionales del producto. En el Capítulo V se documentó la implementación de la Landing Page, la aplicación web desarrollada en Angular, la aplicación móvil en Flutter y los servicios RESTful implementados mediante Spring Boot. Posteriormente, el Capítulo VI permitió identificar oportunidades de mejora mediante pruebas y entrevistas de validación, mientras que el Capítulo VII describió las prácticas DevOps utilizadas durante el desarrollo.
+
+A partir de estos antecedentes, la sección 8.1 permitió identificar y priorizar preguntas de investigación. Asimismo, en la sección 8.2 se definieron ocho hipótesis experimentales, sus métricas de dominio, condiciones de evaluación, criterios de escala y mecanismos de recolección de información.
+
+Las principales oportunidades de mejora identificadas son:
+
+- Mejorar la completitud de los traspasos clínicos mediante la estructura SBAR, reduciendo la necesidad de ingresar repetidamente información existente.
+- Facilitar el registro de signos vitales y proporcionar retroalimentación clara sobre el resultado del guardado.
+- Optimizar la consulta de información clínica mediante vistas resumidas y tendencias temporales.
+- Fortalecer la trazabilidad y confiabilidad de los registros mediante una identificación verificable del usuario responsable.
+- Mejorar la priorización, visualización y gestión segura de alertas clínicas.
+- Incrementar la eficiencia de las actividades realizadas desde la aplicación móvil.
+- Mejorar la comprensión de la propuesta de valor y los mecanismos de contacto de la Landing Page.
+- Facilitar la comprensión del modelo SaaS y su carácter complementario frente a los sistemas hospitalarios existentes.
+
+Para estructurar las mejoras propuestas se consideran las ocho hipótesis del diseño experimental y sus métricas de dominio:
+
+| Hipótesis | Área de evaluación | Métrica |
+|---|---|---|
+| H-01 | Traspaso de turno mediante SBAR | M-01: SBAR Omission Rate (SOR) |
+| H-02 | Registro de signos vitales | M-02: Vital Signs Completion Rate (VCR) |
+| H-03 | Consulta de evolución clínica | M-03: Clinical Information Retrieval Time (CIRT) |
+| H-04 | Trazabilidad clínica | M-04: Traceability Accuracy Rate (TAR) |
+| H-05 | Priorización de alertas | M-05: Priority Alert Recognition Time (PART) |
+| H-06 | Eficiencia de la aplicación móvil | M-06: Mobile Task Efficiency (MTE) |
+| H-07 | Comprensión de la Landing Page | M-07: Value Proposition Comprehension Rate (VPCR) |
+| H-08 | Adopción institucional | M-08: Scope Differentiation Rate (SDR) |
+
+La propuesta To-Be conserva el alcance general de NursePulse como plataforma de apoyo a los procesos de enfermería en clínicas privadas. La validación inicial se concentra en escenarios de hospitalización general, manteniendo a los profesionales de enfermería y coordinadores como usuarios principales, así como a los médicos y administradores autorizados como actores complementarios.
+
+Las pruebas se diseñan utilizando datos clínicos sintéticos y escenarios controlados, sin involucrar información identificable de pacientes reales. De esta manera, se busca obtener evidencia útil respetando las responsabilidades éticas y profesionales del equipo.
+
+La presente sección desarrolla las historias de usuario To-Be y su correspondiente Product Backlog. Las funcionalidades aquí descritas constituyen propuestas de mejora sujetas a implementación y validación experimental. Su inclusión no implica que se encuentren desarrolladas ni que las hipótesis hayan sido confirmadas.
+
+---
+
+### 8.3.1. To-Be User Stories
+
+Las *To-Be User Stories* representan las funcionalidades y mejoras propuestas para la siguiente evolución de NursePulse, tomando como referencia los resultados del proceso de *Needfinding*, los hallazgos de las entrevistas de validación, la evaluación heurística y las hipótesis definidas en el apartado 8.2.
+
+A diferencia de las historias originales, cuyo objetivo fue construir la primera versión funcional de la plataforma, las historias To-Be buscan mejorar los procesos existentes y atender problemas específicos identificados durante su evaluación.
+
+Para conservar la trazabilidad con el Product Backlog original, las nuevas historias se identifican mediante el prefijo `TB-US`, seguido de un número correlativo. Los criterios de aceptación se redactan utilizando la estructura Gherkin *Given–When–Then*, expresada mediante **Dado, Cuando y Entonces**.
+
+#### TB-US-01: Autocompletar antecedentes clínicos en el traspaso SBAR
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-01 |
+| Epic | EP-02: Gestión de traspaso clínico SBAR |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-01 |
+| Métrica | M-01: SBAR Omission Rate |
+| Historias originales | US-13, US-14, US-15 |
+
+**User Story**
+
+Como profesional de enfermería, deseo que el formulario de traspaso SBAR complete automáticamente los antecedentes clínicos disponibles del paciente para evitar registrar información repetida y facilitar una comunicación más completa durante el cambio de turno.
+
+**Justificación**
+
+Durante las entrevistas de validación y la evaluación heurística se identificó que la necesidad de ingresar nuevamente antecedentes clínicos puede aumentar el tiempo de documentación y provocar omisiones. Esta mejora aprovecha información previamente registrada en NursePulse, manteniendo la posibilidad de actualizar los datos relevantes para el turno.
+
+**Criterios de aceptación**
+
+**Escenario 1: Recuperación de antecedentes clínicos**
+
+```gherkin
+Dado que el paciente cuenta con información clínica registrada
+Cuando el profesional de enfermería inicia un nuevo traspaso SBAR
+Entonces el sistema presenta los antecedentes disponibles en el apartado correspondiente
+```
+
+**Escenario 2: Información clínica no disponible**
+
+```gherkin
+Dado que el paciente no cuenta con antecedentes previamente registrados
+Cuando el usuario accede al formulario SBAR
+Entonces el sistema permite completar manualmente la información faltante sin generar datos inexistentes
+```
+
+**Escenario 3: Actualización de la información**
+
+```gherkin
+Dado que los antecedentes han sido recuperados
+Cuando el usuario modifica información para el traspaso actual
+Entonces el sistema registra los datos del nuevo traspaso sin modificar automáticamente el historial clínico original
+```
+
+**Resultado esperado:** disminuir los elementos relevantes omitidos durante el traspaso y reducir la duplicidad de ingreso de información.
+
+#### TB-US-02: Verificación de completitud del formulario SBAR
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-02 |
+| Epic | EP-02: Gestión de traspaso clínico SBAR |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-01 |
+| Métrica | M-01: SBAR Omission Rate |
+| Historias originales | US-13, US-15 |
+
+**User Story**
+
+Como profesional de enfermería, deseo visualizar el estado de completitud de los componentes del formulario SBAR para identificar información faltante antes de finalizar el traspaso de turno.
+
+**Justificación**
+
+El modelo SBAR constituye uno de los principales diferenciadores de NursePulse. La identificación de campos incompletos permite apoyar su uso estructurado y reducir la posibilidad de omitir información relevante durante una transferencia de responsabilidad asistencial.
+
+**Criterios de aceptación**
+
+**Escenario 1: Identificación de información faltante**
+
+```gherkin
+Dado que el usuario está completando un formulario SBAR
+Cuando uno o más campos obligatorios permanecen incompletos
+Entonces el sistema identifica visualmente los campos pendientes
+```
+
+**Escenario 2: Finalización del traspaso**
+
+```gherkin
+Dado que todos los campos obligatorios contienen información válida
+Cuando el usuario confirma el traspaso
+Entonces el sistema permite guardar el registro y muestra una confirmación de éxito
+```
+
+**Resultado esperado:** reducir al menos 15 puntos porcentuales la tasa de omisión frente a la condición de comunicación no estructurada, conforme al umbral propuesto en la sección 8.2.
+
+#### TB-US-03: Registro de signos vitales con observaciones clínicas
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-03 |
+| Epic | EP-03: Registro y seguimiento clínico |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-02 |
+| Métrica | M-02: Vital Signs Completion Rate |
+| Historias originales | US-16, US-17 |
+
+**User Story**
+
+Como profesional de enfermería, deseo agregar observaciones clínicas al registrar los signos vitales de un paciente para complementar las mediciones con información contextual relevante para el seguimiento asistencial.
+
+**Justificación**
+
+Las entrevistas de validación identificaron la necesidad de agregar comentarios a los registros de signos vitales. El registro numérico permite documentar parámetros fisiológicos, pero no siempre refleja circunstancias relevantes para su interpretación, como las condiciones en las que se realizó una medición.
+
+**Criterios de aceptación**
+
+**Escenario 1: Registro con observaciones**
+
+```gherkin
+Dado que el usuario se encuentra en el formulario de signos vitales
+Cuando ingresa mediciones válidas y una observación complementaria
+Entonces el sistema guarda los valores y la observación asociados al paciente correspondiente
+```
+
+**Escenario 2: Registro sin observaciones**
+
+```gherkin
+Dado que el campo de observaciones es opcional
+Cuando el usuario ingresa correctamente los signos vitales sin comentarios
+Entonces el sistema permite guardar el registro
+```
+
+**Escenario 3: Validación de mediciones**
+
+```gherkin
+Dado que existe un valor fuera de los límites permitidos por el formulario
+Cuando el usuario intenta guardar el registro
+Entonces el sistema muestra el campo que requiere revisión sin descartar los demás datos ingresados
+```
+
+**Resultado esperado:** alcanzar una tasa de registros correctos a la primera de al menos 90 %, manteniendo una omisión de campos esenciales no superior al 5 %.
+
+#### TB-US-04: Visualización del estado de guardado en la aplicación móvil
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-04 |
+| Epic | EP-11: Plataforma web y móvil |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-02, H-06 |
+| Métricas | M-02: VCR; M-06: MTE |
+| Historias originales | US-16, US-38 |
+
+**User Story**
+
+Como profesional de enfermería, deseo recibir una confirmación visual del estado de guardado de los registros realizados desde la aplicación móvil para saber si la información se almacenó correctamente y evitar registros duplicados.
+
+**Justificación**
+
+La evaluación de usabilidad identificó la ausencia de retroalimentación clara durante el registro móvil. Esta situación puede producir incertidumbre cuando el usuario presiona el botón de guardar, especialmente bajo condiciones de conectividad limitada.
+
+**Criterios de aceptación**
+
+**Escenario 1: Guardado exitoso**
+
+```gherkin
+Dado que el usuario ha completado correctamente un formulario
+Cuando el servidor confirma la operación
+Entonces la aplicación muestra un mensaje de guardado exitoso
+```
+
+**Escenario 2: Operación en proceso**
+
+```gherkin
+Dado que una solicitud de guardado se encuentra en ejecución
+Cuando el usuario observa la pantalla
+Entonces la aplicación presenta un indicador de procesamiento y evita envíos duplicados
+```
+
+**Escenario 3: Error de conexión**
+
+```gherkin
+Dado que el servidor no confirma el guardado
+Cuando ocurre un error de conexión
+Entonces el sistema informa que la operación no fue confirmada y permite recuperarla de manera controlada
+```
+
+**Resultado esperado:** mejorar la tasa de finalización de tareas móviles y reducir errores asociados a la incertidumbre del guardado.
+
+Esta historia no presupone la existencia de un modo offline completo, cuya implementación requeriría un alcance técnico adicional.
+
+#### TB-US-05: Visualización integrada de evolución clínica
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-05 |
+| Epic | EP-05: Soporte a la toma de decisiones clínicas |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-03 |
+| Métrica | M-03: Clinical Information Retrieval Time |
+| Historias originales | US-17, US-21, US-29 |
+
+**User Story**
+
+Como profesional clínico autorizado, deseo visualizar en una misma pantalla los signos vitales recientes, los eventos clínicos y las alertas del paciente para consultar su evolución sin navegar entre diferentes módulos.
+
+**Justificación**
+
+El análisis de entrevistas identificó que la fragmentación de información incrementa el esfuerzo necesario para consultar el estado reciente de los pacientes. Asimismo, en la evaluación heurística se señaló la ausencia de curvas de tendencia temporal de parámetros hemodinámicos.
+
+**Criterios de aceptación**
+
+**Escenario 1: Consulta de información consolidada**
+
+```gherkin
+Dado que el paciente cuenta con registros clínicos
+Cuando el usuario autorizado accede a su vista de seguimiento
+Entonces el sistema presenta los signos vitales, eventos y alertas disponibles en una vista integrada
+```
+
+**Escenario 2: Visualización de tendencias**
+
+```gherkin
+Dado que el paciente cuenta con múltiples mediciones registradas
+Cuando el usuario selecciona un parámetro fisiológico
+Entonces el sistema presenta su evolución temporal mediante una representación gráfica
+```
+
+**Escenario 3: Ausencia de registros**
+
+```gherkin
+Dado que no existen datos para el periodo seleccionado
+Cuando el usuario consulta la evolución
+Entonces el sistema informa que no hay registros disponibles, sin generar valores estimados
+```
+
+**Resultado esperado:** reducir al menos un 30 % el tiempo de localización de información clínica respecto a la condición de control, sin incrementar las respuestas incorrectas.
+
+#### TB-US-06: Filtrado y priorización de alertas clínicas
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-06 |
+| Epic | EP-09: Alertas clínicas |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-05 |
+| Métrica | M-05: Priority Alert Recognition Time |
+| Historias originales | US-31, US-32, US-33 |
+
+**User Story**
+
+Como profesional de enfermería, deseo visualizar las alertas clínicas ordenadas y filtradas por severidad y estado para identificar rápidamente aquellas que requieren atención prioritaria.
+
+**Justificación**
+
+La evaluación heurística identificó sobrecarga visual y ausencia de filtros inmediatos en la consola de alertas. Esta situación puede dificultar el reconocimiento de eventos relevantes dentro de una lista extensa.
+
+**Criterios de aceptación**
+
+**Escenario 1: Priorización de alertas**
+
+```gherkin
+Dado que existen alertas de diferentes niveles de severidad
+Cuando el usuario abre el listado
+Entonces el sistema permite identificar visualmente las alertas de mayor prioridad
+```
+
+**Escenario 2: Aplicación de filtros**
+
+```gherkin
+Dado que existen alertas con diferentes estados
+Cuando el usuario selecciona un filtro
+Entonces el sistema presenta únicamente las alertas que cumplen las condiciones seleccionadas
+```
+
+**Escenario 3: Consulta del detalle**
+
+```gherkin
+Dado que el usuario identifica una alerta
+Cuando selecciona el registro
+Entonces el sistema presenta la información correspondiente y su estado actual
+```
+
+**Resultado esperado:** reducir al menos 30 % el tiempo de identificación de la alerta prioritaria y alcanzar una tasa de acierto mínima de 90 %.
+
+#### TB-US-07: Confirmación del cierre de alertas críticas
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-07 |
+| Epic | EP-09: Alertas clínicas |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-05 |
+| Métrica relacionada | M-05; evaluación complementaria de errores |
+| Historias originales | US-31, US-32 |
+
+**User Story**
+
+Como profesional clínico autorizado, deseo confirmar y justificar el cierre de una alerta crítica para evitar cierres accidentales y mantener evidencia de las decisiones tomadas durante su atención.
+
+**Justificación**
+
+La evaluación heurística identificó como problema la posibilidad de cerrar alertas clínicas críticas sin una confirmación ni justificación obligatoria. Esta mejora responde a la necesidad de prevenir errores en operaciones que pueden afectar el seguimiento de eventos relevantes.
+
+**Criterios de aceptación**
+
+**Escenario 1: Solicitud de cierre**
+
+```gherkin
+Dado que una alerta crítica se encuentra en un estado que permite su cierre
+Cuando el usuario selecciona la opción correspondiente
+Entonces el sistema solicita confirmación y una justificación
+```
+
+**Escenario 2: Cancelación**
+
+```gherkin
+Dado que el diálogo de confirmación se encuentra abierto
+Cuando el usuario cancela la operación
+Entonces la alerta conserva su estado anterior
+```
+
+**Escenario 3: Cierre confirmado**
+
+```gherkin
+Dado que el usuario autorizado confirma la operación e ingresa una justificación válida
+Cuando el sistema procesa el cierre
+Entonces actualiza el estado de la alerta y registra el responsable, fecha, hora y motivo de la acción
+```
+
+**Resultado esperado:** reducir cierres involuntarios y fortalecer la seguridad de las operaciones clínicas y su trazabilidad.
+
+#### TB-US-08: Fortalecimiento de la trazabilidad de acciones clínicas
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-08 |
+| Epic | EP-04: Trazabilidad clínica |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-04 |
+| Métrica | M-04: Traceability Accuracy Rate |
+| Historias originales | US-20, US-35, US-36 |
+
+**User Story**
+
+Como jefe o coordinador de enfermería, deseo consultar un historial confiable de las acciones realizadas por el personal autorizado para identificar al responsable de cada registro y reconstruir lo ocurrido durante un turno.
+
+**Justificación**
+
+El Product Backlog original reconoce que algunas operaciones registran el identificador del responsable proporcionado por la aplicación cliente sin contrastarlo con el token de autenticación. Este comportamiento representa una oportunidad de mejora en la confiabilidad de la auditoría.
+
+**Criterios de aceptación**
+
+**Escenario 1: Registro del responsable**
+
+```gherkin
+Dado que un usuario autenticado realiza una acción clínica
+Cuando el servidor procesa la operación
+Entonces registra como responsable al usuario identificado mediante la sesión autenticada, sin confiar exclusivamente en un identificador enviado por el cliente
+```
+
+**Escenario 2: Consulta de auditoría**
+
+```gherkin
+Dado que un supervisor autorizado accede al historial
+Cuando consulta una acción registrada
+Entonces visualiza el responsable, la fecha, la hora, el tipo de operación y la entidad relacionada
+```
+
+**Escenario 3: Acceso no autorizado**
+
+```gherkin
+Dado que un usuario carece de permisos para consultar determinados registros
+Cuando intenta acceder a ellos
+Entonces el sistema rechaza la solicitud conforme a las reglas de autorización
+```
+
+**Resultado esperado:** alcanzar al menos un 85 % de respuestas correctas en los escenarios de reconstrucción de acciones clínicas.
+
+#### TB-US-09: Dashboard de seguimiento de actividades y pendientes
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-09 |
+| Epic | EP-08: Pacientes y monitoreo |
+| Prioridad | Media |
+| Hipótesis relacionada | H-03, H-05 |
+| Métricas | M-03: CIRT; M-05: PART |
+| Historias originales | US-29, US-30 |
+
+**User Story**
+
+Como jefe o coordinador de enfermería, deseo consultar un dashboard con información resumida de pacientes, alertas y actividades pendientes para supervisar el estado general del turno sin revisar cada módulo individualmente.
+
+**Justificación**
+
+El primer capítulo del informe identifica a los coordinadores de enfermería como un segmento objetivo que necesita visibilidad sobre responsables, pendientes y eventos relevantes. Esta historia complementa las funcionalidades existentes del dashboard y la propuesta de centralización de información.
+
+**Criterios de aceptación**
+
+**Escenario 1: Visualización del dashboard**
+
+```gherkin
+Dado que el usuario autorizado inicia sesión
+Cuando accede al dashboard
+Entonces visualiza los indicadores y registros disponibles correspondientes a su ámbito de autorización
+```
+
+**Escenario 2: Identificación de pendientes**
+
+```gherkin
+Dado que existen actividades o alertas pendientes registradas en el sistema
+Cuando el usuario consulta el resumen
+Entonces puede identificar los elementos que requieren seguimiento
+```
+
+**Escenario 3: Acceso al detalle**
+
+```gherkin
+Dado que el usuario selecciona un elemento del dashboard
+Cuando solicita información adicional
+Entonces el sistema muestra el registro asociado, respetando los permisos existentes
+```
+
+**Resultado esperado:** reducir el tiempo requerido para identificar información relevante y facilitar el seguimiento de las actividades documentadas.
+
+#### TB-US-10: Registro de eventos de interacción para experimentación
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-10 |
+| Epic | EP-11: Plataforma web y móvil |
+| Prioridad | Alta |
+| Hipótesis relacionada | H-01 a H-07 |
+| Métricas | M-01 a M-07 |
+| Historias originales | TS-08, TS-09, US-38 |
+
+**User Story**
+
+Como integrante del equipo de investigación de NursePulse, deseo disponer de registros de interacción de las tareas experimentales para calcular las métricas definidas y analizar el comportamiento de los participantes durante las pruebas.
+
+**Justificación**
+
+La sección 8.2.8 establece un plan de seguimiento de eventos para la aplicación web y móvil, pero reconoce que todavía no existe una herramienta de analítica de producto implementada. Por ello, esta historia permite preparar la infraestructura necesaria para ejecutar las pruebas y obtener datos cuantitativos.
+
+**Criterios de aceptación**
+
+**Escenario 1: Registro de eventos**
+
+```gherkin
+Dado que un participante realiza una tarea experimental
+Cuando ocurre una interacción definida en el Tracking Plan
+Entonces el sistema registra el evento y sus propiedades necesarias para calcular la métrica correspondiente
+```
+
+**Escenario 2: Diferenciación de plataforma**
+
+```gherkin
+Dado que el evento ocurre desde la aplicación web o móvil
+Cuando se almacena el registro
+Entonces se identifica el canal mediante la propiedad channel
+```
+
+**Escenario 3: Protección de datos**
+
+```gherkin
+Dado que se registra una interacción experimental
+Cuando se recopila la información
+Entonces se evita almacenar nombres, documentos u otros identificadores personales de pacientes
+```
+
+**Resultado esperado:** disponer de datos consistentes que permitan calcular las métricas experimentales y comparar las condiciones definidas en la sección 8.2.
+
+#### TB-US-11: Mejorar la comprensión y conversión de la Landing Page
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-11 |
+| Epic | EP-01: Landing Page informativa |
+| Prioridad | Media |
+| Hipótesis relacionada | H-07 |
+| Métrica | M-07: Value Proposition Comprehension Rate |
+| Historias originales | US-01, US-02, US-05, US-10 |
+
+**User Story**
+
+Como visitante de la Landing Page, deseo comprender rápidamente el propósito de NursePulse y localizar la opción para solicitar una demostración para evaluar si la plataforma responde a las necesidades de mi institución.
+
+**Justificación**
+
+Las entrevistas identificaron una percepción favorable sobre la claridad visual de la Landing Page, pero también oportunidades para simplificar algunos términos técnicos y mejorar la navegación.
+
+**Criterios de aceptación**
+
+**Escenario 1: Comprensión de la propuesta de valor**
+
+```gherkin
+Dado que el visitante accede a la página principal
+Cuando revisa la información presentada
+Entonces encuentra una explicación del propósito de NursePulse, sus funcionalidades principales y su alcance complementario
+```
+
+**Escenario 2: Solicitud de información**
+
+```gherkin
+Dado que el visitante desea conocer más sobre el producto
+Cuando busca la opción de contacto o demostración
+Entonces puede identificar y acceder al llamado a la acción correspondiente
+```
+
+**Escenario 3: Registro de interacción**
+
+```gherkin
+Dado que el visitante selecciona el llamado a la acción
+Cuando ocurre la interacción
+Entonces se registra el evento landing_cta_clicked, conforme al Tracking Plan
+```
+
+**Resultado esperado:** alcanzar al menos 70 % de comprensión correcta y 80 % de localización del llamado a la acción sin asistencia.
+
+#### TB-US-12: Comprensión de los planes y el alcance institucional
+
+| Campo | Descripción |
+|---|---|
+| Story ID | TB-US-12 |
+| Epic | EP-11: Plataforma y suscripciones |
+| Prioridad | Media |
+| Hipótesis relacionada | H-08 |
+| Métrica | M-08: Scope Differentiation Rate |
+| Historias originales | US-39, US-10 |
+
+**User Story**
+
+Como representante de una clínica privada, deseo comparar los planes y funcionalidades de NursePulse y conocer sus limitaciones frente a un HIS o EHR para evaluar una posible adopción institucional de acuerdo con las necesidades de mi organización.
+
+**Justificación**
+
+El modelo comercial documentado contempla los planes Essential, Professional y Enterprise. Sin embargo, las conclusiones del proyecto identifican la necesidad de obtener validación directa de representantes institucionales respecto a los precios, características y condiciones de adopción.
+
+**Criterios de aceptación**
+
+**Escenario 1: Comparación de planes**
+
+```gherkin
+Dado que un representante institucional accede a la información comercial
+Cuando consulta los planes disponibles
+Entonces el sistema presenta los límites de usuarios y las funcionalidades correspondientes a cada plan
+```
+
+**Escenario 2: Comprensión del alcance**
+
+```gherkin
+Dado que el representante revisa la propuesta de valor
+Cuando consulta el funcionamiento de NursePulse
+Entonces encuentra una explicación de que la solución complementa los sistemas hospitalarios existentes y no pretende sustituir un HIS o EHR completo
+```
+
+**Escenario 3: Solicitud de información institucional**
+
+```gherkin
+Dado que el representante desea evaluar la plataforma
+Cuando selecciona la opción de contacto
+Entonces puede acceder al canal disponible para solicitar información o una demostración
+```
+
+**Resultado esperado:** lograr que al menos 70 % de los representantes entrevistados diferencie correctamente el alcance de NursePulse y que al menos tres instituciones manifiesten interés en evaluarlo.
+
+Esta historia no contempla implementar una pasarela de pagos, ya que dicha funcionalidad no forma parte de las capacidades verificadas en el producto actual.
+
+#### Relación entre las To-Be User Stories y los hallazgos de validación
+
+| Hallazgo identificado | Historia To-Be |
+|---|---|
+| Redigitación de antecedentes en SBAR | TB-US-01 |
+| Posibles omisiones en traspasos | TB-US-02 |
+| Ausencia de observaciones en signos vitales | TB-US-03 |
+| Falta de confirmación visual en móvil | TB-US-04 |
+| Ausencia de tendencias temporales | TB-US-05 |
+| Sobrecarga visual de alertas | TB-US-06 |
+| Cierre de alertas sin confirmación | TB-US-07 |
+| Limitaciones de trazabilidad | TB-US-08 |
+| Necesidad de supervisar pendientes | TB-US-09 |
+| Ausencia de instrumentación experimental | TB-US-10 |
+| Oportunidades de mejora en Landing Page | TB-US-11 |
+| Validación institucional pendiente | TB-US-12 |
+
+Las historias propuestas deben considerarse candidatas para su incorporación al siguiente ciclo de desarrollo. Su aprobación definitiva dependerá de los resultados experimentales y de las prioridades establecidas por el equipo.
+
+---
+
+### 8.3.2. To-Be Product Backlog
+
+El *To-Be Product Backlog* de NursePulse organiza y prioriza las historias de usuario derivadas de las oportunidades identificadas durante la validación del producto y del diseño experimental.
+
+Su propósito es establecer una secuencia de implementación que permita abordar primero los riesgos relacionados con la continuidad de atención, integridad de los registros, trazabilidad y disponibilidad de datos experimentales. Posteriormente se consideran mejoras de experiencia de usuario, visualización de información y comunicación de valor institucional.
+
+La priorización toma como referencia los criterios empleados en el Question Backlog de la sección 8.1.4:
+
+- **Confianza:** nivel de evidencia disponible sobre el problema.
+- **Riesgo:** consecuencias de mantener el problema sin resolver.
+- **Impacto:** beneficio esperado para los usuarios y los objetivos del negocio.
+- **Interés:** relevancia de la pregunta para los usuarios y stakeholders del proyecto.
+
+Asimismo, se consideran las dependencias técnicas entre historias, el alcance del producto y la necesidad de recopilar evidencia antes de tomar decisiones de implementación adicionales.
+
+#### Criterios de estimación y priorización
+
+Para la estimación del esfuerzo se emplea la escala de Story Points utilizada en el Product Backlog original del Capítulo III: **1, 2, 3, 5 y 8**.
+
+Los Story Points representan estimaciones relativas de complejidad, esfuerzo e incertidumbre técnica. No equivalen directamente a horas de desarrollo.
+
+Las estimaciones siguientes constituyen una propuesta inicial y deberán ser confirmadas por el equipo durante la planificación del Sprint.
+
+Se establecen dos niveles de prioridad:
+
+- **Alta:** historias relacionadas con problemas de seguridad, calidad de los registros, trazabilidad, eficiencia del traspaso e instrumentación necesaria para ejecutar los experimentos.
+- **Media:** mejoras que complementan la experiencia de usuario, permiten ampliar el seguimiento operativo o facilitan la comunicación institucional.
+
+#### Product Backlog To-Be — NursePulse
+
+| Orden | Story ID | Título | Prioridad | Story Points | Hipótesis |
+|---:|---|---|---|---:|---|
+| 1 | TB-US-10 | Registro de eventos para experimentación | Alta | 5 | H-01 a H-07 |
+| 2 | TB-US-08 | Fortalecimiento de la trazabilidad | Alta | 8 | H-04 |
+| 3 | TB-US-01 | Autocompletar antecedentes SBAR | Alta | 5 | H-01 |
+| 4 | TB-US-02 | Verificación de completitud SBAR | Alta | 3 | H-01 |
+| 5 | TB-US-07 | Confirmación del cierre de alertas críticas | Alta | 5 | H-05 |
+| 6 | TB-US-03 | Registro de signos vitales con observaciones | Alta | 5 | H-02 |
+| 7 | TB-US-04 | Estado de guardado en la aplicación móvil | Alta | 8 | H-02, H-06 |
+| 8 | TB-US-06 | Filtrado y priorización de alertas | Alta | 5 | H-05 |
+| 9 | TB-US-05 | Visualización integrada de evolución clínica | Alta | 8 | H-03 |
+| 10 | TB-US-09 | Dashboard de actividades y pendientes | Media | 5 | H-03, H-05 |
+| 11 | TB-US-11 | Comprensión y conversión de Landing Page | Media | 3 | H-07 |
+| 12 | TB-US-12 | Comprensión de planes y alcance institucional | Media | 5 | H-08 |
+| | | **Total estimado** | | **65 SP** | |
+
+#### Distribución del Product Backlog por bloques funcionales
+
+| Bloque funcional | Historias relacionadas | Propósito |
+|---|---|---|
+| Experimentación y analítica | TB-US-10 | Incorporar los mecanismos necesarios para medir los resultados de las pruebas |
+| Traspasos SBAR | TB-US-01, TB-US-02 | Mejorar la completitud y reducir la duplicidad de información |
+| Registro de signos vitales | TB-US-03, TB-US-04 | Facilitar el registro y mejorar la retroalimentación al usuario |
+| Consulta y seguimiento | TB-US-05, TB-US-09 | Centralizar información y mejorar la identificación de elementos relevantes |
+| Alertas clínicas | TB-US-06, TB-US-07 | Facilitar la priorización y prevenir errores de cierre |
+| Auditoría y trazabilidad | TB-US-08 | Fortalecer la confiabilidad de los registros |
+| Landing Page | TB-US-11 | Facilitar la comprensión y el contacto institucional |
+| Suscripciones y adopción | TB-US-12 | Mejorar la comprensión de los planes y el alcance del producto |
+
+#### Dependencias técnicas del To-Be Product Backlog
+
+La ejecución de las historias funcionales debe acompañarse de determinadas actividades técnicas para asegurar que los cambios sean comprobables y que los experimentos generen datos utilizables.
+
+| Actividad técnica | Relación | Descripción |
+|---|---|---|
+| Instrumentación del Tracking Plan | TB-US-10 | Implementar los eventos definidos en 8.2.8, incluyendo `sbar_submitted`, `vital_signs_submitted`, `info_found`, `alert_first_opened` y `task_completed` |
+| Validación de identidad del responsable | TB-US-08 | Verificar la identidad mediante el contexto de autenticación del backend, sin depender de identificadores proporcionados por el cliente |
+| Validación de entidades relacionadas | TB-US-01, TB-US-03, TB-US-08 | Comprobar la existencia y autorización de acceso al paciente antes de registrar operaciones asociadas |
+| Prevención de duplicados | TB-US-04 | Gestionar correctamente los intentos de guardado y sus respuestas |
+| Adaptación de interfaces | TB-US-05, TB-US-06, TB-US-09 | Implementar componentes de visualización utilizando información realmente disponible en los módulos existentes |
+| Ejecución de pruebas automatizadas | Todas | Incorporar o actualizar pruebas unitarias, de integración y de comportamiento para verificar los criterios de aceptación |
+
+Estas actividades se vinculan con las Technical Stories originales TS-01 a TS-10, especialmente aquellas relacionadas con autenticación, manejo de errores, trazabilidad, CI/CD y observabilidad.
+
+#### Relación con las métricas y experimentos
+
+| Historias To-Be | Métrica principal | Criterio experimental |
+|---|---|---|
+| TB-US-01, TB-US-02 | M-01 | Reducción de omisiones SBAR de al menos 15 puntos porcentuales |
+| TB-US-03 | M-02 | Al menos 90 % de registros correctos |
+| TB-US-04 | M-06 | Al menos 20 % menos tiempo sin disminuir la finalización más de 10 puntos porcentuales |
+| TB-US-05, TB-US-09 | M-03 | Al menos 30 % menos tiempo de consulta clínica |
+| TB-US-06 | M-05 | Al menos 30 % menos tiempo y 90 % de reconocimiento correcto |
+| TB-US-07 | M-05 y observación de errores | Confirmación segura de acciones críticas y ausencia de cierres accidentales en escenarios evaluados |
+| TB-US-08 | M-04 | Al menos 85 % de respuestas correctas sobre trazabilidad |
+| TB-US-10 | M-01 a M-07 | Disponibilidad y consistencia de eventos necesarios para el análisis |
+| TB-US-11 | M-07 | 70 % de comprensión y 80 % de localización del CTA |
+| TB-US-12 | M-08 | 70 % de diferenciación del alcance y al menos tres instituciones interesadas |
+
+#### Relación del To-Be Product Backlog con los Business Goals
+
+El backlog propuesto conserva su relación con los Business Goals documentados en el Capítulo III, considerando las áreas de mejora definidas en las hipótesis de la sección 8.2.
+
+| Business Goal | Historias To-Be relacionadas | Contribución esperada |
+|---|---|---|
+| BG-01: Captación de interesados | TB-US-11, TB-US-12 | Facilitar la comprensión de la propuesta de valor y el acceso a solicitudes de información |
+| BG-02: Validación de traspasos SBAR | TB-US-01, TB-US-02 | Mejorar la completitud de la información y facilitar la evaluación institucional del proceso |
+| BG-03: Reducción del tiempo de consulta | TB-US-05, TB-US-09 | Facilitar el acceso a información consolidada y reducir la navegación entre módulos |
+| BG-04: Adopción de registros digitales | TB-US-03, TB-US-04 | Mejorar la eficiencia y confiabilidad percibida del registro clínico |
+| BG-05: Trazabilidad de acciones | TB-US-07, TB-US-08 | Fortalecer el registro de responsables, fechas, horas y operaciones realizadas |
+
+#### Propuesta de organización por Sprints
+
+La siguiente distribución constituye una propuesta de planificación inicial. Su ejecución deberá ajustarse de acuerdo con la capacidad del equipo, las dependencias técnicas y la evidencia obtenida durante las sesiones experimentales.
+
+**Sprint To-Be 1: Instrumentación y confiabilidad**
+
+Historias:
+
+- TB-US-10: Registro de eventos para experimentación.
+- TB-US-08: Fortalecimiento de la trazabilidad.
+- TB-US-07: Confirmación del cierre de alertas críticas.
+
+**Objetivo:** preparar la recolección de datos experimentales y mejorar la confiabilidad de los registros y las operaciones críticas.
+
+**Sprint To-Be 2: Optimización de los registros clínicos**
+
+Historias:
+
+- TB-US-01: Autocompletar antecedentes SBAR.
+- TB-US-02: Verificación de completitud SBAR.
+- TB-US-03: Registro de signos vitales con observaciones.
+- TB-US-04: Estado de guardado en la aplicación móvil.
+
+**Objetivo:** mejorar las funcionalidades de registro y comunicación utilizadas frecuentemente por el personal de enfermería.
+
+**Sprint To-Be 3: Seguimiento, alertas y experiencia institucional**
+
+Historias:
+
+- TB-US-05: Visualización integrada de evolución clínica.
+- TB-US-06: Filtrado y priorización de alertas.
+- TB-US-09: Dashboard de actividades y pendientes.
+- TB-US-11: Comprensión y conversión de Landing Page.
+- TB-US-12: Comprensión de planes y alcance institucional.
+
+**Objetivo:** facilitar la consulta de información relevante, la supervisión de procesos y la comunicación del valor de NursePulse.
+
+#### Criterios para considerar completada una historia To-Be
+
+Una historia solo podrá considerarse terminada cuando:
+
+1. Cumpla los criterios de aceptación especificados en la sección 8.3.1.
+2. Su implementación haya sido integrada en el repositorio correspondiente.
+3. Las pruebas automatizadas aplicables se ejecuten satisfactoriamente.
+4. Se verifique su comportamiento mediante escenarios funcionales.
+5. Se compruebe que las restricciones de acceso y seguridad se mantienen.
+6. Se documenten las evidencias de implementación y pruebas.
+7. Los eventos necesarios para medir su impacto estén disponibles cuando correspondan.
+
+Además, la finalización técnica de una historia no implica que la hipótesis experimental haya sido confirmada. La decisión sobre el valor de la funcionalidad deberá basarse en los datos recolectados y analizados durante la experimentación.
+
+#### Conclusión del To-Be Product Backlog
+
+El To-Be Product Backlog de NursePulse establece una propuesta de evolución del producto basada en los problemas identificados durante su validación y en los riesgos priorizados mediante el diseño experimental.
+
+La planificación evita incorporar funcionalidades sin relación con los objetivos del producto y concentra los esfuerzos en mejorar la completitud del traspaso SBAR, la calidad de los registros clínicos, la trazabilidad, el reconocimiento de alertas y la eficiencia de consulta.
+
+Asimismo, incorpora como requisito transversal la disponibilidad de datos experimentales, indispensables para comprobar las hipótesis formuladas y sustentar decisiones posteriores.
+
+La implementación de estas historias permitirá preparar una nueva versión de NursePulse para su evaluación. Los resultados de las pruebas deberán utilizarse posteriormente para actualizar el Question Backlog y determinar qué mejoras mantener, modificar o descartar.
